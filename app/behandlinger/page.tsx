@@ -401,7 +401,7 @@ export default function BehandlingerPage() {
                 For mig er balayage ikke bare en standardiseret teknik, man rutinemæssigt trækker ned over hovedet på alle. Det er et solidt håndværk, der kræver, at jeg faktisk forstår, præcis hvordan lige netop dit hår falder og bevæger sig. Målet er aldrig at det skal se stift eller overbehandlet ud.
               </p>
               <p className="font-sans text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] text-[#6A5D55] font-light leading-relaxed">
-                Jeg bygger altid farven op med bløde, præcise strøg, så den smelter helt naturligt ind i din egen hårfarve. På den måde får du et ærligt og sundt resultat, som du let kan vedligeholde i din hverdag, og som ikke kræver, at du absolut skal sidde i stolen igen om allerede fire uger.
+                Jeg bygger altid farven op med bløde, præcise strøg, så den smelter helt naturligt ind i din egen hårfarve. På den måde får du et ærligt og sundt resultat, som du let kan vedligeholde i din hverdag. Og bare rolig. Jeg skal nok vejlede dig i, hvordan du gør.
               </p>
               <div className="pt-2">
                 <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
