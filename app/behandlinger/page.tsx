@@ -168,28 +168,28 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
   const normalOpacity = useTransform(scrollYProgress, [0.2, 0.4, 0.6, 0.8], [1, 0, 0, 1]);
 
   return (
-    <motion.div style={hardwareAccelerated} 
+    <motion.div 
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-20%" }}
       transition={{ duration: 0.8, delay: delay, ease: [0.16, 1, 0.3, 1] }}
-      style={isMobile ? { boxShadow: mobileShadow } : undefined}
+      style={{ ...hardwareAccelerated, ...(isMobile ? { boxShadow: mobileShadow } : {}) }}
       className={`bg-white/60 backdrop-blur-md p-[clamp(2rem,3.2vw,2.4rem)] 2xl:p-[clamp(2.5rem,4vw,3rem)] rounded-[16px] 2xl:rounded-[20px] shadow-[0_15px_40px_rgba(28,26,24,0.03)] border border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-pointer flex flex-col ${!isMobile ? 'hover:shadow-[0_20px_50px_rgba(28,26,24,0.06)]' : ''}`}
     >
-      <motion.div style={hardwareAccelerated} 
-        style={isMobile ? { y: iconTranslateY, scale: iconScale } : undefined}
+      <motion.div 
+        style={{ ...hardwareAccelerated, ...(isMobile ? { y: iconTranslateY, scale: iconScale } : {}) }}
         className={`mb-5 2xl:mb-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#EDB7A9] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
       >
         {Icon}
       </motion.div>
       
-      <motion.div style={hardwareAccelerated} 
-        style={isMobile ? { y: contentTranslateY, scale: contentScale } : undefined}
+      <motion.div 
+        style={{ ...hardwareAccelerated, ...(isMobile ? { y: contentTranslateY, scale: contentScale } : {}) }}
         className={`relative transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full flex flex-col items-start ${!isMobile ? 'group-hover:-translate-y-1 group-hover:scale-[1.02]' : ''}`}
       >
-        <motion.div style={hardwareAccelerated} 
-          style={isMobile ? { opacity: normalOpacity } : undefined}
+        <motion.div 
+          style={{ ...hardwareAccelerated, ...(isMobile ? { opacity: normalOpacity } : {}) }}
           className={`w-full flex flex-col items-start space-y-4 transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-100 group-hover:opacity-0' : ''}`}
         >
           <h3 className="text-[clamp(1.4rem,2vw,1.6rem)] 2xl:text-[clamp(1.7rem,2.2vw,2rem)] font-headline font-light text-[#4C433C] tracking-tight">{title}</h3>
@@ -198,8 +198,8 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
           </p>
         </motion.div>
         
-        <motion.div style={hardwareAccelerated} 
-          style={isMobile ? { opacity: gradientOpacity } : undefined}
+        <motion.div 
+          style={{ ...hardwareAccelerated, ...(isMobile ? { opacity: gradientOpacity } : {}) }}
           className={`absolute inset-0 pointer-events-none w-full flex flex-col items-start space-y-4 transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-0 group-hover:opacity-100' : ''}`}
         >
           <h3 
