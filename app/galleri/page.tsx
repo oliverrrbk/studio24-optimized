@@ -231,7 +231,7 @@ export default function GalleriPage() {
               <Quote className="text-[#4C433C]/[0.03] w-[clamp(4.25rem,7.65vw,6.8rem)] 2xl:w-[clamp(5rem,9vw,8rem)] h-[clamp(4.25rem,7.65vw,6.8rem)] 2xl:h-[clamp(5rem,9vw,8rem)] absolute top-1/2 left-[12%] md:left-[15%] -translate-y-[60%] -z-10 -rotate-3" />
               
               <blockquote className="font-headline text-[clamp(1.53rem,2.55vw,2.72rem)] 2xl:text-[clamp(1.8rem,3vw,3.2rem)] text-[#4C433C] leading-[1.15] relative z-10 italic font-light w-full">
-                &quot;Jeg går aldrig på kompromis. Hverken med kvaliteten, produkterne eller den tid, dit hår kræver.&quot;
+                &quot;Jeg går meget op i, at lave et smukt resultat, som er lavet ud fra et ordentligt fundament, så det også er nemt at holde pænt i hverdagen.&quot;
               </blockquote>
             </div>
 
