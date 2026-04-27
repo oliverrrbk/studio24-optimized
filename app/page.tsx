@@ -435,12 +435,12 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 md:mt-10 lg:-mt-12 2xl:mt-4">
+          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 md:mt-16 lg:-mt-12 2xl:mt-4">
             <motion.h1 style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(2.8rem,4vw,3.5rem)] lg:text-[clamp(4rem,6.5vw,5.5rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
+              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(2.5rem,3.5vw,3.2rem)] lg:text-[clamp(4rem,6.5vw,5.5rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
             >
               Dit hår fortjener<br/>
               <span className="italic font-light">en dygtig frisør</span>
@@ -449,7 +449,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(0.9rem,1vw,0.95rem)] lg:text-[clamp(1rem,1.3vw,1.15rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
+              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(0.85rem,1vw,0.9rem)] lg:text-[clamp(1rem,1.3vw,1.15rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
               Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
             </motion.p>
@@ -459,7 +459,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[2rem] md:py-[0.75rem] md:text-[0.875rem] lg:px-[clamp(2.75rem,3.5vw,3.25rem)] lg:py-[clamp(1rem,1.3vw,1.125rem)] lg:text-[1rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
+              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.75rem,3.5vw,3.25rem)] lg:py-[clamp(1rem,1.3vw,1.125rem)] lg:text-[1rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
                 Udforsk ydelser
               </Link>
             </motion.div>
