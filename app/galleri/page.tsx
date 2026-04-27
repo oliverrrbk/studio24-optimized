@@ -167,7 +167,7 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-headline text-[clamp(2.975rem,5.1vw,4.675rem)] 2xl:text-[clamp(3.5rem,6vw,5.5rem)] text-[#4C433C] mb-[clamp(1.275rem,2.55vw,1.7rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)] tracking-tight font-light"
           >
-            Vores Håndværk
+            Mit Håndværk
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -175,7 +175,7 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-[clamp(0.935rem,1.19vw,1.147rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] text-[#6A5D55] leading-relaxed mb-[clamp(2.55rem,4.25vw,3.4rem)] 2xl:mb-[clamp(3rem,5vw,4rem)] font-light drop-shadow-sm"
           >
-            I Studio 24 tror vi på, at ægte skønhed udspringer af en dyb forståelse for hårets naturlige fald og tekstur. Vores atelier er dedikeret til organisk pleje, minutiøs præcision og skabelsen af tidløse forvandlinger.
+            For mig starter alt smukt hår med at forstå præcis, hvordan det falder fra naturens side. Mit atelier er dedikeret til dig, der værdsætter organisk pleje, personlig præcision og et håndværk, der får lov at tage den tid, det kræver.
           </motion.p>
           
           <motion.div 
@@ -231,7 +231,7 @@ export default function GalleriPage() {
               <Quote className="text-[#4C433C]/[0.03] w-[clamp(4.25rem,7.65vw,6.8rem)] 2xl:w-[clamp(5rem,9vw,8rem)] h-[clamp(4.25rem,7.65vw,6.8rem)] 2xl:h-[clamp(5rem,9vw,8rem)] absolute top-1/2 left-[12%] md:left-[15%] -translate-y-[60%] -z-10 -rotate-3" />
               
               <blockquote className="font-headline text-[clamp(1.53rem,2.55vw,2.72rem)] 2xl:text-[clamp(1.8rem,3vw,3.2rem)] text-[#4C433C] leading-[1.15] relative z-10 italic font-light w-full">
-                &quot;Jeg reparerer ikke med lappeløsninger, fordi det skal være billigt.&quot;
+                &quot;Jeg går aldrig på kompromis. Hverken med kvaliteten, produkterne eller den tid, dit hår kræver.&quot;
               </blockquote>
             </div>
 
