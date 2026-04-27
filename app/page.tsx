@@ -543,7 +543,7 @@ export default function Page() {
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group transition-all duration-300">
-                  <Image src="/images/solo_salon_hair_natural.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                  <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
@@ -577,7 +577,7 @@ export default function Page() {
                 className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
               >
                  <div className="w-full md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
-                    <Image src="/images/solo_salon_relaxing_natural.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                    <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
                  </div>
                  
                  <h4 className="font-headline font-medium text-[clamp(1.5rem,2.2vw,2.3rem)] 2xl:text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left md:w-[115%]">
