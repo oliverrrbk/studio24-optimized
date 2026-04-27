@@ -175,7 +175,7 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-sans text-[clamp(0.935rem,1.19vw,1.147rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] text-[#6A5D55] leading-relaxed mb-[clamp(2.55rem,4.25vw,3.4rem)] 2xl:mb-[clamp(3rem,5vw,4rem)] font-light drop-shadow-sm"
           >
-            For mig starter alt smukt hår med at forstå præcis, hvordan det falder fra naturens side. Mit atelier er dedikeret til dig, der værdsætter organisk pleje, personlig præcision og et håndværk, der får lov at tage den tid, det kræver.
+            Gå på opdagelse i nogle af de forvandlinger, jeg har skabt i salonen. Billederne her er din inspiration og et ærligt indblik i de færdige resultater – smukt, sundt og levende hår, der føles præcis lige så godt, som det ser ud.
           </motion.p>
           
           <motion.div 
