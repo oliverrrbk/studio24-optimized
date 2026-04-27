@@ -435,7 +435,7 @@ export default function BehandlingerPage() {
                 <div className="space-y-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:space-y-[clamp(1.5rem,3vw,2rem)]">
                   <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">på den rigtige måde</em></h2>
                   <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#EDB7A9]/40 pl-6 py-2">
-                    En af de største bekymringer ved extensions er frygten for, at de føles forkerte, tunge eller er tydelige at se. Det forstår jeg utrolig godt, og netop derfor er jeg meget opmærksom på præcis dette. Jeg tager mig altid den ekstra tid, det kræver, at skræddersy en påsætning, der falder fuldstændig i ét med dit eget hår og føles helt naturligt.
+                    En af de største bekymringer ved extensions er frygten for, at de føles forkerte, tunge eller er tydelige at se. Det forstår jeg utrolig godt, og netop derfor bygger min tilgang på to faste principper:
                   </p>
                 </div>
                 <style>{`
