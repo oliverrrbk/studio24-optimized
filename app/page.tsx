@@ -785,10 +785,10 @@ export default function Page() {
         {/* Stats (Using 44.png layout) */}
         <section className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#F8F5F0] text-[#4C433C] z-40">
           {/* Curve Graphics */}
-          <div className="absolute top-[-10%] md:top-[-20%] left-0 w-[clamp(180px,25vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-70">
+          <div className="hidden md:block absolute top-[-10%] md:top-[-20%] left-0 w-[clamp(180px,25vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-70">
              <Image src="/images/curve_left.png" alt="Curve left" fill className="object-contain object-left-top" />
           </div>
-          <div className="absolute bottom-[-10%] md:bottom-[-25%] right-0 w-[clamp(180px,27vw,700px)] h-[120%] md:h-[150%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-70">
+          <div className="hidden md:block absolute bottom-[-10%] md:bottom-[-25%] right-0 w-[clamp(180px,27vw,700px)] h-[120%] md:h-[150%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-70">
              <Image src="/images/curve_right.png" alt="Curve right" fill className="object-contain object-right-bottom" />
           </div>
           
