@@ -435,7 +435,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 lg:-mt-12 2xl:mt-0">
+          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 lg:-mt-20 2xl:-mt-12">
             <motion.h1 style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
