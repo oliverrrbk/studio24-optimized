@@ -376,7 +376,7 @@ export default function BehandlingerPage() {
               </div>
 
               <div className="aspect-[4/5] w-[85%] ml-[3%] mr-auto lg:w-full lg:mx-0 bg-[#EAD5C5]/20 rounded-[16px] 2xl:rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(28,26,24,0.06)] relative z-10">
-                <img alt="Balayage transformation" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105" src="/gallerypics/14.png" />
+                <img alt="Balayage transformation" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105 brightness-[1.15] contrast-[1.05]" src="/gallerypics/14.png" />
               </div>
               <div className="absolute -bottom-[5%] right-[4%] lg:-bottom-[15%] lg:-right-[5%] block w-[clamp(100px,13vw,176px)] 2xl:w-[clamp(180px,20vw,220px)] aspect-[4/5] overflow-hidden rounded-[16px] 2xl:rounded-[20px] shadow-[0_25px_60px_rgba(28,26,24,0.15)] transform rotate-3 z-20 group-hover:rotate-6 group-hover:-translate-y-2 transition-all duration-700 ease-out">
                 <Image alt="Detail work" fill className="object-cover" src="/about/hairdresser_balayage_detail.png" sizes="(min-width: 768px) 220px, 120px" />
