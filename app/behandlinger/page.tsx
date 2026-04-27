@@ -405,8 +405,8 @@ export default function BehandlingerPage() {
               </p>
               <div className="pt-2">
                 <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
-                  Se hvornår jeg har tid
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="font-light group-hover:translate-x-3 transition-transform duration-500 ease-out"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  Find din tid her...
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </Link>
               </div>
             </motion.div>
