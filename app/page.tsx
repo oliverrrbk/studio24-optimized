@@ -466,7 +466,7 @@ export default function Page() {
           </div>
 
           {/* Bottom Curve */}
-          <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none hidden md:block">
+          <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
             <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
               <path className="text-[#FDFBF7]" d="M0,100 L0,80 C480,0 960,0 1440,80 L1440,100 Z" />
             </svg>
@@ -513,7 +513,7 @@ export default function Page() {
               Jeg oplever desværre ofte nye kunder, der kommer ind med fuldstændig smadret hår fra et tidligere frisørbesøg. Det sker næsten altid, fordi der mangler basal kommunikation. Derfor gennemgår vi altid alt i fællesskab her. Jeg kigger på dine referencebilleder og sikrer mig, at jeg forstår din vision, inden jeg rører saksen.
             </motion.p>
 
-            <div className="grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1fr_1fr] 2xl:grid-cols-[1.3fr_1fr] gap-[clamp(4rem,8vw,10rem)] lg:gap-12 2xl:gap-[clamp(4rem,8vw,10rem)] mt-[clamp(2.5rem,4vw,4rem)] w-full items-start px-4 md:px-0 lg:translate-x-0 transition-transform">
+            <div className="grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1fr_1fr] 2xl:grid-cols-[1.3fr_1fr] gap-[clamp(4rem,8vw,10rem)] lg:gap-12 2xl:gap-[clamp(4rem,8vw,10rem)] mt-[1rem] md:mt-[clamp(2.5rem,4vw,4rem)] w-full items-start px-4 md:px-0 lg:translate-x-0 transition-transform">
               
               {/* LEFT SIDE */}
               <motion.div style={hardwareAccelerated} 
@@ -568,16 +568,16 @@ export default function Page() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
+                className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[0.8rem] md:pt-[clamp(2rem,8vw,10rem)]"
               >
-                 <div className="relative w-full mb-[clamp(2rem,4vw,3rem)] h-[85vw] md:h-auto md:block">
+                 <div className="relative w-full mb-[clamp(2rem,4vw,3rem)] h-[75vw] md:h-auto md:block">
                     {/* Background image (Mobile offset: right/down, Desktop: normal) */}
                     <div className="absolute md:relative bottom-0 right-0 md:bottom-auto md:right-auto w-[75%] md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] group z-10">
                       <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
 
                     {/* Foreground image (Mobile only offset: left/up) */}
-                    <div className="absolute top-0 left-0 w-[65%] aspect-[1/1] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
+                    <div className="absolute top-0 left-0 w-[65%] aspect-[4/3] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
                       <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
                  </div>
