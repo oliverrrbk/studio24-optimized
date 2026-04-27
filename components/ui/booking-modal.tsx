@@ -98,11 +98,11 @@ function BookingModalInner() {
                   Booking & Rådgivning
                 </span>
                 <h1 className="font-headline text-[clamp(1.7rem,2.55vw,2.125rem)] 2xl:text-[clamp(2rem,3vw,2.5rem)] text-[#1c1a18] leading-[1.1] font-light mb-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2vw,2rem)] italic tracking-tight">
-                  Kontakt os for vejledning
+                  Er du i tvivl om din booking?
                 </h1>
                 <div className="w-10 2xl:w-12 h-[0.8px] 2xl:h-[1px] bg-[#4C433C]/20 mb-[clamp(1.275rem,2.55vw,1.7rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]"></div>
                 <p className="text-[#6A5D55] font-body font-light leading-relaxed text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)]">
-                  Vi tilbyder personlig rådgivning før dit besøg. Kontakt os venligst for at sikre den mest optimale behandling tilpasset dine ønsker.
+                  Jeg vil meget hellere have, at du ringer en gang for meget end en gang for lidt. På den måde er vi sikre på, at vi får sat den helt rigtige tid af til præcis dét, dit hår kræver.
                 </p>
               </header>
 
