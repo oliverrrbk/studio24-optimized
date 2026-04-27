@@ -515,7 +515,7 @@ export default function BehandlingerPage() {
                 className="relative mt-8 lg:mt-[clamp(4.8rem,8vw,6.4rem)] group"
               >
                 <div className="aspect-[3/4] bg-[#EAD5C5]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(28,26,24,0.08)] relative z-10 w-full max-w-[400px] 2xl:max-w-[500px] ml-auto rotate-1">
-                  <img alt="Hair Extensions results" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105" src="/about/extensions_guarantee.png" />
+                  <img alt="Hair Extensions results" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" src="/about/extensions_guarantee.png" />
                 </div>
                 <div className="absolute -left-[3%] bottom-[2%] md:left-auto md:-right-[5%] md:bottom-[5%] z-20 max-w-[240px] 2xl:max-w-[300px] group/guarantee">
                   <div className="bg-[#4C433C] p-[clamp(1.6rem,2.4vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] text-white rounded-[16px] 2xl:rounded-[20px] shadow-[0_30px_60px_rgba(28,26,24,0.2)] transition-transform duration-700 group-hover/guarantee:-translate-y-2">
@@ -545,7 +545,7 @@ export default function BehandlingerPage() {
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full lg:w-[65%] h-[clamp(320px,40vw,480px)] 2xl:h-[clamp(400px,50vw,600px)] rounded-[16px] 2xl:rounded-[20px] overflow-hidden shadow-[0_25px_60px_rgba(28,26,24,0.1)] relative z-10 group -mt-[10%] lg:mt-0"
               >
-                <Image alt="Salon Oplevelse" fill className="object-cover transition-transform duration-[5s] group-hover:scale-105" src="/about/salon_experience_elegant.png" sizes="(min-width: 1024px) 65vw, 100vw" />
+                <Image alt="Salon Oplevelse" fill className="object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" src="/about/salon_experience_elegant.png" sizes="(min-width: 1024px) 65vw, 100vw" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 pointer-events-none"></div>
               </motion.div>
 

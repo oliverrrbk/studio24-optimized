@@ -224,7 +224,7 @@ export default function MinHistoriePage() {
                 <Image
                   fill
                   priority
-                  className="object-cover"
+                  className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                   src="/about/emilie.png"
                   alt="Elegant close-up portrait of Emilie"
                 />
@@ -263,7 +263,7 @@ export default function MinHistoriePage() {
                     <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
-                        className="object-cover"
+                        className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                         src="/about/tools.png"
                         alt="Hair styling tools"
                       />
@@ -271,7 +271,7 @@ export default function MinHistoriePage() {
                     <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
-                        className="object-cover"
+                        className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                         src="/about/interior.png"
                         alt="Atelier interior"
                       />
@@ -281,7 +281,7 @@ export default function MinHistoriePage() {
                     <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
-                        className="object-cover"
+                        className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                         src="/about/hair_closeup.png"
                         alt="Hair styling close-up"
                       />
@@ -289,7 +289,7 @@ export default function MinHistoriePage() {
                     <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
-                        className="object-cover"
+                        className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                         src="/about/client_coffee.png"
                         alt="Client relaxing"
                       />
@@ -413,7 +413,7 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-[4/5] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                   src="/about/swatches.png"
                   alt="Hair color swatches"
                 />
@@ -424,7 +424,7 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-square relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                   src="/about/product_hands.png"
                   alt="Product application hands"
                 />
@@ -435,7 +435,7 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-[4/3] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                   src="/about/mirror.png"
                   alt="Mirror reflection"
                 />
@@ -446,7 +446,7 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-[3/4] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
+                  className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
                   src="/about/waiting.png"
                   alt="Cozy waiting table"
                 />
