@@ -543,7 +543,7 @@ export default function Page() {
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group transition-all duration-300">
-                  <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                  <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
@@ -577,7 +577,7 @@ export default function Page() {
                 className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
               >
                  <div className="w-full md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
-                    <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                    <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                  </div>
                  
                  <h4 className="font-headline font-medium text-[clamp(1.5rem,2.2vw,2.3rem)] 2xl:text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left md:w-[115%]">
@@ -808,10 +808,10 @@ export default function Page() {
                   className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
                 >
                    <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-500 hover:scale-105">
-                      <Image src="/images/landing_stats_1.png" fill alt="Detail" className="object-cover" />
+                      <Image src="/images/landing_stats_1.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                    <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-all duration-500 hover:scale-105">
-                      <Image src="/images/landing_stats_2.png" fill alt="Tools" className="object-cover" />
+                      <Image src="/images/landing_stats_2.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                 </motion.div>
              </div>
@@ -832,11 +832,11 @@ export default function Page() {
                 className="relative w-[75%] md:w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0"
               >
                   <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
-                    <Image src="/images/landing_founder.png" fill alt="Founder" className="object-cover transition-transform duration-[5s] group-hover:scale-105" />
+                    <Image src="/images/landing_founder.png" fill alt="Founder" className="object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Floating Galleri Image */}
                   <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
-                    <Image src="/images/landing_founder_detail.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110" />
+                    <Image src="/images/landing_founder_detail.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Subtle star SVG accent behind */}
                   <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[20%] aspect-square animate-[spin_40s_linear_infinite]">
@@ -887,7 +887,7 @@ export default function Page() {
         <section id="kontakt" className="relative pt-[clamp(4rem,8vw,8rem)] 2xl:pt-[clamp(8rem,15vw,12rem)] pb-[clamp(8rem,15vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden flex items-center justify-center">
            {/* Background Image and Overlay */}
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
-             <Image src="/images/cozy_small_salon.png" fill alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45]" />
+             <Image src="/images/cozy_small_salon.png" fill alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 backdrop-blur-sm pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}
