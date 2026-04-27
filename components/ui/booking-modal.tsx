@@ -74,7 +74,7 @@ function BookingModalInner() {
               
               <div className="absolute inset-0 flex flex-col items-center justify-end text-center pb-[clamp(2.55rem,5.1vw,4.25rem)] 2xl:pb-[clamp(3rem,6vw,5rem)] px-6 2xl:px-8">
                 <span className="text-[#FDFBF7]/80 font-label text-[clamp(0.51rem,0.68vw,0.595rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.4em] font-bold block mb-[clamp(0.85rem,1.275vw,1.275rem)] 2xl:mb-[clamp(1rem,1.5vw,1.5rem)] drop-shadow-sm">
-                  Klar til at booke?
+                  Sikker i dit valg
                 </span>
                 <h2 className="font-headline italic text-[#FDFBF7] text-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] mb-[clamp(1.275rem,2.125vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2.5vw,2rem)] font-light leading-none tracking-tight drop-shadow-md">
                   Bestil tid
