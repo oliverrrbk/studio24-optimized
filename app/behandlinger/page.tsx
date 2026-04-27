@@ -352,7 +352,7 @@ export default function BehandlingerPage() {
         </section>
 
         {/* Balayage Section */}
-        <section className="max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(6.4rem,11.2vw,12.8rem)] 2xl:mb-[clamp(8rem,14vw,16rem)] overflow-hidden" id="balayage">
+        <section className="max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(6.4rem,11.2vw,12.8rem)] 2xl:mb-[clamp(8rem,14vw,16rem)] relative" id="balayage">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-[clamp(1.5rem,3vw,2.5rem)] lg:gap-[clamp(3.2rem,6.4vw,4.8rem)] 2xl:gap-[clamp(4rem,8vw,6rem)] items-center">
             
             {/* Mobile Title */}
