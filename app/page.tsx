@@ -440,7 +440,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(3.5rem,6vw,5.5rem)] lg:text-[clamp(4rem,6.5vw,5.5rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
+              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(3.1rem,4.5vw,4rem)] lg:text-[clamp(4rem,6.5vw,5.5rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
             >
               Dit hår fortjener<br/>
               <span className="italic font-light">en dygtig frisør</span>
@@ -646,11 +646,11 @@ export default function Page() {
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/3.png" fill alt="Result 1" className="object-cover" />
                  </div>
-                 <div className="absolute top-[42%] 2xl:top-[43%] left-[2%] lg:left-[6%] 2xl:-left-[2%] w-[clamp(110px,10vw,130px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[40%] 2xl:top-[41%] left-[2%] lg:left-[6%] 2xl:-left-[2%] w-[clamp(120px,10.5vw,140px)] 2xl:w-[clamp(160px,12.5vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-10">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover" />
                  </div>
-                 <div className="absolute top-[68%] 2xl:top-[66%] left-[12%] lg:left-[14%] 2xl:left-[6%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[64%] 2xl:top-[62%] left-[12%] lg:left-[14%] 2xl:left-[6%] w-[clamp(125px,11.5vw,150px)] 2xl:w-[clamp(145px,11.5vw,190px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-20">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/6.png" fill alt="Result 3" className="object-cover" />
                  </div>
@@ -664,7 +664,7 @@ export default function Page() {
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/1.png" fill alt="Result 5" className="object-cover" />
                  </div>
-                 <div className="absolute top-[72%] 2xl:top-[70%] right-[12%] lg:right-[14%] 2xl:right-[8%] w-[clamp(110px,9vw,135px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[68%] 2xl:top-[66%] right-[12%] lg:right-[14%] 2xl:right-[8%] w-[clamp(120px,10vw,140px)] 2xl:w-[clamp(160px,12vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-20">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/12.png" fill alt="Result 6" className="object-cover" />
                  </div>
