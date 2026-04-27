@@ -261,7 +261,7 @@ export default function BehandlingerPage() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#6A5D55] text-[clamp(0.88rem,1.12vw,1.08rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] font-sans font-light leading-relaxed max-w-lg 2xl:max-w-2xl mx-auto drop-shadow-sm"
             >
-              Udforsk min behandlingsmenu, bygget på solidt håndværk, god tid og fuld respekt for dit hår.
+              Her finder du ikke et uendeligt menukort af forvirrende koncepter. Jeg har skåret ind til benet og fokuserer udelukkende på de teknikker, jeg mestrer til fulde. Ægte håndværk tager den tid det tager, og det er netop det, du betaler for.
             </motion.p>
           </div>
         </section>
@@ -361,7 +361,7 @@ export default function BehandlingerPage() {
                  <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#EDB7A9]"></div>
                  <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#EDB7A9] font-bold">Signature Service</span>
               </div>
-              <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Den Ultimative <br/><em className="italic font-light">Balayage</em></h2>
+              <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Min tilgang til <br/><em className="italic font-light">Balayage</em></h2>
             </div>
 
             <motion.div 
@@ -395,13 +395,13 @@ export default function BehandlingerPage() {
                    <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#EDB7A9]"></div>
                    <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#EDB7A9] font-bold">Signature Service</span>
                 </div>
-                <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Den Ultimative <br/><em className="italic font-light">Balayage</em></h2>
+                <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Min tilgang til <br/><em className="italic font-light">Balayage</em></h2>
               </div>
               <p className="font-sans text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] text-[#6A5D55] font-light leading-relaxed">
-                Jeg har gjort op med det frygtede &quot;motorvejen&quot;-look. Du kender det sikkert: de hårde, vandrette linjer og kontraster, der skriger af kunstig farve. 
+                For mig er balayage ikke bare en standardiseret teknik, man rutinemæssigt trækker ned over hovedet på alle. Det er et solidt håndværk, der kræver, at jeg faktisk forstår, præcis hvordan lige netop dit hår falder og bevæger sig. Målet er aldrig at det skal se stift eller overbehandlet ud.
               </p>
               <p className="font-sans text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] text-[#6A5D55] font-light leading-relaxed">
-                Når jeg laver balayage, maler jeg i frihånd og arbejder ud fra dit hårs naturlige fald. Jeg skaber sømløse overgange, der eliminerer markante udvoksninger og sikrer et spil i håret, der kun bliver smukkere med tiden. Det er ikke bare en farvning; det er lys-design skræddersyet til dig.
+                Jeg bygger altid farven op med bløde, præcise strøg, så den smelter helt naturligt ind i din egen hårfarve. På den måde får du et ærligt og sundt resultat, som du let kan vedligeholde i din hverdag, og som ikke kræver, at du absolut skal sidde i stolen igen om allerede fire uger.
               </p>
               <div className="pt-2">
                 <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
@@ -433,9 +433,9 @@ export default function BehandlingerPage() {
                 className="space-y-[clamp(2.4rem,4.8vw,3.2rem)] 2xl:space-y-[clamp(3rem,6vw,4rem)]"
               >
                 <div className="space-y-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:space-y-[clamp(1.5rem,3vw,2rem)]">
-                  <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">uden</em> kompromis</h2>
+                  <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">på den rigtige måde</em></h2>
                   <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#EDB7A9]/40 pl-6 py-2">
-                    &quot;Ødelægger det mit eget hår?&quot; Det er det spørgsmål, jeg oftest får. Svaret er et rungende nej – når det bliver gjort ordentligt.
+                    Rigtig mange kvinder er nervøse for, at extensions totalsmadrer deres eget hår. Det forstår jeg utrolig godt. Men når håndværket er i orden, og man sætter det i uden stress, er det faktisk fuldstændig trygt.
                   </p>
                 </div>
                 <style>{`
@@ -458,16 +458,16 @@ export default function BehandlingerPage() {
                 `}</style>
                 <div className="grid grid-cols-1 gap-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:gap-[clamp(1.5rem,3vw,2rem)]">
                   <ScrollExtensionCard 
-                    title="100% Skånsomhed"
-                    text="Jeg anvender udelukkende metoder, der passer hundrede procent på dit eget hår. Monteringerne er nærmest vægtløse og sikrer, at dit naturlige hår kan vokse sundt videre."
+                    title="Ro til påsætningen"
+                    text="Jeg tager mig altid den fulde nødvendige tid til at placere hver evig eneste tot fuldstændig perfekt. Det må nemlig aldrig nogensinde føles ubehageligt eller stramme i din hovedbund, når du træder ud af døren."
                     icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>}
                     delay={0.2}
                     isMobile={isMobile}
                   />
 
                   <ScrollExtensionCard 
-                    title="Myten om 'Det Kunstige'"
-                    text="Glem alt om unaturlige overgange. Jeg mikser forskellige nuancer og strukturer, så dine extensions blender fuldstændig usynligt ind i dit eget hår."
+                    title="Usynlige overgange"
+                    text="Det absolut værste ved dårlige extensions er, når alle og enhver kan spotte dem på lang afstand. Jeg gør en enorm dyd ud af at klippe og blende håret så skarpt, at du næsten selv glemmer, det ikke er dit eget."
                     icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>}
                     delay={0.4}
                     isMobile={isMobile}
@@ -487,9 +487,9 @@ export default function BehandlingerPage() {
                 </div>
                 <div className="absolute -left-[3%] bottom-[2%] md:left-auto md:-right-[5%] md:bottom-[5%] z-20 max-w-[240px] 2xl:max-w-[300px] group/guarantee">
                   <div className="bg-[#4C433C] p-[clamp(1.6rem,2.4vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] text-white rounded-[16px] 2xl:rounded-[20px] shadow-[0_30px_60px_rgba(28,26,24,0.2)] transition-transform duration-700 group-hover/guarantee:-translate-y-2">
-                    <p className="font-headline text-[1.75rem] mb-3 2xl:mb-4 italic font-light tracking-tight">Garanti</p>
+                    <p className="font-headline text-[1.75rem] mb-3 2xl:mb-4 italic font-light tracking-tight">Mit løfte</p>
                     <p className="font-sans text-[0.95rem] leading-relaxed opacity-90 font-light drop-shadow-sm">
-                      Jeg garanterer en 100% skånsom påsætning. Dit hårs sundhed er altid min absolutte førsteprioritet.
+                      Jeg monterer aldrig noget i dit hår, hvis jeg ikke hundrede procent kan stå inde for, at dit eget naturlige hår faktisk kan bære det.
                     </p>
                   </div>
                 </div>
@@ -525,10 +525,10 @@ export default function BehandlingerPage() {
                 className="w-[90%] mx-auto lg:w-[45%] lg:absolute lg:right-0 lg:top-1/2 lg:-translate-y-1/2 bg-white/95 backdrop-blur-xl p-[clamp(2rem,4vw,3.2rem)] 2xl:p-[clamp(2.5rem,5vw,4rem)] rounded-[16px] 2xl:rounded-[20px] shadow-[0_30px_80px_rgba(28,26,24,0.08)] border border-white z-20"
               >
                 <h2 className="text-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:text-[clamp(2rem,3.5vw,3rem)] font-headline font-light text-[#4C433C] mb-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:mb-[clamp(1.5rem,2vw,2rem)] leading-[1.05] tracking-tight">
-                  <em className="italic font-light">Oplevelsen</em> <br/>i stolen
+                  <em className="italic font-light">Når du sidder</em> <br/>i min stol
                 </h2>
                 <p className="font-sans text-[#6A5D55] font-light text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] leading-relaxed mb-[clamp(2rem,2.8vw,2.4rem)] 2xl:mb-[clamp(2.5rem,3.5vw,3rem)]">
-                  Hos mig er der plads til at trække vejret. Vi tager os altid god tid til en start-snak, så jeg forstår præcis, hvad du drømmer om – og vi finder den løsning, der passer til din hverdag. Læn dig tilbage med en god kop kaffe, og lad mig tage mig ordentligt af dit hår.
+                  Når du sætter dig i stolen hos mig, skal skuldrene helt ned. Vi starter med at tale helt åbent om dine forventninger – og hvis du beder om noget, jeg af faglige årsager ikke mener gavner dit hår, så siger jeg det direkte til dig. Det handler om ren og skær tillid, en god kop kaffe i hånden og ordentlig tid til håndværket.
                 </p>
                 <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
                   Book din konsultation
