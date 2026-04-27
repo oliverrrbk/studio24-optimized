@@ -210,15 +210,13 @@ export default function MinHistoriePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(3.5rem,6vw,6rem)] 2xl:gap-[clamp(6rem,8vw,8rem)] items-center relative z-10">
             <div className="flex flex-col relative z-10">
               <motion.span variants={fadeInUp} className="font-label text-[clamp(0.6rem,0.7vw,0.7rem)] 2xl:text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(2rem,3vw,2.5rem)] block">
-                Visionen bag Atelieret
+                Baggrunden
               </motion.span>
               <motion.h1 variants={fadeInUp} className="text-[clamp(2.7rem,4.5vw,4.5rem)] 2xl:text-[clamp(4.5rem,5vw,5.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight mb-[clamp(1.8rem,3.5vw,2.5rem)] 2xl:mb-[clamp(2.5rem,4vw,3rem)]">
                 Et oprør mod <br /> <span className="italic">samlebåndet.</span>
               </motion.h1>
               <motion.p variants={fadeInUp} className="text-[clamp(1rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.4vw,1.35rem)] font-sans text-[#6A5D55] font-light leading-relaxed max-w-[450px] 2xl:max-w-[500px]">
-                Jeg startede Studio 24 som en modreaktion på en industri, der glemte
-                mennesket bag håret. Her er tid ikke en ressource, vi sparer på – det er
-                vores vigtigste værktøj.
+                Jeg skabte Studio 24, fordi jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager et godt resultat den tid, det tager. Længere er den egentlig ikke.
               </motion.p>
             </div>
             <div className="relative w-[85%] ml-[11%] mr-auto md:w-full md:mx-0 mt-8 md:mt-0">
@@ -239,10 +237,10 @@ export default function MinHistoriePage() {
                 style={{ WebkitBackdropFilter: "blur(12px)", backdropFilter: "blur(12px)" }}
               >
                 <p className="font-headline italic text-[#1c1a18] text-[clamp(0.95rem,1.2vw,1.1rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.25rem)] leading-[1.4] mb-4 2xl:mb-5">
-                  &quot;Ægte skønhed kræver ro, nærvær og tid til at se det unikke i hvert menneske.&quot;
+                  &quot;Jeg gider ikke overfladiske salgstaler. Du får min ærlige mening, og vi finder en løsning, der rent faktisk holder i din hverdag.&quot;
                 </p>
                 <p className="font-label text-[0.65rem] uppercase tracking-[0.2em] text-[#92857C]">
-                  — Emilie, Grundlægger
+                  — Emilie, Indehaver
                 </p>
               </motion.div>
             </div>
@@ -301,24 +299,17 @@ export default function MinHistoriePage() {
               </div>
               <div className="order-1 md:order-2 self-center relative z-10">
                 <motion.h2 variants={fadeInUp} className="text-[clamp(2.2rem,3.5vw,3rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1] tracking-tight mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(1.5rem,3vw,2.5rem)]">
-                  Drømmen om ægte nærvær
+                  Min vej hertil
                 </motion.h2>
                 <motion.div variants={fadeInUp} className="space-y-6 font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
                   <p>
-                    I mange år arbejdede jeg i saloner, hvor succeskriteriet var, hvor
-                    mange kunder man kunne nå på en time. Det føltes mekanisk. Som et
-                    samlebånd, hvor det personlige nærvær og den kreative gnist blev
-                    kvalt af uret.
+                    Med en 4½-årig frisøruddannelse i bagagen, har jeg stået i saloner, hvor kalenderen var booket til bristepunktet. Det handlede om at få så mange kunder igennem systemet som muligt. Det var mekanisk, travlt og enormt upersonligt.
                   </p>
                   <p>
-                    Jeg vidste, at der måtte findes en anden vej. En vej hvor håndværket
-                    fik lov til at trække vejret. Hvor en balayage ikke bare er en
-                    farvebehandling, men en kunstnerisk proces, der tilpasses dit
-                    ansigt, din livsstil og din sjæl.
+                    Det gad jeg simpelthen ikke mere. Jeg valgte at starte for mig selv, for at skære alt det overflødige væk. Ingen forhastede behandlinger, ingen smarte genveje, ingen stressende atmosfære.
                   </p>
                   <p className="font-semibold text-[#4C433C] hidden md:block">
-                    Studio 24 er min vision om et fristed. Et atelier, hvor du ikke bare
-                    er den næste i rækken, men centrum for min fulde opmærksomhed.
+                    Mit håndværk bygger på tillid. Vi skal finde det look, der fungerer for dig. Det kræver ærlig rådgivning, og frem for alt, at jeg har tid til at lytte til dig.
                   </p>
                 </motion.div>
                 <div className="mt-[clamp(2.5rem,3.5vw,3.5rem)] 2xl:mt-[clamp(3rem,4vw,4rem)] hidden md:flex items-center justify-center gap-6">
@@ -338,8 +329,7 @@ export default function MinHistoriePage() {
               <div className="order-3 md:hidden self-center relative z-10 -mt-[1rem]">
                 <motion.div variants={fadeInUp} className="font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
                   <p className="font-semibold text-[#4C433C]">
-                    Studio 24 er min vision om et fristed. Et atelier, hvor du ikke bare
-                    er den næste i rækken, men centrum for min fulde opmærksomhed.
+                    Mit håndværk bygger på tillid. Vi skal finde det look, der fungerer for dig. Det kræver ærlig rådgivning, og frem for alt, at jeg har tid til at lytte til dig.
                   </p>
                 </motion.div>
                 <div className="mt-[clamp(2.5rem,3.5vw,3.5rem)] flex items-center justify-center gap-6">
@@ -369,10 +359,10 @@ export default function MinHistoriePage() {
         >
           <motion.div variants={fadeInUp} className="mb-[clamp(4rem,6vw,8rem)]">
             <span className="font-label text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.5rem,3vw,2.5rem)] block">
-              Vores Manifest
+              Mit løfte
             </span>
             <h2 className="text-[clamp(2.5rem,4vw,4.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight">
-              Hvad jeg <span className="italic">går op i.</span>
+              Hvad jeg <span className="italic">står for.</span>
             </h2>
           </motion.div>
           <style>{`
@@ -395,9 +385,9 @@ export default function MinHistoriePage() {
           `}</style>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-[clamp(4rem,6vw,6rem)]">
             {[
-              { icon: Clock, title: "Ingen tidspres", text: "Vi afsætter altid rigeligt med tid, så vi aldrig skal gå på kompromis med detaljen." },
-              { icon: Heart, title: "Personligt bånd", text: "Hos os er du gæst i vores hjem. Vi lytter, før vi klipper." },
-              { icon: Leaf, title: "Ren samvittighed", text: "Vi vælger kun produkter, der respekterer både dit hår og vores planet." }
+              { icon: Clock, title: "God tid", text: "Jeg har altid god tid til dig. Ingen stress, ingen lappeløsninger – bare ro til at nørde detaljerne." },
+              { icon: Heart, title: "Ærlig rådgivning", text: "Jeg guider dig altid ærligt. Du får en behandling, der fungerer for dig, og solid vejledning til din hverdag." },
+              { icon: Leaf, title: "Høj faglighed", text: "Med min 4½-årige uddannelse går jeg aldrig på kompromis. Jeg ved, hvad der virker bedst for dig og dit hår." }
             ].map((item, idx) => (
               <ScrollManifestoItem key={idx} item={item} idx={idx} isMobile={isMobile} />
             ))}
@@ -413,9 +403,9 @@ export default function MinHistoriePage() {
           className="pt-[clamp(5rem,8vw,8rem)] 2xl:pt-[clamp(6rem,10vw,10rem)] pb-4 bg-[#FAF8F5] overflow-hidden"
         >
           <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(2.5rem,4vw,4rem)] 2xl:mb-[clamp(3rem,5vw,5rem)] flex justify-between items-end border-b border-[#4C433C]/10 pb-6">
-            <h2 className="text-[clamp(2.2rem,2.7vw,3.1rem)] 2xl:text-[clamp(2.5rem,3vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1]">Bag facaden</h2>
+            <h2 className="text-[clamp(2.2rem,2.7vw,3.1rem)] 2xl:text-[clamp(2.5rem,3vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1]">Mit håndværk</h2>
             <span className="font-label text-[clamp(0.6rem,0.7vw,0.65rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.2em] text-[#92857C]">
-              Glimt fra hverdagen
+              Detaljerne bag facaden
             </span>
           </div>
           <div className="flex overflow-x-auto items-center xl:justify-center pb-12 px-[clamp(1.5rem,5vw,4rem)] gap-[clamp(1.3rem,2.5vw,2.5rem)] 2xl:gap-[clamp(1.5rem,3vw,3rem)] no-scrollbar scroll-smooth">
@@ -490,11 +480,10 @@ export default function MinHistoriePage() {
 
           <div className="relative z-10 max-w-[800px] mx-auto">
             <motion.h2 variants={fadeInUp} className="font-headline font-light text-[clamp(2.2rem,3.5vw,3.6rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] text-[#1c1a18] leading-[1.1] mb-[clamp(0.9rem,1.8vw,1.3rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)] tracking-tight">
-              Klar til din transformation?
+              Skal vi kigge på dit hår?
             </motion.h2>
             <motion.p variants={fadeInUp} className="text-[clamp(1rem,1.3vw,1.15rem)] 2xl:text-[clamp(1.1rem,1.5vw,1.3rem)] font-sans text-[#6A5D55] font-light leading-relaxed mb-[clamp(2.2rem,3.5vw,3.1rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] max-w-xl mx-auto">
-              Oplev forskellen ved et besøg, hvor tiden står stille, og dit hår er i
-              centrum.
+              Oplev forskellen ved et besøg, hvor der rent faktisk er sat ordentlig tid af til dig.
             </motion.p>
             <motion.div variants={fadeInUp}>
               <Link 
