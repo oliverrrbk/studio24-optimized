@@ -563,7 +563,7 @@ export default function BehandlingerPage() {
                   Når du sætter dig i stolen hos mig, skal skuldrene helt ned. Vi starter med at tale helt åbent om dine forventninger – og hvis du beder om noget, jeg af faglige årsager ikke mener gavner dit hår, så siger jeg det direkte til dig. Det handler om ren og skær tillid, en god kop kaffe i hånden og ordentlig tid til håndværket.
                 </p>
                 <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
-                  Book din konsultation
+                  Book en behandling
                 </Link>
               </motion.div>
             </div>
