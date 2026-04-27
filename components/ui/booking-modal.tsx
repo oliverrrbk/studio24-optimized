@@ -65,7 +65,7 @@ function BookingModalInner() {
           >
             <button 
               onClick={close}
-              className="absolute top-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:top-[clamp(1.5rem,4vw,2rem)] right-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:right-[clamp(1.5rem,4vw,2rem)] p-2 md:p-3 2xl:p-4 rounded-full bg-[#4C433C]/5 hover:bg-[#4C433C]/10 text-[#4C433C] transition-colors z-[102] backdrop-blur-md shadow-sm"
+              className="absolute top-[clamp(1.275rem,3.4vw,1.7rem)] md:top-4 xl:top-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:top-[clamp(1.5rem,4vw,2rem)] right-[clamp(1.275rem,3.4vw,1.7rem)] md:right-4 xl:right-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:right-[clamp(1.5rem,4vw,2rem)] p-2 md:p-3 2xl:p-4 rounded-full bg-[#4C433C]/5 hover:bg-[#4C433C]/10 text-[#4C433C] transition-colors z-[102] backdrop-blur-md shadow-sm"
               aria-label="Luk"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>

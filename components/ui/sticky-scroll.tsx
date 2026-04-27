@@ -95,7 +95,7 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
   const { ref: stickyRef } = useBidirectionalSticky(80, 4);
 
   return (
-    <section className='w-full max-w-4xl mx-auto' ref={ref}>
+    <section className='w-full max-w-3xl md:max-w-[460px] lg:max-w-[550px] xl:max-w-[600px] 2xl:max-w-4xl mx-auto' ref={ref}>
       <div className='grid grid-cols-3 gap-2 md:gap-4 items-start relative'>
         {/* Left Column */}
         <div className='grid gap-2 md:gap-4 col-span-1'>

@@ -220,7 +220,7 @@ export default function MinHistoriePage() {
                 Jeg skabte Studio 24, fordi jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager et godt resultat den tid, det tager. Længere er den egentlig ikke.
               </motion.p>
             </div>
-            <div className="relative w-[85%] ml-[11%] mr-auto md:w-full md:mx-0 mt-8 md:mt-0">
+            <div className="relative w-[85%] ml-[11%] mr-auto md:w-[90%] md:ml-auto md:mr-0 mt-8 md:mt-0">
               <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_20px_40px_rgba(28,26,24,0.08)]">
                 <Image
                   fill

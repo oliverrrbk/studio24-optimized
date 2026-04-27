@@ -468,28 +468,28 @@ export default function Page() {
           {/* Bottom Curve */}
           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
             <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
-              <path className="text-[#FDFBF7]" d="M0,100 L0,80 C480,0 960,0 1440,80 L1440,100 Z" />
+              <path className="text-[#FDFBF7]" d="M0,100 C 480,100 480,0 720,0 C 960,0 960,100 1440,100 Z" />
             </svg>
           </div>
         </section>
 
         {/* Min Historie (Using 11.png layout) */}
-        <section id="min-historie" className="relative pt-[clamp(1rem,3vw,3rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
+        <section id="min-historie" className="relative pt-[clamp(1rem,3vw,3rem)] md:pt-0 2xl:pt-[clamp(1rem,3vw,3rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
           {/* Glimmer Image overlay */}
-          <div className="absolute right-0 top-[-9rem] md:top-[-22rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] opacity-80">
+          <div className="absolute right-0 top-[-9rem] md:top-[-11rem] 2xl:top-[-22rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] opacity-80">
              <Image src="/images/glitter.png" alt="Glitter graphic" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
           </div>
 
-          <div className="max-w-[1400px] mx-auto flex flex-col items-center relative z-10 pt-4">
+          <div className="max-w-[1400px] mx-auto flex flex-col items-center relative z-10 pt-4 md:pt-[5%] 2xl:pt-0">
             
             <motion.div
  style={hardwareAccelerated}              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[clamp(3.5rem,5vw,4.5rem)] h-[clamp(3.5rem,5vw,4.5rem)] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
+              className="w-[clamp(3.5rem,5vw,4.5rem)] md:w-[3rem] 2xl:w-[clamp(3.5rem,5vw,4.5rem)] h-[clamp(3.5rem,5vw,4.5rem)] md:h-[3rem] 2xl:h-[clamp(3.5rem,5vw,4.5rem)] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] md:mb-[1rem] 2xl:mb-[clamp(1.5rem,3vw,2rem)] p-3 md:p-2 2xl:p-3"
             >
-              <Scissors className="w-6 h-6 md:w-8 md:h-8 text-[#4C433C] opacity-70" />
+              <Scissors className="w-6 h-6 md:w-5 md:h-5 2xl:w-8 2xl:h-8 text-[#4C433C] opacity-70" />
             </motion.div>
 
             <motion.h2 style={hardwareAccelerated} 
@@ -497,7 +497,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
+              className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] md:text-[clamp(2.2rem,4vw,3.2rem)] 2xl:text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
             >
               <em className="italic font-light">Ingen ubehagelige overraskelser.</em><br/>
               <strong className="font-medium">Bare det resultat,</strong> <br className="md:hidden"/><em className="italic font-light">vi aftalte.</em>
@@ -630,11 +630,11 @@ export default function Page() {
               </div>
               
               {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
-              <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+              <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] md:w-[clamp(250px,25vw,400px)] 2xl:w-[clamp(400px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
                  <div style={hardwareAccelerated} className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
                  <div style={hardwareAccelerated} className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
               </div>
-              <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+              <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] md:w-[clamp(250px,25vw,400px)] 2xl:w-[clamp(400px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
                  <div style={hardwareAccelerated} className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
                  <div style={hardwareAccelerated} className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
               </div>
@@ -877,7 +877,7 @@ export default function Page() {
            </div>
 
            {/* Mirrored Glimmer Image overlay (Between Founder & FAQ) */}
-           <div className="hidden md:block absolute left-0 bottom-[-5rem] md:bottom-[-26rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] scale-x-[-1] opacity-80">
+           <div className="hidden md:block absolute left-0 bottom-[-5rem] md:bottom-[-16rem] xl:bottom-[-20rem] 2xl:bottom-[-26rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] scale-x-[-1] opacity-80">
               <Image src="/images/glitter.png" alt="Glitter graphic mirrored" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
            </div>
         </section>
