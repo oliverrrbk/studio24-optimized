@@ -926,7 +926,7 @@ export default function Page() {
           <div className="max-w-[320px]">
             <div className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif mb-[clamp(1rem,2vw,1.5rem)] italic tracking-tight leading-none text-[#1c1a18]">Studio 24</div>
             <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
-              Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør der forstår dig.
+              Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.
             </p>
           </div>
           <div className="flex flex-col">
