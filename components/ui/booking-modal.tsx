@@ -22,13 +22,16 @@ function BookingModalInner() {
 
   useEffect(() => {
     if (isOpen) {
+      document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
       if (lenis) lenis.stop();
     } else {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
       if (lenis) lenis.start();
     }
     return () => {
+      document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
       if (lenis) lenis.start();
     };
@@ -44,8 +47,10 @@ function BookingModalInner() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-[#4C433C]/20 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-[#4C433C]/20 backdrop-blur-sm z-[100] overscroll-none"
             onClick={close}
+            onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
           />
           {/* Modal Container */}
           <motion.div
@@ -53,8 +58,10 @@ function BookingModalInner() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 m-auto w-[90%] max-w-4xl 2xl:max-w-5xl h-[85vh] bg-[#FDFBF7] shadow-2xl z-[101] rounded-[25.5px] 2xl:rounded-[30px] overflow-hidden flex flex-col md:flex-row"
+            className="fixed inset-0 m-auto w-[90%] max-w-4xl 2xl:max-w-5xl h-[85vh] bg-[#FDFBF7] shadow-2xl z-[101] rounded-[25.5px] 2xl:rounded-[30px] overflow-hidden flex flex-col md:flex-row overscroll-contain"
             data-lenis-prevent="true"
+            onWheel={(e) => e.stopPropagation()}
+            onTouchMove={(e) => e.stopPropagation()}
           >
             <button 
               onClick={close}
