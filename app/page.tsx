@@ -435,12 +435,12 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 lg:-mt-20 2xl:-mt-12">
+          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 lg:-mt-4 2xl:mt-16">
             <motion.h1 style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(3.5rem,6vw,5.5rem)] lg:text-[clamp(5rem,7.5vw,7rem)] 2xl:text-[clamp(6rem,8.5vw,8rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
+              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(3.5rem,6vw,5.5rem)] lg:text-[clamp(4.5rem,7vw,6.5rem)] 2xl:text-[clamp(5.5rem,8vw,7.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
             >
               Dit hår fortjener<br/>
               <span className="italic font-light">en dygtig frisør</span>
@@ -449,7 +449,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] lg:text-[clamp(1.15rem,1.5vw,1.35rem)] 2xl:text-[clamp(1.35rem,1.7vw,1.6rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
+              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] lg:text-[clamp(1.1rem,1.4vw,1.25rem)] 2xl:text-[clamp(1.25rem,1.6vw,1.5rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
               Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
             </motion.p>
@@ -459,7 +459,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] lg:px-[clamp(3.5rem,4.5vw,4rem)] lg:py-[clamp(1.25rem,1.6vw,1.35rem)] lg:text-[1.125rem] 2xl:px-[clamp(4rem,5vw,5rem)] 2xl:py-[clamp(1.35rem,1.8vw,1.6rem)] 2xl:text-[1.25rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
+              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] lg:px-[clamp(3rem,4vw,3.5rem)] lg:py-[clamp(1.125rem,1.5vw,1.25rem)] lg:text-[1.0625rem] 2xl:px-[clamp(3.5rem,4.5vw,4.5rem)] 2xl:py-[clamp(1.25rem,1.75vw,1.5rem)] 2xl:text-[1.125rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
                 Udforsk ydelser
               </Link>
             </motion.div>
@@ -476,7 +476,7 @@ export default function Page() {
         {/* Min Historie (Using 11.png layout) */}
         <section id="min-historie" className="relative pt-[clamp(1rem,3vw,3rem)] md:pt-0 2xl:pt-[clamp(1rem,3vw,3rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
           {/* Glimmer Image overlay */}
-          <div className="absolute right-0 top-[-9rem] md:top-[-11rem] 2xl:top-[-22rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] opacity-80">
+          <div className="absolute right-0 top-[-6rem] md:top-[-11rem] 2xl:top-[-22rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] opacity-80">
              <Image src="/images/glitter.png" alt="Glitter graphic" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
           </div>
 
