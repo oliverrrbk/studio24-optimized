@@ -640,29 +640,29 @@ export default function Page() {
                {/* Six Floating Background Images (Left and Right) */}
               <div className="absolute inset-0 w-full max-w-[1400px] mx-auto z-0 pointer-events-none hidden md:block">
                  {/* Left Side Group */}
-                 <div className="absolute top-[15%] 2xl:top-[16%] left-[8%] lg:left-[12%] 2xl:left-[0%] w-[clamp(120px,11vw,150px)] 2xl:w-[clamp(170px,14vw,230px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[-12deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[15%] 2xl:top-[16%] left-[8%] lg:left-[12%] 2xl:left-[4%] w-[clamp(120px,11vw,150px)] 2xl:w-[clamp(170px,14vw,230px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-12deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/3.png" fill alt="Result 1" className="object-cover" />
                  </div>
-                 <div className="absolute top-[42%] 2xl:top-[43%] left-[2%] lg:left-[6%] 2xl:-left-[6%] w-[clamp(110px,10vw,130px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[42%] 2xl:top-[43%] left-[2%] lg:left-[6%] 2xl:-left-[2%] w-[clamp(110px,10vw,130px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover" />
                  </div>
-                 <div className="absolute top-[68%] 2xl:top-[66%] left-[12%] lg:left-[14%] 2xl:left-[2%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[68%] 2xl:top-[66%] left-[12%] lg:left-[14%] 2xl:left-[6%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/6.png" fill alt="Result 3" className="object-cover" />
                  </div>
 
                  {/* Right Side Group */}
-                 <div className="absolute top-[18%] 2xl:top-[18%] right-[10%] lg:right-[12%] 2xl:right-[2%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(180px,14vw,235px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[15deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[18%] 2xl:top-[18%] right-[10%] lg:right-[12%] 2xl:right-[6%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(180px,14vw,235px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[15deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/9.png" fill alt="Result 4" className="object-cover" />
                  </div>
-                 <div className="absolute top-[45%] 2xl:top-[45%] right-[3%] lg:right-[6%] 2xl:-right-[4%] w-[clamp(115px,10vw,140px)] 2xl:w-[clamp(160px,13vw,210px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[-10deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[45%] 2xl:top-[45%] right-[3%] lg:right-[6%] 2xl:right-[0%] w-[clamp(115px,10vw,140px)] 2xl:w-[clamp(160px,13vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-10deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/1.png" fill alt="Result 5" className="object-cover" />
                  </div>
-                 <div className="absolute top-[72%] 2xl:top-[70%] right-[12%] lg:right-[14%] 2xl:right-[4%] w-[clamp(110px,9vw,135px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[16px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                 <div className="absolute top-[72%] 2xl:top-[70%] right-[12%] lg:right-[14%] 2xl:right-[8%] w-[clamp(110px,9vw,135px)] 2xl:w-[clamp(150px,12vw,200px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
                     <Image src="/gallerypics/12.png" fill alt="Result 6" className="object-cover" />
                  </div>

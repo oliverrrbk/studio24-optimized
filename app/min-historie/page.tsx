@@ -237,7 +237,7 @@ export default function MinHistoriePage() {
                 style={{ WebkitBackdropFilter: "blur(12px)", backdropFilter: "blur(12px)" }}
               >
                 <p className="font-headline italic text-[#1c1a18] text-[clamp(0.95rem,1.2vw,1.1rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.25rem)] leading-[1.4] mb-4 2xl:mb-5">
-                  &quot;Jeg gider ikke overfladiske salgstaler. Du får min ærlige mening, og vi finder en løsning, der rent faktisk holder i din hverdag.&quot;
+                  &quot;Jeg undgår det overfladiske. Du får min ærlige mening, og vi finder en løsning, der rent faktisk giver mening for dig.&quot;
                 </p>
                 <p className="font-label text-[0.65rem] uppercase tracking-[0.2em] text-[#92857C]">
                   — Emilie, Indehaver
@@ -260,7 +260,7 @@ export default function MinHistoriePage() {
               <div className="relative order-2 md:order-1">
                 <div className="grid grid-cols-2 gap-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:gap-[clamp(1rem,2vw,1.5rem)]">
                   <div className="space-y-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:space-y-[clamp(1rem,2vw,1.5rem)] pt-12">
-                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[4px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover"
@@ -268,7 +268,7 @@ export default function MinHistoriePage() {
                         alt="Hair styling tools"
                       />
                     </motion.div>
-                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover"
@@ -278,7 +278,7 @@ export default function MinHistoriePage() {
                     </motion.div>
                   </div>
                   <div className="space-y-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:space-y-[clamp(1rem,2vw,1.5rem)]">
-                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover"
@@ -286,7 +286,7 @@ export default function MinHistoriePage() {
                         alt="Hair styling close-up"
                       />
                     </motion.div>
-                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[4px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover"
@@ -387,7 +387,7 @@ export default function MinHistoriePage() {
             {[
               { icon: Clock, title: "God tid", text: "Jeg har altid god tid til dig. Ingen stress, ingen lappeløsninger – bare ro til at nørde detaljerne." },
               { icon: Heart, title: "Ærlig rådgivning", text: "Jeg guider dig altid ærligt. Du får en behandling, der fungerer for dig, og solid vejledning til din hverdag." },
-              { icon: Leaf, title: "Høj faglighed", text: "Med min 4½-årige uddannelse går jeg aldrig på kompromis. Jeg ved, hvad der virker bedst for dig og dit hår." }
+              { icon: Leaf, title: "Høj faglighed", text: "Med min 4½-årige uddannelse går jeg aldrig på kompromis. Jeg ved, hvad der virker bedst for dit hår." }
             ].map((item, idx) => (
               <ScrollManifestoItem key={idx} item={item} idx={idx} isMobile={isMobile} />
             ))}
