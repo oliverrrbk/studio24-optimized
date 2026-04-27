@@ -102,7 +102,7 @@ function BookingModalInner() {
                 </h1>
                 <div className="w-10 2xl:w-12 h-[0.8px] 2xl:h-[1px] bg-[#4C433C]/20 mb-[clamp(1.275rem,2.55vw,1.7rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]"></div>
                 <p className="text-[#6A5D55] font-body font-light leading-relaxed text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)]">
-                  Jeg vil meget hellere have, at du ringer end du booker noget, du ikke er helt sikker omkring. På den måde er vi sikre på, at vi får sat den helt rigtige tid af til præcis dét, dit hår kræver.
+                  Jeg vil meget hellere have, at du ringer, end du booker noget, du ikke er helt sikker omkring. På den måde er vi sikre på, at vi får sat den helt rigtige tid af til præcis dét, dit hår kræver.
                 </p>
               </header>
 
