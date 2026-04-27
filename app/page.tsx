@@ -493,9 +493,9 @@ export default function Page() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[ clamp(3rem,5vw,4rem) ] h-[ clamp(3rem,5vw,4rem) ] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
+              className="w-[clamp(4rem,6vw,5rem)] h-[clamp(4rem,6vw,5rem)] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
             >
-              <Scissors className="w-5 h-5 md:w-6 md:h-6 text-[#4C433C] opacity-70" />
+              <Scissors className="w-8 h-8 md:w-10 md:h-10 text-[#4C433C] opacity-70" />
             </motion.div>
 
             <motion.h2 style={hardwareAccelerated} 
