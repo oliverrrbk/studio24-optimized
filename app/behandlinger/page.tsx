@@ -376,7 +376,7 @@ export default function BehandlingerPage() {
               </div>
 
               <div className="aspect-[4/5] w-[85%] ml-[3%] mr-auto lg:w-full lg:mx-0 bg-[#EAD5C5]/20 rounded-[16px] 2xl:rounded-[20px] overflow-hidden shadow-[0_20px_50px_rgba(28,26,24,0.06)] relative z-10">
-                <img alt="Balayage transformation" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKXnyBjuJUilqz_NwVmVXV5qiDOJUmZGDlLRicox9ZCMmlcauhVNYLSbvRlhTpaL7cLFgqTLRRMfXD3uFiBHiN9hQ0VR0wIJEZh7RnqJq253fccDuoFF1Btp-Ekr3-wEK5GyKU-DlCORBoX5FIpHiwhiF_7FkIkH8qY0gdojdBBPr71BvRUQREigO6OCpPdsWRGjtZBPMxnpKUa6AaAfJPjbGCSVeeAtDGL4RyxPIFUNGH1uKLhTJu7rHflV_Dkaw6Jpg8eCJ3Q" />
+                <img alt="Balayage transformation" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105" src="/gallerypics/6.png" />
               </div>
               <div className="absolute -bottom-[5%] right-[4%] lg:-bottom-[15%] lg:-right-[5%] block w-[clamp(100px,13vw,176px)] 2xl:w-[clamp(180px,20vw,220px)] aspect-[4/5] overflow-hidden rounded-[16px] 2xl:rounded-[20px] shadow-[0_25px_60px_rgba(28,26,24,0.15)] transform rotate-3 z-20 group-hover:rotate-6 group-hover:-translate-y-2 transition-all duration-700 ease-out">
                 <Image alt="Detail work" fill className="object-cover" src="/about/hairdresser_balayage_detail.png" sizes="(min-width: 768px) 220px, 120px" />
@@ -435,7 +435,7 @@ export default function BehandlingerPage() {
                 <div className="space-y-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:space-y-[clamp(1.5rem,3vw,2rem)]">
                   <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">på den rigtige måde</em></h2>
                   <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#EDB7A9]/40 pl-6 py-2">
-                    Rigtig mange kvinder er nervøse for, at extensions totalsmadrer deres eget hår. Det forstår jeg utrolig godt. Men når håndværket er i orden, og man sætter det i uden stress, er det faktisk fuldstændig trygt.
+                    En af de største bekymringer ved extensions er frygten for, at de føles forkerte, tunge eller er tydelige at se. Det forstår jeg utrolig godt. Men når håndværket er i orden, og man sætter det i uden stress, er det faktisk fuldstændig trygt.
                   </p>
                 </div>
                 <style>{`
