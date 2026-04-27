@@ -422,9 +422,9 @@ export default function Page() {
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-30"
+              className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/50 via-[#EAD5C5]/20 to-white/40 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-[#EAD5C5]/10 to-white/20 backdrop-blur-sm"></div>
           </div>
 
           {/* Left Lines */}
