@@ -4,12 +4,14 @@ import React, { useEffect, Suspense } from 'react';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import { useLenis } from 'lenis/react';
 
 
 function BookingModalInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const isOpen = searchParams.get('booking') === 'true';
+  const lenis = useLenis();
 
   const close = () => {
     // Remove 'booking=true' from URL without reloading or scrolling
@@ -21,13 +23,16 @@ function BookingModalInner() {
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      if (lenis) lenis.stop();
     } else {
       document.body.style.overflow = "";
+      if (lenis) lenis.start();
     }
     return () => {
       document.body.style.overflow = "";
+      if (lenis) lenis.start();
     };
-  }, [isOpen]);
+  }, [isOpen, lenis]);
 
   return (
     <AnimatePresence>
@@ -92,7 +97,7 @@ function BookingModalInner() {
             </section>
 
             {/* Right Side: Info & Contact Details */}
-            <section className="w-full md:w-1/2 bg-[#FDFBF7] py-[clamp(1.7rem,3.4vw,3.4rem)] md:py-[clamp(2.55rem,4.25vw,4.25rem)] 2xl:py-[clamp(3rem,5vw,5rem)] px-[clamp(1.7rem,3.4vw,3.4rem)] 2xl:px-[clamp(2rem,4vw,4rem)] overflow-y-auto relative z-10 flex flex-col justify-start md:justify-center">
+            <section className="w-full md:w-1/2 bg-[#FDFBF7] py-[clamp(1.7rem,3.4vw,3.4rem)] md:py-[clamp(2.55rem,4.25vw,4.25rem)] 2xl:py-[clamp(3rem,5vw,5rem)] px-[clamp(1.7rem,3.4vw,3.4rem)] 2xl:px-[clamp(2rem,4vw,4rem)] overflow-y-auto md:overflow-y-hidden relative z-10 flex flex-col justify-start md:justify-center">
               <header className="mb-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] text-left mt-0 md:mt-[clamp(2.5rem,4vw,4rem)] 2xl:md:mt-[clamp(3.5rem,5vw,5rem)]">
                 <span className="text-[#92857C] font-label text-[clamp(0.51rem,0.68vw,0.595rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.4em] font-bold block mb-[clamp(0.85rem,1.7vw,1.275rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)]">
                   Booking & Rådgivning
