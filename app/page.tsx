@@ -468,7 +468,7 @@ export default function Page() {
           {/* Bottom Curve */}
           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
             <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
-              <path className="text-[#FDFBF7]" d="M0,100 C 480,100 480,0 720,0 C 960,0 960,100 1440,100 Z" />
+              <path className="text-[#FDFBF7]" d="M0,100 L0,80 C480,0 960,0 1440,80 L1440,100 Z" />
             </svg>
           </div>
         </section>
