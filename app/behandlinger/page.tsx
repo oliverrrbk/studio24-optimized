@@ -261,7 +261,7 @@ export default function BehandlingerPage() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#6A5D55] text-[clamp(0.88rem,1.12vw,1.08rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] font-sans font-light leading-relaxed max-w-lg 2xl:max-w-2xl mx-auto drop-shadow-sm"
             >
-              Her finder du ikke et uendeligt menukort af forvirrende koncepter. Jeg har skåret ind til benet og fokuserer udelukkende på de teknikker, jeg mestrer til fulde. Ægte håndværk tager den tid det tager, og det er netop det, du betaler for.
+              Forud for enhver behandling bruger jeg god tid på at læse dit hår. Jeg vurderer dets tilstand, fald og dine unikke træk, så vi i fællesskab kan skabe et resultat, der fremhæver dig på den mest naturlige og flatterende måde. Hver eneste detalje er velovervejet.
             </motion.p>
           </div>
         </section>
@@ -276,7 +276,7 @@ export default function BehandlingerPage() {
             className="bg-white/80 backdrop-blur-xl border border-[#4C433C]/5 rounded-2xl shadow-[0_10px_40px_rgba(28,26,24,0.03)] p-[clamp(2rem,4vw,4rem)] 2xl:p-[clamp(2.5rem,5vw,5rem)] relative z-10"
           >
             <div className="text-center mb-[clamp(2.4rem,4vw,3.2rem)] 2xl:mb-[clamp(3rem,5vw,4rem)]">
-              <span className="font-label text-[0.7rem] uppercase tracking-[0.4em] text-[#92857C] mb-3 2xl:mb-4 block font-bold">Atelier Service Menu</span>
+              <span className="font-label text-[0.7rem] uppercase tracking-[0.4em] text-[#92857C] mb-3 2xl:mb-4 block font-bold">Mit Håndværk</span>
               <h2 className="text-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:text-[clamp(2rem,3vw,3rem)] font-headline italic font-light text-[#4C433C]">Signatur &amp; Essentielle</h2>
             </div>
             
@@ -289,7 +289,7 @@ export default function BehandlingerPage() {
                   <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#EDB7A9]"></div>
                 </div>
                 
-                <div className="group cursor-pointer">
+                <div className="group">
                   <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2 2xl:mb-3">
                     <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#EDB7A9] transition-colors duration-300">Balayage</h3>
                     <span className="font-label text-xs tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 1.800,-</span>
@@ -297,7 +297,7 @@ export default function BehandlingerPage() {
                   <p className="text-sm text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Sømløse overgange og lys-design, der vokser smukt ud.</p>
                 </div>
                 
-                <div className="group cursor-pointer">
+                <div className="group">
                   <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2 2xl:mb-3">
                     <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#EDB7A9] transition-colors duration-300">Extensions</h3>
                     <span className="font-label text-xs tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors text-right">Pris v. konsultation</span>
@@ -315,7 +315,7 @@ export default function BehandlingerPage() {
                 </div>
                 
                 <div className="space-y-[clamp(1.2rem,2.4vw,2rem)] 2xl:space-y-[clamp(1.5rem,3vw,2.5rem)]">
-                  <div className="group cursor-pointer">
+                  <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(0.96rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.5vw,1.5rem)] font-headline font-light text-[#4C433C] group-hover:text-[#EDB7A9] transition-colors duration-300">Klip &amp; Form</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 650,-</span>
@@ -323,7 +323,7 @@ export default function BehandlingerPage() {
                     <p className="text-xs text-[#92857C] font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Arkitektonisk klipning tilpasset dit ansigts form.</p>
                   </div>
                   
-                  <div className="group cursor-pointer">
+                  <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(0.96rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.5vw,1.5rem)] font-headline font-light text-[#4C433C] group-hover:text-[#EDB7A9] transition-colors duration-300">Moderne Permanent</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 1.200,-</span>
@@ -331,7 +331,7 @@ export default function BehandlingerPage() {
                     <p className="text-xs text-[#92857C] font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Bløde, levende bølger skabt med moderne teknik.</p>
                   </div>
                   
-                  <div className="group cursor-pointer">
+                  <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(0.96rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.5vw,1.5rem)] font-headline font-light text-[#4C433C] group-hover:text-[#EDB7A9] transition-colors duration-300">Helfarve</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 950,-</span>
@@ -343,7 +343,7 @@ export default function BehandlingerPage() {
             </div>
             
             <div className="mt-[clamp(3.2rem,4.8vw,4.8rem)] 2xl:mt-[clamp(4rem,6vw,6rem)] text-center">
-              <p className="font-headline italic text-[#92857C] text-[clamp(0.68rem,0.88vw,0.8rem)] 2xl:text-[clamp(0.85rem,1.1vw,1rem)] mb-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]">Alle priser er vejledende og afhænger af hårets tykkelse og længde.</p>
+              <p className="font-headline italic text-[#92857C] text-[clamp(0.68rem,0.88vw,0.8rem)] 2xl:text-[clamp(0.85rem,1.1vw,1rem)] mb-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]">Den præcise pris fastsættes altid ud fra den specifikke teknik, vi i fællesskab beslutter os for.</p>
               <Link href="?booking=true" scroll={false} className="inline-block border border-[#4C433C]/20 text-[#4C433C] px-[clamp(2rem,3.2vw,2.8rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.7rem,1.2vw,0.9rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] rounded-full font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.2em] font-bold hover:bg-[#4C433C] hover:text-[#FDFBF7] hover:border-[#4C433C] hover:shadow-[0_15px_40px_rgba(76,67,60,0.2)] hover:-translate-y-1 active:scale-95 transition-all duration-400">
                 Se fuld prisliste &amp; book tid
               </Link>
@@ -405,7 +405,7 @@ export default function BehandlingerPage() {
               </p>
               <div className="pt-2">
                 <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
-                  Find din tid her...
+                  Find din tid her
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </Link>
               </div>
