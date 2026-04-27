@@ -55,7 +55,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
 
               <div className="space-y-6 text-[#6A5D55] leading-relaxed font-body text-[clamp(0.95rem,1.1vw,1.05rem)]">
                 <p>
-                  Hos Studio 24 tager vi beskyttelsen af dine personoplysninger alvorligt. For os er det vigtigt, at du føler dig tryg, når du besøger vores hjemmeside og kontakter os. Herunder kan du læse præcis, hvilke oplysninger vi indsamler, og hvordan vi behandler dem.
+                  Hos Studio 24 tager jeg beskyttelsen af dine personoplysninger alvorligt. For mig er det vigtigt, at du føler dig tryg, når du besøger min hjemmeside og kontakter mig. Herunder kan du læse præcis, hvilke oplysninger jeg indsamler, og hvordan jeg behandler dem.
                 </p>
 
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
@@ -73,24 +73,24 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                 </div>
 
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  2. Hvilke oplysninger indsamler vi og hvorfor?
+                  2. Hvilke oplysninger indsamler jeg og hvorfor?
                 </h3>
                 <p>
-                  Vi indsamler kun de oplysninger, der er strengt nødvendige for at kunne hjælpe dig.
+                  Jeg indsamler kun de oplysninger, der er strengt nødvendige for at kunne hjælpe dig.
                 </p>
 
                 <div className="border-l-4 border-[#EDB7A9] pl-6 my-6">
                   <h4 className="font-bold text-[#4C433C] mb-2">Når du booker tid:</h4>
                   <p>
-                    Vi benytter bookingplatformen <a href="https://planway.com" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Planway</a> til tidsbestilling. Når du klikker på &quot;Book tid&quot;, videredirigeres du til deres platform. Planway fungerer som databehandler, og de oplysninger du indtaster dér, behandles sikkert i overensstemmelse med deres privatlivspolitik for at kunne levere ydelsen til dig.
+                    Jeg benytter bookingplatformen <a href="https://planway.com" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Planway</a> til tidsbestilling. Når du klikker på &quot;Book tid&quot;, videredirigeres du til deres platform. Planway fungerer som databehandler, og de oplysninger du indtaster dér, behandles sikkert i overensstemmelse med deres privatlivspolitik for at kunne levere ydelsen til dig.
                   </p>
                   <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: GDPR art. 6, stk. 1, litra b.</p>
                 </div>
 
                 <div className="border-l-4 border-[#EDB7A9] pl-6 my-6">
-                  <h4 className="font-bold text-[#4C433C] mb-2">Når du bruger vores kontaktformular:</h4>
+                  <h4 className="font-bold text-[#4C433C] mb-2">Når du bruger min kontaktformular:</h4>
                   <p>
-                    For at kunne besvare din henvendelse, vurdere din opgave og kontakte dig med et svar eller et tilbud, indsamler vi de oplysninger, du selv indtaster i formularen. Vi benytter en tredjepartsformularudbyder til at videresende disse oplysninger sikkert til vores e-mail.
+                    For at kunne besvare din henvendelse, vurdere din opgave og kontakte dig med et svar, indsamler jeg de oplysninger, du selv indtaster i formularen. Jeg benytter en sikker tredjepartsformularudbyder til at videresende disse oplysninger sikkert til min e-mail.
                   </p>
                   <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: GDPR art. 6, stk. 1, litra b (nødvendigt aftalegrundlag) samt vurderet legitim interesse i god kundeservice (GDPR art. 6, stk. 1, litra f).</p>
                 </div>
@@ -99,30 +99,30 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                   3. Cookies og sporing
                 </h3>
                 <p>
-                  Vi går meget op i at beskytte dit privatliv, og derfor bruger vi ingen markedsføringscookies eller tredjepartssporing på vores hjemmeside.
+                  Jeg går meget op i at beskytte dit privatliv, og derfor bruger jeg ingen markedsføringscookies eller tredjepartssporing på min hjemmeside.
                 </p>
                 <ul className="list-disc pl-6 space-y-3">
-                  <li>Vi benytter udelukkende Vercel Analytics og Google Search Console til fejlfinding og basale trafikmålinger.</li>
+                  <li>Jeg benytter udelukkende Vercel Analytics og Google Search Console til fejlfinding og basale trafikmålinger.</li>
                   <li>Disse systemer indsamler data 100% anonymiseret og sætter ingen form for personhenførbare cookies på dit udstyr.</li>
-                  <li>Vores fonte og scripts er hostet lokalt i løsningen, så din IP-adresse ikke deles med Google eller andre tredjeparter.</li>
-                  <li>Eventuelle links til sociale medier (f.eks. Instagram) sporer dig ikke på vores side, men når du aktivt klikker dig videre, gælder den pågældende platforms privatlivsvilkår.</li>
+                  <li>Mine fonte og scripts er hostet lokalt i løsningen, så din IP-adresse ikke deles med Google eller andre tredjeparter.</li>
+                  <li>Eventuelle links til sociale medier (f.eks. Instagram) sporer dig ikke på min side, men når du aktivt klikker dig videre, gælder den pågældende platforms privatlivsvilkår.</li>
                 </ul>
 
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  4. Hvem deler vi dine oplysninger med?
+                  4. Hvem deler jeg dine oplysninger med?
                 </h3>
                 <p>
-                  Vi sælger og deler aldrig dine personoplysninger med tredjeparter til markedsføringsvirksomheder eller lignende.
+                  Jeg sælger og deler aldrig dine personoplysninger med tredjeparter til markedsføring eller lignende.
                 </p>
                 <p>
-                  Dine data fra kontaktformularen behandles primært i vores eget e-mailsystem via en sikker tredjepartsformularudbyder. Booking af tider håndteres udelukkende i vores bookingsystem, Planway. Selve hjemmesiden hostes sikkert via Vercel. 
+                  Dine data fra kontaktformularen behandles primært i mit eget e-mailsystem via en sikker tredjepartsformularudbyder. Booking af tider håndteres udelukkende i bookingsystemet Planway. Selve hjemmesiden hostes sikkert via Vercel. 
                 </p>
 
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  5. Hvor længe gemmer vi dine oplysninger?
+                  5. Hvor længe gemmer jeg dine oplysninger?
                 </h3>
                 <p>
-                  Vi gemmer kun dine data, så længe de har et sagligt formål:
+                  Jeg gemmer kun dine data, så længe de har et sagligt formål:
                 </p>
                 <ul className="list-disc pl-6 space-y-3">
                   <li><strong className="text-[#4C433C]">Faktureringsoplysninger:</strong> Opbevares i 5 år efter regnskabsårets afslutning for at overholde gældende krav i den danske Bogføringslov.</li>
@@ -133,10 +133,10 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
                   6. Dine rettigheder
                 </h3>
                 <p>
-                  Efter databeskyttelsesreglerne (GDPR) har du ret til at få indsigt i, hvilke personoplysninger vi har registreret om dig, få dem rettet, slettet eller gøre en række øvrige indsigelser mod vores behandling.
+                  Efter databeskyttelsesreglerne (GDPR) har du ret til at få indsigt i, hvilke personoplysninger jeg har registreret om dig, få dem rettet, slettet eller gøre en række øvrige indsigelser mod min behandling.
                 </p>
                 <p>
-                  Ønsker du at gøre brug af disse rettigheder, bedes du kontakte os på vores e-mailadresse ovenfor. Du har desuden altid den grundlæggende ret til at klage over vores behandling til <a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Datatilsynet</a>.
+                  Ønsker du at gøre brug af disse rettigheder, kan du kontakte mig på min e-mailadresse ovenfor. Du har desuden altid den grundlæggende ret til at klage over min behandling til <a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Datatilsynet</a>.
                 </p>
               </div>
             </div>
@@ -261,7 +261,7 @@ export default function BehandlingerPage() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#6A5D55] text-[clamp(0.88rem,1.12vw,1.08rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] font-sans font-light leading-relaxed max-w-lg 2xl:max-w-2xl mx-auto drop-shadow-sm"
             >
-              Udforsk vores kuraterede menu af ydelser, skabt med fokus på organisk harmoni og teknisk overlegenhed.
+              Udforsk min behandlingsmenu, bygget på solidt håndværk, god tid og fuld respekt for dit hår.
             </motion.p>
           </div>
         </section>
@@ -398,10 +398,10 @@ export default function BehandlingerPage() {
                 <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Den Ultimative <br/><em className="italic font-light">Balayage</em></h2>
               </div>
               <p className="font-sans text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] text-[#6A5D55] font-light leading-relaxed">
-                Vi har gjort op med det frygtede &quot;motorvejen&quot;-look. Du kender det: de hårde, vandrette linjer og kontraster, der skriger af kunstig farve. 
+                Jeg har gjort op med det frygtede &quot;motorvejen&quot;-look. Du kender det sikkert: de hårde, vandrette linjer og kontraster, der skriger af kunstig farve. 
               </p>
               <p className="font-sans text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] text-[#6A5D55] font-light leading-relaxed">
-                Vores balayage-teknik er funderet i frihåndsmaling, hvor vi arbejder med hårets naturlige fald. Vi skaber sømløse overgange, der eliminerer skarpe udvoksninger og sikrer et blend, der kun bliver smukkere med tiden. Det er ikke bare en farvning; det er lys-design skræddersyet til dig.
+                Når jeg laver balayage, maler jeg i frihånd og arbejder ud fra dit hårs naturlige fald. Jeg skaber sømløse overgange, der eliminerer markante udvoksninger og sikrer et spil i håret, der kun bliver smukkere med tiden. Det er ikke bare en farvning; det er lys-design skræddersyet til dig.
               </p>
               <div className="pt-2">
                 <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
@@ -435,7 +435,7 @@ export default function BehandlingerPage() {
                 <div className="space-y-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:space-y-[clamp(1.5rem,3vw,2rem)]">
                   <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">uden</em> kompromis</h2>
                   <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#EDB7A9]/40 pl-6 py-2">
-                    &quot;Ødelægger det mit eget hår?&quot; Det er det spørgsmål, vi hører mest. Svaret er et rungende nej – hvis det gøres korrekt.
+                    &quot;Ødelægger det mit eget hår?&quot; Det er det spørgsmål, jeg oftest får. Svaret er et rungende nej – når det bliver gjort ordentligt.
                   </p>
                 </div>
                 <style>{`
@@ -459,7 +459,7 @@ export default function BehandlingerPage() {
                 <div className="grid grid-cols-1 gap-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:gap-[clamp(1.5rem,3vw,2rem)]">
                   <ScrollExtensionCard 
                     title="100% Skånsomhed"
-                    text="Vi anvender udelukkende metoder, der respekterer dit hårs integritet. Vores monteringspunkter er vægtløse og sikrer, at dit naturlige hår kan vokse sundt nedenunder."
+                    text="Jeg anvender udelukkende metoder, der passer hundrede procent på dit eget hår. Monteringerne er nærmest vægtløse og sikrer, at dit naturlige hår kan vokse sundt videre."
                     icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>}
                     delay={0.2}
                     isMobile={isMobile}
@@ -467,7 +467,7 @@ export default function BehandlingerPage() {
 
                   <ScrollExtensionCard 
                     title="Myten om 'Det Kunstige'"
-                    text="Glem alt om synlige overgange. Vi blander forskellige nuancer og teksturer, så dine extensions bliver en usynlig forlængelse af din egen skønhed."
+                    text="Glem alt om unaturlige overgange. Jeg mikser forskellige nuancer og strukturer, så dine extensions blender fuldstændig usynligt ind i dit eget hår."
                     icon={<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>}
                     delay={0.4}
                     isMobile={isMobile}
@@ -489,7 +489,7 @@ export default function BehandlingerPage() {
                   <div className="bg-[#4C433C] p-[clamp(1.6rem,2.4vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] text-white rounded-[16px] 2xl:rounded-[20px] shadow-[0_30px_60px_rgba(28,26,24,0.2)] transition-transform duration-700 group-hover/guarantee:-translate-y-2">
                     <p className="font-headline text-[1.75rem] mb-3 2xl:mb-4 italic font-light tracking-tight">Garanti</p>
                     <p className="font-sans text-[0.95rem] leading-relaxed opacity-90 font-light drop-shadow-sm">
-                      Vi garanterer 100% skånsom påsætning. Din hår-sundhed er vores førsteprioritet, hver gang.
+                      Jeg garanterer en 100% skånsom påsætning. Dit hårs sundhed er altid min absolutte førsteprioritet.
                     </p>
                   </div>
                 </div>
@@ -528,7 +528,7 @@ export default function BehandlingerPage() {
                   <em className="italic font-light">Oplevelsen</em> <br/>i stolen
                 </h2>
                 <p className="font-sans text-[#6A5D55] font-light text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] leading-relaxed mb-[clamp(2rem,2.8vw,2.4rem)] 2xl:mb-[clamp(2.5rem,3.5vw,3rem)]">
-                  At besøge Studio 24 er et pusterum. Vi starter altid med en dybdegående konsultation, hvor vi forventningsafstemmer alt fra nuancevalg til plejerutine. Drik en kop friskbrygget kaffe eller special-te, mens vi transformerer dit look i rolige omgivelser.
+                  Hos mig er der plads til at trække vejret. Vi tager os altid god tid til en start-snak, så jeg forstår præcis, hvad du drømmer om – og vi finder den løsning, der passer til din hverdag. Læn dig tilbage med en god kop kaffe, og lad mig tage mig ordentligt af dit hår.
                 </p>
                 <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
                   Book din konsultation
