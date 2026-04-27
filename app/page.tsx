@@ -891,7 +891,7 @@ export default function Page() {
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
              <Image src="/images/cozy_small_salon.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
-             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 backdrop-blur-0 md:backdrop-blur-sm pointer-events-none z-10"></div>
+             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 backdrop-blur-0 md:backdrop-blur-[2px] pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}
              <div className="absolute top-0 left-0 w-full h-[clamp(150px,25vw,300px)] bg-gradient-to-b from-[#FDFBF7] via-[#FDFBF7]/80 to-transparent pointer-events-none z-20"></div>
            </div>
