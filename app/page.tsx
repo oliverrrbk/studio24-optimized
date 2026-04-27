@@ -480,7 +480,7 @@ export default function Page() {
         </section>
 
         {/* Min Historie (Using 11.png layout) */}
-        <section id="min-historie" className="relative pt-[clamp(1.5rem,4vw,5rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
+        <section id="min-historie" className="relative pt-[clamp(1rem,3vw,3rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
           {/* Glimmer Image overlay */}
           <div className="absolute right-0 top-[-9rem] md:top-[-22rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] opacity-80">
              <Image src="/images/glitter.png" alt="Glitter graphic" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
