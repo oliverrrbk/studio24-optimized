@@ -74,7 +74,7 @@ function BookingModalInner() {
               
               <div className="absolute inset-0 flex flex-col items-center justify-end text-center pb-[clamp(2.55rem,5.1vw,4.25rem)] 2xl:pb-[clamp(3rem,6vw,5rem)] px-6 2xl:px-8">
                 <span className="text-[#FDFBF7]/80 font-label text-[clamp(0.51rem,0.68vw,0.595rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.4em] font-bold block mb-[clamp(0.85rem,1.275vw,1.275rem)] 2xl:mb-[clamp(1rem,1.5vw,1.5rem)] drop-shadow-sm">
-                  Din Salonoplevelse
+                  Klar til at booke?
                 </span>
                 <h2 className="font-headline italic text-[#FDFBF7] text-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] mb-[clamp(1.275rem,2.125vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2.5vw,2rem)] font-light leading-none tracking-tight drop-shadow-md">
                   Bestil tid
@@ -102,7 +102,7 @@ function BookingModalInner() {
                 </h1>
                 <div className="w-10 2xl:w-12 h-[0.8px] 2xl:h-[1px] bg-[#4C433C]/20 mb-[clamp(1.275rem,2.55vw,1.7rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]"></div>
                 <p className="text-[#6A5D55] font-body font-light leading-relaxed text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)]">
-                  Jeg vil meget hellere have, at du ringer en gang for meget end en gang for lidt. På den måde er vi sikre på, at vi får sat den helt rigtige tid af til præcis dét, dit hår kræver.
+                  Jeg vil meget hellere have, at du ringer end du booker noget, du ikke er helt sikker omkring. På den måde er vi sikre på, at vi får sat den helt rigtige tid af til præcis dét, dit hår kræver.
                 </p>
               </header>
 
