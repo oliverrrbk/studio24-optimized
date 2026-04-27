@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
 import { Paintbrush, Clock, Heart, Leaf } from 'lucide-react';
+import { hardwareAccelerated } from '@/lib/utils';
 
 // Safari Optimization Config (Hardware Acceleration + will-change)
 
@@ -69,7 +70,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-[100dvh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
+            className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
           >
             <div className="p-[clamp(2rem,5vw,4rem)] text-[#4C433C] relative">
@@ -191,11 +192,11 @@ export default function MinHistoriePage() {
   }, []);
 
   return (
-    <div className="bg-[#FDFBF7] text-[#1c1a18] font-sans antialiased min-h-screen flex flex-col selection:bg-[#EDB7A9] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#1c1a18] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#EDB7A9] selection:text-white">
 
       <main className="flex-1 pt-[clamp(7rem,10vw,10rem)] 2xl:pt-[clamp(10rem,12vw,12rem)] pb-0 overflow-x-hidden">
         {/* Hero Section: Editorial Intro */}
-        <motion.section 
+        <motion.section style={hardwareAccelerated} 
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
@@ -209,18 +210,18 @@ export default function MinHistoriePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(3.5rem,6vw,6rem)] 2xl:gap-[clamp(6rem,8vw,8rem)] items-center relative z-10">
             <div className="flex flex-col relative z-10">
-              <motion.span variants={fadeInUp} className="font-label text-[clamp(0.6rem,0.7vw,0.7rem)] 2xl:text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(2rem,3vw,2.5rem)] block">
+              <motion.span style={hardwareAccelerated} variants={fadeInUp} className="font-label text-[clamp(0.6rem,0.7vw,0.7rem)] 2xl:text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(2rem,3vw,2.5rem)] block">
                 Baggrunden
               </motion.span>
-              <motion.h1 variants={fadeInUp} className="text-[clamp(2.7rem,4.5vw,4.5rem)] 2xl:text-[clamp(4.5rem,5vw,5.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight mb-[clamp(1.8rem,3.5vw,2.5rem)] 2xl:mb-[clamp(2.5rem,4vw,3rem)]">
+              <motion.h1 style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(2.7rem,4.5vw,4.5rem)] 2xl:text-[clamp(4.5rem,5vw,5.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight mb-[clamp(1.8rem,3.5vw,2.5rem)] 2xl:mb-[clamp(2.5rem,4vw,3rem)]">
                 Et oprør mod <br /> <span className="italic">samlebåndet.</span>
               </motion.h1>
-              <motion.p variants={fadeInUp} className="text-[clamp(1rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.4vw,1.35rem)] font-sans text-[#6A5D55] font-light leading-relaxed max-w-[450px] 2xl:max-w-[500px]">
+              <motion.p style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(1rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.4vw,1.35rem)] font-sans text-[#6A5D55] font-light leading-relaxed max-w-[450px] 2xl:max-w-[500px]">
                 Jeg skabte Studio 24, fordi jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager et godt resultat den tid, det tager. Længere er den egentlig ikke.
               </motion.p>
             </div>
             <div className="relative w-[85%] ml-[11%] mr-auto md:w-full md:mx-0 mt-8 md:mt-0">
-              <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_20px_40px_rgba(28,26,24,0.08)]">
+              <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_20px_40px_rgba(28,26,24,0.08)]">
                 <Image
                   fill
                   priority
@@ -248,7 +249,7 @@ export default function MinHistoriePage() {
         </motion.section>
 
         {/* The Narrative: Asymmetric Layout */}
-        <motion.section 
+        <motion.section style={hardwareAccelerated} 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-20%" }}
@@ -260,7 +261,7 @@ export default function MinHistoriePage() {
               <div className="relative order-2 md:order-1">
                 <div className="grid grid-cols-2 gap-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:gap-[clamp(1rem,2vw,1.5rem)]">
                   <div className="space-y-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:space-y-[clamp(1rem,2vw,1.5rem)] pt-12">
-                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
@@ -268,7 +269,7 @@ export default function MinHistoriePage() {
                         alt="Hair styling tools"
                       />
                     </motion.div>
-                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
@@ -278,7 +279,7 @@ export default function MinHistoriePage() {
                     </motion.div>
                   </div>
                   <div className="space-y-[clamp(0.9rem,1.8vw,1.2rem)] 2xl:space-y-[clamp(1rem,2vw,1.5rem)]">
-                    <motion.div variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
@@ -286,7 +287,7 @@ export default function MinHistoriePage() {
                         alt="Hair styling close-up"
                       />
                     </motion.div>
-                    <motion.div variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                    <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-square relative overflow-hidden rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
@@ -298,10 +299,10 @@ export default function MinHistoriePage() {
                 </div>
               </div>
               <div className="order-1 md:order-2 self-center relative z-10">
-                <motion.h2 variants={fadeInUp} className="text-[clamp(2.2rem,3.5vw,3rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1] tracking-tight mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(1.5rem,3vw,2.5rem)]">
+                <motion.h2 style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(2.2rem,3.5vw,3rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1] tracking-tight mb-[clamp(1.3rem,2.5vw,2rem)] 2xl:mb-[clamp(1.5rem,3vw,2.5rem)]">
                   Min vej hertil
                 </motion.h2>
-                <motion.div variants={fadeInUp} className="space-y-6 font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
+                <motion.div style={hardwareAccelerated} variants={fadeInUp} className="space-y-6 font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
                   <p>
                     Med en 4½-årig frisøruddannelse i bagagen, har jeg stået i saloner, hvor kalenderen var booket til bristepunktet. Det handlede om at få så mange kunder igennem systemet som muligt. Det var mekanisk, travlt og enormt upersonligt.
                   </p>
@@ -327,7 +328,7 @@ export default function MinHistoriePage() {
               </div>
               
               <div className="order-3 md:hidden self-center relative z-10 -mt-[1rem]">
-                <motion.div variants={fadeInUp} className="font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
+                <motion.div style={hardwareAccelerated} variants={fadeInUp} className="font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
                   <p className="font-semibold text-[#4C433C]">
                     Mit håndværk bygger på tillid. Vi skal finde det look, der fungerer for dig. Det kræver ærlig rådgivning, og frem for alt, at jeg har tid til at lytte til dig.
                   </p>
@@ -350,14 +351,14 @@ export default function MinHistoriePage() {
         </motion.section>
 
         {/* Manifesto Section */}
-        <motion.section 
+        <motion.section style={hardwareAccelerated} 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-20%" }}
           variants={staggerContainer}
           className="max-w-[1200px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,8vw,8rem)] 2xl:py-[clamp(6rem,10vw,10rem)] text-center relative"
         >
-          <motion.div variants={fadeInUp} className="mb-[clamp(4rem,6vw,8rem)]">
+          <motion.div style={hardwareAccelerated} variants={fadeInUp} className="mb-[clamp(4rem,6vw,8rem)]">
             <span className="font-label text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.5rem,3vw,2.5rem)] block">
               Mit løfte
             </span>
@@ -395,7 +396,7 @@ export default function MinHistoriePage() {
         </motion.section>
 
         {/* Signature Component: Stylist Narrative (Horizontal Scroll) */}
-        <motion.section 
+        <motion.section style={hardwareAccelerated} 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-20%" }}
@@ -409,7 +410,7 @@ export default function MinHistoriePage() {
             </span>
           </div>
           <div className="flex overflow-x-auto items-center xl:justify-center pb-12 px-[clamp(1.5rem,5vw,4rem)] gap-[clamp(1.3rem,2.5vw,2.5rem)] 2xl:gap-[clamp(1.5rem,3vw,3rem)] no-scrollbar scroll-smooth">
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="w-full aspect-[4/5] relative">
                 <Image
                   fill
@@ -420,7 +421,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="w-full aspect-square relative">
                 <Image
                   fill
@@ -431,7 +432,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="w-full aspect-[4/3] relative">
                 <Image
                   fill
@@ -442,7 +443,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
               <div className="w-full aspect-[3/4] relative">
                 <Image
                   fill
@@ -457,7 +458,7 @@ export default function MinHistoriePage() {
         </motion.section>
 
         {/* Final CTA: The Invitation */}
-        <motion.section 
+        <motion.section style={hardwareAccelerated} 
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
@@ -479,13 +480,13 @@ export default function MinHistoriePage() {
           </div>
 
           <div className="relative z-10 max-w-[800px] mx-auto">
-            <motion.h2 variants={fadeInUp} className="font-headline font-light text-[clamp(2.2rem,3.5vw,3.6rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] text-[#1c1a18] leading-[1.1] mb-[clamp(0.9rem,1.8vw,1.3rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)] tracking-tight">
+            <motion.h2 style={hardwareAccelerated} variants={fadeInUp} className="font-headline font-light text-[clamp(2.2rem,3.5vw,3.6rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] text-[#1c1a18] leading-[1.1] mb-[clamp(0.9rem,1.8vw,1.3rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)] tracking-tight">
               Skal vi kigge på dit hår?
             </motion.h2>
-            <motion.p variants={fadeInUp} className="text-[clamp(1rem,1.3vw,1.15rem)] 2xl:text-[clamp(1.1rem,1.5vw,1.3rem)] font-sans text-[#6A5D55] font-light leading-relaxed mb-[clamp(2.2rem,3.5vw,3.1rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] max-w-xl mx-auto">
+            <motion.p style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(1rem,1.3vw,1.15rem)] 2xl:text-[clamp(1.1rem,1.5vw,1.3rem)] font-sans text-[#6A5D55] font-light leading-relaxed mb-[clamp(2.2rem,3.5vw,3.1rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] max-w-xl mx-auto">
               Oplev forskellen ved et besøg, hvor der rent faktisk er sat ordentlig tid af til dig.
             </motion.p>
-            <motion.div variants={fadeInUp}>
+            <motion.div style={hardwareAccelerated} variants={fadeInUp}>
               <Link 
                 className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.8rem,3vw,2.7rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.9rem,1.3vw,1.1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.6rem,0.9vw,0.7rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400"
                 href="?booking=true"

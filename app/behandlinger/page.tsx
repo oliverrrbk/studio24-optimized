@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { hardwareAccelerated } from '@/lib/utils';
 
 // Safari Optimization Config (Hardware Acceleration + will-change)
 
@@ -37,7 +38,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-[100dvh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
+            className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
           >
             <div className="p-[clamp(2rem,5vw,4rem)] text-[#4C433C] relative">
@@ -167,7 +168,7 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
   const normalOpacity = useTransform(scrollYProgress, [0.2, 0.4, 0.6, 0.8], [1, 0, 0, 1]);
 
   return (
-    <motion.div 
+    <motion.div style={hardwareAccelerated} 
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -176,18 +177,18 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
       style={isMobile ? { boxShadow: mobileShadow } : undefined}
       className={`bg-white/60 backdrop-blur-md p-[clamp(2rem,3.2vw,2.4rem)] 2xl:p-[clamp(2.5rem,4vw,3rem)] rounded-[16px] 2xl:rounded-[20px] shadow-[0_15px_40px_rgba(28,26,24,0.03)] border border-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-pointer flex flex-col ${!isMobile ? 'hover:shadow-[0_20px_50px_rgba(28,26,24,0.06)]' : ''}`}
     >
-      <motion.div 
+      <motion.div style={hardwareAccelerated} 
         style={isMobile ? { y: iconTranslateY, scale: iconScale } : undefined}
         className={`mb-5 2xl:mb-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#EDB7A9] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
       >
         {Icon}
       </motion.div>
       
-      <motion.div 
+      <motion.div style={hardwareAccelerated} 
         style={isMobile ? { y: contentTranslateY, scale: contentScale } : undefined}
         className={`relative transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full flex flex-col items-start ${!isMobile ? 'group-hover:-translate-y-1 group-hover:scale-[1.02]' : ''}`}
       >
-        <motion.div 
+        <motion.div style={hardwareAccelerated} 
           style={isMobile ? { opacity: normalOpacity } : undefined}
           className={`w-full flex flex-col items-start space-y-4 transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-100 group-hover:opacity-0' : ''}`}
         >
@@ -197,7 +198,7 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
           </p>
         </motion.div>
         
-        <motion.div 
+        <motion.div style={hardwareAccelerated} 
           style={isMobile ? { opacity: gradientOpacity } : undefined}
           className={`absolute inset-0 pointer-events-none w-full flex flex-col items-start space-y-4 transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-0 group-hover:opacity-100' : ''}`}
         >
@@ -239,7 +240,7 @@ export default function BehandlingerPage() {
   }, []);
 
   return (
-    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-screen flex flex-col selection:bg-[#EDB7A9] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#EDB7A9] selection:text-white">
 
       {/* Main content */}
       <main className="flex-1 pt-[clamp(6.4rem,9.6vw,9.6rem)] 2xl:pt-[clamp(8rem,12vw,12rem)] pb-0 overflow-x-hidden">
@@ -247,7 +248,7 @@ export default function BehandlingerPage() {
         {/* Main Header */}
         <section className="max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(1.6rem,3.2vw,4rem)] 2xl:mb-[clamp(2rem,4vw,5rem)] relative">
           <div className="text-center max-w-xl 2xl:max-w-3xl mx-auto space-y-5 2xl:space-y-6 relative z-10">
-            <motion.h1 
+            <motion.h1 style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -255,7 +256,7 @@ export default function BehandlingerPage() {
             >
               Behandlinger
             </motion.h1>
-            <motion.p 
+            <motion.p style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -268,7 +269,7 @@ export default function BehandlingerPage() {
 
         {/* Menu Section */}
         <section className="max-w-4xl 2xl:max-w-6xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(4.8rem,8vw,9.6rem)] 2xl:mb-[clamp(6rem,10vw,12rem)] relative z-10">
-          <motion.div 
+          <motion.div style={hardwareAccelerated} 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-20%" }}
@@ -398,7 +399,7 @@ export default function BehandlingerPage() {
               <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Min tilgang til <br/><em className="italic font-light">Balayage</em></h2>
             </div>
 
-            <motion.div 
+            <motion.div style={hardwareAccelerated} 
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-20%" }}
@@ -410,12 +411,12 @@ export default function BehandlingerPage() {
               </div>
 
               <div className="aspect-[4/5] w-[85%] ml-[3%] mr-auto lg:w-full lg:mx-0 bg-[#EAD5C5]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_50px_rgba(28,26,24,0.06)] relative z-10 -rotate-1">
-                <img alt="Balayage transformation" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105 brightness-[1.15] contrast-[1.05]" src="/gallerypics/14.png" />
+                <Image alt="Balayage transformation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[5s] group-hover:scale-105 brightness-[1.15] contrast-[1.05]" src="/gallerypics/14.png" />
               </div>
 
             </motion.div>
 
-            <motion.div 
+            <motion.div style={hardwareAccelerated} 
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: "-20%" }}
@@ -457,7 +458,7 @@ export default function BehandlingerPage() {
 
           <div className="max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-[clamp(4rem,8vw,6.4rem)] 2xl:gap-[clamp(5rem,10vw,8rem)] items-center lg:items-start">
-              <motion.div 
+              <motion.div style={hardwareAccelerated} 
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-20%" }}
@@ -507,7 +508,7 @@ export default function BehandlingerPage() {
                 </div>            
               </motion.div>
 
-              <motion.div 
+              <motion.div style={hardwareAccelerated} 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-20%" }}
@@ -515,7 +516,7 @@ export default function BehandlingerPage() {
                 className="relative mt-8 lg:mt-[clamp(4.8rem,8vw,6.4rem)] group"
               >
                 <div className="aspect-[3/4] bg-[#EAD5C5]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(28,26,24,0.08)] relative z-10 w-full max-w-[400px] 2xl:max-w-[500px] ml-auto rotate-1">
-                  <img alt="Hair Extensions results" className="w-full h-full object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" src="/about/extensions_guarantee.png" />
+                  <Image alt="Hair Extensions results" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" src="/about/extensions_guarantee.png" />
                 </div>
                 <div className="absolute -left-[3%] bottom-[2%] md:left-auto md:-right-[5%] md:bottom-[5%] z-20 max-w-[240px] 2xl:max-w-[300px] group/guarantee">
                   <div className="bg-[#4C433C] p-[clamp(1.6rem,2.4vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] text-white rounded-[16px] 2xl:rounded-[20px] shadow-[0_30px_60px_rgba(28,26,24,0.2)] transition-transform duration-700 group-hover/guarantee:-translate-y-2">
@@ -538,7 +539,7 @@ export default function BehandlingerPage() {
           <div className="relative z-10 max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)]">
             <div className="relative flex flex-col-reverse lg:flex-row items-center gap-0 lg:gap-[clamp(3rem,6vw,5rem)]">
               
-              <motion.div 
+              <motion.div style={hardwareAccelerated} 
                 initial={{ opacity: 0, x: -40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20%" }}
@@ -549,7 +550,7 @@ export default function BehandlingerPage() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent to-black/20 pointer-events-none"></div>
               </motion.div>
 
-              <motion.div 
+              <motion.div style={hardwareAccelerated} 
                 initial={{ opacity: 0, x: 40 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20%" }}

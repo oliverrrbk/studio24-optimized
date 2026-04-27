@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
+import { hardwareAccelerated } from '@/lib/utils';
 import { Scissors, Leaf, Ruler, Droplet, Quote } from 'lucide-react';
 import StickyScrollGallery from '@/components/ui/sticky-scroll';
 
@@ -39,7 +40,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-[100dvh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
+            className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
           >
             <div className="p-[clamp(2rem,5vw,4rem)] text-[#4C433C] relative">
@@ -154,14 +155,14 @@ export default function GalleriPage() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
 
   return (
-    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-screen flex flex-col selection:bg-[#EDB7A9] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#EDB7A9] selection:text-white">
 
 
       <main className="flex-1 pt-[clamp(6.8rem,10.2vw,10.2rem)] 2xl:pt-[clamp(8rem,12vw,12rem)] pb-0">
         
         {/* Intro Section */}
         <section className="mb-[clamp(5.1rem,8.5vw,6.8rem)] 2xl:mb-[clamp(6rem,10vw,8rem)] px-[clamp(1.275rem,4.25vw,3.4rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] max-w-3xl 2xl:max-w-4xl mx-auto text-center relative z-10">
-          <motion.h1 
+          <motion.h1 style={hardwareAccelerated} 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
@@ -169,7 +170,7 @@ export default function GalleriPage() {
           >
             Mit Håndværk
           </motion.h1>
-          <motion.p 
+          <motion.p style={hardwareAccelerated} 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
@@ -178,7 +179,7 @@ export default function GalleriPage() {
             Gå på opdagelse i nogle af de forvandlinger, jeg har skabt i salonen. Billederne her er din inspiration og et ærligt indblik i de færdige resultater – smukt, sundt og levende hår, der føles præcis lige så godt, som det ser ud.
           </motion.p>
           
-          <motion.div 
+          <motion.div style={hardwareAccelerated} 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
@@ -219,7 +220,7 @@ export default function GalleriPage() {
 
         {/* Quote / CTA Section Merged */}
         <section className="relative w-full overflow-hidden pt-[clamp(3.4rem,6.8vw,6.8rem)] 2xl:pt-[clamp(4rem,8vw,8rem)] pb-[clamp(8.5rem,12.75vw,13.6rem)] 2xl:pb-[clamp(10rem,15vw,16rem)] bg-gradient-to-t from-[#EDB7A9]/10 to-transparent">
-          <motion.div 
+          <motion.div style={hardwareAccelerated} 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, margin: "-20%" }}

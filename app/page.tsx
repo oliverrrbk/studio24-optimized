@@ -8,14 +8,7 @@ import { Play, Paintbrush, Scissors, Sparkles, User, Quote, Globe, Share2, Camer
 import { CardTransformed, CardsContainer, ContainerScroll, ReviewStars } from "@/components/blocks/animated-cards-stack"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { FAQAccordion } from "@/components/ui/faq-accordion"
-// Safari Optimization Config (Hardware Acceleration + will-change)
-const hardwareAccelerated = {
-  WebkitTransform: "translateZ(0)",
-  transform: "translate3d(0, 0, 0)",
-  WebkitBackfaceVisibility: "hidden",
-  backfaceVisibility: "hidden",
-  willChange: "transform, opacity",
-} as React.CSSProperties;
+import { hardwareAccelerated } from "@/lib/utils"
 
 function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
   const IconComponent = ydelse.icon;
@@ -46,18 +39,19 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
       >
         <motion.div 
           style={isMobile ? { 
+            ...hardwareAccelerated,
             borderColor: mobileBorderColor, 
             boxShadow: mobileShadow, 
             scale: mobileScale 
-          } : undefined}
+          } : hardwareAccelerated}
           className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-[2000ms] ease-out group-hover:duration-500 shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 border ${!isMobile && isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
         >
-          <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={`transition-all duration-[2000ms] ease-out group-hover:duration-300 group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
+          <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-all duration-[2000ms] ease-out group-hover:duration-300 group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
              <IconComponent className={`w-[clamp(2rem,3vw,2.5rem)] h-[clamp(2rem,3vw,2.5rem)] 2xl:w-[3.5rem] 2xl:h-[3.5rem] stroke-[1]`} />
           </motion.div>
         </motion.div>
         <motion.h4 
-          style={isMobile ? { color: mobileTextColor } : undefined}
+          style={isMobile ? { ...hardwareAccelerated, color: mobileTextColor } : hardwareAccelerated}
           className={`font-headline font-medium text-[clamp(1.5rem,2vw,1.75rem)] mb-3 tracking-tight group-hover:text-[#EAD5C5] transition-colors duration-[2000ms] ease-out group-hover:duration-300 ${!isMobile && isActive ? 'text-[#EDB7A9]' : !isMobile ? 'text-[#4C433C]' : 'text-[#4C433C]'}`}
         >
           {ydelse.title}
@@ -202,7 +196,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-[100dvh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
+            className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
           >
             <div className="p-[clamp(2rem,5vw,4rem)] text-[#4C433C] relative">
@@ -493,9 +487,9 @@ export default function Page() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-[clamp(4rem,6vw,5rem)] h-[clamp(4rem,6vw,5rem)] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
+              className="w-[clamp(3.5rem,5vw,4.5rem)] h-[clamp(3.5rem,5vw,4.5rem)] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
             >
-              <Scissors className="w-8 h-8 md:w-10 md:h-10 text-[#4C433C] opacity-70" />
+              <Scissors className="w-6 h-6 md:w-8 md:h-8 text-[#4C433C] opacity-70" />
             </motion.div>
 
             <motion.h2 style={hardwareAccelerated} 
@@ -506,7 +500,7 @@ export default function Page() {
               className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
             >
               <em className="italic font-light">Ingen ubehagelige overraskelser.</em><br/>
-              <strong className="font-medium">Bare det resultat,</strong> <em className="italic font-light">vi aftalte.</em>
+              <strong className="font-medium">Bare det resultat,</strong> <br className="md:hidden"/><em className="italic font-light">vi aftalte.</em>
             </motion.h2>
 
             <motion.p
@@ -527,19 +521,19 @@ export default function Page() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-full"
+                className="relative w-full hidden md:block"
               >
                 {/* Floating Title (Absolute to overlap left edge on Desktop) */}
                 <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block transition-all duration-300">
                   <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
                     <strong className="font-medium">Ægte faglighed.</strong><br/>
-                    <em className="italic font-light">Ingen smarte salgstaler.</em>
+                    <em className="italic font-light">Kun ærligt håndværk.</em>
                   </h3>
                 </div>
                 {/* For mobile & small tablets, show natural flowing title */}
                 <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#4C433C] mb-6 block lg:hidden text-center md:text-left [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
                   <strong className="font-medium">Ægte faglighed.</strong><br/>
-                  <em className="italic font-light">Ingen smarte salgstaler.</em>
+                  <em className="italic font-light">Kun ærligt håndværk.</em>
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group transition-all duration-300">
@@ -602,7 +596,7 @@ export default function Page() {
 
         {/* New Animated Stack Testimonials */}
         <section id="testimonials" className="relative pb-[clamp(5rem,8vw,8rem)] bg-[#FDFBF7] text-[#4C433C] overflow-clip z-20">
-          <ContainerScroll className="container mx-auto h-[500vh]">
+          <ContainerScroll className="container mx-auto h-[500svh]">
             <div className="sticky left-0 top-0 h-svh w-full py-12 flex flex-col justify-center items-center">
               
               {/* Title Section (Sticky Background) */}
@@ -629,12 +623,12 @@ export default function Page() {
               
               {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
-                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
-                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
+                 <div style={hardwareAccelerated} className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
+                 <div style={hardwareAccelerated} className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
               </div>
               <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
-                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
-                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
+                 <div style={hardwareAccelerated} className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
+                 <div style={hardwareAccelerated} className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
               </div>
 
                {/* Six Floating Background Images (Left and Right) */}
@@ -875,7 +869,7 @@ export default function Page() {
            </div>
 
            {/* Mirrored Glimmer Image overlay (Between Founder & FAQ) */}
-           <div className="absolute left-0 bottom-[-5rem] md:bottom-[-26rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] scale-x-[-1] opacity-80">
+           <div className="hidden md:block absolute left-0 bottom-[-5rem] md:bottom-[-26rem] w-[clamp(200px,25vw,600px)] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg] scale-x-[-1] opacity-80">
               <Image src="/images/glitter.png" alt="Glitter graphic mirrored" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
            </div>
         </section>
@@ -899,7 +893,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[70px] rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
+              className="relative z-10 mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-[32px] md:rounded-[0px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
            >
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? <em className="italic font-light">Book en tid</em> hos os, så tager vi <em className="italic font-light">en snak</em> om dit hår.
@@ -910,7 +904,7 @@ export default function Page() {
            </motion.div>
 
            {/* Bottom Curve for Footer (Opposite to Hero = U-shape dip) */}
-           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none hidden md:block">
              <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
                <path className="text-[#FDFBF7]" d="M0,100 L0,0 C480,80 960,80 1440,0 L1440,100 Z" />
              </svg>
