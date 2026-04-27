@@ -901,7 +901,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 mt-[6rem] md:mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-[32px] md:rounded-[0px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
+              className="relative z-10 mt-[8rem] md:mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[50px] rounded-bl-[50px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
            >
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
