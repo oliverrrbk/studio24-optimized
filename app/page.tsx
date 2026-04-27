@@ -508,7 +508,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="mt-[clamp(1.5rem,3vw,2.5rem)] max-w-3xl font-body text-[#6A5D55] text-[clamp(0.875rem,1.2vw,1.125rem)] text-center leading-relaxed px-4"
+              className="mt-[clamp(1.5rem,3vw,2.5rem)] md:mt-[1rem] 2xl:mt-[clamp(1.5rem,3vw,2.5rem)] max-w-3xl font-body text-[#6A5D55] text-[clamp(0.875rem,1.2vw,1.125rem)] text-center leading-relaxed px-4"
             >
               Jeg oplever desværre ofte nye kunder, der kommer ind med fuldstændig smadret hår fra et tidligere frisørbesøg. Det sker næsten altid, fordi der mangler basal kommunikation. Derfor gennemgår vi altid alt i fællesskab her. Jeg kigger på dine referencebilleder og sikrer mig, at jeg forstår din vision, inden jeg rører saksen.
             </motion.p>
