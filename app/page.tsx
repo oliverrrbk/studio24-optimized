@@ -480,7 +480,7 @@ export default function Page() {
              <Image src="/images/glitter.png" alt="Glitter graphic" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
           </div>
 
-          <div className="max-w-[1400px] mx-auto flex flex-col items-center relative z-10 pt-4 md:pt-[5%] 2xl:pt-0">
+          <div className="max-w-[1400px] mx-auto flex flex-col items-center relative z-10 pt-4 md:pt-[2%] 2xl:pt-0">
             
             <motion.div
  style={hardwareAccelerated}              initial={{ opacity: 0, scale: 0.9 }}
