@@ -451,7 +451,8 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(0.85rem,1vw,0.9rem)] lg:text-[clamp(0.95rem,1.1vw,1rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
-              Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
+              Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. <br className="hidden md:block" />
+              Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
             </motion.p>
             <motion.div style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 20 }}
