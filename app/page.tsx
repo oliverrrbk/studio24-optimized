@@ -889,7 +889,7 @@ export default function Page() {
         <section id="kontakt" className="relative pt-[clamp(4rem,8vw,8rem)] 2xl:pt-[clamp(8rem,15vw,12rem)] pb-[clamp(8rem,15vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden flex items-center justify-center">
            {/* Background Image and Overlay */}
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
-             <Image src="/images/cozy_small_salon.png" fill alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+             <Image src="/images/cozy_small_salon.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 backdrop-blur-0 md:backdrop-blur-sm pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}
@@ -912,7 +912,7 @@ export default function Page() {
            </motion.div>
 
            {/* Bottom Curve for Footer (Opposite to Hero = U-shape dip) */}
-           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none hidden md:block">
+           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
              <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
                <path className="text-[#FDFBF7]" d="M0,100 L0,0 C480,80 960,80 1440,0 L1440,100 Z" />
              </svg>
