@@ -570,8 +570,16 @@ export default function Page() {
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
               >
-                 <div className="w-full md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
-                    <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                 <div className="relative w-full mb-[clamp(2rem,4vw,3rem)] h-[85vw] md:h-auto md:block">
+                    {/* Background image (Mobile offset: right/down, Desktop: normal) */}
+                    <div className="absolute md:relative bottom-0 right-0 md:bottom-auto md:right-auto w-[75%] md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] group z-10">
+                      <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    </div>
+
+                    {/* Foreground image (Mobile only offset: left/up) */}
+                    <div className="absolute top-0 left-0 w-[65%] aspect-[1/1] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
+                      <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    </div>
                  </div>
                  
                  <h4 className="font-headline font-medium text-[clamp(1.5rem,2.2vw,2.3rem)] 2xl:text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left md:w-[115%]">
