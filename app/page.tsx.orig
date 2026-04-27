@@ -1,0 +1,674 @@
+'use client';
+
+import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { motion, AnimatePresence } from 'motion/react';
+import { Play, Paintbrush, Scissors, Sparkles, User, Quote, Globe, Share2, Camera } from 'lucide-react';
+import { CardTransformed, CardsContainer, ContainerScroll, ReviewStars } from "@/components/blocks/animated-cards-stack"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { FAQAccordion } from "@/components/ui/faq-accordion"
+// Safari Optimization Config (Hardware Acceleration + will-change)
+const hardwareAccelerated = {
+  WebkitTransform: "translateZ(0)",
+  transform: "translate3d(0, 0, 0)",
+  WebkitBackfaceVisibility: "hidden",
+  backfaceVisibility: "hidden",
+  willChange: "transform, opacity",
+} as React.CSSProperties;
+
+
+
+const TESTIMONIALS = [
+  {
+    id: "testimonial-1",
+    name: "Maja Petersen",
+    date: "12. Maj 2023",
+    rating: 5,
+    description: "Den bedste oplevelse jeg nogensinde har haft. Deres blik for detaljen og dedikation til at skabe et resultat, der passer til mig, er simpelthen enestående.",
+  },
+  {
+    id: "testimonial-2",
+    name: "Sofie Lindholm",
+    date: "3. August 2023",
+    rating: 5,
+    description: "Professionalisme i særklasse. Frisørerne forstår præcis hvad man ønsker, og leverer altid et overvældende smukt resultat. Helt klart min faste salon.",
+  },
+  {
+    id: "testimonial-3",
+    name: "Clara Jensen",
+    date: "28. Oktober 2023",
+    rating: 4.5,
+    description: "Atmosfæren er utrolig afslappende og luksuriøs. Jeg elsker hvordan de virkelig tager sig tid til hver enkelt kunde og bruger eksklusive produkter.",
+  }
+];
+
+export default function Page() {
+  const [activeServices, setActiveServices] = useState<number[]>([]);
+  const [isHoveringServices, setIsHoveringServices] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (isHoveringServices) {
+      setActiveServices([]);
+      return;
+    }
+
+    let isCancelled = false;
+
+    const runWave = async () => {
+      while (!isCancelled) {
+        for (let i = 0; i < 4; i++) {
+          if (isCancelled) break;
+          setActiveServices(prev => Array.from(new Set([...prev, i])));
+          
+          setTimeout(() => {
+            if (!isCancelled) {
+              setActiveServices(prev => prev.filter(x => x !== i));
+            }
+          }, 1500);
+
+          await new Promise(r => setTimeout(r, 600)); // Shorter gap for overlapping wave
+        }
+        if (isCancelled) break;
+        await new Promise(r => setTimeout(r, 4500));
+      }
+    };
+
+    runWave();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [isHoveringServices]);
+
+  return (
+    <>
+      {/* Top Navigation */}
+      <nav 
+        style={hardwareAccelerated}
+        className={`fixed top-0 w-full z-50 transition-all duration-700 ease-out ${
+          isScrolled 
+            ? 'bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#4C433C]/10 shadow-[0_4px_20px_rgba(28,26,24,0.03)]' 
+            : 'bg-transparent border-b border-[#4C433C]/10 shadow-none'
+        }`}
+      >
+        <div className={`flex justify-between items-center max-w-[1920px] mx-auto px-[clamp(1.5rem,4vw,3rem)] text-[#4C433C] transition-all duration-700 ${
+          isScrolled ? 'py-[clamp(0.8rem,1.2vw,1rem)]' : 'py-[clamp(1.2rem,2vw,1.5rem)]'
+        }`}>
+          <div className="hidden md:flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
+            <Link className="hover:opacity-70 transition-opacity" href="#min-historie">Min Historie</Link>
+            <Link className="hover:opacity-70 transition-opacity" href="#ydelser">Ydelser</Link>
+            <Link className="hover:opacity-70 transition-opacity" href="#galleri">Galleri</Link>
+          </div>
+          <Link className="absolute left-1/2 -translate-x-1/2 text-[clamp(2.5rem,4vw,3rem)] font-serif text-[#1c1a18] tracking-wide hover:opacity-80 transition-opacity" href="/">Studio 24</Link>
+          <div className="hidden md:flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
+            <Link href="#kontakt" scroll={true}>
+              <button className="bg-[#EDB7A9] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#e6a896] border-[#4C433C]/20 transition-all duration-300 shadow-[0_8px_30px_rgba(237,183,169,0.4)]">
+                Book tid
+              </button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        {/* Hero Section */}
+        <section className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
+          <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
+            <video
+              src="/videos/video_one.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover opacity-30"
+            />
+            <div className="absolute inset-0 bg-gradient-to-br from-white/60 via-[#EAD5C5]/25 to-white/45 backdrop-blur-sm"></div>
+          </div>
+
+          {/* Left Lines */}
+          <div className="absolute left-[min(4vw,4rem)] top-1/2 -translate-y-1/2 hidden md:flex items-center z-20 group cursor-pointer hover:opacity-80 transition-opacity">
+            <div className="w-[60px] md:w-[80px] h-[1px] bg-[#4C433C]/40 group-hover:w-[120px] transition-all duration-700 relative">
+               <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#4C433C] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+          </div>
+
+          {/* Right Lines */}
+          <div className="absolute right-[min(4vw,4rem)] top-1/2 -translate-y-1/2 hidden md:flex items-center z-20 group cursor-pointer hover:opacity-80 transition-opacity">
+            <div className="w-[60px] md:w-[80px] h-[1px] bg-[#4C433C]/40 group-hover:w-[120px] transition-all duration-700 relative">
+               <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#4C433C] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+          </div>
+
+          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-16">
+            <motion.h1 
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="font-headline font-light text-[clamp(2.5rem,6.5vw,5.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-6"
+            >
+              Find din <span className="italic font-light">indre</span><br/>
+              <span className="italic font-light">skønhed</span> og glød
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="font-body text-[#6A5D55] text-[clamp(1rem,1.25vw,1.125rem)] max-w-2xl mx-auto mb-[clamp(2.5rem,4vw,3.5rem)] font-light leading-relaxed drop-shadow-sm"
+            >
+              Fra skræddersyede klipninger til smukke balayage-behandlinger. Vores dygtige stylister er dedikeret til at give dig en luksuriøs salonoplevelse.
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="flex justify-center"
+            >
+              <button className="bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.875rem,1.5vw,1.125rem)] font-body font-bold text-[clamp(0.875rem,1vw,1rem)] tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
+                Se behandlinger
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Bottom Curve */}
+          <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+            <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
+              <path className="text-[#FDFBF7]" d="M0,100 L0,80 C480,0 960,0 1440,80 L1440,100 Z" />
+            </svg>
+          </div>
+        </section>
+
+        {/* Min Historie (Using 11.png layout) */}
+        <section id="min-historie" className="relative pt-[clamp(1.5rem,4vw,5rem)] pb-[clamp(5rem,12vw,8rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C]">
+          {/* Glimmer Image overlay */}
+          <div className="absolute right-0 top-[-8rem] md:top-[-18rem] w-[24rem] md:w-[38rem] z-[35] pointer-events-none drop-shadow-md brightness-90 saturate-[1.5] sepia-[0.3] hue-rotate-[-10deg]">
+             <Image src="/images/glitter.png" alt="Glitter graphic" width={800} height={1000} className="w-full h-auto object-contain object-right-top" />
+          </div>
+
+          <div className="max-w-[1400px] mx-auto flex flex-col items-center relative z-10 pt-4">
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="w-[ clamp(3rem,5vw,4rem) ] h-[ clamp(3rem,5vw,4rem) ] rounded-full bg-[#4C433C]/[0.03] flex items-center justify-center mb-[clamp(1.5rem,3vw,2rem)] p-3"
+            >
+              <Scissors className="w-5 h-5 md:w-6 md:h-6 text-[#4C433C] opacity-70" />
+            </motion.div>
+
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
+            >
+              <em className="italic font-light">Vores salon</em> <strong className="font-medium">er et frirum, hvor</strong><br/>
+              <strong className="font-medium">afslapning</strong> <em className="italic font-light">møder fornyelse.</em>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="mt-[clamp(1.5rem,3vw,2.5rem)] max-w-3xl font-body text-[#6A5D55] text-[clamp(0.875rem,1.2vw,1.125rem)] text-center leading-relaxed px-4"
+            >
+              Slap af med vores udsøgte udvalg af salonbehandlinger skabt til at forkæle dig fra top til tå. Fra afslappende hovedbundsmassage og velgørende kure til luksuriøse stylingoplevelser - vores erfarne team er dedikeret til at skabe en personlig oplevelse skræddersyet til dine unikke behov.
+            </motion.p>
+
+            <div className="grid md:grid-cols-[1.3fr_1fr] gap-[clamp(4rem,8vw,10rem)] mt-[clamp(5rem,10vw,8rem)] w-full items-start px-4 md:px-0">
+              
+              {/* LEFT SIDE */}
+              <motion.div 
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                style={hardwareAccelerated}
+                className="relative w-full"
+              >
+                {/* Floating Title (Absolute to overlap left edge on Desktop) */}
+                <div className="absolute top-[10%] left-[-10%] z-20 hidden lg:block">
+                  <h3 className="font-headline text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap drop-shadow-sm">
+                    <strong className="font-medium">Forkæl dig selv med</strong><br/>
+                    <em className="italic font-light">skønheden</em> <strong className="font-medium">i vores salon</strong>
+                  </h3>
+                </div>
+                {/* For mobile & small tablets, show natural flowing title */}
+                <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#4C433C] mb-6 block lg:hidden text-center md:text-left">
+                  <strong className="font-medium">Forkæl dig selv med</strong><br/>
+                  <em className="italic font-light">skønheden</em> <strong className="font-medium">i vores salon</strong>
+                </h3>
+                
+                <div className="relative w-full md:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
+                  <Image src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=2069&auto=format&fit=crop" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                </div>
+
+                {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
+                <div className="absolute bottom-[-8%] left-[2%] md:bottom-[-2%] md:left-[12%] z-30 w-[clamp(7.5rem,15vw,11.5rem)] h-[clamp(9rem,18vw,14rem)] flex items-center justify-center translate-y-3">
+                  <svg viewBox="0 0 100 120" className="w-full h-full text-[#7A6F68] drop-shadow-sm overflow-visible">
+                    <path
+                      d="M 85.00 60.00 Q 90.90 77.92 78.32 89.39 Q 75.27 106.92 60.82 107.55 Q 50.00 118.00 39.18 107.55 Q 24.73 106.92 21.68 89.39 Q 9.10 77.92 15.00 60.00 Q 9.10 42.08 21.68 30.61 Q 24.73 13.08 39.18 12.45 Q 50.00 2.00 60.82 12.45 Q 75.27 13.08 78.32 30.61 Q 90.90 42.08 85.00 60.00"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeDasharray="4 4"
+                    />
+                  </svg>
+                </div>
+              </motion.div>
+
+              {/* RIGHT SIDE */}
+              <motion.div 
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+                style={hardwareAccelerated}
+                className="flex flex-col justify-center h-full max-w-[450px] mx-auto lg:ml-auto lg:mr-0 pt-[clamp(2rem,8vw,10rem)]"
+              >
+                 <div className="w-full aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
+                    <Image src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=2069&auto=format&fit=crop" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
+                 </div>
+                 
+                 <h4 className="font-headline font-medium text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left">
+                   Her kan du slappe af <br/>og undslippe hverdagens stress.
+                 </h4>
+                 
+                 <p className="mt-[clamp(1rem,2vw,1.5rem)] font-body text-[clamp(0.875rem,1.1vw,1rem)] text-[#6A5D55] leading-relaxed text-center md:text-left">
+                   Slap af med vores udsøgte udvalg af behandlinger designet til at forkæle dig. Fra afslappende hovedbundsmassage til luksuriøse frisurer, er vores dygtige team dedikeret til en personlig oplevelse skræddersyet til dine unikke behov.
+                 </p>
+                 
+                 <div className="mt-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full">
+                   <button className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
+                     Find din tid
+                   </button>
+                 </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+
+
+        {/* New Animated Stack Testimonials */}
+        <section id="testimonials" className="relative pt-[clamp(4rem,8vw,6rem)] pb-0 bg-[#FDFBF7] text-[#4C433C] overflow-hidden z-20">
+          <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)]">
+            <motion.h3 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="text-center font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight mb-4"
+            >
+              Se hvad <em className="italic font-light">vores kunder siger</em>
+            </motion.h3>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="mx-auto max-w-lg text-center text-[#6A5D55] font-body font-light text-[clamp(1rem,1.5vw,1.125rem)]"
+            >
+              Vi er dedikeret til at skabe uforglemmelige oplevelser, skræddersyet til dig.
+            </motion.p>
+          </div>
+          <ContainerScroll className="container mx-auto h-[120vh] mt-[-15vh]">
+            <div className="sticky left-0 top-0 h-svh w-full py-12 flex justify-center items-center">
+              
+              {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
+              <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
+                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
+              </div>
+              <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
+                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
+              </div>
+
+              {/* Six Floating Background Images (Left and Right) */}
+              <div className="absolute inset-0 w-full max-w-[1400px] mx-auto z-0 pointer-events-none hidden md:block">
+                 {/* Left Side Group */}
+                 <div className="absolute top-[20%] left-[8%] w-[clamp(140px,12vw,180px)] aspect-[4/5] rounded-[16px] overflow-hidden rotate-[-12deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?q=80&w=800&auto=format&fit=crop" fill alt="Result 1" className="object-cover" />
+                 </div>
+                 <div className="absolute top-[45%] left-[2%] w-[clamp(120px,10vw,160px)] aspect-square rounded-[16px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=800&auto=format&fit=crop" fill alt="Result 2" className="object-cover" />
+                 </div>
+                 <div className="absolute top-[65%] left-[12%] w-[clamp(150px,14vw,200px)] aspect-[4/5] rounded-[16px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1562322140-8baeececf3df?q=80&w=800&auto=format&fit=crop" fill alt="Result 3" className="object-cover" />
+                 </div>
+
+                 {/* Right Side Group */}
+                 <div className="absolute top-[18%] right-[10%] w-[clamp(140px,13vw,190px)] aspect-square rounded-[16px] overflow-hidden rotate-[15deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=800&auto=format&fit=crop" fill alt="Result 4" className="object-cover" />
+                 </div>
+                 <div className="absolute top-[42%] right-[3%] w-[clamp(130px,11vw,170px)] aspect-[3/4] rounded-[16px] overflow-hidden rotate-[-10deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=800&auto=format&fit=crop" fill alt="Result 5" className="object-cover" />
+                 </div>
+                 <div className="absolute top-[70%] right-[12%] w-[clamp(120px,10vw,160px)] aspect-[4/5] rounded-[16px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
+                    <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
+                    <Image src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?q=80&w=800&auto=format&fit=crop" fill alt="Result 6" className="object-cover" />
+                 </div>
+              </div>
+
+              {/* Central Stack */}
+              <CardsContainer className="relative z-10 size-full max-w-[450px] h-[510px] w-full px-4 md:px-0 -translate-y-10">
+                {TESTIMONIALS.map((testimonial, index) => (
+                  <CardTransformed
+                    arrayLength={TESTIMONIALS.length}
+                    key={testimonial.id}
+                    variant="light"
+                    index={index + 2}
+                    role="article"
+                    className="flex flex-col justify-between h-[100%]"
+                  >
+                    <div className="flex flex-col items-center space-y-4 text-center mt-2">
+                      <ReviewStars
+                        className="text-[#EAD5C5]"
+                        rating={testimonial.rating}
+                      />
+                      <div className="mx-auto w-[90%] text-[clamp(1.1rem,1.5vw,1.25rem)] font-body italic font-light leading-relaxed text-[#6A5D55]">
+                        <blockquote cite="#">"{testimonial.description}"</blockquote>
+                      </div>
+                    </div>
+                    <div className="flex flex-col items-center justify-center gap-1 mt-6 pt-5 border-t border-[#4C433C]/5 w-full text-center">
+                        <span className="block font-label uppercase tracking-[0.15em] text-[13px] font-bold text-[#4C433C]">
+                          {testimonial.name}
+                        </span>
+                        <span className="block text-[12px] font-body text-[#92857C] mt-1">
+                          {testimonial.date}
+                        </span>
+                    </div>
+                  </CardTransformed>
+                ))}
+              </CardsContainer>
+            </div>
+          </ContainerScroll>
+        </section>
+
+        {/* Ydelser (Using 33.png layout) */}
+        <section id="ydelser" className="relative pb-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] overflow-hidden -mt-[clamp(2rem,6vw,8rem)] z-30">
+          {/* Abstract SVG line accent top right */}
+          <div className="absolute top-0 right-[-10%] w-[clamp(400px,40vw,600px)] h-[clamp(400px,40vw,600px)] pointer-events-none opacity-[0.03]">
+            <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full rotate-45">
+              <path d="M 0 500 C 100 200, 400 300, 500 0" stroke="#4C433C" strokeWidth="2" strokeDasharray="10,10" />
+            </svg>
+          </div>
+
+          <div className="max-w-[1400px] mx-auto relative z-10">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="text-center font-headline font-light text-[clamp(3rem,5vw,5rem)] leading-[1.05] tracking-tight mb-[clamp(4rem,8vw,8rem)]"
+            >
+              Eksklusivt udvalg af <br/><em className="italic font-light">frisøroplevelser</em>
+            </motion.h2>
+
+            <div 
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[clamp(3rem,5vw,4rem)]"
+              onMouseEnter={() => setIsHoveringServices(true)}
+              onMouseLeave={() => setIsHoveringServices(false)}
+            >
+              {[
+                { title: "Balayage Værk", desc: "Solkysset og naturlig farveovergang, håndmalet specielt til dine træk.", icon: Paintbrush },
+                { title: "Klip og Styling", desc: "Perfektion i hvert snit. Vi former håret for at komplementere dit ansigt.", icon: Scissors },
+                { title: "Hovedbundskur", desc: "Dybdegående og genopbyggende behandling for fundamentet af et sundt hår.", icon: Sparkles },
+                { title: "Bespoke Extensions", desc: "Fyldigt, langt og luksuriøst hår med premium kvalitetsextensions.", icon: User }
+              ].map((ydelse, idx) => {
+                const IconComponent = ydelse.icon;
+                const isActive = activeServices.includes(idx);
+                
+                return (
+                <motion.div 
+                  key={idx}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 1, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                  style={hardwareAccelerated}
+                  className="flex flex-col items-center text-center group cursor-pointer"
+                >
+                  <div className={`w-[clamp(8rem,12vw,10rem)] h-[clamp(8rem,12vw,10rem)] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-1000 ease-out group-hover:duration-500 shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 border ${isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : 'border-[#4C433C]/10 scale-100'}`}>
+                    <IconComponent className={`w-[clamp(2.5rem,4vw,3.5rem)] h-[clamp(2.5rem,4vw,3.5rem)] group-hover:opacity-100 group-hover:text-[#4C433C] transition-all duration-1000 ease-out group-hover:duration-300 stroke-[1] ${isActive ? 'opacity-100 text-[#EDB7A9]' : 'opacity-60 text-[#4C433C]'}`} />
+                  </div>
+                  <h4 className={`font-headline font-medium text-[clamp(1.5rem,2vw,1.75rem)] mb-3 tracking-tight group-hover:text-[#EAD5C5] transition-colors duration-1000 ease-out group-hover:duration-300 ${isActive ? 'text-[#EDB7A9]' : 'text-[#4C433C]'}`}>{ydelse.title}</h4>
+                  <p className="font-body text-[#6A5D55] font-light leading-relaxed max-w-[280px]">{ydelse.desc}</p>
+                </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Stats (Using 44.png layout) */}
+        <section className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#F8F5F0] text-[#4C433C] z-40">
+          {/* Curve Graphics */}
+          <div className="absolute top-[-10%] md:top-[-20%] left-0 w-[clamp(250px,40vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95]">
+             <Image src="/images/curve_left.png" alt="Curve left" fill className="object-contain object-left-top" />
+          </div>
+          <div className="absolute bottom-[-10%] md:bottom-[-25%] right-0 w-[clamp(250px,45vw,700px)] h-[120%] md:h-[150%] pointer-events-none drop-shadow-sm brightness-[0.95]">
+             <Image src="/images/curve_right.png" alt="Curve right" fill className="object-contain object-right-bottom" />
+          </div>
+          
+          <div className="max-w-[1400px] mx-auto relative z-10">
+             <div className="grid md:grid-cols-2 gap-[clamp(4rem,10vw,12rem)] items-center mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto">
+                <div className="max-w-md ml-auto text-center md:text-right space-y-[clamp(1.5rem,3vw,2rem)] order-2 md:order-1 pt-8 md:pt-0">
+                  <h3 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight">
+                    Løft dit <em className="italic font-light">velvære</em> med varig <em className="italic font-light">kvalitet</em>
+                  </h3>
+                  <p className="font-body text-[#6A5D55] font-light text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed">
+                    Vores dedikation til håndværket, parret med luksuriøse produkter, sikrer at du altid forlader os med følelsen af ægte velvære og perfektion.
+                  </p>
+                </div>
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-10%" }}
+                  transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                  style={hardwareAccelerated}
+                  className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
+                >
+                   <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-10 hover:z-20 transition-all duration-500 hover:scale-105">
+                      <Image src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop" fill alt="Detail" className="object-cover" />
+                   </div>
+                   <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-0 hover:z-20 transition-all duration-500 hover:scale-105">
+                      <Image src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=1974&auto=format&fit=crop" fill alt="Tools" className="object-cover" />
+                   </div>
+                </motion.div>
+             </div>
+
+             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-[#4C433C]/10 text-center">
+                {[
+                  { num: "24", label: "Års erfaring" },
+                  { num: "01", label: "Premium salon" },
+                  { num: "1.8k", label: "Glade kunder" },
+                  { num: "45", label: "Prisvindende looks" }
+                ].map((stat, idx) => (
+                  <motion.div 
+                    key={idx}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-5%" }}
+                    transition={{ duration: 1, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    style={hardwareAccelerated}
+                    className="flex flex-col items-center justify-center p-4"
+                  >
+                     <span className="font-headline text-[clamp(4rem,7vw,6.5rem)] font-light italic leading-none mb-3 text-[#4C433C] opacity-80">{stat.num}</span>
+                     <span className="font-label text-[clamp(0.7rem,1vw,0.85rem)] uppercase tracking-[0.2em] text-[#92857C] font-bold">{stat.label}</span>
+                  </motion.div>
+                ))}
+             </div>
+          </div>
+        </section>
+
+        {/* Eksperter / Stifter (Founder) */}
+        <section id="galleri" className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] z-10">
+           <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-[clamp(5rem,10vw,8rem)] items-center mb-[clamp(6rem,12vw,10rem)] pt-[clamp(2rem,4vw,4rem)]">
+              {/* Left Image Composition */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true, margin: "-10%" }}
+                transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
+                style={hardwareAccelerated}
+                className="relative w-full max-w-[500px] mx-auto md:mr-auto md:ml-0"
+              >
+                  <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
+                    <Image src="https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?q=80&w=1936&auto=format&fit=crop" fill alt="Founder" className="object-cover transition-transform duration-[5s] group-hover:scale-105" />
+                  </div>
+                  {/* Floating Galleri Image */}
+                  <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
+                    <Image src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?q=80&w=2069&auto=format&fit=crop" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110" />
+                  </div>
+                  {/* Subtle star SVG accent behind */}
+                  <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[clamp(60px,10vw,100px)] h-[clamp(60px,10vw,100px)] animate-[spin_40s_linear_infinite]">
+                     <Sparkles className="w-full h-full stroke-[0.5]" />
+                  </div>
+              </motion.div>
+
+              {/* Right Text Block */}
+              <motion.div
+                 initial={{ opacity: 0, x: 40 }}
+                 whileInView={{ opacity: 1, x: 0 }}
+                 viewport={{ once: true, margin: "-10%" }}
+                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                 style={hardwareAccelerated}
+                 className="flex flex-col justify-center max-w-xl mx-auto md:mx-0"
+              >
+                 <div className="flex items-center gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60">
+                    <div className="h-[1px] w-[clamp(2rem,4vw,3rem)] bg-[#4C433C]"></div>
+                    <span className="font-label uppercase tracking-[0.25em] text-[clamp(0.7rem,1vw,0.85rem)] font-bold">Stifter & Salonejer</span>
+                 </div>
+                 
+                 <h2 className="font-headline font-light text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)]">
+                   Lidenskaben bag <br/><em className="italic font-light">hvert eneste snit</em>
+                 </h2>
+                 
+                 <p className="font-body text-[#6A5D55] font-light text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)]">
+                    Med kompromisløs dedikation til håndværket og en dyb forståelse for din unikke skønhed, har jeg skabt Studio 24. For mig er håret ikke bare en frisure; det er din identitet og personlige kunst.
+                 </p>
+                 
+                 <div className="relative pl-[clamp(1.5rem,3vw,2rem)] border-l-2 border-[#EAD5C5]">
+                    <Quote className="absolute top-[-15px] left-[-0.75rem] w-8 h-8 text-[#EAD5C5] opacity-40 stroke-[2] bg-[#FDFBF7]" />
+                    <p className="font-headline italic text-[clamp(1.25rem,1.5vw,1.5rem)] text-[#4C433C]/90 leading-relaxed pt-2">
+                       "Mit mål er at skabe et frirum, hvor du slapper helt af, og forlader stolen med følelsen af at være den absolut bedste udgave af dig selv."
+                    </p>
+                 </div>
+              </motion.div>
+           </div>
+        </section>
+
+        {/* FAQ Section */}
+        <FAQAccordion />
+
+        {/* Booking CTA Background Parallax (Using 66.png layout) */}
+        <section id="kontakt" className="relative py-[clamp(8rem,15vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden flex items-center justify-center">
+           {/* Background Image and Overlay */}
+           <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
+             <Image src="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?q=80&w=2070&auto=format&fit=crop" fill alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45]" />
+             {/* Whitish tint matching hero video (slightly reduced for footer image) */}
+             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 backdrop-blur-sm pointer-events-none z-10"></div>
+             {/* Top fade gradient for a smooth transition from previous section */}
+             <div className="absolute top-0 left-0 w-full h-[clamp(150px,25vw,300px)] bg-gradient-to-b from-[#FDFBF7] via-[#FDFBF7]/80 to-transparent pointer-events-none z-20"></div>
+           </div>
+
+           <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-10%" }}
+              transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+              style={hardwareAccelerated}
+              className="relative z-10 max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[90px] rounded-bl-[90px]"
+           >
+              <h2 className="font-headline font-light text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
+                Book din tid i dag og lad <em className="italic font-light">vores fantastiske salon</em> være dit <em className="italic font-light">frirum</em> for fornyelse.
+              </h2>
+              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2rem,3.5vw,3rem)] py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
+                Book en aftale
+              </a>
+           </motion.div>
+
+           {/* Bottom Curve for Footer (Opposite to Hero = U-shape dip) */}
+           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
+             <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
+               <path className="text-[#FDFBF7]" d="M0,100 L0,0 C480,80 960,80 1440,0 L1440,100 Z" />
+             </svg>
+           </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className="w-full bg-[#FDFBF7] text-[#4C433C]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,10vw,8rem)] max-w-[1920px] mx-auto">
+          <div className="md:col-span-1">
+            <div className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif mb-[clamp(1rem,2vw,1.5rem)] italic tracking-tight leading-none text-[#1c1a18]">Studio 24</div>
+            <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
+              Designet til at skabe kunst. Et sted hvor teknisk mesterskab møder den seneste vision inden for hår.
+            </p>
+          </div>
+          <div>
+            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Udforsk</h5>
+            <ul className="space-y-[clamp(0.75rem,1.5vw,1rem)]">
+              {['Min Historie', 'Ydelser', 'Galleri', 'Kontakt'].map(item => (
+                <li key={item}><a className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide hover:text-[#EAD5C5] hover:tracking-[0.05em] transition-all duration-300 inline-block font-light" href={`#${item.toLowerCase().replace(' ', '-')}`}>{item}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Information</h5>
+            <ul className="space-y-[clamp(0.75rem,1.5vw,1rem)]">
+              {['Privatlivspolitik', 'Vilkår for Service', 'Bæredygtighed', 'Karriere'].map(item => (
+                <li key={item}><a className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide hover:text-[#EAD5C5] hover:tracking-[0.05em] transition-all duration-300 inline-block font-light" href="/">{item}</a></li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
+            <div className="flex gap-[clamp(1.5rem,3vw,2.5rem)] items-center">
+                <a className="flex items-center justify-center hover:scale-[1.15] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
+                  <Image src="/images/fb.png" alt="Facebook" width={40} height={40} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a className="flex items-center justify-center hover:scale-[1.15] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
+                  <Image src="/images/ig.png" alt="Instagram" width={40} height={40} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+                </a>
+            </div>
+          </div>
+        </div>
+        <div className="px-[clamp(1.5rem,5vw,4rem)] py-[clamp(1.5rem,3vw,2rem)] border-t border-[#4C433C]/10 text-center">
+          <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] tracking-[0.2em] font-label uppercase">
+            © 2024 Studio 24. Designet til hårets kunst.
+          </p>
+        </div>
+      </footer>
+    </>
+  );
+}

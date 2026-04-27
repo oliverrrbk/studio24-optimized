@@ -1,0 +1,78 @@
+diff --git a/app/page.tsx b/app/page.tsx
+--- a/app/page.tsx
++++ b/app/page.tsx
+@@ -263,14 +263,22 @@
+                 </div>
+ 
+                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
+-                <div className="absolute bottom-[-8%] left-[2%] md:bottom-[-2%] md:left-[12%] z-30 w-[clamp(7.5rem,15vw,11.5rem)] h-[clamp(9rem,18vw,14rem)] flex items-center justify-center translate-y-3">
+-                  <svg viewBox="0 0 100 120" className="w-full h-full text-[#7A6F68] drop-shadow-sm overflow-visible">
+-                    <path
+-                      d="M 85.00 60.00 Q 90.90 77.92 78.32 89.39 Q 75.27 106.92 60.82 107.55 Q 50.00 118.00 39.18 107.55 Q 24.73 106.92 21.68 89.39 Q 9.10 77.92 15.00 60.00 Q 9.10 42.08 21.68 30.61 Q 24.73 13.08 39.18 12.45 Q 50.00 2.00 60.82 12.45 Q 75.27 13.08 78.32 30.61 Q 90.90 42.08 85.00 60.00"
++                <div className="absolute bottom-[-16%] left-[-12%] md:bottom-[-10%] md:left-[-4%] z-30 w-[clamp(11.5rem,24vw,17rem)] h-[clamp(11.5rem,24vw,17rem)] flex items-center justify-center translate-y-3">
++                  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[#7A6F68] drop-shadow-sm overflow-visible">
++                    <style>{`
++                      @keyframes orbit-dash {
++                        to { stroke-dashoffset: -200; }
++                      }
++                    `}</style>
++                    <circle
++                      cx="50"
++                      cy="50"
++                      r="45"
+                       fill="none"
+                       stroke="currentColor"
+                       strokeWidth="1.5"
+-                      strokeDasharray="4 4"
++                      strokeDasharray="6 6"
++                      style={{ animation: 'orbit-dash 60s linear infinite' }}
+                     />
+                   </svg>
+                 </div>
+@@ -336,14 +344,14 @@
+           <ContainerScroll className="container mx-auto h-[120vh] mt-[-15vh]">
+             <div className="sticky left-0 top-0 h-svh w-full py-12 flex justify-center items-center">
+               
+-              {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
++              {/* Amorphous Pulsating Hues matched to the Rose-Beige primary base (#EAD5C5) */}
+               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+-                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EDB7A9]/20 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
+-                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EDB7A9]/15 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
++                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EAD5C5]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
++                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EAD5C5]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
+               </div>
+               <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+-                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EDB7A9]/15 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
+-                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EDB7A9]/20 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
++                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EAD5C5]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
++                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EAD5C5]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
+               </div>
+ 
+               {/* Six Floating Background Images (Left and Right) */}
+@@ -531,7 +539,7 @@
+         </section>
+ 
+         {/* Eksperter / Stifter (Founder) */}
+-        <section id="galleri" className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] z-10">
++        <section id="galleri" className="relative pt-[clamp(6rem,12vw,10rem)] pb-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] z-10">
+            <div className="max-w-[1400px] mx-auto grid md:grid-cols-2 gap-[clamp(5rem,10vw,8rem)] items-center mb-[clamp(6rem,12vw,10rem)] pt-[clamp(2rem,4vw,4rem)]">
+               {/* Left Image Composition */}
+               <motion.div 
+@@ -653,12 +661,12 @@
+           </div>
+           <div>
+             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
+-            <div className="flex gap-[clamp(1.5rem,3vw,2.5rem)] items-center">
+-                <a className="flex items-center justify-center hover:scale-[1.15] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
+-                  <Image src="/images/fb.png" alt="Facebook" width={40} height={40} className="opacity-70 group-hover:opacity-100 transition-opacity" />
++            <div className="flex gap-[clamp(0.5rem,1.5vw,1rem)] items-center">
++                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
++                  <Image src="/images/fb.png?v=new" alt="Facebook" width={64} height={64} unoptimized className="opacity-70 group-hover:opacity-100 transition-opacity mix-blend-darken" />
+                 </a>
+-                <a className="flex items-center justify-center hover:scale-[1.15] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
+-                  <Image src="/images/ig.png" alt="Instagram" width={40} height={40} className="opacity-70 group-hover:opacity-100 transition-opacity" />
++                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="/">
++                  <Image src="/images/ig.png?v=new" alt="Instagram" width={64} height={64} unoptimized className="opacity-70 group-hover:opacity-100 transition-opacity mix-blend-darken" />
+                 </a>
+             </div>
+           </div>

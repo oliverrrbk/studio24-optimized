@@ -1,0 +1,20 @@
+@@ -336,14 +344,14 @@
+           <ContainerScroll className="container mx-auto h-[120vh] mt-[-15vh]">
+             <div className="sticky left-0 top-0 h-svh w-full py-12 flex justify-center items-center">
+               
+-              {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
++              {/* Amorphous Pulsating Hues matched to the Rose-Beige primary base (#EAD5C5) */}
+               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+-                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EDB7A9]/20 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
+-                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EDB7A9]/15 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
++                 <div className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EAD5C5]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
++                 <div className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EAD5C5]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
+               </div>
+               <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
+-                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EDB7A9]/15 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
+-                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EDB7A9]/20 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
++                 <div className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[#EAD5C5]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
++                 <div className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[#EAD5C5]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
+               </div>
+ 
+               {/* Six Floating Background Images (Left and Right) */}
