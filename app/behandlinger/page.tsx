@@ -344,9 +344,9 @@ export default function BehandlingerPage() {
             
             <div className="mt-[clamp(3.2rem,4.8vw,4.8rem)] 2xl:mt-[clamp(4rem,6vw,6rem)] text-center">
               <p className="font-headline italic text-[#92857C] text-[clamp(0.68rem,0.88vw,0.8rem)] 2xl:text-[clamp(0.85rem,1.1vw,1rem)] mb-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]">Alle priser er vejledende og afhænger af hårets tykkelse og længde.</p>
-              <button className="border border-[#4C433C]/20 text-[#4C433C] px-[clamp(2rem,3.2vw,2.8rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.7rem,1.2vw,0.9rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] rounded-full font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.2em] font-bold hover:bg-[#4C433C] hover:text-[#FDFBF7] hover:border-[#4C433C] hover:shadow-[0_15px_40px_rgba(76,67,60,0.2)] hover:-translate-y-1 active:scale-95 transition-all duration-400">
+              <Link href="?booking=true" scroll={false} className="inline-block border border-[#4C433C]/20 text-[#4C433C] px-[clamp(2rem,3.2vw,2.8rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.7rem,1.2vw,0.9rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] rounded-full font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.2em] font-bold hover:bg-[#4C433C] hover:text-[#FDFBF7] hover:border-[#4C433C] hover:shadow-[0_15px_40px_rgba(76,67,60,0.2)] hover:-translate-y-1 active:scale-95 transition-all duration-400">
                 Se fuld prisliste &amp; book tid
-              </button>
+              </Link>
             </div>
           </motion.div>
         </section>
@@ -404,10 +404,10 @@ export default function BehandlingerPage() {
                 Vores balayage-teknik er funderet i frihåndsmaling, hvor vi arbejder med hårets naturlige fald. Vi skaber sømløse overgange, der eliminerer skarpe udvoksninger og sikrer et blend, der kun bliver smukkere med tiden. Det er ikke bare en farvning; det er lys-design skræddersyet til dig.
               </p>
               <div className="pt-2">
-                <button className="group flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300">
-                  Læs mere om teknikken
+                <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#EDB7A9] transition-colors duration-300 group">
+                  Se hvornår jeg har tid
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="font-light group-hover:translate-x-3 transition-transform duration-500 ease-out"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-                </button>
+                </Link>
               </div>
             </motion.div>
           </div>

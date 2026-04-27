@@ -32,14 +32,14 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
   const mobileTextColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,1)", "rgba(237,183,169,1)", "rgba(76,67,60,1)"]);
 
   return (
-    <motion.div style={hardwareAccelerated} 
-      key={idx}
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-20%" }}
-      transition={{ duration: 1, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col items-center text-center group cursor-pointer w-full"
-    >
+    <Link href="?booking=true" scroll={false} className="w-full block">
+      <motion.div style={hardwareAccelerated} 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-20%" }}
+        transition={{ duration: 1, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+        className="flex flex-col items-center text-center group cursor-pointer w-full"
+      >
       <div
         ref={ref}
         className="w-full flex flex-col items-center"
@@ -64,7 +64,8 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
         </motion.h4>
         <p className="font-body text-[#6A5D55] font-light leading-relaxed max-w-[280px]">{ydelse.desc}</p>
       </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 }
 
@@ -81,10 +82,10 @@ function ScrollStatsGrid({ isMobile }: any) {
   return (
     <div ref={ref} className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-0 md:divide-x divide-[#4C433C]/10 text-center lg:max-w-[900px] 2xl:max-w-none mx-auto">
       {[
-        { num: "24", label: "Års erfaring" },
-        { num: "01", label: "Premium salon" },
-        { num: "1.8k", label: "Glade kunder" },
-        { num: "45", label: "Prisvindende looks" }
+        { num: "10+", label: "Års erfaring" },
+        { num: "4½", label: "Års uddannelse" },
+        { num: "50+", label: "5★ anmeldelser" },
+        { num: "01", label: "Prisvindende salon" }
       ].map((stat, idx) => (
         <ScrollStatItem key={idx} stat={stat} idx={idx} isMobile={isMobile} mobileScale={mobileScale} mobileColor={mobileColor} />
       ))}
@@ -445,18 +446,18 @@ export default function Page() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5.5vw,5rem)] 2xl:text-[clamp(2.5rem,6.5vw,5.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-6"
+              className="font-headline font-light text-[clamp(2.5rem,5.5vw,5rem)] 2xl:text-[clamp(2.5rem,6.5vw,5.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
             >
-              Find din <span className="italic font-light">indre</span><br/>
-              <span className="italic font-light">skønhed</span> og glød
+              Dit hår fortjener<br/>
+              <span className="italic font-light">en dygtig frisør</span>
             </motion.h1>
             <motion.p style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] 2xl:text-[clamp(1rem,1.25vw,1.125rem)] max-w-2xl mx-auto mb-[clamp(2.25rem,3.5vw,3rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] font-light leading-relaxed drop-shadow-sm"
+              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] 2xl:text-[clamp(1rem,1.25vw,1.125rem)] max-w-2xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
-              Fra skræddersyede klipninger til smukke balayage-behandlinger. Vores dygtige stylister er dedikeret til at give dig en luksuriøs salonoplevelse.
+              Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
             </motion.p>
             <motion.div style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 20 }}
@@ -464,9 +465,9 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <button className="bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] 2xl:text-[clamp(0.875rem,1vw,1rem)] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
-                Se behandlinger
-              </button>
+              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] 2xl:text-[clamp(0.875rem,1vw,1rem)] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
+                Udforsk ydelser
+              </Link>
             </motion.div>
           </div>
 
@@ -504,8 +505,8 @@ export default function Page() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
             >
-              <em className="italic font-light">Vores salon</em> <strong className="font-medium">er et frirum, hvor</strong><br/>
-              <strong className="font-medium">afslapning</strong> <em className="italic font-light">møder fornyelse.</em>
+              <em className="italic font-light">Ingen ubehagelige overraskelser.</em><br/>
+              <strong className="font-medium">Bare det resultat,</strong> <em className="italic font-light">vi aftalte.</em>
             </motion.h2>
 
             <motion.p
@@ -515,7 +516,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="mt-[clamp(1.5rem,3vw,2.5rem)] max-w-3xl font-body text-[#6A5D55] text-[clamp(0.875rem,1.2vw,1.125rem)] text-center leading-relaxed px-4"
             >
-              Slap af med vores udsøgte udvalg af salonbehandlinger skabt til at forkæle dig fra top til tå. Fra afslappende hovedbundsmassage og velgørende kure til luksuriøse stylingoplevelser - vores erfarne team er dedikeret til at skabe en personlig oplevelse skræddersyet til dine unikke behov.
+              Jeg oplever desværre ofte nye kunder, der kommer ind med fuldstændig smadret hår fra et tidligere frisørbesøg. Det sker næsten altid, fordi der mangler basal kommunikation. Derfor gennemgår vi altid alt i fællesskab her. Jeg kigger på dine referencebilleder og sikrer mig, at jeg forstår din vision, inden jeg rører saksen.
             </motion.p>
 
             <div className="grid md:grid-cols-[1.3fr_1fr] lg:grid-cols-[1fr_1fr] 2xl:grid-cols-[1.3fr_1fr] gap-[clamp(4rem,8vw,10rem)] lg:gap-12 2xl:gap-[clamp(4rem,8vw,10rem)] mt-[clamp(2.5rem,4vw,4rem)] w-full items-start px-4 md:px-0 lg:translate-x-0 transition-transform">
@@ -530,15 +531,15 @@ export default function Page() {
               >
                 {/* Floating Title (Absolute to overlap left edge on Desktop) */}
                 <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block transition-all duration-300">
-                  <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap drop-shadow-sm">
-                    <strong className="font-medium">Forkæl dig selv med</strong><br/>
-                    <em className="italic font-light">skønheden</em> <strong className="font-medium">i vores salon</strong>
+                  <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
+                    <strong className="font-medium">Ægte faglighed.</strong><br/>
+                    <em className="italic font-light">Ingen smarte salgstaler.</em>
                   </h3>
                 </div>
                 {/* For mobile & small tablets, show natural flowing title */}
-                <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#4C433C] mb-6 block lg:hidden text-center md:text-left">
-                  <strong className="font-medium">Forkæl dig selv med</strong><br/>
-                  <em className="italic font-light">skønheden</em> <strong className="font-medium">i vores salon</strong>
+                <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#4C433C] mb-6 block lg:hidden text-center md:text-left [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
+                  <strong className="font-medium">Ægte faglighed.</strong><br/>
+                  <em className="italic font-light">Ingen smarte salgstaler.</em>
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group transition-all duration-300">
@@ -573,24 +574,24 @@ export default function Page() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-                className="flex flex-col justify-center h-full max-w-[450px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
+                className="flex flex-col justify-center h-full max-w-[550px] mx-auto lg:mx-auto 2xl:ml-auto 2xl:mr-0 pt-[clamp(2rem,8vw,10rem)]"
               >
-                 <div className="w-full aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
+                 <div className="w-full md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden relative shadow-[0_20px_50px_rgba(0,0,0,0.05)] mb-[clamp(2rem,4vw,3rem)] group">
                     <Image src="/images/salon_relaxing_natural_everyday.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105" />
                  </div>
                  
-                 <h4 className="font-headline font-medium text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left">
-                   Her kan du slappe af <br/>og undslippe hverdagens stress.
+                 <h4 className="font-headline font-medium text-[clamp(1.5rem,2.2vw,2.3rem)] 2xl:text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left md:w-[115%]">
+                   Glem alt om det travle og <br/>upersonlige samlebåndsarbejde.
                  </h4>
                  
                  <p className="mt-[clamp(1rem,2vw,1.5rem)] font-body text-[clamp(0.875rem,1.1vw,1rem)] text-[#6A5D55] leading-relaxed text-center md:text-left">
-                   Slap af med vores udsøgte udvalg af behandlinger designet til at forkæle dig. Fra afslappende hovedbundsmassage til luksuriøse frisurer, er vores dygtige team dedikeret til en personlig oplevelse skræddersyet til dine unikke behov.
+                   Jeg har tidligere arbejdet i store saloner, hvor jeg følte mig som en maskine ved et samlebånd. Det nægtede jeg fuldstændig at fortsætte med. Min salon er skabt som et direkte modsvar, bygget på god tid og fuld respekt for dit hår. Ingen lappeløsninger hos mig.
                  </p>
                  
                  <div className="mt-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full">
-                   <button className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
-                     Find din tid
-                   </button>
+                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
+                     Find en tid
+                   </Link>
                  </div>
               </motion.div>
             </div>
@@ -613,7 +614,7 @@ export default function Page() {
                   transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                   className="text-center font-headline font-light text-[clamp(2rem,3vw,3rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight mb-4"
                 >
-                  Se hvad <em className="italic font-light">vores kunder siger</em>
+                  Det mener dem <em className="italic font-light">der sidder her</em>
                 </motion.h3>
                 <motion.p style={hardwareAccelerated} 
                   initial={{ opacity: 0, y: 20 }}
@@ -622,7 +623,7 @@ export default function Page() {
                   transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
                   className="mx-auto max-w-lg text-center text-[#6A5D55] font-body font-light text-[clamp(0.9rem,1.2vw,1rem)] 2xl:text-[clamp(1rem,1.5vw,1.125rem)]"
                 >
-                  Vi er dedikeret til at skabe uforglemmelige oplevelser, skræddersyet til dig.
+                  Jeg kan sige meget, men mine kunders oplevelser ude fra hverdagen vejer altid tungest.
                 </motion.p>
               </div>
               
@@ -756,7 +757,7 @@ export default function Page() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-center font-headline font-light text-[clamp(2.5rem,4vw,4.5rem)] leading-[1.05] tracking-tight mb-[clamp(2rem,4vw,3.5rem)]"
             >
-              Eksklusivt udvalg af <br/><em className="italic font-light">frisøroplevelser</em>
+              Mine kernekompetencer
             </motion.h2>
 
             <div 
@@ -765,10 +766,10 @@ export default function Page() {
               onMouseLeave={() => setIsHoveringServices(false)}
             >
               {[
-                { title: "Balayage Værk", desc: "Solkysset og naturlig farveovergang, håndmalet specielt til dine træk.", icon: Paintbrush },
-                { title: "Klip og Styling", desc: "Perfektion i hvert snit. Vi former håret for at komplementere dit ansigt.", icon: Scissors },
-                { title: "Hovedbundskur", desc: "Dybdegående og genopbyggende behandling for fundamentet af et sundt hår.", icon: Sparkles },
-                { title: "Bespoke Extensions", desc: "Fyldigt, langt og luksuriøst hår med premium kvalitetsextensions.", icon: User }
+                { title: "Balayage", desc: "Skånsomme farveovergange der giver et naturligt look og kræver mindre vedligehold.", icon: Paintbrush },
+                { title: "Klip og styling", desc: "En klipning tilpasset dit ansigt så frisuren også fungerer for dig derhjemme.", icon: Scissors },
+                { title: "Farve og striber", desc: "En grundig farvekonsultation sikrer at vi rammer den rette nuance uden at ødelægge håret.", icon: Sparkles },
+                { title: "Professionelle extensions", desc: "Få længde og fylde på en sikker måde. Jeg bærer dem selv dagligt.", icon: User }
               ].map((ydelse, idx) => {
                 const IconComponent = ydelse.icon;
                 const isActive = activeServices.includes(idx);
@@ -793,10 +794,10 @@ export default function Page() {
              <div className="grid md:grid-cols-2 gap-[clamp(4rem,10vw,12rem)] items-center mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto">
                 <div className="max-w-md ml-auto text-center md:text-right space-y-[clamp(1.5rem,3vw,2rem)] order-2 md:order-1 pt-8 md:pt-0">
                   <h3 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight">
-                    Løft dit <em className="italic font-light">velvære</em> med varig <em className="italic font-light">kvalitet</em>
+                    Fra dygtig lærling til <em className="italic font-light">fuldt uafhængig</em> <em className="italic font-light">salonejer</em>
                   </h3>
                   <p className="font-body text-[#6A5D55] font-light text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed">
-                    Vores dedikation til håndværket, parret med luksuriøse produkter, sikrer at du altid forlader os med følelsen af ægte velvære og perfektion.
+                    Med en lang uddannelse i bagagen kender jeg teorien til bunds. Men det er min erfaring på gulvet der gør den store forskel for dit endelige resultat, når du forlader stolen.
                   </p>
                 </div>
                 <motion.div style={hardwareAccelerated} 
@@ -853,20 +854,20 @@ export default function Page() {
               >
                  <div className="flex items-center gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60">
                     <div className="h-[1px] w-[clamp(2rem,4vw,3rem)] bg-[#4C433C]"></div>
-                    <span className="font-label uppercase tracking-[0.25em] text-[clamp(0.7rem,1vw,0.85rem)] font-bold">Stifter & Salonejer</span>
+                    <span className="font-label uppercase tracking-[0.25em] text-[clamp(0.7rem,1vw,0.85rem)] font-bold">Din personlige frisør</span>
                  </div>
                  
                  <h2 className="font-headline font-light text-[clamp(2rem,3.5vw,3.5rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)]">
-                   Lidenskaben bag <br/><em className="italic font-light">hvert eneste snit</em>
+                   Ærlig og nede<br/><em className="italic font-light">på jorden</em>
                  </h2>
                  
                  <p className="font-body text-[#6A5D55] font-light text-[clamp(1rem,1.35vw,1.18rem)] 2xl:text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)]">
-                    Med kompromisløs dedikation til håndværket og en dyb forståelse for din unikke skønhed, har jeg skabt Studio 24. For mig er håret ikke bare en frisure; det er din identitet og personlige kunst.
+                    For mig er tryghed at vide præcis hvad du går ind til. Du får absolut ingen urealistiske løfter her. Du får til gengæld en erfaren fagperson, der passer utroligt godt på dit eget naturlige hår under behandlingen.
                  </p>
                  
                  <div className="relative pl-[clamp(1.5rem,3vw,2rem)] border-l-2 border-[#EAD5C5]">
                     <p className="font-headline italic text-[clamp(1.15rem,1.35vw,1.35rem)] 2xl:text-[clamp(1.25rem,1.5vw,1.5rem)] text-[#4C433C]/90 leading-relaxed pt-2 relative z-10">
-                       &quot;Mit mål er at skabe et frirum, hvor du slapper helt af, og forlader stolen med følelsen af at være den absolut bedste udgave af dig selv.&quot;
+                       &quot;Jeg har altid hadet den der snobbede kultur, hvor man næsten ikke tør sige noget, når man sidder i frisørstolen. Min salon er skabt som det direkte modsvar. Den er elegant, ja – men den er først og fremmest jordnær.&quot;
                     </p>
                     <Quote className="absolute bottom-[-20%] right-[-5%] w-[clamp(4.5rem,6vw,6rem)] h-[clamp(4.5rem,6vw,6rem)] 2xl:w-[clamp(5rem,8vw,7rem)] 2xl:h-[clamp(5rem,8vw,7rem)] text-[#EAD5C5] opacity-25 stroke-[1] rotate-12 z-0" />
                  </div>
@@ -901,10 +902,10 @@ export default function Page() {
               className="relative z-10 mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[70px] rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
            >
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
-                Book din tid i dag og lad <em className="italic font-light">vores fantastiske salon</em> være dit <em className="italic font-light">frirum</em> for fornyelse.
+                Lyder det som noget for dig? <em className="italic font-light">Book en tid</em> hos os, så tager vi <em className="italic font-light">en snak</em> om dit hår.
               </h2>
               <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
-                Book en aftale
+                Book en tid nu
               </a>
            </motion.div>
 
@@ -923,7 +924,7 @@ export default function Page() {
           <div className="max-w-[320px]">
             <div className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif mb-[clamp(1rem,2vw,1.5rem)] italic tracking-tight leading-none text-[#1c1a18]">Studio 24</div>
             <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
-              Designet til at skabe kunst. Et sted hvor teknisk mesterskab møder den seneste vision inden for hår.
+              Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør der forstår dig.
             </p>
           </div>
           <div className="flex flex-col">

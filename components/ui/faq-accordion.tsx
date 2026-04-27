@@ -48,16 +48,16 @@ const FAQItem = ({ question, answer }: FAQItemProps) => {
 export const FAQAccordion = () => {
   const faqs = [
     {
-      question: "Hvordan forbereder jeg mig til en balayage-behandling?",
-      answer: "Vi anbefaler, at du ankommer med rent, tørt hår. Undgå at bruge tunge stylingprodukter eller farvespray 24 timer før din aftale, så vi kan opnå det bedste resultat."
+      question: "Skal jeg vide præcis hvad jeg vil have, inden jeg sætter mig i stolen?",
+      answer: "Overhovedet ikke. Rigtig mange er i tvivl, og det er præcis derfor, jeg altid afsætter tid til en grundig snak først. Vi kigger på billeder og finder sammen frem til den løsning, der passer til dig og dit hår."
     },
     {
-      question: "Hvad er levetiden for jeres skræddersyede extensions?",
-      answer: "Med korrekt vedligeholdelse derhjemme og professionel pleje her i salonen hver 6-8. uge, kan vores premium extensions holde mellem 6 og 12 måneder."
+      question: "Jeg har hørt at extensions ødelægger ens eget hår – passer det?",
+      answer: "Nej, det er en myte. Det er ikke skadeligt, så længe de sættes korrekt i, og du overholder din oprykning. Jeg har selv haft extensions i over 10 år, så jeg ved præcis, hvordan det føles, og hvordan det skal plejes."
     },
     {
-      question: "Tilbyder i brudestyling og opsætning?",
-      answer: "Ja, vi specialiserer os i eksklusiv og tidløs brudestyling. Kontakt os venligst direkte for at høre mere om vores særlige bryllupspakker."
+      question: "Jeg har tidligere fået ødelagt mit hår. Hvad gør vi?",
+      answer: "Det ser jeg desværre ret ofte. Inden vi gør noget som helst, kigger jeg grundigt på dit hårs tilstand. Hvis en behandling er en dårlig idé eller vil skade dit hår yderligere, pakker jeg det ikke ind – så siger jeg ærligt fra. Dit hårs sundhed kommer altid først."
     }
   ];
 
