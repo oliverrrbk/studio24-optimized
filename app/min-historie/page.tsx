@@ -472,7 +472,7 @@ export default function MinHistoriePage() {
             </motion.p>
             <motion.div style={hardwareAccelerated} variants={fadeInUp}>
               <Link 
-                className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.8rem,3vw,2.7rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.9rem,1.3vw,1.1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.6rem,0.9vw,0.7rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out"
+                className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.8rem,3vw,2.7rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.9rem,1.3vw,1.1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.6rem,0.9vw,0.7rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out"
                 href="?booking=true"
                 scroll={false}
               >
@@ -586,7 +586,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
       <div ref={ref} className="w-full flex flex-col items-center">
         <motion.div 
           style={isMobile ? { backgroundColor: mobileBg, y: mobileTranslateY, scale: mobileScale, boxShadow: mobileShadow } : undefined}
-          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition-[transform,background-color,color,box-shadow] duration-700 ease-in-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#EDB7A9] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
+          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#EDB7A9] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
         >
           <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#EDB7A9] transition-colors duration-500" : ""}>
             <IconComponent className="w-6 h-6" strokeWidth={1.5} />

@@ -461,7 +461,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out">
+              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
                 Udforsk ydelser
               </Link>
             </motion.div>
@@ -593,7 +593,7 @@ export default function Page() {
                  </p>
                  
                  <div className="mt-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full">
-                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out">
+                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
                      Find en tid
                    </Link>
                  </div>
@@ -906,7 +906,7 @@ export default function Page() {
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
               </h2>
-              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out">
+              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
                 Book en tid nu
               </a>
            </motion.div>
