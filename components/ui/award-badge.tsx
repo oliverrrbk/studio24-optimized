@@ -14,8 +14,8 @@ const identityMatrix =
   "0, 0, 1, 0, " +
   "0, 0, 0, 1";
 
-const maxRotate = 0.06;
-const minRotate = -0.06;
+const maxRotate = 0.03;
+const minRotate = -0.03;
 const maxScale = 1;
 const minScale = 0.98;
 
@@ -205,7 +205,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
         style={{
           transform: `perspective(700px) matrix3d(${matrix})`,
           transformOrigin: "center center",
-          transition: "transform 350ms cubic-bezier(0.16, 1, 0.3, 1)"
+          transition: "transform 700ms ease-out"
         }}
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 54" className="w-180px sm:w-260px h-auto">

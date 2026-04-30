@@ -96,7 +96,7 @@ function BookingModalInner() {
                   href="https://studio24-23056.planway.com/?fbclid=PAZXh0bgNhZW0CMTEAAabSSGkkKcugKZtVPz7PPvpalHT7XXpy_mXSoNzi8uBOwSFihIBcJT7VKyk_aem_9lVuJdIYwEp78fYfyZYV4g" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] relative z-20"
+                  className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out relative z-20"
                 >
                   Gå til booking
                 </a>

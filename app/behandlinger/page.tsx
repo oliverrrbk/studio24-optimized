@@ -176,18 +176,18 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
       viewport={{ once: true, margin: "-20%" }}
       transition={{ duration: 0.8, delay: delay, ease: [0.16, 1, 0.3, 1] }}
       style={{ ...hardwareAccelerated, ...(isMobile ? { boxShadow: mobileShadow } : {}) }}
-      className={`bg-white/90 p-[clamp(2rem,3.2vw,2.4rem)] 2xl:p-[clamp(2.5rem,4vw,3rem)] rounded-[16px] 2xl:rounded-[20px] shadow-[0_15px_40px_rgba(28,26,24,0.03)] border border-white transition-[box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group cursor-pointer flex flex-col ${!isMobile ? 'hover:shadow-[0_20px_50px_rgba(28,26,24,0.06)]' : ''}`}
+      className={`bg-white/90 p-[clamp(2rem,3.2vw,2.4rem)] 2xl:p-[clamp(2.5rem,4vw,3rem)] rounded-[16px] 2xl:rounded-[20px] shadow-[0_15px_40px_rgba(28,26,24,0.03)] border border-white transition-[box-shadow] duration-700 ease-in-out group cursor-pointer flex flex-col ${!isMobile ? 'hover:shadow-[0_20px_50px_rgba(28,26,24,0.06)]' : ''}`}
     >
       <motion.div 
         style={{ ...hardwareAccelerated, ...(isMobile ? { y: iconTranslateY, scale: iconScale } : {}) }}
-        className={`mb-5 2xl:mb-6 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] text-[#EDB7A9] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
+        className={`mb-5 2xl:mb-6 transition-transform duration-700 ease-in-out text-[#EDB7A9] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
       >
         {Icon}
       </motion.div>
       
       <motion.div 
         style={{ ...hardwareAccelerated, ...(isMobile ? { y: contentTranslateY, scale: contentScale } : {}) }}
-        className={`relative transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full flex flex-col items-start ${!isMobile ? 'group-hover:-translate-y-1 group-hover:scale-[1.02]' : ''}`}
+        className={`relative transition-transform duration-700 ease-in-out w-full flex flex-col items-start ${!isMobile ? 'group-hover:-translate-y-1 group-hover:scale-[1.02]' : ''}`}
       >
         <motion.div 
           style={{ ...hardwareAccelerated, ...(isMobile ? { opacity: normalOpacity } : {}) }}
@@ -380,7 +380,7 @@ export default function BehandlingerPage() {
             
             <div className="mt-[clamp(3.2rem,4.8vw,4.8rem)] 2xl:mt-[clamp(4rem,6vw,6rem)] text-center">
               <p className="font-headline italic text-[#92857C] text-[clamp(0.68rem,0.88vw,0.8rem)] 2xl:text-[clamp(0.85rem,1.1vw,1rem)] mb-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)]">Den præcise pris fastsættes altid ud fra den specifikke teknik, vi i fællesskab beslutter os for.</p>
-              <Link href="?booking=true" scroll={false} className="inline-block border border-[#4C433C]/20 text-[#4C433C] px-[clamp(2rem,3.2vw,2.8rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.7rem,1.2vw,0.9rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] rounded-full font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.2em] font-bold hover:bg-[#4C433C] hover:text-[#FDFBF7] hover:border-[#4C433C] hover:shadow-[0_15px_40px_rgba(76,67,60,0.2)] hover:-translate-y-1 active:scale-95 transition-[transform,background-color,color,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+              <Link href="?booking=true" scroll={false} className="inline-block border border-[#4C433C]/20 text-[#4C433C] px-[clamp(2rem,3.2vw,2.8rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.7rem,1.2vw,0.9rem)] 2xl:py-[clamp(0.875rem,1.5vw,1.125rem)] rounded-full font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.2em] font-bold hover:bg-[#4C433C] hover:text-[#FDFBF7] hover:border-[#4C433C] hover:shadow-[0_15px_40px_rgba(76,67,60,0.2)] hover:-translate-y-1 active:scale-95 transition-[transform,background-color,color,border-color,box-shadow] duration-700 ease-in-out">
                 Se fuld prisliste &amp; book tid
               </Link>
             </div>
@@ -564,7 +564,7 @@ export default function BehandlingerPage() {
                 <p className="font-sans text-[#6A5D55] font-light text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] leading-relaxed mb-[clamp(2rem,2.8vw,2.4rem)] 2xl:mb-[clamp(2.5rem,3.5vw,3rem)]">
                   Når du sætter dig i stolen hos mig, skal skuldrene helt ned. Vi starter med at tale helt åbent om dine forventninger – og hvis du beder om noget, jeg af faglige årsager ikke mener gavner dit hår, så siger jeg det direkte til dig. Det handler om ren og skær tillid, en god kop kaffe i hånden og ordentlig tid til håndværket.
                 </p>
-                <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-700 ease-in-out">
                   Book en behandling
                 </Link>
               </motion.div>
@@ -617,12 +617,12 @@ export default function BehandlingerPage() {
           <div className="flex flex-col">
             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
             <div className="flex gap-[clamp(0.5rem,1.5vw,1rem)] items-center">
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-700 ease-in-out group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <svg className="w-[clamp(2.5rem,4vw,3rem)] h-[clamp(2.5rem,4vw,3rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-3px]" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
                   </svg>
                 </a>
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-700 ease-in-out group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <svg className="w-[clamp(2.75rem,4.5vw,3.5rem)] h-[clamp(2.75rem,4.5vw,3.5rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-2px]" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                   </svg>

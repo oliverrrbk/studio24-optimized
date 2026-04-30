@@ -378,11 +378,11 @@ export default function MinHistoriePage() {
                 transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
                 className="flex flex-col items-center group cursor-default"
               >
-                <div className="bg-[#FAF8F5] group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] p-5 rounded-full mb-[clamp(1.3rem,1.8vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] group-hover:text-[#EDB7A9] shadow-[0_4px_20px_rgba(28,26,24,0.03)] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
+                <div className="bg-[#FAF8F5] group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] transition-all duration-700 ease-in-out p-5 rounded-full mb-[clamp(1.3rem,1.8vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] group-hover:text-[#EDB7A9] shadow-[0_4px_20px_rgba(28,26,24,0.03)] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]">
                   <item.icon className="w-6 h-6 transition-colors duration-500" strokeWidth={1.5} />
                 </div>
                 
-                <div className="relative group-hover:-translate-y-2 group-hover:scale-[1.04] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] w-full flex flex-col items-center">
+                <div className="relative group-hover:-translate-y-2 group-hover:scale-[1.04] transition-all duration-700 ease-in-out w-full flex flex-col items-center">
                   <div className="opacity-100 group-hover:opacity-0 transition-opacity duration-500 ease-in-out w-full flex flex-col items-center">
                     <h4 className="font-headline text-[clamp(1.3rem,1.8vw,1.5rem)] 2xl:text-[clamp(1.5rem,2vw,1.75rem)] text-[#1c1a18] font-light mb-4 whitespace-nowrap">{item.title}</h4>
                     <p className="text-[clamp(0.9rem,1vw,1rem)] 2xl:text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light text-[#6A5D55] leading-relaxed max-w-[280px]">
@@ -435,7 +435,7 @@ export default function MinHistoriePage() {
             </span>
           </div>
           <div className="flex overflow-x-auto items-center xl:justify-center pb-12 px-[clamp(1.5rem,5vw,4rem)] gap-[clamp(1.3rem,2.5vw,2.5rem)] 2xl:gap-[clamp(1.5rem,3vw,3rem)] no-scrollbar scroll-smooth">
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
               <div className="w-full aspect-[4/5] relative">
                 <Image
                   fill
@@ -446,7 +446,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
               <div className="w-full aspect-square relative">
                 <Image
                   fill
@@ -457,7 +457,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
               <div className="w-full aspect-[4/3] relative">
                 <Image
                   fill
@@ -468,7 +468,7 @@ export default function MinHistoriePage() {
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </motion.div>
-            <motion.div variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]">
+            <motion.div variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
               <div className="w-full aspect-[3/4] relative">
                 <Image
                   fill
@@ -566,12 +566,12 @@ export default function MinHistoriePage() {
           <div className="flex flex-col">
             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
             <div className="flex gap-[clamp(0.5rem,1.5vw,1rem)] items-center">
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-700 ease-in-out group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <svg className="w-[clamp(2.5rem,4vw,3rem)] h-[clamp(2.5rem,4vw,3rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-3px]" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
                   </svg>
                 </a>
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-700 ease-in-out group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <svg className="w-[clamp(2.75rem,4.5vw,3.5rem)] h-[clamp(2.75rem,4.5vw,3.5rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-2px]" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                   </svg>
