@@ -114,10 +114,14 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const yCenter = (top + bottom) / 2;
 
     setDisableInOutOverlayAnimation(false);
-    enterTimeout.current = setTimeout(() => setDisableInOutOverlayAnimation(true), 350);
+    
+    if (enterTimeout.current) clearTimeout(enterTimeout.current);
+
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
-        setFirstOverlayPosition((Math.abs(xCenter - e.clientX) + Math.abs(yCenter - e.clientY)) / 4);
+        const width = right - left;
+        const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 35;
+        setFirstOverlayPosition(targetAngle);
       });
     });
 
@@ -136,10 +140,9 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const xCenter = (left + right) / 2;
     const yCenter = (top + bottom) / 2;
 
-    if (moveTimeout.current) {
-      clearTimeout(moveTimeout.current);
-    }
-    moveTimeout.current = setTimeout(() => setFirstOverlayPosition((Math.abs(xCenter - e.clientX) + Math.abs(yCenter - e.clientY)) / 4), 350);
+    const width = right - left;
+    const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 35;
+    setFirstOverlayPosition(targetAngle);
 
     if (isTimeoutFinished) {
       setCurrentMatrix(getMatrix(e.clientX, e.clientY));
@@ -159,8 +162,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         setDisableInOutOverlayAnimation(false);
-        leaveTimeout1.current = setTimeout(() => setFirstOverlayPosition(-firstOverlayPosition / 4), 150);
-        leaveTimeout2.current = setTimeout(() => setFirstOverlayPosition(0), 300);
+        setFirstOverlayPosition(0);
         leaveTimeout3.current = setTimeout(() => {
           setDisableOverlayAnimation(false);
           setDisableInOutOverlayAnimation(true);
@@ -236,7 +238,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation1 5s infinite",
               willChange: "auto"
             }}>
@@ -245,7 +247,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 10}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation2 5s infinite",
               willChange: "transform"
             }}>
@@ -254,7 +256,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 20}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation3 5s infinite",
               willChange: "transform"
             }}>
@@ -263,7 +265,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 30}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation4 5s infinite",
               willChange: "transform"
             }}>
@@ -272,7 +274,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 40}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation5 5s infinite",
               willChange: "transform"
             }}>
@@ -281,7 +283,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 50}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation6 5s infinite",
               willChange: "transform"
             }}>
@@ -290,7 +292,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 60}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation7 5s infinite",
               willChange: "transform"
             }}>
@@ -299,7 +301,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 70}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation8 5s infinite",
               willChange: "transform"
             }}>
@@ -308,7 +310,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 80}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation9 5s infinite",
               willChange: "transform"
             }}>
@@ -317,7 +319,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <g style={{
               transform: `rotate(${firstOverlayPosition + 90}deg)`,
               transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 500ms ease-out" : "none",
+              transition: !disableInOutOverlayAnimation ? "transform 400ms ease-out" : "none",
               animation: disableOverlayAnimation ? "none" : "overlayAnimation10 5s infinite",
               willChange: "transform"
             }}>
