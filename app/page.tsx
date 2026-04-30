@@ -8,6 +8,7 @@ import { Play, Paintbrush, Scissors, Sparkles, User, Quote, Globe, Share2, Camer
 import { CardTransformed, CardsContainer, ContainerScroll, ReviewStars } from "@/components/blocks/animated-cards-stack"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { FAQAccordion } from "@/components/ui/faq-accordion"
+import { AwardBadge } from "@/components/ui/award-badge"
 import { hardwareAccelerated } from "@/lib/utils"
 
 function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
@@ -44,9 +45,9 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
             boxShadow: mobileShadow, 
             scale: mobileScale 
           } : hardwareAccelerated}
-          className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-[2000ms] ease-out group-hover:duration-500 shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 border ${!isMobile && isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
+          className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-[background-color,border-color,transform,box-shadow] duration-[2000ms] ease-out group-hover:duration-500 shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 border ${!isMobile && isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
         >
-          <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-all duration-[2000ms] ease-out group-hover:duration-300 group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
+          <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-[color,opacity] duration-[2000ms] ease-out group-hover:duration-300 group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
              <IconComponent className={`w-[clamp(2rem,3vw,2.5rem)] h-[clamp(2rem,3vw,2.5rem)] 2xl:w-[3.5rem] 2xl:h-[3.5rem] stroke-[1]`} />
           </motion.div>
         </motion.div>
@@ -188,7 +189,7 @@ const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-[#4C433C]/20 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-[#4C433C]/30 z-[100]"
             onClick={onClose}
           />
           <motion.div
@@ -316,7 +317,7 @@ const ReviewModal = ({ review, onClose }: { review: any, onClose: () => void }) 
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="fixed inset-0 bg-[#4C433C]/20 backdrop-blur-sm z-[100]"
+            className="fixed inset-0 bg-[#4C433C]/30 z-[100]"
           />
           <motion.div
  style={hardwareAccelerated}            initial={{ opacity: 0, y: 100, scale: 0.95 }}
@@ -418,19 +419,19 @@ export default function Page() {
               playsInline
               className="absolute inset-0 w-full h-full object-cover opacity-40"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-[#EAD5C5]/10 to-white/20 backdrop-blur-sm"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-[#EAD5C5]/10 to-white/20"></div>
           </div>
 
           {/* Left Lines */}
           <div className="absolute left-[min(4vw,4rem)] top-1/2 -translate-y-1/2 hidden md:flex items-center z-20 group cursor-pointer hover:opacity-80 transition-opacity">
-            <div className="w-[90px] md:w-[120px] h-[1px] bg-[#4C433C]/40 group-hover:w-[130px] md:group-hover:w-[160px] transition-all duration-700 relative">
+            <div className="w-[90px] md:w-[120px] h-[1px] bg-[#4C433C]/40 group-hover:w-[130px] md:group-hover:w-[160px] transition-[width] duration-700 relative">
                <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#4C433C] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           </div>
 
           {/* Right Lines */}
           <div className="absolute right-[min(4vw,4rem)] top-1/2 -translate-y-1/2 hidden md:flex items-center z-20 group cursor-pointer hover:opacity-80 transition-opacity">
-            <div className="w-[90px] md:w-[120px] h-[1px] bg-[#4C433C]/40 group-hover:w-[130px] md:group-hover:w-[160px] transition-all duration-700 relative">
+            <div className="w-[90px] md:w-[120px] h-[1px] bg-[#4C433C]/40 group-hover:w-[130px] md:group-hover:w-[160px] transition-[width] duration-700 relative">
                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-[#4C433C] opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
           </div>
@@ -460,7 +461,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-300">
+              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-300">
                 Udforsk ydelser
               </Link>
             </motion.div>
@@ -525,7 +526,7 @@ export default function Page() {
                 className="relative w-full hidden md:block"
               >
                 {/* Floating Title (Absolute to overlap left edge on Desktop) */}
-                <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block transition-all duration-300">
+                <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block">
                   <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
                     <strong className="font-medium">Ægte faglighed.</strong><br/>
                     <em className="italic font-light">Kun ærligt håndværk.</em>
@@ -537,12 +538,12 @@ export default function Page() {
                   <em className="italic font-light">Kun ærligt håndværk.</em>
                 </h3>
                 
-                <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group transition-all duration-300">
+                <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
                   <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
-                <div className="absolute bottom-[-4%] left-[1%] md:bottom-[-4%] md:left-[8%] lg:left-[24%] 2xl:left-[2%] z-30 w-[clamp(6rem,12vw,10rem)] h-[clamp(6rem,12vw,10rem)] 2xl:w-[clamp(9rem,18vw,14rem)] 2xl:h-[clamp(9rem,18vw,14rem)] flex items-center justify-center opacity-70 transition-all duration-300">
+                <div className="absolute bottom-[-4%] left-[1%] md:bottom-[-4%] md:left-[8%] lg:left-[24%] 2xl:left-[2%] z-30 w-[clamp(6rem,12vw,10rem)] h-[clamp(6rem,12vw,10rem)] 2xl:w-[clamp(9rem,18vw,14rem)] 2xl:h-[clamp(9rem,18vw,14rem)] flex items-center justify-center opacity-70">
                   <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[#7A6F68] drop-shadow-sm overflow-visible">
                     <style>{`
                       @keyframes orbit-dash {
@@ -592,7 +593,7 @@ export default function Page() {
                  </p>
                  
                  <div className="mt-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full">
-                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
+                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-400">
                      Find en tid
                    </Link>
                  </div>
@@ -632,12 +633,10 @@ export default function Page() {
               
               {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] md:w-[clamp(250px,25vw,400px)] 2xl:w-[clamp(400px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
-                 <div style={hardwareAccelerated} className="absolute inset-0 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[80px] animate-[spin_15s_linear_infinite]"></div>
-                 <div style={hardwareAccelerated} className="absolute inset-[-10%] rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[100px] animate-[spin_20s_linear_infinite_reverse]"></div>
+                 <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(234,213,197,0.4) 0%, transparent 70%)'}}></div>
               </div>
               <div className="absolute top-1/2 right-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] md:w-[clamp(250px,25vw,400px)] 2xl:w-[clamp(400px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
-                 <div style={hardwareAccelerated} className="absolute inset-0 rounded-[60%_40%_30%_70%/50%_40%_50%_60%] bg-[_#EAD5C5_]/30 blur-[90px] animate-[spin_18s_linear_infinite]"></div>
-                 <div style={hardwareAccelerated} className="absolute inset-[-5%] rounded-[40%_60%_70%_30%/40%_50%_60%_50%] bg-[_#EAD5C5_]/40 blur-[110px] animate-[spin_22s_linear_infinite_reverse]"></div>
+                 <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(234,213,197,0.35) 0%, transparent 70%)'}}></div>
               </div>
 
                {/* Six Floating Background Images (Left and Right) */}
@@ -736,7 +735,7 @@ export default function Page() {
                     {[1,2,3,4,5].map((i, idx) => (
                       <Star 
                         key={i} 
-                        className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 fill-[#EDB7A9] text-[#EDB7A9] transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:scale-110" 
+                        className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 fill-[#EDB7A9] text-[#EDB7A9] transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:scale-110" 
                         style={{ transitionDelay: `${idx * 60}ms` }}
                       />
                     ))}
@@ -810,10 +809,10 @@ export default function Page() {
                   transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
                   className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
                 >
-                   <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-500 hover:scale-105">
+                   <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-[transform,box-shadow] duration-500 hover:scale-105">
                       <Image src="/images/landing_stats_1.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
-                   <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-all duration-500 hover:scale-105">
+                   <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-[transform,box-shadow] duration-500 hover:scale-105">
                       <Image src="/images/landing_stats_2.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                 </motion.div>
@@ -892,7 +891,7 @@ export default function Page() {
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
              <Image src="/images/cozy_small_salon.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
-             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 md:bg-white/[0.05] backdrop-blur-0 md:backdrop-blur-[5px] pointer-events-none z-10"></div>
+             <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 md:bg-white/30 pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}
              <div className="absolute top-0 left-0 w-full h-[clamp(150px,25vw,300px)] bg-gradient-to-b from-[#FDFBF7] via-[#FDFBF7]/80 to-transparent pointer-events-none z-20"></div>
            </div>
@@ -902,12 +901,12 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative z-10 mt-[8rem] md:mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/40 backdrop-blur-xl p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[50px] rounded-bl-[50px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
+              className="relative z-10 mt-[8rem] md:mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/85 p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[50px] rounded-bl-[50px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
            >
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
               </h2>
-              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400">
+              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-400">
                 Book en tid nu
               </a>
            </motion.div>
@@ -929,6 +928,9 @@ export default function Page() {
             <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
               Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.
             </p>
+            <div className="relative z-10 mt-6">
+              <AwardBadge type="industry-favorites" place={2026} link="https://www.industryfavorites.eu/" />
+            </div>
           </div>
           <div className="flex flex-col">
             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Udforsk</h5>
@@ -939,7 +941,7 @@ export default function Page() {
                 { name: 'Behandlinger', href: '/behandlinger' },
                 { name: 'Galleri', href: '/galleri' }
               ].map(item => (
-                <li key={item.name}><Link className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide hover:text-[#EAD5C5] hover:tracking-[0.05em] transition-all duration-300 inline-block font-light" href={item.href}>{item.name}</Link></li>
+                <li key={item.name}><Link className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide hover:text-[#EAD5C5] transition-colors duration-300 inline-block font-light" href={item.href}>{item.name}</Link></li>
               ))}
             </ul>
           </div>
@@ -955,12 +957,12 @@ export default function Page() {
           <div className="flex flex-col">
             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
             <div className="flex gap-[clamp(0.5rem,1.5vw,1rem)] items-center">
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                   <svg className="w-[clamp(2.5rem,4vw,3rem)] h-[clamp(2.5rem,4vw,3rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-3px]" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
                   </svg>
                 </a>
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                   <svg className="w-[clamp(2.75rem,4.5vw,3.5rem)] h-[clamp(2.75rem,4.5vw,3.5rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-2px]" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                   </svg>

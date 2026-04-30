@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ReactLenis, useLenis } from 'lenis/react';
 import { usePathname } from 'next/navigation';
 
@@ -27,8 +27,38 @@ function ScrollToTop() {
 }
 
 export function LenisProvider({ children }: { children: React.ReactNode }) {
+  const [isSafariDesktop, setIsSafariDesktop] = useState(false);
+
+  useEffect(() => {
+    const ua = navigator.userAgent;
+    const isSafari = /^((?!chrome|android).)*safari/i.test(ua);
+    const isDesktop = window.innerWidth >= 768;
+    setIsSafariDesktop(isSafari && isDesktop);
+  }, []);
+
+  // Safari Desktop: Use much lighter Lenis settings to avoid fighting WebKit's native compositor.
+  // syncTouch must be false on desktop Safari — it intercepts trackpad events and creates
+  // a "double-smoothing" conflict with WebKit's own scroll physics engine.
+  const safariDesktopOptions = {
+    lerp: 0.12,       // Faster convergence = less time fighting the compositor
+    duration: 1.0,     // Shorter duration = fewer interpolation frames
+    smoothWheel: true,
+    syncTouch: false,  // CRITICAL: Let WebKit handle trackpad natively
+    wheelMultiplier: 0.8,
+    touchMultiplier: 2,
+  };
+
+  const defaultOptions = {
+    lerp: 0.08,
+    duration: 1.5,
+    smoothWheel: true,
+    syncTouch: true,
+    wheelMultiplier: 0.7,
+    touchMultiplier: 2,
+  };
+
   return (
-    <ReactLenis root options={{ lerp: 0.08, duration: 1.5, smoothWheel: true }}>
+    <ReactLenis root options={isSafariDesktop ? safariDesktopOptions : defaultOptions}>
       <ScrollToTop />
       {children}
     </ReactLenis>

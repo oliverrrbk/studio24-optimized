@@ -1,5 +1,5 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+@import "tailwindcss";
 
 @theme {
   --color-on-tertiary-container: #fffbff;
@@ -100,3 +100,70 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #D8BAA3;
 }
+
+/* ═══════════════════════════════════════════════════
+   Safari Desktop Performance Optimizations
+   These rules reduce compositor overhead in WebKit
+   without changing any visual appearance.
+   ═══════════════════════════════════════════════════ */
+
+/* Promote all motion-animated elements to their own compositor layer.
+   This prevents WebKit from doing expensive "layer tree rebuild" on scroll. */
+[style*="transform"] {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+/* Note: Section-level `contain` was removed because it clips
+   decorative elements (curves, glitter) that intentionally overflow
+   their parent sections. Individual element GPU promotion below
+   is sufficient for Safari performance. */
+
+/* Force images with CSS filters (contrast, saturate, brightness)
+   to be pre-composited in their own layer on WebKit. Without this,
+   Safari re-rasterizes the filter on every scroll frame. */
+@supports (-webkit-appearance: none) {
+  img[class*="contrast-"],
+  img[class*="saturate-"],
+  img[class*="brightness-"],
+  img[class*="grayscale"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Force GPU compositing on drop-shadow elements.
+   drop-shadow is a CSS filter under the hood and forces
+   software rasterization in WebKit without explicit GPU promotion. */
+@supports (-webkit-appearance: none) {
+  [class*="drop-shadow"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
+/* Isolate mix-blend-mode elements into their own compositor layers.
+   Without this, Safari re-composites the entire parent tree during scroll. */
+@supports (-webkit-appearance: none) {
+  [class*="mix-blend"] {
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* Decorative overlays with opacity: promote to GPU layer
+   so they don't trigger repaints of content beneath them.
+   Targeted to opacity-bearing overlays to avoid interfering
+   with CSS mask elements that use pointer-events-none. */
+@supports (-webkit-appearance: none) {
+  .pointer-events-none[class*="opacity-"] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+

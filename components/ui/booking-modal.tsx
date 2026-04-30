@@ -47,7 +47,7 @@ function BookingModalInner() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-[#4C433C]/20 backdrop-blur-sm z-[100] overscroll-none"
+            className="fixed inset-0 bg-[#4C433C]/30 z-[100] overscroll-none"
             onClick={close}
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
@@ -65,7 +65,7 @@ function BookingModalInner() {
           >
             <button 
               onClick={close}
-              className="absolute top-[clamp(1.275rem,3.4vw,1.7rem)] md:top-4 xl:top-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:top-[clamp(1.5rem,4vw,2rem)] right-[clamp(1.275rem,3.4vw,1.7rem)] md:right-4 xl:right-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:right-[clamp(1.5rem,4vw,2rem)] p-2 md:p-3 2xl:p-4 rounded-full bg-[#4C433C]/5 hover:bg-[#4C433C]/10 text-[#4C433C] transition-colors z-[102] backdrop-blur-md shadow-sm"
+              className="absolute top-[clamp(1.275rem,3.4vw,1.7rem)] md:top-4 xl:top-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:top-[clamp(1.5rem,4vw,2rem)] right-[clamp(1.275rem,3.4vw,1.7rem)] md:right-4 xl:right-[clamp(1.275rem,3.4vw,1.7rem)] 2xl:right-[clamp(1.5rem,4vw,2rem)] p-2 md:p-3 2xl:p-4 rounded-full bg-[#4C433C]/10 hover:bg-[#4C433C]/15 text-[#4C433C] transition-colors z-[102] shadow-sm"
               aria-label="Luk"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -96,7 +96,7 @@ function BookingModalInner() {
                   href="https://studio24-23056.planway.com/?fbclid=PAZXh0bgNhZW0CMTEAAabSSGkkKcugKZtVPz7PPvpalHT7XXpy_mXSoNzi8uBOwSFihIBcJT7VKyk_aem_9lVuJdIYwEp78fYfyZYV4g" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-all duration-400 relative z-20"
+                  className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition-[transform,background-color,box-shadow] duration-400 relative z-20"
                 >
                   Gå til booking
                 </a>

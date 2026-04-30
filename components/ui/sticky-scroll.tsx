@@ -16,56 +16,72 @@ function useBidirectionalSticky(offsetTop = 80, offsetBottom = 32) {
     if (!el) return;
 
     el.style.position = 'sticky';
+    el.style.top = `${offsetTop}px`;
+    // GPU layer promotion for Safari — avoids layout thrashing
+    el.style.willChange = 'transform';
+    el.style.backfaceVisibility = 'hidden';
+    (el.style as any).WebkitBackfaceVisibility = 'hidden';
+
     lastScrollY.current = window.scrollY;
+    let rafId: number | null = null;
 
     const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const scrollDiff = scrollY - lastScrollY.current;
-      lastScrollY.current = scrollY;
+      // Batch layout reads/writes into a single animation frame
+      // to prevent forced synchronous reflow in Safari
+      if (rafId !== null) return;
+      rafId = requestAnimationFrame(() => {
+        rafId = null;
+        const scrollY = window.scrollY;
+        const scrollDiff = scrollY - lastScrollY.current;
+        lastScrollY.current = scrollY;
 
-      const rect = el.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
-      const isMobile = window.innerWidth < 768;
-      const dynamicOffsetTop = isMobile ? 55 : offsetTop;
-      const dynamicOffsetBottom = isMobile ? 0 : offsetBottom;
+        const rect = el.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const isMobile = window.innerWidth < 768;
+        const dynamicOffsetTop = isMobile ? 55 : offsetTop;
+        const dynamicOffsetBottom = isMobile ? 0 : offsetBottom;
 
-      const targetTop = viewportHeight - rect.height - dynamicOffsetBottom;
+        const targetTop = viewportHeight - rect.height - dynamicOffsetBottom;
 
-      // If the column is shorter than the viewport, act like a smooth bidirectional sticky
-      if (rect.height <= viewportHeight - dynamicOffsetTop - dynamicOffsetBottom) {
-        let currentTop = parseFloat(el.dataset.currentTop || String(dynamicOffsetTop));
-        currentTop -= scrollDiff;
-        // Clamp between top boundary and bottom boundary
-        currentTop = Math.max(dynamicOffsetTop, Math.min(currentTop, targetTop));
-        el.dataset.currentTop = String(currentTop);
-        el.style.top = `${currentTop}px`;
-        return;
-      }
-
-      if (state.current === 'top') {
-        el.style.top = `${dynamicOffsetTop}px`;
-        
-        // Only switch anchor when the row has been completely "delivered" to the bottom
-        if (rect.bottom <= viewportHeight - dynamicOffsetBottom) {
-          state.current = 'bottom';
-          el.style.top = `${targetTop}px`;
+        // If the column is shorter than the viewport, act like a smooth bidirectional sticky
+        if (rect.height <= viewportHeight - dynamicOffsetTop - dynamicOffsetBottom) {
+          let currentTop = parseFloat(el.dataset.currentTop || String(dynamicOffsetTop));
+          currentTop -= scrollDiff;
+          // Clamp between top boundary and bottom boundary
+          currentTop = Math.max(dynamicOffsetTop, Math.min(currentTop, targetTop));
+          el.dataset.currentTop = String(currentTop);
+          el.style.top = `${currentTop}px`;
+          return;
         }
-      } else {
-        el.style.top = `${targetTop}px`;
-        
-        // Only switch anchor when the row has been completely "delivered" to the top
-        if (rect.top >= dynamicOffsetTop) {
-          state.current = 'top';
+
+        if (state.current === 'top') {
           el.style.top = `${dynamicOffsetTop}px`;
+          
+          // Only switch anchor when the row has been completely "delivered" to the bottom
+          if (rect.bottom <= viewportHeight - dynamicOffsetBottom) {
+            state.current = 'bottom';
+            el.style.top = `${targetTop}px`;
+          }
+        } else {
+          el.style.top = `${targetTop}px`;
+          
+          // Only switch anchor when the row has been completely "delivered" to the top
+          if (rect.top >= dynamicOffsetTop) {
+            state.current = 'top';
+            el.style.top = `${dynamicOffsetTop}px`;
+          }
         }
-      }
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     // Run once on mount
     handleScroll();
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (rafId !== null) cancelAnimationFrame(rafId);
+    };
   }, [offsetTop, offsetBottom]);
 
   return { ref };

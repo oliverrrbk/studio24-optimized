@@ -1,0 +1,3 @@
+for file in /Users/oliverrrbk/Downloads/studio24-saved/app/behandlinger/page.tsx /Users/oliverrrbk/Downloads/studio24-saved/app/min-historie/page.tsx /Users/oliverrrbk/Downloads/studio24-saved/app/galleri/page.tsx; do
+  sed -i '' -e 's|Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.\n            </p>\n          </div>\n          <div className="flex flex-col">|Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.\n            </p>\n            <div className="relative z-10">\n              <AwardBadge type="golden-kitty" place={1} link="#" />\n            </div>\n          </div>\n          <div className="flex flex-col z-10">|g' "$file"
+done

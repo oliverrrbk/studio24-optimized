@@ -15,12 +15,12 @@ import {
 
 import { cn } from "@/lib/utils"
 
-const cardVariants = cva("absolute will-change-transform", {
+const cardVariants = cva("absolute", {
   variants: {
     variant: {
       dark: "flex size-full flex-col items-center justify-center gap-6 rounded-2xl border border-stone-700/50 bg-accent-foreground/80 p-6 backdrop-blur-md",
       light:
-        "flex size-full flex-col items-center justify-center gap-6 rounded-[40px] rounded-tr-[80px] rounded-bl-[80px] border border-white/60 p-8 pt-10 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.04)]",
+        "flex size-full flex-col items-center justify-center gap-6 rounded-[40px] rounded-tr-[80px] rounded-bl-[80px] border border-white/60 p-8 pt-10 shadow-[0_15px_40px_rgba(0,0,0,0.04)]",
     },
   },
   defaultVariants: {
@@ -71,7 +71,7 @@ export const ContainerScroll: React.FC<
       <div
         ref={scrollRef}
         className={cn("relative min-h-svh w-full", className)}
-        style={{ perspective: "1000px", ...style }}
+        style={{ ...style }}
         {...props}
       >
         {children}
@@ -92,7 +92,7 @@ export const CardsContainer: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     <div
       ref={containerRef}
       className={cn("relative", className)}
-      style={{ perspective: "1000px", ...props.style }}
+      style={{ ...props.style }}
       {...props}
     >
       {children}
@@ -161,8 +161,8 @@ export const CardTransformed = React.forwardRef<
       0,
     ]);
 
-    // Progressively decrease opacity by 5% per card, bottoming out at 40%
-    const cardOpacity = Math.max(0.4, 0.9 - index * 0.05);
+    // Progressively decrease opacity by 3% per card, bottoming out at 65%
+    const cardOpacity = Math.max(0.65, 0.95 - index * 0.03);
     const cardStyle = {
       top: index * incrementY,
       backfaceVisibility: "hidden" as const,
