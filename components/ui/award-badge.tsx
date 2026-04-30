@@ -38,6 +38,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
   const [disableOverlayAnimation, setDisableOverlayAnimation] = useState<boolean>(false);
   const [isTimeoutFinished, setIsTimeoutFinished] = useState<boolean>(false);
   const enterTimeout = useRef<NodeJS.Timeout>(null);
+  const moveTimeout = useRef<NodeJS.Timeout>(null);
   const leaveTimeout1 = useRef<NodeJS.Timeout>(null);
   const leaveTimeout2 = useRef<NodeJS.Timeout>(null);
   const leaveTimeout3 = useRef<NodeJS.Timeout>(null);
@@ -135,7 +136,10 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const xCenter = (left + right) / 2;
     const yCenter = (top + bottom) / 2;
 
-    setTimeout(() => setFirstOverlayPosition((Math.abs(xCenter - e.clientX) + Math.abs(yCenter - e.clientY)) / 4), 350);
+    if (moveTimeout.current) {
+      clearTimeout(moveTimeout.current);
+    }
+    moveTimeout.current = setTimeout(() => setFirstOverlayPosition((Math.abs(xCenter - e.clientX) + Math.abs(yCenter - e.clientY)) / 4), 350);
 
     if (isTimeoutFinished) {
       setCurrentMatrix(getMatrix(e.clientX, e.clientY));
