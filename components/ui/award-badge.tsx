@@ -1,4 +1,5 @@
 import React, { MouseEvent, useEffect, useRef, useState } from "react";
+import { useIsSafariDesktop } from "@/hooks/use-safari-desktop";
 
 type AwardBadgeType = "industry-favorites" | "golden-kitty" | "product-of-the-day" | "product-of-the-month" | "product-of-the-week";
 
@@ -14,8 +15,8 @@ const identityMatrix =
   "0, 0, 1, 0, " +
   "0, 0, 0, 1";
 
-const maxRotate = 0.03;
-const minRotate = -0.03;
+const maxRotate = 0.06;
+const minRotate = -0.06;
 const maxScale = 1;
 const minScale = 0.98;
 
@@ -31,12 +32,13 @@ const title = {
 
 export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
   const ref = useRef<HTMLAnchorElement>(null);
-  const [firstOverlayPosition, setFirstOverlayPosition] = useState<number>(0);
+  const overlayRef = useRef<SVGGElement>(null);
+  const lightAngle = useRef<number>(0);
   const [matrix, setMatrix] = useState<string>(identityMatrix);
-  const [currentMatrix, setCurrentMatrix] = useState<string>(identityMatrix);
   const [disableInOutOverlayAnimation, setDisableInOutOverlayAnimation] = useState<boolean>(true);
   const [disableOverlayAnimation, setDisableOverlayAnimation] = useState<boolean>(false);
-  const [isTimeoutFinished, setIsTimeoutFinished] = useState<boolean>(false);
+  const badgeRef = useRef<HTMLDivElement>(null);
+  const isSafariDesktop = useIsSafariDesktop();
   const enterTimeout = useRef<NodeJS.Timeout>(null);
   const moveTimeout = useRef<NodeJS.Timeout>(null);
   const leaveTimeout1 = useRef<NodeJS.Timeout>(null);
@@ -120,8 +122,11 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const width = right - left;
-        const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 35;
-        setFirstOverlayPosition(targetAngle);
+        const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 20;
+        lightAngle.current = targetAngle;
+        if (overlayRef.current) {
+          overlayRef.current.style.transform = `rotate(${targetAngle}deg)`;
+        }
       });
     });
 
@@ -129,10 +134,9 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const oppositeMatrix = getOppositeMatrix(matrix, e.clientY, true);
 
     setMatrix(oppositeMatrix);
-    setIsTimeoutFinished(false);
-    setTimeout(() => {
-      setIsTimeoutFinished(true)
-    }, 200);
+    if (badgeRef.current) {
+      badgeRef.current.style.transform = `perspective(700px) matrix3d(${oppositeMatrix})`;
+    }
   };
 
   const onMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
@@ -141,11 +145,15 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const yCenter = (top + bottom) / 2;
 
     const width = right - left;
-    const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 35;
-    setFirstOverlayPosition(targetAngle);
+    const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 20;
+    lightAngle.current = targetAngle;
+    if (overlayRef.current) {
+      overlayRef.current.style.transform = `rotate(${targetAngle}deg)`;
+    }
 
-    if (isTimeoutFinished) {
-      setCurrentMatrix(getMatrix(e.clientX, e.clientY));
+    const newMatrix = getMatrix(e.clientX, e.clientY);
+    if (badgeRef.current) {
+      badgeRef.current.style.transform = `perspective(700px) matrix3d(${newMatrix})`;
     }
   };
 
@@ -156,13 +164,25 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
       clearTimeout(enterTimeout.current);
     }
 
-    setCurrentMatrix(oppositeMatrix);
-    setTimeout(() => setCurrentMatrix(identityMatrix), 200);
+    if (badgeRef.current) {
+      badgeRef.current.style.transform = `perspective(700px) matrix3d(${oppositeMatrix})`;
+      badgeRef.current.style.transition = "transform 700ms ease-out";
+    }
+    
+    setTimeout(() => {
+      setMatrix(identityMatrix);
+      if (badgeRef.current) {
+        badgeRef.current.style.transform = `perspective(700px) matrix3d(${identityMatrix})`;
+      }
+    }, 200);
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         setDisableInOutOverlayAnimation(false);
-        setFirstOverlayPosition(0);
+        lightAngle.current = 0;
+        if (overlayRef.current) {
+          overlayRef.current.style.transform = `rotate(0deg)`;
+        }
         leaveTimeout3.current = setTimeout(() => {
           setDisableOverlayAnimation(false);
           setDisableInOutOverlayAnimation(true);
@@ -171,11 +191,6 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     });
   };
 
-  useEffect(() => {
-    if (isTimeoutFinished) {
-      setMatrix(currentMatrix);
-    }
-  }, [currentMatrix, isTimeoutFinished]);
 
   const overlayAnimations = [...Array(10).keys()].map((e) => (
     `
@@ -208,6 +223,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
         {overlayAnimations}
       </style>
       <div
+        ref={badgeRef}
         style={{
           transform: `perspective(700px) matrix3d(${matrix})`,
           transformOrigin: "center center",
@@ -235,95 +251,43 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
             <path fill="#6A5D55" d="M16.956 2.057c.355.124.829.375 1.303.796a3.77 3.77 0 0 1 1.246 2.204c.173.989-.047 1.894-.519 2.683l-.123.194q-.097.147-.196.272q.066.234.117.471q.26-.178.545-.307c.851-.389 1.727-.442 2.527-.306q.226.04.346.076a1 1 0 0 1 .689.712l.029.13q.015.08.03.18a4.45 4.45 0 0 1-.324 2.496a3.94 3.94 0 0 1-1.71 1.85l-.242.12a4.23 4.23 0 0 1-2.234.349A9 9 0 0 1 17.997 15c.37.016.748.093 1.128.24c.732.28 1.299.758 1.711 1.367a3.95 3.95 0 0 1 .654 1.613a1 1 0 0 1-.356.917a3.8 3.8 0 0 1-.716.443c-.933.455-1.978.588-3.043.179l-.032-.015l-.205-.086a3.6 3.6 0 0 1-1.33-1.069l-.143-.197a4 4 0 0 1-.26-.433a6 6 0 0 1-.927.511q.18.262.337.56a7.4 7.4 0 0 1 .66 1.747a1 1 0 0 1-1.95.444l-.028-.11a6 6 0 0 0-.449-1.143C12.706 19.323 12.338 19 12 19s-.706.323-1.048.969a5.6 5.6 0 0 0-.367.874l-.082.269l-.028.11a1 1 0 0 1-1.95-.444a7.3 7.3 0 0 1 .66-1.747q.158-.298.337-.561a6.4 6.4 0 0 1-.93-.508a4 4 0 0 1-.256.43c-.366.541-.855.98-1.473 1.267l-.238.1c-.994.382-1.97.292-2.855-.091l-.188-.087a3.8 3.8 0 0 1-.716-.443a1 1 0 0 1-.356-.917a3.95 3.95 0 0 1 .654-1.613a3.6 3.6 0 0 1 1.71-1.368c.38-.146.758-.223 1.13-.24a9 9 0 0 1-.445-1.023a4.23 4.23 0 0 1-2.233-.348a4 4 0 0 1-.916-.587l-.207-.191a4 4 0 0 1-.724-.977l-.105-.216a4.45 4.45 0 0 1-.265-2.806a1 1 0 0 1 .69-.712q.119-.036.345-.076c.801-.135 1.678-.082 2.53.308q.283.129.545.304q.048-.235.112-.47a5 5 0 0 1-.194-.272c-.556-.832-.83-1.806-.642-2.877l.05-.242a3.75 3.75 0 0 1 1.027-1.803l.169-.159a4 4 0 0 1 1.303-.796a1 1 0 0 1 .975.178c.2.168.462.446.719.83c.556.833.83 1.807.642 2.878a3.77 3.77 0 0 1-1.246 2.204c-.303.27-.607.47-.879.61A7.5 7.5 0 0 0 7 10.728C7 14.23 9.285 17 12 17s5-2.77 5-6.276a7.6 7.6 0 0 0-.253-1.967a4.3 4.3 0 0 1-.881-.61a3.77 3.77 0 0 1-1.246-2.204c-.188-1.07.086-2.045.642-2.877c.257-.385.52-.663.72-.831a1 1 0 0 1 .974-.178" />
           </g>
           <g style={{ mixBlendMode: "overlay" }} mask="url(#badgeMask)">
-            <g style={{
-              transform: `rotate(${firstOverlayPosition}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation1 5s infinite",
-              willChange: "auto"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(358, 100%, 62%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 10}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation2 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(30, 100%, 50%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 20}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation3 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(60, 100%, 50%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 30}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation4 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(96, 100%, 50%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 40}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation5 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(233, 85%, 47%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 50}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation6 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(271, 85%, 47%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 60}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation7 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="hsl(300, 20%, 35%)" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 70}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation8 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="transparent" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 80}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation9 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="transparent" filter="url(#blur1)" opacity="0.375" />
-            </g>
-            <g style={{
-              transform: `rotate(${firstOverlayPosition + 90}deg)`,
-              transformOrigin: "center center",
-              transition: !disableInOutOverlayAnimation ? "transform 150ms ease-out" : "none",
-              animation: disableOverlayAnimation ? "none" : "overlayAnimation10 5s infinite",
-              willChange: "transform"
-            }}>
-              <polygon points="0,0 260,54 260,0 0,54" fill="white" filter="url(#blur1)" opacity="0.375" />
+            <g
+              ref={overlayRef}
+              style={{
+                transformOrigin: "center center",
+                filter: "blur(5px)",
+              }}
+            >
+              <g style={{ transform: "rotate(0deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation1 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(358, 100%, 62%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(10deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation2 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(30, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(20deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation3 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(60, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(30deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation4 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(96, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(40deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation5 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(233, 85%, 47%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(50deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation6 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(271, 85%, 47%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(60deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation7 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(300, 20%, 35%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(70deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation8 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(80deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation9 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
+              <g style={{ transform: "rotate(90deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation10 5s infinite" }}>
+                <polygon points="0,0 260,54 260,0 0,54" fill="white" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+              </g>
             </g>
           </g>
         </svg>
