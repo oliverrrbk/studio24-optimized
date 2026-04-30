@@ -64,7 +64,7 @@ export function Navigation() {
           </Link>
           <div className="flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             <Link href="?booking=true" scroll={false}>
-              <button className="bg-[#EDB7A9] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#e6a896] border-[#4C433C]/20 transition-[transform,background-color] duration-300 shadow-[0_8px_30px_rgba(237,183,169,0.4)]">
+              <button className="bg-[#EDB7A9] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#e6a896] border-[#4C433C]/20 transition-[transform,background-color] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-[0_8px_30px_rgba(237,183,169,0.4)]">
                 Book tid
               </button>
             </Link>

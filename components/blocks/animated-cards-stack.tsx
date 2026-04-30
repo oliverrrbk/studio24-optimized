@@ -161,8 +161,8 @@ export const CardTransformed = React.forwardRef<
       0,
     ]);
 
-    // Progressively decrease opacity by 3% per card, bottoming out at 65%
-    const cardOpacity = Math.max(0.65, 0.95 - index * 0.03);
+    // Progressively decrease opacity by 3% per card, bottoming out at 70%
+    const cardOpacity = Math.max(0.70, 0.97 - index * 0.03);
     const cardStyle = {
       top: index * incrementY,
       backfaceVisibility: "hidden" as const,
