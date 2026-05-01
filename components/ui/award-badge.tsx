@@ -15,10 +15,10 @@ const identityMatrix =
   "0, 0, 1, 0, " +
   "0, 0, 0, 1";
 
-const maxRotate = 0.06;
-const minRotate = -0.06;
-const maxScale = 1;
-const minScale = 0.98;
+const maxRotate = 0.18;
+const minRotate = -0.18;
+const maxScale = 1.05;
+const minScale = 0.94;
 
 const backgroundColor = ["#E8E0D5", "#E5E5E5", "#EAD5C5"];
 
@@ -122,7 +122,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         const width = right - left;
-        const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 20;
+        const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 8;
         lightAngle.current = targetAngle;
         if (overlayRef.current) {
           overlayRef.current.style.transform = `rotate(${targetAngle}deg)`;
@@ -145,7 +145,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
     const yCenter = (top + bottom) / 2;
 
     const width = right - left;
-    const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 20;
+    const targetAngle = ((e.clientX - xCenter) / (width / 2)) * 8;
     lightAngle.current = targetAngle;
     if (overlayRef.current) {
       overlayRef.current.style.transform = `rotate(${targetAngle}deg)`;
@@ -232,8 +232,8 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 54" className="w-180px sm:w-260px h-auto">
           <defs>
-            <filter id="blur1">
-              <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
+            <filter id="blur1" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="12" />
             </filter>
             <mask id="badgeMask">
               <rect width="260" height="54" fill="white" rx="10" />
@@ -253,40 +253,40 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
           <g style={{ mixBlendMode: "overlay" }} mask="url(#badgeMask)">
             <g
               ref={overlayRef}
+              filter="url(#blur1)"
               style={{
                 transformOrigin: "center center",
-                filter: "blur(5px)",
               }}
             >
               <g style={{ transform: "rotate(0deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation1 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(358, 100%, 62%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(358, 100%, 62%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(10deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation2 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(30, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(30, 100%, 50%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(20deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation3 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(60, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(60, 100%, 50%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(30deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation4 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(96, 100%, 50%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(96, 100%, 50%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(40deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation5 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(233, 85%, 47%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(233, 85%, 47%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(50deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation6 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(271, 85%, 47%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(271, 85%, 47%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(60deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation7 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(300, 20%, 35%)" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="hsl(300, 20%, 35%)" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(70deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation8 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(80deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation9 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
               <g style={{ transform: "rotate(90deg)", transformOrigin: "center center", animation: disableOverlayAnimation ? "none" : "overlayAnimation10 5s infinite" }}>
-                <polygon points="0,0 260,54 260,0 0,54" fill="white" opacity={isSafariDesktop ? "0.175" : "0.375"} />
+                <polygon points="0,0 260,54 260,0 0,54" fill="white" opacity={isSafariDesktop ? "0.275" : "0.425"} />
               </g>
             </g>
           </g>

@@ -1,5 +1,6 @@
 'use client';
 import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import Image from 'next/image';
 import { motion } from 'motion/react';
 
 // Safari Optimization Config
@@ -123,12 +124,14 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
               transition={{ duration: 1.2, delay: idx * 0.15, ease: 'easeOut' }}
               className={`w-full rounded-[20px] shadow-[0_20px_50px_rgba(28,26,24,0.06)] overflow-hidden group ${idx === 6 ? 'hidden md:block' : ''}`}
             >
-              <div className='w-full h-full transition-transform duration-300 group-hover:scale-[1.02]'>
-                <img
+              <div className='relative w-full aspect-[4/5] h-full transition-transform duration-300 group-hover:scale-[1.02]'>
+                <Image
                   src={img.src}
                   alt='Salon Gallery Image'
+                  fill
+                  sizes="(max-width: 768px) 33vw, 25vw"
                   style={{ objectPosition: img.pos, transformOrigin: img.pos, transform: `scale(${img.scale})` }}
-                  className='w-full aspect-[4/5] align-bottom object-cover'
+                  className='align-bottom object-cover'
                 />
               </div>
             </motion.figure>
@@ -148,12 +151,14 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
               transition={{ duration: 1.2, delay: idx * 0.15, ease: 'easeOut' }}
               className={`w-full rounded-[20px] shadow-[0_20px_50px_rgba(28,26,24,0.06)] overflow-hidden group ${idx === 3 ? 'hidden max-md:block' : ''}`}
             >
-              <div className='w-full h-full transition-transform duration-300 group-hover:scale-[1.02]'>
-                <img
+              <div className='relative w-full aspect-[2/3] h-full transition-transform duration-300 group-hover:scale-[1.02]'>
+                <Image
                   src={img.src}
                   alt='Salon Gallery Focus Image'
+                  fill
+                  sizes="(max-width: 768px) 33vw, 25vw"
                   style={{ objectPosition: img.pos, transformOrigin: img.pos, transform: `scale(${img.scale})` }}
-                  className='w-full aspect-[2/3] align-bottom object-cover'
+                  className='align-bottom object-cover'
                 />
               </div>
             </motion.figure>
@@ -170,12 +175,14 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
               transition={{ duration: 1.2, delay: idx * 0.15, ease: 'easeOut' }}
               className={`w-full rounded-[20px] shadow-[0_20px_50px_rgba(28,26,24,0.06)] overflow-hidden group ${idx === 3 ? 'hidden md:block' : ''}`}
             >
-              <div className='w-full h-full transition-transform duration-300 group-hover:scale-[1.02]'>
-                <img
+              <div className='relative w-full aspect-[4/5] h-full transition-transform duration-300 group-hover:scale-[1.02]'>
+                <Image
                   src={img.src}
                   alt='Salon Gallery Image'
+                  fill
+                  sizes="(max-width: 768px) 33vw, 25vw"
                   style={{ objectPosition: img.pos, transformOrigin: img.pos, transform: `scale(${img.scale})` }}
-                  className='w-full aspect-[4/5] align-bottom object-cover'
+                  className='align-bottom object-cover'
                 />
               </div>
             </motion.figure>

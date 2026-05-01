@@ -58,7 +58,7 @@ function BookingModalInner() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.95 }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 m-auto w-[90%] max-w-4xl 2xl:max-w-5xl h-[85vh] bg-[#FDFBF7] shadow-2xl z-[101] rounded-[25.5px] 2xl:rounded-[30px] overflow-hidden flex flex-col md:flex-row overscroll-contain"
+            className="fixed inset-0 m-auto w-[90%] max-w-4xl 2xl:max-w-5xl h-[85svh] bg-[#FDFBF7] shadow-2xl z-[101] rounded-[25.5px] 2xl:rounded-[30px] overflow-hidden flex flex-col md:flex-row overscroll-contain"
             data-lenis-prevent="true"
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
@@ -72,7 +72,7 @@ function BookingModalInner() {
             </button>
 
             {/* Left Side: Image & Call to Action */}
-            <section className="relative w-full md:w-1/2 h-[40vh] md:h-full overflow-hidden flex-shrink-0">
+            <section className="relative w-full md:w-1/2 h-[40svh] md:h-full overflow-hidden flex-shrink-0">
               <Image 
                 src="/booking-modal.png" 
                 alt="Atmospheric Interior" 

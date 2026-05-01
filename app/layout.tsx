@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`} suppressHydrationWarning>
+    <html lang="da" className={`${cormorant.variable} ${manrope.variable}`} suppressHydrationWarning>
       <body suppressHydrationWarning className="bg-background text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed w-full relative antialiased">
         <LenisProvider>
           <div className="overflow-x-clip w-full flex flex-col min-h-screen relative">
