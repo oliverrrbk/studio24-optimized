@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect, useRef, useMemo } from 'react';
 import Link from 'next/link';
-import { AwardBadge } from '@/components/ui/award-badge';
 import Image from 'next/image';
-import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import { Paintbrush, Clock, Heart, Leaf } from 'lucide-react';
 import { hardwareAccelerated, getSafeFadeInUp, getSafeImageReveal, checkIsSafariDesktop } from '@/lib/utils';
+import { SiteFooter } from '@/components/ui/site-footer';
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -19,148 +19,90 @@ const staggerContainer = {
   }
 };
 
-const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => {
-  // Disable scroll on body when open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+function ScrollManifestoItem({ item, idx, isMobile }: any) {
+  const IconComponent = item.icon;
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+
+  // Mobile scroll-scrub animations similar to page.tsx
+  const mobileTranslateY = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [0, -8, -8, 0]);
+  const mobileScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.02, 1.02, 1]);
+  const mobileContainerScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.04, 1.04, 1]);
+  const mobileBg = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#FAF8F5", "#F3EFE9", "#F3EFE9", "#FAF8F5"]);
+  const mobileIconColor = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#887A70", "#EDB7A9", "#EDB7A9", "#887A70"]);
+  const mobileShadow = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["0 4px 20px rgba(28,26,24,0.03)", "0 15px 30px rgba(28,26,24,0.06)", "0 15px 30px rgba(28,26,24,0.06)", "0 4px 20px rgba(28,26,24,0.03)"]);
+  const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [0, 1, 1, 0]);
+  const mobileTextOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 0, 0, 1]);
 
   return (
-    <AnimatePresence>
-      {isOpen && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 bg-[#4C433C]/30 z-[100]"
-            onClick={onClose}
-          />
-          <motion.div
-            initial={{ x: "100%" }}
-            animate={{ x: 0 }}
-            exit={{ x: "100%" }}
-            transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
-            data-lenis-prevent="true"
-          >
-            <div className="p-[clamp(2rem,5vw,4rem)] text-[#4C433C] relative">
-              <button 
-                onClick={onClose}
-                className="absolute top-[clamp(1.5rem,4vw,2rem)] right-[clamp(1.5rem,4vw,2rem)] p-2 rounded-full bg-[#4C433C]/5 hover:bg-[#4C433C]/10 transition-colors"
-                aria-label="Luk"
-              >
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-              </button>
-
-              <h2 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] tracking-tight mb-8">
-                Privatlivspolitik
-              </h2>
-
-              <div className="space-y-6 text-[#6A5D55] leading-relaxed font-body text-[clamp(0.95rem,1.1vw,1.05rem)]">
-                <p>
-                  Hos Studio 24 tager vi beskyttelsen af dine personoplysninger alvorligt. For os er det vigtigt, at du føler dig tryg, når du besøger vores hjemmeside og kontakter os. Herunder kan du læse præcis, hvilke oplysninger vi indsamler, og hvordan vi behandler dem.
-                </p>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  1. Dataansvarlig
-                </h3>
-                <div className="bg-[#4C433C]/5 p-6 rounded-2xl text-[#4C433C]">
-                  <p className="font-bold mb-1">Studio 24</p>
-                  <p>Mariagervej 91</p>
-                  <p>8920 Randers NV</p>
-                  <p className="mt-2 text-sm uppercase tracking-wider text-[#6A5D55]">CVR-nr.: 44907917</p>
-                  <div className="mt-4 space-y-1">
-                    <p>Telefon: <a href="tel:29896069" className="hover:text-[#EDB7A9] transition-colors">29 89 60 69</a></p>
-                    <p>E-mail: <a href="mailto:enistudio.24@gmail.com" className="hover:text-[#EDB7A9] transition-colors">enistudio.24@gmail.com</a></p>
-                  </div>
-                </div>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  2. Hvilke oplysninger indsamler vi og hvorfor?
-                </h3>
-                <p>
-                  Vi indsamler kun de oplysninger, der er strengt nødvendige for at kunne hjælpe dig.
-                </p>
-
-                <div className="border-l-4 border-[#EDB7A9] pl-6 my-6">
-                  <h4 className="font-bold text-[#4C433C] mb-2">Når du booker tid:</h4>
-                  <p>
-                    Vi benytter bookingplatformen <a href="https://planway.com" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Planway</a> til tidsbestilling. Når du klikker på &quot;Book tid&quot;, videredirigeres du til deres platform. Planway fungerer som databehandler, og de oplysninger du indtaster dér, behandles sikkert i overensstemmelse med deres privatlivspolitik for at kunne levere ydelsen til dig.
-                  </p>
-                  <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: GDPR art. 6, stk. 1, litra b.</p>
-                </div>
-
-                <div className="border-l-4 border-[#EDB7A9] pl-6 my-6">
-                  <h4 className="font-bold text-[#4C433C] mb-2">Når du bruger vores kontaktformular:</h4>
-                  <p>
-                    For at kunne besvare din henvendelse, vurdere din opgave og kontakte dig med et svar eller et tilbud, indsamler vi de oplysninger, du selv indtaster i formularen. Vi benytter en tredjepartsformularudbyder til at videresende disse oplysninger sikkert til vores e-mail.
-                  </p>
-                  <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: GDPR art. 6, stk. 1, litra b (nødvendigt aftalegrundlag) samt vurderet legitim interesse i god kundeservice (GDPR art. 6, stk. 1, litra f).</p>
-                </div>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  3. Cookies og sporing
-                </h3>
-                <p>
-                  Vi går meget op i at beskytte dit privatliv, og derfor bruger vi ingen markedsføringscookies eller tredjepartssporing på vores hjemmeside.
-                </p>
-                <ul className="list-disc pl-6 space-y-3">
-                  <li>Vi benytter udelukkende Vercel Analytics og Google Search Console til fejlfinding og basale trafikmålinger.</li>
-                  <li>Disse systemer indsamler data 100% anonymiseret og sætter ingen form for personhenførbare cookies på dit udstyr.</li>
-                  <li>Vores fonte og scripts er hostet lokalt i løsningen, så din IP-adresse ikke deles med Google eller andre tredjeparter.</li>
-                  <li>Eventuelle links til sociale medier (f.eks. Instagram) sporer dig ikke på vores side, men når du aktivt klikker dig videre, gælder den pågældende platforms privatlivsvilkår.</li>
-                </ul>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  4. Hvem deler vi dine oplysninger med?
-                </h3>
-                <p>
-                  Vi sælger og deler aldrig dine personoplysninger med tredjeparter til markedsføringsvirksomheder eller lignende.
-                </p>
-                <p>
-                  Dine data fra kontaktformularen behandles primært i vores eget e-mailsystem via en sikker tredjepartsformularudbyder. Booking af tider håndteres udelukkende i vores bookingsystem, Planway. Selve hjemmesiden hostes sikkert via Vercel. 
-                </p>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  5. Hvor længe gemmer vi dine oplysninger?
-                </h3>
-                <p>
-                  Vi gemmer kun dine data, så længe de har et sagligt formål:
-                </p>
-                <ul className="list-disc pl-6 space-y-3">
-                  <li><strong className="text-[#4C433C]">Faktureringsoplysninger:</strong> Opbevares i 5 år efter regnskabsårets afslutning for at overholde gældende krav i den danske Bogføringslov.</li>
-                  <li><strong className="text-[#4C433C]">Generelle henvendelser:</strong> Henvendelser fra en kontaktformular, der ikke udmønter sig i en ydelse/serviceaftale, slettes senest 6 måneder efter seneste korrespondance.</li>
-                </ul>
-
-                <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
-                  6. Dine rettigheder
-                </h3>
-                <p>
-                  Efter databeskyttelsesreglerne (GDPR) har du ret til at få indsigt i, hvilke personoplysninger vi har registreret om dig, få dem rettet, slettet eller gøre en række øvrige indsigelser mod vores behandling.
-                </p>
-                <p>
-                  Ønsker du at gøre brug af disse rettigheder, bedes du kontakte os på vores e-mailadresse ovenfor. Du har desuden altid den grundlæggende ret til at klage over vores behandling til <a href="https://www.datatilsynet.dk" target="_blank" rel="noopener noreferrer" className="text-[#EDB7A9] hover:underline">Datatilsynet</a>.
-                </p>
-              </div>
-            </div>
+    <motion.div 
+      key={idx} 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-20%" }}
+      transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
+      className="flex flex-col items-center group cursor-default"
+    >
+      <div ref={ref} className="w-full flex flex-col items-center">
+        <motion.div 
+          style={isMobile ? { backgroundColor: mobileBg, y: mobileTranslateY, scale: mobileScale, boxShadow: mobileShadow } : undefined}
+          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#EDB7A9] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
+        >
+          <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#EDB7A9] transition-colors duration-500" : ""}>
+            <IconComponent className="w-6 h-6" strokeWidth={1.5} />
           </motion.div>
-        </>
-      )}
-    </AnimatePresence>
+        </motion.div>
+        
+        <motion.div 
+          style={isMobile ? { y: mobileTranslateY, scale: mobileContainerScale } : undefined}
+          className={`relative w-full flex flex-col items-center transition-transform duration-700 ease-in-out ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.04]' : ''}`}
+        >
+          <motion.div 
+            style={isMobile ? { opacity: mobileTextOpacity } : undefined}
+            className={`w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-100 group-hover:opacity-0' : ''}`}
+          >
+            <h4 className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] text-[#1c1a18] font-light mb-4 whitespace-nowrap">{item.title}</h4>
+            <p className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light text-[#6A5D55] leading-relaxed max-w-[280px]">
+              {item.text}
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            style={isMobile ? { opacity: mobileOpacity } : undefined}
+            className={`absolute inset-0 pointer-events-none w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-0 group-hover:opacity-100' : ''}`}
+          >
+            <h4 
+              className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] font-light mb-4 text-transparent whitespace-nowrap animate-wave-rtl"
+              style={{ 
+                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text"
+              }}
+            >
+              {item.title}
+            </h4>
+            <p 
+              className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light leading-relaxed max-w-[280px] text-transparent animate-wave-ltr"
+              style={{ 
+                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
+                WebkitBackgroundClip: "text",
+                backgroundClip: "text"
+              }}
+            >
+              {item.text}
+            </p>
+          </motion.div>
+        </motion.div>
+      </div>
+    </motion.div>
   );
-};
+}
 
 export default function MinHistoriePage() {
-  const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
+
   const [isMobile, setIsMobile] = useState(false);
   const [isSafariDesktop, setIsSafariDesktop] = useState(false);
 
@@ -490,150 +432,7 @@ export default function MinHistoriePage() {
         </motion.section>
       </main>
 
-      {/* Footer from Landing Page */}
-      <footer className="w-full bg-[#FDFBF7] text-[#4C433C]">
-        <div className="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,10vw,8rem)] max-w-[1400px] mx-auto w-full">
-          <div className="max-w-[320px]">
-            <div className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif mb-[clamp(1rem,2vw,1.5rem)] italic tracking-tight leading-none text-[#1c1a18]">Studio 24</div>
-            <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
-              Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.
-            </p>
-            <div className="relative z-10 mt-6">
-              <AwardBadge type="industry-favorites" place={2026} link="https://www.industryfavorites.eu/" />
-            </div>
-          </div>
-          <div className="flex flex-col z-10">
-            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Udforsk</h5>
-            <ul className="space-y-[clamp(0.75rem,1.5vw,1rem)]">
-              {[
-                { name: 'Hjem', href: '/' },
-                { name: 'Min Historie', href: '/min-historie' },
-                { name: 'Behandlinger', href: '/behandlinger' },
-                { name: 'Galleri', href: '/galleri' }
-              ].map(item => (
-                <li key={item.name}><Link className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide hover:text-[#EAD5C5] transition-colors duration-300 inline-block font-light" href={item.href}>{item.name}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div className="flex flex-col">
-            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Kontakt</h5>
-            <ul className="space-y-[clamp(0.75rem,1.5vw,1rem)] text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] font-light tracking-wide">
-              <li>Tirsdag - Fredag: 09:00 - 17:30<br/>Lørdag: 09:00 - 13:00<br/>Søn, Man & Helligdage efter aftale</li>
-              <li><a href="tel:+4529896069" className="hover:text-[#EAD5C5] transition-colors">+45 29 89 60 69</a></li>
-              <li><a href="mailto:enistudio.24@gmail.com" className="hover:text-[#EAD5C5] transition-colors">enistudio.24@gmail.com</a></li>
-              <li>Mariagervej 91<br/>8920 Randers NV</li>
-            </ul>
-          </div>
-          <div className="flex flex-col">
-            <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Følg med</h5>
-            <div className="flex gap-[clamp(0.5rem,1.5vw,1rem)] items-center">
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-700 ease-in-out group" href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                  <svg className="w-[clamp(2.5rem,4vw,3rem)] h-[clamp(2.5rem,4vw,3rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-3px]" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/>
-                  </svg>
-                </a>
-                <a className="flex items-center justify-center hover:scale-[1.12] active:scale-95 transition-transform duration-700 ease-in-out group" href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                  <svg className="w-[clamp(2.75rem,4.5vw,3.5rem)] h-[clamp(2.75rem,4.5vw,3.5rem)] text-[#EDB7A9] opacity-80 group-hover:opacity-100 transition-opacity drop-shadow-sm relative top-[-2px]" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
-                  </svg>
-                </a>
-            </div>
-          </div>
-        </div>
-        <div className="border-t border-[#4C433C]/10 w-full">
-          <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(1.5rem,3vw,2rem)] flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
-            <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase text-left">
-              © 2026 Studio 24. Alle rettigheder forbeholdes.
-            </p>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsPrivacyOpen(true); }} className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase hover:text-[#EAD5C5] transition-colors text-center md:text-right cursor-pointer">
-              Privatlivspolitik
-            </a>
-          </div>
-        </div>
-      </footer>
-      <PrivacyPolicyModal isOpen={isPrivacyOpen} onClose={() => setIsPrivacyOpen(false)} />
+      <SiteFooter />
     </div>
-  );
-}
-
-function ScrollManifestoItem({ item, idx, isMobile }: any) {
-  const IconComponent = item.icon;
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"]
-  });
-
-  // Mobile scroll-scrub animations similar to page.tsx
-  const mobileTranslateY = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [0, -8, -8, 0]);
-  const mobileScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.02, 1.02, 1]);
-  const mobileContainerScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.04, 1.04, 1]);
-  const mobileBg = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#FAF8F5", "#F3EFE9", "#F3EFE9", "#FAF8F5"]);
-  const mobileIconColor = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#887A70", "#EDB7A9", "#EDB7A9", "#887A70"]);
-  const mobileShadow = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["0 4px 20px rgba(28,26,24,0.03)", "0 15px 30px rgba(28,26,24,0.06)", "0 15px 30px rgba(28,26,24,0.06)", "0 4px 20px rgba(28,26,24,0.03)"]);
-  const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [0, 1, 1, 0]);
-  const mobileTextOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 0, 0, 1]);
-
-  return (
-    <motion.div 
-      key={idx} 
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-20%" }}
-      transition={{ duration: 0.8, delay: idx * 0.2, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col items-center group cursor-default"
-    >
-      <div ref={ref} className="w-full flex flex-col items-center">
-        <motion.div 
-          style={isMobile ? { backgroundColor: mobileBg, y: mobileTranslateY, scale: mobileScale, boxShadow: mobileShadow } : undefined}
-          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#EDB7A9] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
-        >
-          <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#EDB7A9] transition-colors duration-500" : ""}>
-            <IconComponent className="w-6 h-6" strokeWidth={1.5} />
-          </motion.div>
-        </motion.div>
-        
-        <motion.div 
-          style={isMobile ? { y: mobileTranslateY, scale: mobileContainerScale } : undefined}
-          className={`relative w-full flex flex-col items-center transition-transform duration-700 ease-in-out ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.04]' : ''}`}
-        >
-          <motion.div 
-            style={isMobile ? { opacity: mobileTextOpacity } : undefined}
-            className={`w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-100 group-hover:opacity-0' : ''}`}
-          >
-            <h4 className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] text-[#1c1a18] font-light mb-4 whitespace-nowrap">{item.title}</h4>
-            <p className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light text-[#6A5D55] leading-relaxed max-w-[280px]">
-              {item.text}
-            </p>
-          </motion.div>
-          
-          <motion.div 
-            style={isMobile ? { opacity: mobileOpacity } : undefined}
-            className={`absolute inset-0 pointer-events-none w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-0 group-hover:opacity-100' : ''}`}
-          >
-            <h4 
-              className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] font-light mb-4 text-transparent whitespace-nowrap animate-wave-rtl"
-              style={{ 
-                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text"
-              }}
-            >
-              {item.title}
-            </h4>
-            <p 
-              className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light leading-relaxed max-w-[280px] text-transparent animate-wave-ltr"
-              style={{ 
-                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
-                WebkitBackgroundClip: "text",
-                backgroundClip: "text"
-              }}
-            >
-              {item.text}
-            </p>
-          </motion.div>
-        </motion.div>
-      </div>
-    </motion.div>
   );
 }
