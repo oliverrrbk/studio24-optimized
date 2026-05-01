@@ -52,7 +52,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     lerp: 0.08,
     duration: 1.5,
     smoothWheel: true,
-    syncTouch: true,
+    syncTouch: false,
     wheelMultiplier: 0.7,
     touchMultiplier: 1.2,
   };
