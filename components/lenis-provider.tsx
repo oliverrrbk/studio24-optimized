@@ -45,7 +45,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     smoothWheel: true,
     syncTouch: false,  // CRITICAL: Let WebKit handle trackpad natively
     wheelMultiplier: 0.8,
-    touchMultiplier: 2,
+    touchMultiplier: 1.2,
   };
 
   const defaultOptions = {
@@ -54,7 +54,7 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
     smoothWheel: true,
     syncTouch: true,
     wheelMultiplier: 0.7,
-    touchMultiplier: 2,
+    touchMultiplier: 1.2,
   };
 
   return (
