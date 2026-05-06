@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { Paintbrush, Scissors, Sparkles, User, Quote, Star } from 'lucide-react';
+import { Paintbrush, Scissors, Sparkles, User, Quote, Star, Waves } from 'lucide-react';
 import { CardTransformed, CardsContainer, ContainerScroll, ReviewStars } from "@/components/blocks/animated-cards-stack"
 import { FAQAccordion } from "@/components/ui/faq-accordion"
 import { SiteFooter } from "@/components/ui/site-footer"
@@ -47,7 +47,7 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
           className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-1000 ease-out shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 group-hover:scale-105 border ${!isMobile && isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
         >
           <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-all duration-1000 ease-out group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
-             <IconComponent className={`w-[clamp(2rem,3vw,2.5rem)] h-[clamp(2rem,3vw,2.5rem)] 2xl:w-[3.5rem] 2xl:h-[3.5rem] stroke-[1]`} />
+             <IconComponent className={`w-[clamp(2rem,3vw,2.5rem)] h-[clamp(2rem,3vw,2.5rem)] 2xl:w-[3.5rem] 2xl:h-[3.5rem] stroke-[1] ${ydelse.iconClass || ''}`} />
           </motion.div>
         </motion.div>
         <motion.h4 
@@ -493,29 +493,29 @@ export default function Page() {
                  {/* Left Side Group */}
                  <div className="absolute top-[15%] 2xl:top-[16%] left-[8%] lg:left-[12%] 2xl:left-[4%] w-[clamp(120px,11vw,150px)] 2xl:w-[clamp(170px,14vw,230px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-12deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/3.png" fill alt="Result 1" className="object-cover" />
+                    <Image src="/gallerypics/14.png" fill alt="Result 1" className="object-cover" />
                  </div>
                  <div className="absolute top-[40%] 2xl:top-[41%] left-[2%] lg:left-[6%] 2xl:-left-[2%] w-[clamp(120px,10.5vw,140px)] 2xl:w-[clamp(160px,12.5vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-10">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover" />
+                    <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover brightness-110" />
                  </div>
                  <div className="absolute top-[64%] 2xl:top-[62%] left-[12%] lg:left-[14%] 2xl:left-[6%] w-[clamp(125px,11.5vw,150px)] 2xl:w-[clamp(145px,11.5vw,190px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-20">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/6.png" fill alt="Result 3" className="object-cover" />
+                    <Image src="/gallerypics/4.png" fill alt="Result 3" className="object-cover" />
                  </div>
 
                  {/* Right Side Group */}
                  <div className="absolute top-[18%] 2xl:top-[18%] right-[10%] lg:right-[12%] 2xl:right-[6%] w-[clamp(130px,12vw,160px)] 2xl:w-[clamp(180px,14vw,235px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[15deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/9.png" fill alt="Result 4" className="object-cover" />
+                    <Image src="/gallerypics/13.png" fill alt="Result 4" className="object-cover" />
                  </div>
                  <div className="absolute top-[45%] 2xl:top-[45%] right-[3%] lg:right-[6%] 2xl:right-[0%] w-[clamp(115px,10vw,140px)] 2xl:w-[clamp(160px,13vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-10deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/1.png" fill alt="Result 5" className="object-cover" />
+                    <Image src="/gallerypics/12.png" fill alt="Result 5" className="object-cover brightness-[0.93]" />
                  </div>
                  <div className="absolute top-[68%] 2xl:top-[66%] right-[12%] lg:right-[14%] 2xl:right-[8%] w-[clamp(120px,10vw,140px)] 2xl:w-[clamp(160px,12vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[6deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-20">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/12.png" fill alt="Result 6" className="object-cover" />
+                    <Image src="/gallerypics/16.png" fill alt="Result 6" className="object-cover" />
                  </div>
               </div>
 
@@ -606,7 +606,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center font-headline font-light text-[clamp(2.5rem,4vw,4.5rem)] leading-[1.05] tracking-tight mb-[clamp(2rem,4vw,3.5rem)]"
+              className="text-center font-headline font-light text-[clamp(2.5rem,4vw,4.5rem)] leading-[1.05] tracking-tight mb-[clamp(3.5rem,4vw,3.5rem)] md:mb-[clamp(2rem,4vw,3.5rem)]"
             >
               Mine kernekompetencer
             </motion.h2>
@@ -617,10 +617,10 @@ export default function Page() {
               onMouseLeave={() => setIsHoveringServices(false)}
             >
               {[
+                { title: "Professionelle extensions", desc: "Få længde og fylde på en sikker måde. Jeg bærer dem selv dagligt.", icon: Waves, iconClass: "rotate-90" },
                 { title: "Balayage", desc: "Skånsomme farveovergange der giver et naturligt look og kræver mindre vedligehold.", icon: Paintbrush },
                 { title: "Klip og styling", desc: "En klipning tilpasset dit ansigt så frisuren også fungerer for dig derhjemme.", icon: Scissors },
-                { title: "Farve og striber", desc: "En grundig farvekonsultation sikrer at vi rammer den rette nuance uden at ødelægge håret.", icon: Sparkles },
-                { title: "Professionelle extensions", desc: "Få længde og fylde på en sikker måde. Jeg bærer dem selv dagligt.", icon: User }
+                { title: "Farve og striber", desc: "En grundig farvekonsultation sikrer at vi rammer den rette nuance uden at ødelægge håret.", icon: Sparkles }
               ].map((ydelse, idx) => {
                 const IconComponent = ydelse.icon;
                 const isActive = activeServices.includes(idx);
@@ -658,10 +658,10 @@ export default function Page() {
                   transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
                   className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
                 >
-                   <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-[transform,box-shadow] duration-500 hover:scale-105">
+                   <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
                       <Image src="/images/landing_stats_1.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
-                   <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-[transform,box-shadow] duration-500 hover:scale-105">
+                   <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
                       <Image src="/images/landing_stats_2.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                 </motion.div>
@@ -755,7 +755,7 @@ export default function Page() {
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
               </h2>
-              <a href="#book" className="inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
+              <a href="#book" className="cursor-pointer inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
                 Book en tid nu
               </a>
            </motion.div>

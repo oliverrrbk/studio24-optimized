@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accent Colour Review — Studio 24</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,500;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #FDFBF7;
+      --bg-2: #F5F3EF;
+      --brown: #4C433C;
+      --brown-light: #92857C;
+      --brown-dark: #1c1a18;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--brown);
+      font-family: 'Manrope', sans-serif;
+      min-height: 100vh;
+      padding: 3rem 1.5rem 5rem;
+    }
+
+    /* ── HEADER ── */
+    .header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .header-label {
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown-light);
+      margin-bottom: 0.75rem;
+    }
+    .header h1 {
+      font-family: 'Noto Serif', serif;
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 400;
+      color: var(--brown-dark);
+      line-height: 1.2;
+      margin-bottom: 0.9rem;
+    }
+    .header p {
+      font-size: 0.88rem;
+      color: var(--brown-light);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── CURRENT PILL ── */
+    .current-swatch {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 4rem;
+      background: white;
+      border: 1px solid #E8E4DF;
+      border-radius: 16px;
+      padding: 1.25rem 2rem;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .current-swatch .dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .current-swatch .info {
+      font-size: 0.82rem;
+      color: var(--brown-light);
+    }
+    .current-swatch .info strong {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--brown);
+      margin-bottom: 2px;
+    }
+
+    /* ── GRID ── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* ── CARD ── */
+    .card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1.5px solid #EDE9E4;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+      cursor: default;
+    }
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(28, 26, 24, 0.1);
+    }
+
+    /* Card banner */
+    .card-banner {
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-banner::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .banner-swatch {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,0.6);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+    .banner-swatch-light {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 2px solid rgba(255,255,255,0.5);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .variation-badge {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      background: rgba(0,0,0,0.12);
+      border-radius: 100px;
+      padding: 3px 10px;
+      font-weight: 600;
+    }
+
+    /* Card body */
+    .card-body {
+      padding: 1.75rem;
+    }
+    .card-title {
+      font-family: 'Noto Serif', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--brown-dark);
+      margin-bottom: 0.35rem;
+    }
+    .card-subtitle {
+      font-size: 0.75rem;
+      color: var(--brown-light);
+      letter-spacing: 0.05em;
+      margin-bottom: 1.25rem;
+    }
+    .card-desc {
+      font-size: 0.82rem;
+      color: var(--brown-light);
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Mini mockup */
+    .mockup {
+      background: var(--bg-2);
+      border-radius: 14px;
+      padding: 1.1rem 1.25rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+    .mockup-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mockup-logo {
+      font-family: 'Noto Serif', serif;
+      font-size: 0.82rem;
+      color: var(--brown);
+      font-style: italic;
+    }
+    .mockup-btn {
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      border-radius: 100px;
+      padding: 5px 14px;
+      border: none;
+      cursor: default;
+    }
+    .mockup-divider {
+      height: 1px;
+      background: #E8E4DF;
+      margin: 0 -1.25rem;
+    }
+    .mockup-hero {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .mockup-line {
+      height: 7px;
+      border-radius: 4px;
+    }
+    .mockup-line.title { width: 70%; }
+    .mockup-line.sub { width: 50%; height: 5px; background: #E0DBD5; }
+    .mockup-cta {
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      border-radius: 100px;
+      padding: 7px 18px;
+      border: none;
+      cursor: default;
+      display: inline-block;
+      margin-top: 0.25rem;
+      align-self: flex-start;
+    }
+    .mockup-accent-line {
+      width: 4px;
+      height: 36px;
+      border-radius: 2px;
+      align-self: center;
+    }
+    .mockup-star-row {
+      display: flex;
+      gap: 4px;
+    }
+    .star {
+      width: 10px;
+      height: 10px;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    /* Hex chips */
+    .hex-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .hex-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: var(--bg-2);
+      border: 1px solid #E8E4DF;
+      border-radius: 100px;
+      padding: 5px 12px 5px 6px;
+      font-size: 0.7rem;
+      color: var(--brown-light);
+      font-family: 'Manrope', monospace;
+    }
+    .hex-chip .dot-sm {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Mood tag */
+    .mood-tag {
+      display: inline-block;
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    /* CHOOSE button */
+    .choose-btn {
+      width: 100%;
+      background: none;
+      border: 1.5px solid currentColor;
+      border-radius: 100px;
+      padding: 0.6rem 1rem;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.25s, color 0.25s;
+    }
+
+    /* ── NOTE FOOTER ── */
+    .note {
+      max-width: 640px;
+      margin: 4rem auto 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--brown-light);
+      line-height: 1.8;
+      border-top: 1px solid #E8E4DF;
+      padding-top: 2.5rem;
+    }
+    .note strong { color: var(--brown); }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <div class="header-label">Internal Design Review</div>
+    <h1>Accent Colour Variations</h1>
+    <p>Six highly subtle variations that stay extremely true to the original pinkish essence, but gently push it slightly towards beige or brown.</p>
+  </div>
+
+  <!-- CURRENT -->
+  <div class="current-swatch" style="margin-bottom: 3rem;">
+    <div class="dot" style="background:#EDB7A9;"></div>
+    <div class="dot" style="background:#EAD5C5;"></div>
+    <div class="info">
+      <strong>Current Accent (for reference)</strong>
+      Primary #EDB7A9 &nbsp;·&nbsp; Light #EAD5C5
+    </div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ═══════════════════════ VARIATION 1 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #EFCAA3 0%, #D9C3AD 100%);">
+        <div class="banner-swatch" style="background:#D9C3AD;"></div>
+        <div class="banner-swatch-light" style="background:#CDB39B;"></div>
+        <span class="variation-badge">Option 1</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#F7ECE9; color:#A66453;">Warm Cashmere</span>
+        <div class="card-title">Sand Beige</div>
+        <div class="card-subtitle">#D9C3AD · #CDB39B</div>
+        <div class="card-desc">
+          A soft, sandy beige that completely removes the pink tint while maintaining a light, elegant feel.towards a golden-beige. It retains the delicate, luminous feel of the pink but warms it up slightly.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#D9C3AD;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#D9C3AD; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#D9C3AD;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#D9C3AD;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#D9C3AD;"></div>
+            <div class="star" style="background:#D9C3AD;"></div>
+            <div class="star" style="background:#D9C3AD;"></div>
+            <div class="star" style="background:#D9C3AD;"></div>
+            <div class="star" style="background:#D9C3AD;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#D9C3AD;"></div>#D9C3AD</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#CDB39B;"></div>#CDB39B</div>
+        </div>
+        <button class="choose-btn" style="color:#D9C3AD; border-color:#D9C3AD;"
+          onmouseover="this.style.background='#D9C3AD'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#D9C3AD';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ VARIATION 2 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #EADBD1 0%, #D1BAA3 100%);">
+        <div class="banner-swatch" style="background:#D1BAA3;"></div>
+        <div class="banner-swatch-light" style="background:#C4A98F;"></div>
+        <span class="variation-badge">Option 2</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#F2E9E6; color:#9E5F4D;">Dusty Blush</span>
+        <div class="card-title">Warm Oatmeal</div>
+        <div class="card-subtitle">#D1BAA3 · #C4A98F</div>
+        <div class="card-desc">
+          A comfortable, natural oat tone. Slightly darker than sand with a very subtle warmth.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#D1BAA3;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#D1BAA3; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#D1BAA3;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#D1BAA3;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#D1BAA3;"></div>
+            <div class="star" style="background:#D1BAA3;"></div>
+            <div class="star" style="background:#D1BAA3;"></div>
+            <div class="star" style="background:#D1BAA3;"></div>
+            <div class="star" style="background:#D1BAA3;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#D1BAA3;"></div>#D1BAA3</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#C4A98F;"></div>#C4A98F</div>
+        </div>
+        <button class="choose-btn" style="color:#D1BAA3; border-color:#D1BAA3;"
+          onmouseover="this.style.background='#D1BAA3'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#D1BAA3';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ VARIATION 3 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #E6D4CB 0%, #BEA28C 100%);">
+        <div class="banner-swatch" style="background:#BEA28C;"></div>
+        <div class="banner-swatch-light" style="background:#AF907A;"></div>
+        <span class="variation-badge">Option 3</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#EDE3DF; color:#955A48;">Rosewood Sand</span>
+        <div class="card-title">Deeper Pink-Brown</div>
+        <div class="card-subtitle">#BEA28C · #AF907A</div>
+        <div class="card-desc">
+          Deeper and a bit more brown-beige, but the original pink essence is absolutely still there. It creates a slightly stronger contrast against the light backgrounds.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#BEA28C;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#BEA28C; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#BEA28C;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#BEA28C;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#BEA28C;"></div>
+            <div class="star" style="background:#BEA28C;"></div>
+            <div class="star" style="background:#BEA28C;"></div>
+            <div class="star" style="background:#BEA28C;"></div>
+            <div class="star" style="background:#BEA28C;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#BEA28C;"></div>#BEA28C</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#AF907A;"></div>#AF907A</div>
+        </div>
+        <button class="choose-btn" style="color:#BEA28C; border-color:#BEA28C;"
+          onmouseover="this.style.background='#BEA28C'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#BEA28C';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ VARIATION 4 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #F0D5C9 0%, #B5957C 100%);">
+        <div class="banner-swatch" style="background:#B5957C;"></div>
+        <div class="banner-swatch-light" style="background:#A3836A;"></div>
+        <span class="variation-badge">Option 4</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#F5E8E3; color:#A4604C;">Soft Terracotta</span>
+        <div class="card-title">Camel Beige</div>
+        <div class="card-subtitle">#B5957C · #A3836A</div>
+        <div class="card-desc">
+          Pushes the pink towards a warm, earthy terracotta tone. It feels slightly more vibrant and "baked" but retains the pastel, high-end feel.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#B5957C;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#B5957C; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#B5957C;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#B5957C;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#B5957C;"></div>
+            <div class="star" style="background:#B5957C;"></div>
+            <div class="star" style="background:#B5957C;"></div>
+            <div class="star" style="background:#B5957C;"></div>
+            <div class="star" style="background:#B5957C;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#B5957C;"></div>#B5957C</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#A3836A;"></div>#A3836A</div>
+        </div>
+        <button class="choose-btn" style="color:#B5957C; border-color:#B5957C;"
+          onmouseover="this.style.background='#B5957C'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#B5957C';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ VARIATION 5 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #ECE2DD 0%, #C7AE97 100%);">
+        <div class="banner-swatch" style="background:#C7AE97;"></div>
+        <div class="banner-swatch-light" style="background:#B99E85;"></div>
+        <span class="variation-badge">Option 5</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#F0EAE7; color:#966455;">Pale Rose-Beige</span>
+        <div class="card-title">Desaturated Rose</div>
+        <div class="card-subtitle">#C7AE97 · #B99E85</div>
+        <div class="card-desc">
+          Loses a bit of the color punch, becoming a very soft, desaturated grey-pink-beige. Very calm, subtle, and understated.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#C7AE97;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#C7AE97; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#C7AE97;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#C7AE97;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#C7AE97;"></div>
+            <div class="star" style="background:#C7AE97;"></div>
+            <div class="star" style="background:#C7AE97;"></div>
+            <div class="star" style="background:#C7AE97;"></div>
+            <div class="star" style="background:#C7AE97;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#C7AE97;"></div>#C7AE97</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#B99E85;"></div>#B99E85</div>
+        </div>
+        <button class="choose-btn" style="color:#C7AE97; border-color:#C7AE97;"
+          onmouseover="this.style.background='#C7AE97'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#C7AE97';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+    <!-- ═══════════════════════ VARIATION 6 ═══════════════════════ -->
+    <div class="card">
+      <div class="card-banner" style="background: linear-gradient(135deg, #DFCBC3 0%, #AA876E 100%);">
+        <div class="banner-swatch" style="background:#AA876E;"></div>
+        <div class="banner-swatch-light" style="background:#98755C;"></div>
+        <span class="variation-badge">Option 6</span>
+      </div>
+      <div class="card-body">
+        <span class="mood-tag" style="background:#EBE2DE; color:#8F523E;">Latte</span>
+        <div class="card-title">Deepest Brown-Pink</div>
+        <div class="card-subtitle">#AA876E · #98755C</div>
+        <div class="card-desc">
+          The furthest push into brown out of these subtle variations. It holds onto the pinkish DNA but leans heavily into a muted, earthy clay.
+        </div>
+
+        <div class="mockup">
+          <div class="mockup-nav">
+            <div class="mockup-logo">Studio 24</div>
+            <button class="mockup-btn" style="background:#AA876E;">Book tid</button>
+          </div>
+          <div class="mockup-divider"></div>
+          <div class="mockup-hero">
+            <div class="mockup-line title" style="background:#AA876E; opacity:0.5;"></div>
+            <div class="mockup-line sub"></div>
+            <button class="mockup-cta" style="background:#AA876E;">Bestil tid</button>
+          </div>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div class="mockup-accent-line" style="background:#AA876E;"></div>
+            <div style="flex:1;">
+              <div class="mockup-line" style="width:90%; height:5px; background:#E0DBD5; margin-bottom:5px;"></div>
+              <div class="mockup-line" style="width:70%; height:5px; background:#E0DBD5;"></div>
+            </div>
+          </div>
+          <div class="mockup-star-row">
+            <div class="star" style="background:#AA876E;"></div>
+            <div class="star" style="background:#AA876E;"></div>
+            <div class="star" style="background:#AA876E;"></div>
+            <div class="star" style="background:#AA876E;"></div>
+            <div class="star" style="background:#AA876E;"></div>
+          </div>
+        </div>
+
+        <div class="hex-row" style="margin-bottom:1.25rem;">
+          <div class="hex-chip"><div class="dot-sm" style="background:#AA876E;"></div>#AA876E</div>
+          <div class="hex-chip"><div class="dot-sm" style="background:#98755C;"></div>#98755C</div>
+        </div>
+        <button class="choose-btn" style="color:#AA876E; border-color:#AA876E;"
+          onmouseover="this.style.background='#AA876E'; this.style.color='white';"
+          onmouseout="this.style.background='none'; this.style.color='#AA876E';">
+          → Choose this option
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

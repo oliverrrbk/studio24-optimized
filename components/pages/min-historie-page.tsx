@@ -336,49 +336,49 @@ export default function MinHistoriePage() {
             </span>
           </div>
           <div className="flex overflow-x-auto items-center xl:justify-center pb-12 px-[clamp(1.5rem,5vw,4rem)] gap-[clamp(1.3rem,2.5vw,2.5rem)] 2xl:gap-[clamp(1.5rem,3vw,3rem)] no-scrollbar scroll-smooth">
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(250px,27vw,360px)] 2xl:w-[clamp(280px,30vw,400px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
               <div className="w-full aspect-[4/5] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
+                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
                   src="/about/swatches.png"
                   alt="Hair color swatches"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
             </motion.div>
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
               <div className="w-full aspect-square relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
+                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
                   src="/about/product_hands.png"
                   alt="Product application hands"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
             </motion.div>
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(270px,31vw,450px)] 2xl:w-[clamp(300px,35vw,500px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
               <div className="w-full aspect-[4/3] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
+                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
                   src="/about/mirror.png"
                   alt="Mirror reflection"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
             </motion.div>
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-700 ease-in-out">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
               <div className="w-full aspect-[3/4] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 transition-[filter,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]"
+                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
                   src="/about/waiting.png"
                   alt="Cozy waiting table"
                 />
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
             </motion.div>
           </div>
         </motion.section>

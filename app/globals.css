@@ -167,3 +167,13 @@
   }
 }
 
+/* Bag Facaden gallery images – slow, smooth zoom on hover */
+.facaden-img {
+  transform: scale(1) !important;
+  transition: transform 4s ease-out, filter 2s ease-out !important;
+  will-change: transform;
+}
+.group:hover .facaden-img {
+  transform: scale(1.07) !important;
+}
+

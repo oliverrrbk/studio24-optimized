@@ -100,6 +100,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
   };
 
   const onMouseEnter = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
     if (leaveTimeout1.current) {
       clearTimeout(leaveTimeout1.current);
     }
@@ -140,6 +141,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
   };
 
   const onMouseMove = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
     const { left, right, top, bottom } = getDimensions();
     const xCenter = (left + right) / 2;
     const yCenter = (top + bottom) / 2;
@@ -158,6 +160,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
   };
 
   const onMouseLeave = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
     const oppositeMatrix = getOppositeMatrix(matrix, e.clientY);
 
     if (enterTimeout.current) {

@@ -116,7 +116,7 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
       <div className='grid grid-cols-3 gap-2 md:gap-4 items-start relative'>
         {/* Left Column */}
         <div className='grid gap-2 md:gap-4 col-span-1'>
-          {[images.img4, images.img5, images.img6, images.img7, images.img8, images.img9, images.img10].map((img, idx) => (
+          {[images.img9, images.img6, images.img7, images.img5, images.img4, images.img8, images.img15].map((img, idx) => (
             <motion.figure 
               key={`left-${idx}`} 
               initial={{ opacity: 0 }}
@@ -143,7 +143,7 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
           ref={stickyRef}
           className='flex flex-col w-full col-span-1 gap-2 md:gap-4 sticky z-10'
         >
-          {[images.img1, images.img2, images.img3, images.img10].map((img, idx) => (
+          {[images.img16, images.img17, images.img1, images.img10].map((img, idx) => (
             <motion.figure 
               key={`mid-${idx}`} 
               initial={{ opacity: 0 }}
@@ -167,7 +167,7 @@ const StickyScrollGallery = forwardRef<HTMLElement>((props, ref) => {
 
         {/* Right Column */}
         <div className='grid gap-2 md:gap-4 col-span-1'>
-          {[images.img11, images.img12, images.img13, images.img14, images.img15, images.img16, images.img17].map((img, idx) => (
+          {[images.img13, images.img10, images.img14, images.img2, images.img11, images.img12, images.img3].map((img, idx) => (
             <motion.figure 
               key={`right-${idx}`} 
               initial={{ opacity: 0 }}
