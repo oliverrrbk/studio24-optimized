@@ -74,12 +74,12 @@ function BookingModalInner() {
             {/* Left Side: Image & Call to Action */}
             <section className="relative w-full md:w-1/2 h-[40svh] md:h-full overflow-hidden flex-shrink-0">
               <Image 
-                src="/booking-modal.png" 
+                src="/new_gallery/13.png" 
                 alt="Atmospheric Interior" 
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 priority
-                className="object-cover transition-transform duration-[15s] hover:scale-105" 
+                className="object-cover object-[35%_bottom] scale-[1.12] translate-y-3 transition-transform duration-[15s] hover:scale-[1.17] contrast-[0.85] saturate-[0.85] brightness-[1.05]" 
               />
               {/* Elegant Warm Gradient Overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-[#2c2621]/90 via-[#2c2621]/20 to-transparent pointer-events-none"></div>

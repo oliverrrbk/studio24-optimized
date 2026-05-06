@@ -388,12 +388,12 @@ export default function Page() {
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
-                  <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                  <Image src="/new_gallery/11.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
                 <div className="absolute bottom-[-4%] left-[1%] md:bottom-[-4%] md:left-[8%] lg:left-[24%] 2xl:left-[2%] z-30 w-[clamp(6rem,12vw,10rem)] h-[clamp(6rem,12vw,10rem)] 2xl:w-[clamp(9rem,18vw,14rem)] 2xl:h-[clamp(9rem,18vw,14rem)] flex items-center justify-center opacity-70">
-                  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[#7A6F68] drop-shadow-sm overflow-visible">
+                  <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" className="w-full h-full text-[#4C433C] drop-shadow-sm overflow-visible">
                     <style>{`
                       @keyframes orbit-dash {
                         to { stroke-dashoffset: 200; }
@@ -424,12 +424,12 @@ export default function Page() {
                  <div className="relative w-full mb-[clamp(2rem,4vw,3rem)] h-[75vw] md:h-auto md:block">
                     {/* Background image (Mobile offset: right/down, Desktop: normal) */}
                     <div className="absolute md:relative bottom-0 right-0 md:bottom-auto md:right-auto w-[75%] md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] group z-10">
-                      <Image src="/images/solo_salon_relaxing_emilie.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/42.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
 
                     {/* Foreground image (Mobile only offset: left/up) */}
                     <div className="absolute top-0 left-0 w-[65%] aspect-[4/3] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
-                      <Image src="/images/solo_salon_hair_emilie.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/5.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
                  </div>
                  
@@ -493,11 +493,11 @@ export default function Page() {
                  {/* Left Side Group */}
                  <div className="absolute top-[15%] 2xl:top-[16%] left-[8%] lg:left-[12%] 2xl:left-[4%] w-[clamp(120px,11vw,150px)] 2xl:w-[clamp(170px,14vw,230px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-12deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)]">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/14.png" fill alt="Result 1" className="object-cover" />
+                    <Image src="/gallerypics/14.png" fill alt="Result 1" className="object-cover brightness-110" />
                  </div>
                  <div className="absolute top-[40%] 2xl:top-[41%] left-[2%] lg:left-[6%] 2xl:-left-[2%] w-[clamp(120px,10.5vw,140px)] 2xl:w-[clamp(160px,12.5vw,210px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[8deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-10">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
-                    <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover brightness-110" />
+                    <Image src="/gallerypics/15.png" fill alt="Result 2" className="object-cover" />
                  </div>
                  <div className="absolute top-[64%] 2xl:top-[62%] left-[12%] lg:left-[14%] 2xl:left-[6%] w-[clamp(125px,11.5vw,150px)] 2xl:w-[clamp(145px,11.5vw,190px)] aspect-[2/3] rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden rotate-[-4deg] shadow-[0_15px_40px_rgba(28,26,24,0.15)] z-20">
                     <div className="absolute inset-0 bg-[#EAD5C5]/10 mix-blend-multiply z-10"></div>
@@ -659,10 +659,10 @@ export default function Page() {
                   className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
                 >
                    <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
-                      <Image src="/images/landing_stats_1.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/5.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                    <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
-                      <Image src="/images/landing_stats_2.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/31.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                    </div>
                 </motion.div>
              </div>
@@ -687,7 +687,7 @@ export default function Page() {
                   </div>
                   {/* Floating Galleri Image */}
                   <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
-                    <Image src="/images/landing_founder_detail.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/30.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Subtle star SVG accent behind */}
                   <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[20%] aspect-square animate-[spin_40s_linear_infinite]">
@@ -738,7 +738,7 @@ export default function Page() {
         <section id="kontakt" className="relative pt-[clamp(4rem,8vw,8rem)] 2xl:pt-[clamp(8rem,15vw,12rem)] pb-[clamp(8rem,15vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden flex items-center justify-center">
            {/* Background Image and Overlay */}
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
-             <Image src="/images/cozy_small_salon.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+             <Image src="/new_gallery/19.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover object-bottom scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 md:bg-white/30 pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}

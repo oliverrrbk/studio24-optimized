@@ -191,7 +191,7 @@ export default function MinHistoriePage() {
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                        src="/about/tools.png"
+                        src="/new_gallery/47.png"
                         alt="Hair styling tools"
                       />
                     </motion.div>
@@ -199,7 +199,7 @@ export default function MinHistoriePage() {
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                        src="/about/interior.png"
+                        src="/new_gallery/7.png"
                         alt="Atelier interior"
                       />
                     </motion.div>
@@ -209,7 +209,7 @@ export default function MinHistoriePage() {
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                        src="/about/hair_closeup.png"
+                        src="/new_gallery/34.png"
                         alt="Hair styling close-up"
                       />
                     </motion.div>
@@ -217,7 +217,7 @@ export default function MinHistoriePage() {
                       <Image
                         fill
                         className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                        src="/about/client_coffee.png"
+                        src="/new_gallery/2.png"
                         alt="Client relaxing"
                       />
                     </motion.div>
@@ -340,20 +340,9 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-[4/5] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
-                  src="/about/swatches.png"
+                  className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
+                  src="/new_gallery/33.png"
                   alt="Hair color swatches"
-                />
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
-            </motion.div>
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative mt-16 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
-              <div className="w-full aspect-square relative">
-                <Image
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
-                  src="/about/product_hands.png"
-                  alt="Product application hands"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
@@ -362,19 +351,30 @@ export default function MinHistoriePage() {
               <div className="w-full aspect-[4/3] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
-                  src="/about/mirror.png"
+                  className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
+                  src="/new_gallery/8.png"
                   alt="Mirror reflection"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
             </motion.div>
-            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative mt-8 group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(180px,22vw,270px)] 2xl:w-[clamp(200px,25vw,300px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
+              <div className="w-full aspect-square relative">
+                <Image
+                  fill
+                  className="object-cover object-left scale-[1.15] contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
+                  src="/new_gallery/43.png"
+                  alt="Product application hands"
+                />
+              </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1c1a18]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000 ease-out"></div>
+            </motion.div>
+            <motion.div style={hardwareAccelerated} variants={imageReveal} className="flex-none w-[clamp(220px,25vw,310px)] 2xl:w-[clamp(250px,28vw,350px)] relative group cursor-pointer shadow-[0_10px_30px_rgba(28,26,24,0.06)] overflow-hidden rounded-[4px] hover:-translate-y-2 transition-transform duration-1000 ease-out">
               <div className="w-full aspect-[3/4] relative">
                 <Image
                   fill
-                  className="object-cover grayscale group-hover:grayscale-0 contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
-                  src="/about/waiting.png"
+                  className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
+                  src="/new_gallery/36.png"
                   alt="Cozy waiting table"
                 />
               </div>
