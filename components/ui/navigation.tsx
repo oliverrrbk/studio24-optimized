@@ -64,7 +64,7 @@ export function Navigation() {
           </Link>
           <div className="flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             <Link href="?booking=true" scroll={false}>
-              <button className="cursor-pointer bg-[#EDB7A9] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#e6a896] border-[#4C433C]/20 transition duration-1000 ease-out shadow-[0_8px_30px_rgba(237,183,169,0.4)]">
+              <button className="cursor-pointer bg-[#D8AD97] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#cd977a] border-[#4C433C]/20 transition duration-1000 ease-out shadow-[0_8px_30px_rgba(216,173,151,0.4)]">
                 Book tid
               </button>
             </Link>
@@ -90,7 +90,7 @@ export function Navigation() {
             </Link>
           </div>
           <Link href="?booking=true" scroll={false}>
-            <button className="cursor-pointer bg-[#EDB7A9] text-white px-4 py-2.5 rounded-lg font-label text-[10px] uppercase tracking-[0.1em] font-bold active:scale-95 transition-transform shadow-md">
+            <button className="cursor-pointer bg-[#D8AD97] text-white px-4 py-2.5 rounded-lg font-label text-[10px] uppercase tracking-[0.1em] font-bold active:scale-95 transition-transform shadow-md">
               Book tid
             </button>
           </Link>
@@ -116,7 +116,7 @@ export function Navigation() {
                     <Link 
                       href={link.href}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-4 font-light tracking-wide border-b border-[#4C433C]/5 hover:text-[#EDB7A9] transition-colors duration-300"
+                      className="block py-4 font-light tracking-wide border-b border-[#4C433C]/5 hover:text-[#D8AD97] transition-colors duration-300"
                     >
                       {link.name}
                     </Link>

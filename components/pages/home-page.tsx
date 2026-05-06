@@ -18,11 +18,11 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
     offset: ["start end", "end start"]
   });
 
-  const mobileBorderColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,0.1)", "rgba(237,183,169,1)", "rgba(76,67,60,0.1)"]);
-  const mobileShadow = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["0 0 0px rgba(237,183,169,0)", "0 0 30px rgba(237,183,169,0.3)", "0 0 0px rgba(237,183,169,0)"]);
+  const mobileBorderColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,0.1)", "rgba(216,173,151,1)", "rgba(76,67,60,0.1)"]);
+  const mobileShadow = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["0 0 0px rgba(216,173,151,0)", "0 0 30px rgba(216,173,151,0.3)", "0 0 0px rgba(216,173,151,0)"]);
   const mobileScale = useTransform(scrollYProgress, [0.2, 0.4, 0.6], [1, 1.03, 1]);
-  const mobileIconColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,0.6)", "rgba(237,183,169,1)", "rgba(76,67,60,0.6)"]);
-  const mobileTextColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,1)", "rgba(237,183,169,1)", "rgba(76,67,60,1)"]);
+  const mobileIconColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,0.6)", "rgba(216,173,151,1)", "rgba(76,67,60,0.6)"]);
+  const mobileTextColor = useTransform(scrollYProgress, [0.2, 0.4, 0.6], ["rgba(76,67,60,1)", "rgba(216,173,151,1)", "rgba(76,67,60,1)"]);
 
   return (
     <Link href="?booking=true" scroll={false} className="w-full block">
@@ -44,15 +44,15 @@ function ScrollUSPItem({ ydelse, idx, isActive, isMobile }: any) {
             boxShadow: mobileShadow, 
             scale: mobileScale 
           } : hardwareAccelerated}
-          className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-1000 ease-out shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 group-hover:scale-105 border ${!isMobile && isActive ? 'border-[#EDB7A9] shadow-[0_0_30px_rgba(237,183,169,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
+          className={`w-[clamp(6rem,8vw,7.5rem)] h-[clamp(6rem,8vw,7.5rem)] 2xl:w-[10rem] 2xl:h-[10rem] rounded-full flex items-center justify-center mb-[clamp(1.5rem,3vw,2.5rem)] mx-auto group-hover:bg-[#EAD5C5] group-hover:border-[#EAD5C5] transition-all duration-1000 ease-out shadow-sm group-hover:shadow-[0_15px_40px_rgba(234,213,197,0.4)] group-hover:-translate-y-2 group-hover:scale-105 border ${!isMobile && isActive ? 'border-[#D8AD97] shadow-[0_0_30px_rgba(216,173,151,0.3)] scale-[1.03]' : !isMobile ? 'border-[#4C433C]/10 scale-100' : 'border-[#4C433C]/10 scale-100'}`}
         >
-          <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-all duration-1000 ease-out group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#EDB7A9]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
+          <motion.div style={isMobile ? { ...hardwareAccelerated, color: mobileIconColor } : hardwareAccelerated} className={`transition-all duration-1000 ease-out group-hover:opacity-100 group-hover:text-[#4C433C] ${!isMobile && isActive ? 'opacity-100 text-[#D8AD97]' : !isMobile ? 'opacity-60 text-[#4C433C]' : 'text-[#4C433C]'}`}>
              <IconComponent className={`w-[clamp(2rem,3vw,2.5rem)] h-[clamp(2rem,3vw,2.5rem)] 2xl:w-[3.5rem] 2xl:h-[3.5rem] stroke-[1] ${ydelse.iconClass || ''}`} />
           </motion.div>
         </motion.div>
         <motion.h4 
           style={isMobile ? { ...hardwareAccelerated, color: mobileTextColor } : hardwareAccelerated}
-          className={`font-headline font-medium text-[clamp(1.5rem,2vw,1.75rem)] mb-3 tracking-tight group-hover:text-[#EAD5C5] transition-all duration-1000 ease-out ${!isMobile && isActive ? 'text-[#EDB7A9]' : !isMobile ? 'text-[#4C433C]' : 'text-[#4C433C]'}`}
+          className={`font-headline font-medium text-[clamp(1.5rem,2vw,1.75rem)] mb-3 tracking-tight group-hover:text-[#EAD5C5] transition-all duration-1000 ease-out ${!isMobile && isActive ? 'text-[#D8AD97]' : !isMobile ? 'text-[#4C433C]' : 'text-[#4C433C]'}`}
         >
           {ydelse.title}
         </motion.h4>
@@ -310,7 +310,7 @@ export default function Page() {
               transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="flex justify-center"
             >
-              <Link href="/behandlinger" className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(237,183,169,0.3)] hover:shadow-[0_15px_40px_rgba(237,183,169,0.5)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
+              <Link href="/behandlinger" className="inline-block bg-[#D8AD97] text-white px-[clamp(2.25rem,3.5vw,3rem)] py-[clamp(0.8125rem,1.3vw,1.0625rem)] text-[0.9375rem] md:px-[1.75rem] md:py-[0.6rem] md:text-[0.8125rem] lg:px-[clamp(2.25rem,2.8vw,2.75rem)] lg:py-[clamp(0.8rem,1vw,0.9rem)] lg:text-[0.9375rem] 2xl:px-[clamp(3rem,4vw,4rem)] 2xl:py-[clamp(1.125rem,1.5vw,1.25rem)] 2xl:text-[1.0625rem] font-body font-bold tracking-wide shadow-[0_10px_30px_rgba(216,173,151,0.3)] hover:shadow-[0_15px_40px_rgba(216,173,151,0.5)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out">
                 Udforsk ydelser
               </Link>
             </motion.div>
@@ -442,7 +442,7 @@ export default function Page() {
                  </p>
                  
                  <div className="mt-[clamp(1.5rem,3vw,2rem)] text-center md:text-left w-full">
-                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#EDB7A9] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
+                   <Link href="?booking=true" scroll={false} className="inline-block bg-[#D8AD97] text-white px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(1.25rem,2vw,1.5rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.75rem,1.2vw,0.875rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out">
                      Find en tid
                    </Link>
                  </div>
@@ -480,7 +480,7 @@ export default function Page() {
                 </motion.p>
               </div>
               
-              {/* Amorphous Pulsating Hues matched to the CTA button (#EDB7A9) */}
+              {/* Amorphous Pulsating Hues matched to the CTA button (#D8AD97) */}
               <div className="absolute top-1/2 left-[5%] -translate-y-1/2 w-[clamp(250px,40vw,600px)] md:w-[clamp(250px,25vw,400px)] 2xl:w-[clamp(400px,40vw,600px)] aspect-square z-0 pointer-events-none opacity-80">
                  <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(234,213,197,0.4) 0%, transparent 70%)'}}></div>
               </div>
@@ -551,7 +551,7 @@ export default function Page() {
                               {testimonial.description.length > 130 && (
                                 <button 
                                   onClick={() => setSelectedReview(testimonial)}
-                                  className="mt-3 2xl:mt-4 text-[9px] 2xl:text-[11px] font-medium tracking-widest uppercase text-[#EDB7A9] hover:text-[#4C433C] transition-colors font-label"
+                                  className="mt-3 2xl:mt-4 text-[9px] 2xl:text-[11px] font-medium tracking-widest uppercase text-[#D8AD97] hover:text-[#4C433C] transition-colors font-label"
                                 >
                                   Læs mere
                                 </button>
@@ -584,13 +584,13 @@ export default function Page() {
                     {[1,2,3,4,5].map((i, idx) => (
                       <Star 
                         key={i} 
-                        className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 fill-[#EDB7A9] text-[#EDB7A9] transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:scale-110" 
+                        className="w-3 h-3 2xl:w-3.5 2xl:h-3.5 fill-[#D8AD97] text-[#D8AD97] transition-transform duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-[3px] group-hover:scale-110" 
                         style={{ transitionDelay: `${idx * 60}ms` }}
                       />
                     ))}
                   </div>
                   <div className="h-3 w-[1px] bg-[#4C433C]/30"></div>
-                  <span className="text-[10px] 2xl:text-[11px] font-medium tracking-widest text-[#EDB7A9] uppercase pt-px">50+ femstjernede anmeldelser</span>
+                  <span className="text-[10px] 2xl:text-[11px] font-medium tracking-widest text-[#D8AD97] uppercase pt-px">50+ femstjernede anmeldelser</span>
                 </a>
               </motion.div>
             </div>
@@ -683,11 +683,11 @@ export default function Page() {
                 className="relative w-[75%] md:w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0"
               >
                   <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
-                    <Image src="/images/landing_founder.png" fill alt="Founder" className="object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/store-front.jpg" fill alt="Founder" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Floating Galleri Image */}
                   <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
-                    <Image src="/new_gallery/30.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/51.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Subtle star SVG accent behind */}
                   <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[20%] aspect-square animate-[spin_40s_linear_infinite]">
@@ -738,7 +738,7 @@ export default function Page() {
         <section id="kontakt" className="relative pt-[clamp(4rem,8vw,8rem)] 2xl:pt-[clamp(8rem,15vw,12rem)] pb-[clamp(8rem,15vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] overflow-hidden flex items-center justify-center">
            {/* Background Image and Overlay */}
            <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
-             <Image src="/new_gallery/19.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover object-bottom scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+             <Image src="/new_gallery/19.png" fill sizes="100vw" quality={100} alt="Salon ambience" className="object-cover object-[center_80%] scale-[1.05] opacity-[0.45] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
              {/* Whitish tint matching hero video (slightly reduced for footer image) */}
              <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-[#EAD5C5]/15 to-white/30 md:bg-white/30 pointer-events-none z-10"></div>
              {/* Top fade gradient for a smooth transition from previous section */}
@@ -755,7 +755,7 @@ export default function Page() {
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
               </h2>
-              <a href="#book" className="cursor-pointer inline-block bg-[#EDB7A9] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out">
+              <a href="#book" className="cursor-pointer inline-block bg-[#D8AD97] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out">
                 Book en tid nu
               </a>
            </motion.div>

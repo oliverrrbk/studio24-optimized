@@ -32,7 +32,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
   const mobileScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.02, 1.02, 1]);
   const mobileContainerScale = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 1.04, 1.04, 1]);
   const mobileBg = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#FAF8F5", "#F3EFE9", "#F3EFE9", "#FAF8F5"]);
-  const mobileIconColor = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#887A70", "#EDB7A9", "#EDB7A9", "#887A70"]);
+  const mobileIconColor = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["#887A70", "#D8AD97", "#D8AD97", "#887A70"]);
   const mobileShadow = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], ["0 4px 20px rgba(28,26,24,0.03)", "0 15px 30px rgba(28,26,24,0.06)", "0 15px 30px rgba(28,26,24,0.06)", "0 4px 20px rgba(28,26,24,0.03)"]);
   const mobileOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [0, 1, 1, 0]);
   const mobileTextOpacity = useTransform(scrollYProgress, [0.1, 0.3, 0.5, 0.7], [1, 0, 0, 1]);
@@ -49,9 +49,9 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
       <div ref={ref} className="w-full flex flex-col items-center">
         <motion.div 
           style={isMobile ? { backgroundColor: mobileBg, y: mobileTranslateY, scale: mobileScale, boxShadow: mobileShadow } : undefined}
-          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#EDB7A9] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
+          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#D8AD97] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
         >
-          <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#EDB7A9] transition-colors duration-500" : ""}>
+          <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#D8AD97] transition-colors duration-500" : ""}>
             <IconComponent className="w-6 h-6" strokeWidth={1.5} />
           </motion.div>
         </motion.div>
@@ -77,7 +77,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
             <h4 
               className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] font-light mb-4 text-transparent whitespace-nowrap animate-wave-rtl"
               style={{ 
-                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
+                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #D8AD97 25%, #1c1a18 50%, #D8AD97 75%, #1c1a18 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text"
               }}
@@ -87,7 +87,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
             <p 
               className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light leading-relaxed max-w-[280px] text-transparent animate-wave-ltr"
               style={{ 
-                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #EDB7A9 25%, #1c1a18 50%, #EDB7A9 75%, #1c1a18 100%)",
+                backgroundImage: "linear-gradient(to right, #1c1a18 0%, #D8AD97 25%, #1c1a18 50%, #D8AD97 75%, #1c1a18 100%)",
                 WebkitBackgroundClip: "text",
                 backgroundClip: "text"
               }}
@@ -119,7 +119,7 @@ export default function MinHistoriePage() {
   const imageReveal = useMemo(() => getSafeImageReveal(isSafariDesktop), [isSafariDesktop]);
 
   return (
-    <div className="bg-[#FDFBF7] text-[#1c1a18] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#EDB7A9] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#1c1a18] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D8AD97] selection:text-white">
 
       <main className="flex-1 pt-[clamp(7rem,10vw,10rem)] 2xl:pt-[clamp(10rem,12vw,12rem)] pb-0 overflow-x-hidden">
         {/* Hero Section: Editorial Intro */}
@@ -132,7 +132,7 @@ export default function MinHistoriePage() {
           {/* Subtle pulsating gradient blob in top right corner */}
           <div className="absolute top-[-15%] right-[-10%] w-[clamp(270px,45vw,500px)] 2xl:w-[clamp(500px,50vw,600px)] aspect-square z-0 pointer-events-none opacity-40">
              <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(234,213,197,0.45) 0%, transparent 70%)'}}></div>
-             <div className="absolute inset-[-10%] rounded-full" style={{background: 'radial-gradient(circle, rgba(237,183,169,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-[-10%] rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.25) 0%, transparent 70%)'}}></div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[clamp(3.5rem,6vw,6rem)] 2xl:gap-[clamp(6rem,8vw,8rem)] items-center relative z-10">
@@ -153,15 +153,15 @@ export default function MinHistoriePage() {
                   fill
                   priority
                   className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                  src="/about/emilie.png"
-                  alt="Elegant close-up portrait of Emilie"
+                  src="/new_gallery/open-door.png"
+                  alt="Open door to Studio 24"
                 />
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                className="absolute -bottom-6 -left-8 md:-bottom-8 md:-left-8 bg-[#FDFBF7] p-[clamp(1.2rem,2.5vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] max-w-[240px] md:max-w-[280px] 2xl:max-w-[320px] shadow-[-30px_40px_100px_rgba(237,183,169,0.15)] z-10 rounded-[2px]"
+                className="absolute -bottom-6 -left-8 md:-bottom-8 md:-left-8 bg-[#FDFBF7] p-[clamp(1.2rem,2.5vw,2rem)] 2xl:p-[clamp(2rem,3vw,2.5rem)] max-w-[240px] md:max-w-[280px] 2xl:max-w-[320px] shadow-[-30px_40px_100px_rgba(216,173,151,0.15)] z-10 rounded-[2px]"
               >
                 <p className="font-headline italic text-[#1c1a18] text-[clamp(0.95rem,1.2vw,1.1rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.25rem)] leading-[1.4] mb-4 2xl:mb-5">
                   &quot;Jeg undgår det overfladiske. Du får min ærlige mening, og vi finder en løsning, der rent faktisk giver mening for dig.&quot;
@@ -395,14 +395,14 @@ export default function MinHistoriePage() {
           <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FAF8F5] to-transparent pointer-events-none z-10"></div>
 
           {/* Subtle pulsating background gradient fading up from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#EDB7A9]/10 via-[#EDB7A9]/[0.02] to-transparent pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-[#D8AD97]/[0.02] to-transparent pointer-events-none z-0"></div>
 
           {/* Amorphous Pulsating blobs to match the landing page effect but much subtler */}
           <div className="absolute bottom-0 left-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(237,183,169,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.25) 0%, transparent 70%)'}}></div>
           </div>
           <div className="absolute bottom-0 right-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(237,183,169,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.25) 0%, transparent 70%)'}}></div>
           </div>
 
           <div className="relative z-10 max-w-[800px] mx-auto">
@@ -414,7 +414,7 @@ export default function MinHistoriePage() {
             </motion.p>
             <motion.div style={hardwareAccelerated} variants={fadeInUp}>
               <Link 
-                className="inline-block bg-[#EDB7A9] text-white px-[clamp(1.8rem,3vw,2.7rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.9rem,1.3vw,1.1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.6rem,0.9vw,0.7rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(237,183,169,0.4)] hover:shadow-[0_20px_50px_rgba(237,183,169,0.6)] hover:-translate-y-1 hover:bg-[#e6a896] transition duration-1000 ease-out"
+                className="inline-block bg-[#D8AD97] text-white px-[clamp(1.8rem,3vw,2.7rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.9rem,1.3vw,1.1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.6rem,0.9vw,0.7rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out"
                 href="?booking=true"
                 scroll={false}
               >
