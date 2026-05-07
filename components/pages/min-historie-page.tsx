@@ -149,11 +149,11 @@ export default function MinHistoriePage() {
             </div>
             <div className="relative w-[85%] ml-[11%] mr-auto md:w-[90%] md:ml-auto md:mr-0 mt-8 md:mt-0">
               <motion.div style={hardwareAccelerated} variants={imageReveal} className="w-full aspect-[3/4] relative overflow-hidden rounded-[4px] shadow-[0_20px_40px_rgba(28,26,24,0.08)]">
-                <Image
+                  <Image
                   fill
                   priority
                   className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                  src="/new_gallery/new-store-front.png"
+                  src="/new_gallery/newest-store-front.png"
                   alt="Studio 24 Storefront"
                 />
               </motion.div>
