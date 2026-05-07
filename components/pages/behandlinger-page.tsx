@@ -394,7 +394,7 @@ export default function BehandlingerPage() {
         {/* Oplevelsen (Using the Landing Page Hero/CTA overlay style) */}
         <section className="relative w-full overflow-hidden pt-[clamp(4.8rem,8vw,6.4rem)] 2xl:pt-[clamp(6rem,10vw,8rem)] pb-[clamp(8rem,12vw,12.8rem)] 2xl:pb-[clamp(10rem,15vw,16rem)]">
           {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-transparent to-transparent pointer-events-none z-0" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 to-transparent pointer-events-none z-0" />
 
           <div className="relative z-10 max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)]">
             <div className="relative flex flex-col-reverse lg:flex-row items-center gap-0 lg:gap-[clamp(3rem,6vw,5rem)]">

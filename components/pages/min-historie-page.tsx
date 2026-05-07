@@ -395,7 +395,7 @@ export default function MinHistoriePage() {
           <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FAF8F5] to-transparent pointer-events-none z-10"></div>
 
           {/* Subtle pulsating background gradient fading up from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-[#D8AD97]/[0.02] to-transparent pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 to-transparent pointer-events-none z-0"></div>
 
           {/* Amorphous Pulsating blobs to match the landing page effect but much subtler */}
           <div className="absolute bottom-0 left-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
