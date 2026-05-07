@@ -393,8 +393,16 @@ export default function BehandlingerPage() {
 
         {/* Oplevelsen (Using the Landing Page Hero/CTA overlay style) */}
         <section className="relative w-full overflow-hidden pt-[clamp(4.8rem,8vw,6.4rem)] 2xl:pt-[clamp(6rem,10vw,8rem)] pb-[clamp(8rem,12vw,12.8rem)] 2xl:pb-[clamp(10rem,15vw,16rem)]">
-          {/* Gradient Background */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 to-transparent pointer-events-none z-0" />
+          {/* Subtle pulsating background gradient fading up from bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-[#D8AD97]/[0.02] to-transparent pointer-events-none z-0"></div>
+
+          {/* Amorphous Pulsating blobs */}
+          <div className="absolute bottom-0 left-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.25) 0%, transparent 70%)'}}></div>
+          </div>
+          <div className="absolute bottom-0 right-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.25) 0%, transparent 70%)'}}></div>
+          </div>
 
           <div className="relative z-10 max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)]">
             <div className="relative flex flex-col-reverse lg:flex-row items-center gap-0 lg:gap-[clamp(3rem,6vw,5rem)]">
