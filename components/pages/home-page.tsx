@@ -388,7 +388,7 @@ export default function Page() {
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
-                  <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                  <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover object-left-top transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
@@ -429,7 +429,7 @@ export default function Page() {
 
                     {/* Foreground image (Mobile only offset: left/up) */}
                     <div className="absolute top-0 left-0 w-[65%] aspect-[4/3] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
-                      <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover object-left-top transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
                  </div>
                  
