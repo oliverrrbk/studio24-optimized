@@ -307,7 +307,7 @@ export default function BehandlingerPage() {
         </section>
 
         {/* Extensions Section */}
-        <section className="bg-[#F8F5F0] py-[clamp(4.8rem,9.6vw,9.6rem)] 2xl:py-[clamp(6rem,12vw,12rem)] relative" id="extensions">
+        <section className="bg-[#FAF8F5] py-[clamp(4.8rem,9.6vw,9.6rem)] 2xl:py-[clamp(6rem,12vw,12rem)] relative" id="extensions">
           {/* Curve Graphics Overlay */}
           <div className="hidden md:block absolute top-[-10%] md:top-[-15%] 2xl:top-[-20%] left-0 w-[clamp(96px,20vw,520px)] md:w-[clamp(220px,25vw,440px)] 2xl:w-[clamp(120px,25vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-60 z-0">
              <Image src="/images/curve_left.png" alt="Curve left" fill className="object-contain object-left-top" />

@@ -99,7 +99,7 @@ function ScrollStatItem({ stat, idx, scrollScale, scrollColor }: any) {
     >
       <div className="w-full flex flex-col items-center">
         <motion.span style={{ ...hardwareAccelerated, scale: scrollScale, color: scrollColor }}
-          className="font-headline text-[clamp(3rem,5vw,4.5rem)] 2xl:text-[clamp(4rem,7vw,6.5rem)] font-light italic leading-none mb-3 opacity-90 inline-block"
+          className="font-headline text-[clamp(3rem,5vw,4.5rem)] 2xl:text-[clamp(4rem,7vw,6.5rem)] font-light italic leading-none mb-5 md:mb-6 2xl:mb-8 opacity-90 inline-block"
         >
           {stat.num}
         </motion.span>
@@ -285,12 +285,12 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 md:mt-2 lg:-mt-4 2xl:mt-4">
+          <div className="relative z-10 text-center px-[clamp(1.5rem,4vw,4rem)] w-full max-w-4xl mx-auto mt-4 md:-mt-6 lg:-mt-4 2xl:mt-4">
             <motion.h1 style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(2.5rem,3.5vw,3.2rem)] lg:text-[clamp(3.2rem,4.5vw,4.2rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
+              className="font-headline font-light text-[clamp(2.5rem,5.5vw,4.5rem)] md:text-[clamp(3.0rem,4.5vw,3.8rem)] lg:text-[clamp(3.2rem,4.5vw,4.2rem)] 2xl:text-[clamp(4.5rem,7.5vw,6.5rem)] text-[#4C433C] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)]"
             >
               Dit hår fortjener<br/>
               <span className="italic font-light">en dygtig frisør</span>
@@ -299,7 +299,7 @@ export default function Page() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(0.85rem,1vw,0.9rem)] lg:text-[clamp(0.95rem,1.1vw,1rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
+              className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(1.15rem,1.4vw,1.25rem)] lg:text-[clamp(1.15rem,1.4vw,1.25rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
               Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. <br className="hidden md:block" />
               Her får du ærlig rådgivning fra én, der faktisk forstår din vision.
@@ -598,7 +598,7 @@ export default function Page() {
         </section>
 
         {/* Ydelser (Using 33.png layout) */}
-        <section id="ydelser" className="relative pt-[clamp(3rem,4vw,5rem)] pb-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] overflow-hidden z-30">
+        <section id="ydelser" className="relative pt-[clamp(3rem,4vw,5rem)] pb-[clamp(8rem,13vw,12rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] overflow-hidden z-30">
 
           <div className="max-w-[1400px] mx-auto relative z-10">
             <motion.h2 style={hardwareAccelerated} 
@@ -606,7 +606,7 @@ export default function Page() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-20%" }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-center font-headline font-light text-[clamp(2.5rem,4vw,4.5rem)] leading-[1.05] tracking-tight mb-[clamp(3.5rem,4vw,3.5rem)] md:mb-[clamp(2rem,4vw,3.5rem)]"
+              className="text-center font-headline font-light text-[clamp(2.5rem,4vw,4.5rem)] leading-[1.05] tracking-tight mb-[clamp(3.5rem,5vw,4.5rem)]"
             >
               Mine kernekompetencer
             </motion.h2>
@@ -632,7 +632,7 @@ export default function Page() {
         </section>
 
         {/* Stats (Using 44.png layout) */}
-        <section className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#F8F5F0] text-[#4C433C] z-40">
+        <section className="relative py-[clamp(6rem,12vw,10rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FAF8F5] text-[#4C433C] z-40">
           {/* Curve Graphics */}
           <div className="hidden md:block absolute top-[-10%] md:top-[-20%] left-0 w-[clamp(180px,25vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-70">
              <Image src="/images/curve_left.png" alt="Curve left" fill className="object-contain object-left-top" />
@@ -683,11 +683,11 @@ export default function Page() {
                 className="relative w-[75%] md:w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0"
               >
                   <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
-                    <Image src="/new_gallery/store-front.jpg" fill alt="Founder" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Floating Galleri Image */}
                   <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
-                    <Image src="/new_gallery/51.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/35.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Subtle star SVG accent behind */}
                   <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[20%] aspect-square animate-[spin_40s_linear_infinite]">

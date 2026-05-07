@@ -49,23 +49,23 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
       <div ref={ref} className="w-full flex flex-col items-center">
         <motion.div 
           style={isMobile ? { backgroundColor: mobileBg, y: mobileTranslateY, scale: mobileScale, boxShadow: mobileShadow } : undefined}
-          className={`bg-[#FAF8F5] p-5 rounded-full mb-[clamp(1.5rem,2vw,2rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:text-[#D8AD97] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
+          className={`bg-[#FAF8F5] p-[clamp(1.35rem,1.7vw,1.5rem)] rounded-full mb-[clamp(1.65rem,2.2vw,2.25rem)] text-[#887A70] shadow-[0_4px_20px_rgba(28,26,24,0.03)] transition duration-1000 ease-out ${!isMobile ? 'group-hover:bg-[#F3EFE9] group-hover:-translate-y-2 group-hover:scale-[1.03] group-hover:text-[#D8AD97] group-hover:shadow-[0_15px_30px_rgba(28,26,24,0.06)]' : ''}`}
         >
           <motion.div style={isMobile ? { color: mobileIconColor } : undefined} className={!isMobile ? "group-hover:text-[#D8AD97] transition-colors duration-500" : ""}>
-            <IconComponent className="w-6 h-6" strokeWidth={1.5} />
+            <IconComponent className="w-[clamp(1.6rem,2vw,1.8rem)] h-[clamp(1.6rem,2vw,1.8rem)]" strokeWidth={1.5} />
           </motion.div>
         </motion.div>
         
         <motion.div 
           style={isMobile ? { y: mobileTranslateY, scale: mobileContainerScale } : undefined}
-          className={`relative w-full flex flex-col items-center transition-transform duration-700 ease-in-out ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.04]' : ''}`}
+          className={`relative w-full flex flex-col items-center transition-transform duration-700 ease-in-out ${!isMobile ? 'group-hover:-translate-y-3 group-hover:scale-[1.04]' : ''}`}
         >
           <motion.div 
             style={isMobile ? { opacity: mobileTextOpacity } : undefined}
             className={`w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-100 group-hover:opacity-0' : ''}`}
           >
-            <h4 className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] text-[#1c1a18] font-light mb-4 whitespace-nowrap">{item.title}</h4>
-            <p className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light text-[#6A5D55] leading-relaxed max-w-[280px]">
+            <h4 className="font-headline text-[clamp(1.65rem,2.2vw,2rem)] text-[#1c1a18] font-light mb-4 whitespace-nowrap">{item.title}</h4>
+            <p className="text-[clamp(1.05rem,1.3vw,1.2rem)] font-sans font-light text-[#6A5D55] leading-relaxed max-w-[310px]">
               {item.text}
             </p>
           </motion.div>
@@ -75,7 +75,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
             className={`absolute inset-0 pointer-events-none w-full flex flex-col items-center transition-opacity duration-500 ease-in-out ${!isMobile ? 'opacity-0 group-hover:opacity-100' : ''}`}
           >
             <h4 
-              className="font-headline text-[clamp(1.5rem,2vw,1.75rem)] font-light mb-4 text-transparent whitespace-nowrap animate-wave-rtl"
+              className="font-headline text-[clamp(1.65rem,2.2vw,2rem)] font-light mb-4 text-transparent whitespace-nowrap animate-wave-rtl"
               style={{ 
                 backgroundImage: "linear-gradient(to right, #1c1a18 0%, #D8AD97 25%, #1c1a18 50%, #D8AD97 75%, #1c1a18 100%)",
                 WebkitBackgroundClip: "text",
@@ -85,7 +85,7 @@ function ScrollManifestoItem({ item, idx, isMobile }: any) {
               {item.title}
             </h4>
             <p 
-              className="text-[clamp(1rem,1.2vw,1.1rem)] font-sans font-light leading-relaxed max-w-[280px] text-transparent animate-wave-ltr"
+              className="text-[clamp(1.05rem,1.3vw,1.2rem)] font-sans font-light leading-relaxed max-w-[310px] text-transparent animate-wave-ltr"
               style={{ 
                 backgroundImage: "linear-gradient(to right, #1c1a18 0%, #D8AD97 25%, #1c1a18 50%, #D8AD97 75%, #1c1a18 100%)",
                 WebkitBackgroundClip: "text",
@@ -153,8 +153,8 @@ export default function MinHistoriePage() {
                   fill
                   priority
                   className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]"
-                  src="/new_gallery/open-door.png"
-                  alt="Open door to Studio 24"
+                  src="/new_gallery/new-store-front.png"
+                  alt="Studio 24 Storefront"
                 />
               </motion.div>
               <motion.div 
@@ -284,7 +284,7 @@ export default function MinHistoriePage() {
           variants={staggerContainer}
           className="max-w-[1200px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,8vw,8rem)] 2xl:py-[clamp(6rem,10vw,10rem)] text-center relative"
         >
-          <motion.div style={hardwareAccelerated} variants={fadeInUp} className="mb-[clamp(4rem,6vw,8rem)]">
+          <motion.div style={hardwareAccelerated} variants={fadeInUp} className="mb-[clamp(3rem,4.5vw,6rem)]">
             <span className="font-label text-[clamp(0.7rem,0.8vw,0.75rem)] uppercase tracking-[0.3em] text-[#92857C] mb-[clamp(1.5rem,3vw,2.5rem)] block">
               Mit løfte
             </span>
@@ -374,7 +374,7 @@ export default function MinHistoriePage() {
                 <Image
                   fill
                   className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05] facaden-img"
-                  src="/new_gallery/36.png"
+                  src="/new_gallery/52.png"
                   alt="Cozy waiting table"
                 />
               </div>

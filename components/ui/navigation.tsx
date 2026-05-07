@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X } from 'lucide-react';
 
@@ -59,8 +60,8 @@ export function Navigation() {
               </Link>
             ))}
           </div>
-          <Link className="absolute left-1/2 -translate-x-1/2 text-[clamp(2.5rem,4vw,3rem)] font-serif text-[#1c1a18] tracking-wide hover:opacity-80 transition-opacity" href="/">
-            Studio 24
+          <Link className="absolute left-1/2 -translate-x-1/2 hover:opacity-80 transition-opacity flex items-center justify-center" href="/">
+            <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[clamp(150px,16vw,200px)] h-auto" priority />
           </Link>
           <div className="flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             <Link href="?booking=true" scroll={false}>
@@ -85,8 +86,8 @@ export function Navigation() {
                 {isMobileMenuOpen ? <X size={26} strokeWidth={1.5} /> : <Menu size={26} strokeWidth={1.5} />}
               </motion.div>
             </button>
-            <Link className="text-[1.75rem] font-serif text-[#1c1a18] tracking-wide hover:opacity-80 transition-opacity leading-none relative top-[1px]" href="/">
-              Studio 24
+            <Link className="hover:opacity-80 transition-opacity relative flex items-center justify-center" href="/">
+              <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[130px] h-auto" priority />
             </Link>
           </div>
           <Link href="?booking=true" scroll={false}>

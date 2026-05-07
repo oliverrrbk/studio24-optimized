@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { AwardBadge } from '@/components/ui/award-badge';
 import { PrivacyPolicyModal } from '@/components/ui/privacy-policy-modal';
 
@@ -13,7 +14,9 @@ export function SiteFooter() {
       <footer className="w-full bg-[#FDFBF7] text-[#4C433C]">
         <div className="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,10vw,8rem)] max-w-[1400px] mx-auto w-full">
           <div className="max-w-[320px]">
-            <div className="text-[clamp(1.75rem,3vw,2.5rem)] font-serif mb-[clamp(1rem,2vw,1.5rem)] italic tracking-tight leading-none text-[#1c1a18]">Studio 24</div>
+            <div className="mb-[clamp(1rem,2vw,1.5rem)]">
+              <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[clamp(140px,14vw,180px)] h-auto" priority />
+            </div>
             <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
               Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.
             </p>
