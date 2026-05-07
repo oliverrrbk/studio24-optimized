@@ -429,7 +429,7 @@ export default function Page() {
 
                     {/* Foreground image (Mobile only offset: left/up) */}
                     <div className="absolute top-0 left-0 w-[65%] aspect-[4/3] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
-                      <Image src="/new_gallery/5.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/11.png" alt="Frisør behandling" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
                  </div>
                  
@@ -642,21 +642,33 @@ export default function Page() {
           </div>
           
           <div className="max-w-[1400px] mx-auto relative z-10">
-             <div className="grid md:grid-cols-2 gap-[clamp(4rem,10vw,12rem)] items-center mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto">
-                <div className="max-w-md ml-auto text-center md:text-right space-y-[clamp(1.5rem,3vw,2rem)] order-2 md:order-1 pt-8 md:pt-0">
-                  <h3 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight">
+             <div className="flex flex-col md:grid md:grid-cols-2 gap-y-8 md:gap-y-0 gap-[clamp(4rem,10vw,12rem)] items-center mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto pt-8 md:pt-0">
+                <div className="max-w-md mx-auto md:ml-auto text-center md:text-right space-y-[clamp(1.5rem,3vw,2rem)] order-1 flex flex-col">
+                  <h3 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight order-1">
                     Fra dygtig lærling til <em className="italic font-light">fuldt uafhængig</em> <em className="italic font-light">salonejer</em>
                   </h3>
-                  <p className="font-body text-[#6A5D55] font-light text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed">
+
+                  {/* Mobile Images */}
+                  <div className="relative w-full max-w-[450px] aspect-square mx-auto order-2 md:hidden mt-2 mb-4">
+                     <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
+                        <Image src="/new_gallery/5.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                     </div>
+                     <div className="absolute bottom-0 left-0 w-[70%] h-[70%] rounded-full overflow-hidden shadow-[0_15px_40px_rgba(0,0,0,0.08)] z-10 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
+                        <Image src="/new_gallery/31.png" fill alt="Tools" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                     </div>
+                  </div>
+
+                  <p className="font-body text-[#6A5D55] font-light text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed order-3">
                     Med en lang uddannelse i bagagen kender jeg teorien til bunds. Men det er min erfaring på gulvet der gør den store forskel for dit endelige resultat, når du forlader stolen.
                   </p>
                 </div>
+
                 <motion.div style={hardwareAccelerated} 
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-20%" }}
                   transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                  className="relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-1 md:order-2"
+                  className="hidden md:block relative w-full max-w-[450px] aspect-square mx-auto md:ml-0 order-2"
                 >
                    <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
                       <Image src="/new_gallery/5.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
@@ -673,14 +685,14 @@ export default function Page() {
 
         {/* Eksperter / Stifter (Founder) */}
         <section id="galleri" className="relative pt-[clamp(6rem,12vw,10rem)] pb-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] bg-[#FDFBF7] text-[#4C433C] z-10">
-           <div className="max-w-[1400px] lg:max-w-[1100px] 2xl:max-w-[1400px] mx-auto grid md:grid-cols-2 gap-[clamp(5rem,10vw,8rem)] lg:gap-[5rem] 2xl:gap-[clamp(5rem,10vw,8rem)] items-center mb-[clamp(6rem,12vw,10rem)] pt-[clamp(2rem,4vw,4rem)]">
-              {/* Left Image Composition */}
+           <div className="max-w-[1400px] lg:max-w-[1100px] 2xl:max-w-[1400px] mx-auto flex flex-col md:grid md:grid-cols-2 gap-[clamp(5rem,10vw,8rem)] lg:gap-[5rem] 2xl:gap-[clamp(5rem,10vw,8rem)] items-center mb-[clamp(6rem,12vw,10rem)] pt-[clamp(2rem,4vw,4rem)]">
+              {/* Left Image Composition (Desktop) */}
               <motion.div style={hardwareAccelerated} 
                 initial={{ opacity: 0, scale: 0.95 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true, margin: "-20%" }}
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-[75%] md:w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0"
+                className="hidden md:block relative w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0 order-1"
               >
                   <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
                     <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
@@ -695,29 +707,42 @@ export default function Page() {
                   </div>
               </motion.div>
 
-              {/* Right Text Block */}
+              {/* Right Text Block (And Mobile Container) */}
               <motion.div
  style={hardwareAccelerated}                 initial={{ opacity: 0, x: 40 }}
                  whileInView={{ opacity: 1, x: 0 }}
                  viewport={{ once: true, margin: "-20%" }}
                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                 className="flex flex-col justify-center max-w-xl lg:max-w-lg 2xl:max-w-xl mx-auto md:mx-0"
+                 className="flex flex-col justify-center max-w-xl lg:max-w-lg 2xl:max-w-xl mx-auto md:mx-0 order-2"
               >
-                 <div className="flex items-center gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60">
+                 <div className="flex items-center justify-center md:justify-start gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60 order-1">
                     <div className="h-[1px] w-[clamp(2rem,4vw,3rem)] bg-[#4C433C]"></div>
                     <span className="font-label uppercase tracking-[0.25em] text-[clamp(0.7rem,1vw,0.85rem)] font-bold">Din personlige frisør</span>
                  </div>
                  
-                 <h2 className="font-headline font-light text-[clamp(2rem,3.5vw,3.5rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)]">
+                 <h2 className="font-headline font-light text-center md:text-left text-[clamp(2rem,3.5vw,3.5rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] order-2">
                    Ærlig og nede<br/><em className="italic font-light">på jorden</em>
                  </h2>
+
+                 {/* Mobile Image Composition */}
+                 <div className="relative w-[75%] max-w-[500px] mx-auto mb-[clamp(3rem,8vw,5rem)] md:hidden order-3">
+                     <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
+                       <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                     </div>
+                     <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
+                       <Image src="/new_gallery/35.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                     </div>
+                     <div className="absolute top-[10%] left-[-15%] z-0 text-[#EAD5C5] opacity-50 pointer-events-none w-[20%] aspect-square animate-[spin_40s_linear_infinite]">
+                        <Sparkles className="w-full h-full stroke-[0.5]" />
+                     </div>
+                 </div>
                  
-                 <p className="font-body text-[#6A5D55] font-light text-[clamp(1rem,1.35vw,1.18rem)] 2xl:text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)]">
+                 <p className="font-body text-[#6A5D55] font-light text-center md:text-left text-[clamp(1rem,1.35vw,1.18rem)] 2xl:text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)] order-4">
                     For mig er tryghed at vide præcis hvad du går ind til. Du får absolut ingen urealistiske løfter her. Du får til gengæld en erfaren fagperson, der passer utroligt godt på dit eget naturlige hår under behandlingen.
                  </p>
                  
-                 <div className="relative pl-[clamp(1.5rem,3vw,2rem)] border-l-2 border-[#EAD5C5]">
-                    <p className="font-headline italic text-[clamp(1.15rem,1.35vw,1.35rem)] 2xl:text-[clamp(1.25rem,1.5vw,1.5rem)] text-[#4C433C]/90 leading-relaxed pt-2 relative z-10">
+                 <div className="relative pl-[clamp(1.5rem,3vw,2rem)] border-l-2 border-[#EAD5C5] order-5">
+                    <p className="font-headline italic text-[clamp(1.15rem,1.35vw,1.35rem)] 2xl:text-[clamp(1.25rem,1.5vw,1.5rem)] text-[#4C433C]/90 leading-relaxed pt-2 relative z-10 text-left">
                        &quot;Jeg har altid hadet den der snobbede kultur, hvor man næsten ikke tør sige noget, når man sidder i frisørstolen. Min salon er skabt som det direkte modsvar. Den er elegant, ja – men den er først og fremmest jordnær.&quot;
                     </p>
                     <Quote className="absolute bottom-[-20%] right-[-5%] w-[clamp(4.5rem,6vw,6rem)] h-[clamp(4.5rem,6vw,6rem)] 2xl:w-[clamp(5rem,8vw,7rem)] 2xl:h-[clamp(5rem,8vw,7rem)] text-[#EAD5C5] opacity-25 stroke-[1] rotate-12 z-0" />

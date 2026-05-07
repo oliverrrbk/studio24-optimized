@@ -253,7 +253,7 @@ export default function MinHistoriePage() {
                 </div>
               </div>
               
-              <div className="order-3 md:hidden self-center relative z-10 -mt-[1rem]">
+              <div className="order-3 md:hidden self-center relative z-10 -mt-[2.25rem]">
                 <motion.div style={hardwareAccelerated} variants={fadeInUp} className="font-sans text-[clamp(0.95rem,1.2vw,1rem)] 2xl:text-[clamp(1.05rem,1.4vw,1.15rem)] font-light text-[#6A5D55] leading-relaxed">
                   <p className="font-semibold text-[#4C433C]">
                     Mit håndværk bygger på tillid. Vi skal finde det look, der fungerer for dig. Det kræver ærlig rådgivning, og frem for alt, at jeg har tid til at lytte til dig.
