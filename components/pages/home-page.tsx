@@ -642,14 +642,14 @@ export default function Page() {
           </div>
           
           <div className="max-w-[1400px] mx-auto relative z-10">
-             <div className="flex flex-col md:grid md:grid-cols-2 gap-y-8 md:gap-y-0 gap-[clamp(4rem,10vw,12rem)] items-center mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto pt-8 md:pt-0">
+             <div className="flex flex-col md:grid md:grid-cols-2 gap-y-8 md:gap-y-0 gap-[clamp(4rem,10vw,12rem)] items-center mb-8 md:mb-[clamp(6rem,10vw,8rem)] max-w-[1200px] mx-auto pt-8 md:pt-0">
                 <div className="max-w-md mx-auto md:ml-auto text-center md:text-right space-y-[clamp(1.5rem,3vw,2rem)] order-1 flex flex-col">
                   <h3 className="font-headline font-light text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.1] tracking-tight order-1">
                     Fra dygtig lærling til <em className="italic font-light">fuldt uafhængig</em> <em className="italic font-light">salonejer</em>
                   </h3>
 
                   {/* Mobile Images */}
-                  <div className="relative w-full max-w-[450px] aspect-square mx-auto order-2 md:hidden mt-2 mb-4">
+                  <div className="relative w-full max-w-[450px] aspect-square mx-auto order-2 md:hidden mt-8 mb-10">
                      <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
                         <Image src="/new_gallery/5.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                      </div>
@@ -715,17 +715,17 @@ export default function Page() {
                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                  className="flex flex-col justify-center max-w-xl lg:max-w-lg 2xl:max-w-xl mx-auto md:mx-0 order-2"
               >
-                 <div className="flex items-center justify-center md:justify-start gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60 order-1">
+                 <div className="flex items-center justify-start gap-4 mb-[clamp(1.5rem,3vw,2rem)] opacity-60 order-1">
                     <div className="h-[1px] w-[clamp(2rem,4vw,3rem)] bg-[#4C433C]"></div>
                     <span className="font-label uppercase tracking-[0.25em] text-[clamp(0.7rem,1vw,0.85rem)] font-bold">Din personlige frisør</span>
                  </div>
                  
-                 <h2 className="font-headline font-light text-center md:text-left text-[clamp(2rem,3.5vw,3.5rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] order-2">
+                 <h2 className="font-headline font-light text-left text-[3rem] md:text-[clamp(2rem,3.5vw,3.5rem)] 2xl:text-[clamp(2.5rem,4vw,4rem)] leading-[1.05] tracking-tight mb-[clamp(1.5rem,3vw,2.5rem)] order-2">
                    Ærlig og nede<br/><em className="italic font-light">på jorden</em>
                  </h2>
 
                  {/* Mobile Image Composition */}
-                 <div className="relative w-[75%] max-w-[500px] mx-auto mb-[clamp(3rem,8vw,5rem)] md:hidden order-3">
+                 <div className="relative w-[85%] max-w-[500px] mx-auto md:mx-0 mt-6 mb-16 md:hidden order-3">
                      <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
                        <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                      </div>
@@ -737,7 +737,7 @@ export default function Page() {
                      </div>
                  </div>
                  
-                 <p className="font-body text-[#6A5D55] font-light text-center md:text-left text-[clamp(1rem,1.35vw,1.18rem)] 2xl:text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)] order-4">
+                 <p className="font-body text-[#6A5D55] font-light text-left text-[clamp(1rem,1.35vw,1.18rem)] 2xl:text-[clamp(1.125rem,1.5vw,1.25rem)] leading-relaxed mb-[clamp(2rem,4vw,3rem)] order-4">
                     For mig er tryghed at vide præcis hvad du går ind til. Du får absolut ingen urealistiske løfter her. Du får til gengæld en erfaren fagperson, der passer utroligt godt på dit eget naturlige hår under behandlingen.
                  </p>
                  
