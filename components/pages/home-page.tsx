@@ -376,15 +376,15 @@ export default function Page() {
               >
                 {/* Floating Title (Absolute to overlap left edge on Desktop) */}
                 <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block">
-                  <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#D8AD97] whitespace-nowrap [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
+                  <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#7D685C] whitespace-nowrap [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
                     <strong className="font-medium">Ægte faglighed.</strong><br/>
-                    <em className="italic font-light">Kun ærligt håndværk.</em>
+                    <em className="italic font-light">Hårkunst med hjertet.</em>
                   </h3>
                 </div>
                 {/* For mobile & small tablets, show natural flowing title */}
-                <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#D8AD97] mb-6 block lg:hidden text-center md:text-left [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
+                <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#7D685C] mb-6 block lg:hidden text-center md:text-left [text-shadow:0_4px_24px_rgba(253,251,247,1),0_0_12px_rgba(253,251,247,0.8)]">
                   <strong className="font-medium">Ægte faglighed.</strong><br/>
-                  <em className="italic font-light">Kun ærligt håndværk.</em>
+                  <em className="italic font-light">Hårkunst med hjertet.</em>
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
