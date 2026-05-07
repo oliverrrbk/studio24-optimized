@@ -649,7 +649,7 @@ export default function Page() {
                   </h3>
 
                   {/* Mobile Images */}
-                  <div className="relative w-full max-w-[450px] aspect-square mx-auto order-2 md:hidden mt-8 mb-10">
+                  <div className="relative w-full max-w-[450px] aspect-square mx-auto order-2 md:hidden mt-6 mb-10">
                      <div className="absolute top-0 right-0 w-[75%] h-[75%] rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.1)] z-0 hover:z-20 transition-all duration-700 ease-in hover:scale-105">
                         <Image src="/new_gallery/5.png" fill alt="Detail" className="object-cover contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                      </div>
@@ -725,7 +725,7 @@ export default function Page() {
                  </h2>
 
                  {/* Mobile Image Composition */}
-                 <div className="relative w-[85%] max-w-[500px] mx-auto md:mx-0 mt-6 mb-16 md:hidden order-3">
+                 <div className="relative w-[85%] max-w-[500px] mx-auto md:mx-0 mt-4 mb-16 md:hidden order-3">
                      <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
                        <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                      </div>
