@@ -78,7 +78,10 @@ export default function GalleriPage() {
         </section>
 
         {/* Quote / CTA Section Merged */}
-        <section className="relative w-full overflow-hidden pt-[clamp(3.4rem,6.8vw,6.8rem)] 2xl:pt-[clamp(4rem,8vw,8rem)] pb-[clamp(8.5rem,12.75vw,13.6rem)] 2xl:pb-[clamp(10rem,15vw,16rem)]">
+        <section className="relative w-full overflow-hidden pt-[clamp(3.4rem,6.8vw,6.8rem)] 2xl:pt-[clamp(4rem,8vw,8rem)] pb-[clamp(8.5rem,12.75vw,13.6rem)] 2xl:pb-[clamp(10rem,15vw,16rem)] bg-white">
+          {/* Top Seamless Transition from #FDFBF7 to white */}
+          <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FDFBF7] to-transparent pointer-events-none z-10"></div>
+
           {/* Subtle pulsating background gradient fading up from bottom */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-[#D8AD97]/[0.02] to-transparent pointer-events-none z-0"></div>
 

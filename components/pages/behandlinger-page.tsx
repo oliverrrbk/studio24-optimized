@@ -392,7 +392,10 @@ export default function BehandlingerPage() {
         </section>
 
         {/* Oplevelsen (Using the Landing Page Hero/CTA overlay style) */}
-        <section className="relative w-full overflow-hidden pt-[clamp(4.8rem,8vw,6.4rem)] 2xl:pt-[clamp(6rem,10vw,8rem)] pb-[clamp(8rem,12vw,12.8rem)] 2xl:pb-[clamp(10rem,15vw,16rem)]">
+        <section className="relative w-full overflow-hidden pt-[clamp(4.8rem,8vw,6.4rem)] 2xl:pt-[clamp(6rem,10vw,8rem)] pb-[clamp(8rem,12vw,12.8rem)] 2xl:pb-[clamp(10rem,15vw,16rem)] bg-white">
+          {/* Top Seamless Transition from #FDFBF7 to white */}
+          <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FDFBF7] to-transparent pointer-events-none z-10"></div>
+
           {/* Subtle pulsating background gradient fading up from bottom */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#D8AD97]/10 via-[#D8AD97]/[0.02] to-transparent pointer-events-none z-0"></div>
 
