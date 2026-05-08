@@ -397,7 +397,7 @@ export default function Page() {
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
-                  <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover object-left-top transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                  <Image src="/new_gallery/42.png" alt="Frisør salon" fill className="object-cover object-[center_5%] scale-[1.18] transition-transform duration-[2s] group-hover:scale-[1.23] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                 </div>
 
                 {/* Sticker Badge Overlaid Bottom Left (Decorative Scalloped Dashed Oval) */}
@@ -433,12 +433,12 @@ export default function Page() {
                  <div className="relative w-full mb-[clamp(2rem,4vw,3rem)] h-[75vw] md:h-auto md:block">
                     {/* Background image (Mobile offset: right/down, Desktop: normal) */}
                     <div className="absolute md:relative bottom-0 right-0 md:bottom-auto md:right-auto w-[75%] md:w-[85%] aspect-[4/3] md:aspect-[1.4/1] rounded-[50%] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] group z-10">
-                      <Image src="/new_gallery/42.png" alt="Frisør salon" fill className="object-cover transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover object-[10%_25%] scale-[1.03] transition-transform duration-[2s] group-hover:scale-[1.08] contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
 
                     {/* Foreground image (Mobile only offset: left/up) */}
                     <div className="absolute top-0 left-0 w-[65%] aspect-[4/3] rounded-[50%] overflow-hidden shadow-[0_30px_60px_rgba(0,0,0,0.15)] group z-20 md:hidden">
-                      <Image src="/new_gallery/58.png" alt="Frisør behandling" fill className="object-cover object-left-top transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                      <Image src="/new_gallery/42.png" alt="Frisør salon" fill className="object-cover object-left-top transition-transform duration-[2s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                     </div>
                  </div>
                  
