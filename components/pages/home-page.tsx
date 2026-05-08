@@ -211,12 +211,19 @@ export default function Page() {
   const [isHoveringServices, setIsHoveringServices] = useState(false);
   const [selectedReview, setSelectedReview] = useState<any>(null);
   const [isMobile, setIsMobile] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (vid && vid.readyState >= 3) setVideoReady(true);
   }, []);
 
   useEffect(() => {
@@ -261,12 +268,14 @@ export default function Page() {
         <section className="relative h-[100svh] min-h-[600px] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0 bg-[#FDFBF7]">
             <video
+              ref={videoRef}
               src="/videos/hero_video_new.mp4"
               autoPlay
               muted
               loop
               playsInline
-              className="absolute inset-0 w-full h-full object-cover opacity-40"
+              onCanPlay={() => setVideoReady(true)}
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[1200ms] ease-out ${videoReady ? 'opacity-40' : 'opacity-0'}`}
             />
             <div className="absolute inset-0 bg-gradient-to-br from-white/25 via-[#E4D3C4]/10 to-white/20"></div>
           </div>

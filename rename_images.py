@@ -21,5 +21,5 @@ def main():
         mapping[old_name] = new_name
         print(f"{old_name} -> {new_name}")
 
-if __name__ == '__main__':
+if __name__ == '__main__':ff
     main()
