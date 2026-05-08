@@ -96,7 +96,7 @@ function BookingModalInner() {
                   href="https://studio24-23056.planway.com/?fbclid=PAZXh0bgNhZW0CMTEAAabSSGkkKcugKZtVPz7PPvpalHT7XXpy_mXSoNzi8uBOwSFihIBcJT7VKyk_aem_9lVuJdIYwEp78fYfyZYV4g" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-[#D8AD97] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out relative z-20"
+                  className="inline-block bg-[#D3B39E] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out relative z-20"
                 >
                   Gå til booking
                 </a>
@@ -157,11 +157,11 @@ function BookingModalInner() {
                       Direkte
                     </h3>
                     <p className="font-body text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)] text-[#4C433C] leading-relaxed font-light">
-                      <a className="hover:text-[#D8AD97] transition-colors" href="tel:29896069">
+                      <a className="hover:text-[#D3B39E] transition-colors" href="tel:29896069">
                         29 89 60 69
                       </a>
                       <br/>
-                      <a className="hover:text-[#D8AD97] transition-colors" href="mailto:enistudio.24@gmail.com">
+                      <a className="hover:text-[#D3B39E] transition-colors" href="mailto:enistudio.24@gmail.com">
                         enistudio.24@gmail.com
                       </a>
                     </p>

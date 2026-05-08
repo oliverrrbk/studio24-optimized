@@ -20,7 +20,7 @@ const minRotate = -0.18;
 const maxScale = 1.05;
 const minScale = 0.94;
 
-const backgroundColor = ["#E8E0D5", "#E5E5E5", "#EAD5C5"];
+const backgroundColor = ["#E8E0D5", "#E5E5E5", "#E4D3C4"];
 
 const title = {
   "industry-favorites": "Industry Favorites",

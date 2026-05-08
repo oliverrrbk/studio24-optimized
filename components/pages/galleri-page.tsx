@@ -14,7 +14,7 @@ export default function GalleriPage() {
 
 
   return (
-    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D8AD97] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D3B39E] selection:text-white">
 
 
       <main className="flex-1 pt-[clamp(6.8rem,10.2vw,10.2rem)] 2xl:pt-[clamp(8rem,12vw,12rem)] pb-0">
@@ -44,19 +44,19 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center flex-wrap gap-[clamp(1.7rem,3.4vw,3.4rem)] 2xl:gap-[clamp(2rem,4vw,4rem)] text-[#4C433C]/80 relative"
           >
-            <div className="flex flex-col items-center gap-3 hover:text-[#D8AD97] transition-colors duration-300 relative z-10">
+            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
               <Scissors strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
               <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Håndlavet</span>
             </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D8AD97] transition-colors duration-300 relative z-10">
+            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
               <Leaf strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
               <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Organisk</span>
             </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D8AD97] transition-colors duration-300 relative z-10">
+            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
               <Ruler strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
               <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Præcision</span>
             </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D8AD97] transition-colors duration-300 relative z-10">
+            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
               <Droplet strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
               <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Essens</span>
             </div>
@@ -68,10 +68,10 @@ export default function GalleriPage() {
 
           {/* Background Gradient Blobs */}
           <div className="absolute top-[10%] left-[-5%] w-[clamp(255px,34vw,425px)] 2xl:w-[clamp(300px,40vw,500px)] aspect-square z-[-1] pointer-events-none opacity-30">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(234,213,197,0.5) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(228,211,196,0.5) 0%, transparent 70%)'}}></div>
           </div>
           <div className="absolute bottom-[10%] right-[-5%] w-[clamp(255px,34vw,425px)] 2xl:w-[clamp(300px,40vw,500px)] aspect-square z-[-1] pointer-events-none opacity-30">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.35) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(211,179,158,0.35) 0%, transparent 70%)'}}></div>
           </div>
 
           <StickyScrollGallery />
@@ -83,14 +83,14 @@ export default function GalleriPage() {
           <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FDFBF7] to-transparent pointer-events-none z-10"></div>
 
           {/* Subtle pulsating background gradient fading up from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#DCB69E]/10 via-[#DCB69E]/[0.02] to-transparent pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D7C0B0]/10 via-[#D7C0B0]/[0.02] to-transparent pointer-events-none z-0"></div>
 
           {/* Amorphous Pulsating blobs */}
           <div className="absolute bottom-0 left-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(220,182,158,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(215,192,175,0.25) 0%, transparent 70%)'}}></div>
           </div>
           <div className="absolute bottom-0 right-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(220,182,158,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(215,192,175,0.25) 0%, transparent 70%)'}}></div>
           </div>
 
           <motion.div style={hardwareAccelerated} 
@@ -117,7 +117,7 @@ export default function GalleriPage() {
             </div>
 
             {/* CTA Button */}
-            <Link href="?booking=true" scroll={false} className="inline-block bg-[#D8AD97] text-white px-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out relative z-20">
+            <Link href="?booking=true" scroll={false} className="inline-block bg-[#D3B39E] text-white px-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:px-[clamp(2.5rem,4vw,3.5rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out relative z-20">
               Book din tid nu
             </Link>
           </motion.div>

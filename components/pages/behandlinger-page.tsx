@@ -39,7 +39,7 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
     >
       <motion.div 
         style={{ ...hardwareAccelerated, ...(isMobile ? { y: iconTranslateY, scale: iconScale } : {}) }}
-        className={`mb-5 2xl:mb-6 transition-transform duration-700 ease-in-out text-[#D8AD97] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
+        className={`mb-5 2xl:mb-6 transition-transform duration-700 ease-in-out text-[#D3B39E] drop-shadow-sm ${!isMobile ? 'group-hover:-translate-y-2 group-hover:scale-[1.05] group-hover:drop-shadow-md' : ''}`}
       >
         {Icon}
       </motion.div>
@@ -65,7 +65,7 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
           <h3 
             className="text-[clamp(1.4rem,2vw,1.6rem)] 2xl:text-[clamp(1.7rem,2.2vw,2rem)] font-headline font-light tracking-tight text-transparent animate-wave-rtl"
             style={{ 
-              backgroundImage: "linear-gradient(to right, #4C433C 0%, #D8AD97 25%, #4C433C 50%, #D8AD97 75%, #4C433C 100%)",
+              backgroundImage: "linear-gradient(to right, #4C433C 0%, #D3B39E 25%, #4C433C 50%, #D3B39E 75%, #4C433C 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
             }}
@@ -75,7 +75,7 @@ function ScrollExtensionCard({ title, text, icon: Icon, delay, isMobile }: any) 
           <p 
             className="text-[1rem] leading-relaxed font-light font-sans text-transparent animate-wave-ltr"
             style={{ 
-              backgroundImage: "linear-gradient(to right, #6A5D55 0%, #D8AD97 25%, #6A5D55 50%, #D8AD97 75%, #6A5D55 100%)",
+              backgroundImage: "linear-gradient(to right, #6A5D55 0%, #D3B39E 25%, #6A5D55 50%, #D3B39E 75%, #6A5D55 100%)",
               WebkitBackgroundClip: "text",
               backgroundClip: "text"
             }}
@@ -100,7 +100,7 @@ export default function BehandlingerPage() {
   }, []);
 
   return (
-    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D8AD97] selection:text-white">
+    <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D3B39E] selection:text-white">
 
       {/* Main content */}
       <main className="flex-1 pt-[clamp(6.4rem,9.6vw,9.6rem)] 2xl:pt-[clamp(8rem,12vw,12rem)] pb-0 overflow-x-hidden">
@@ -138,22 +138,20 @@ export default function BehandlingerPage() {
           >
             <div className="text-center mb-[clamp(2.4rem,4vw,3.2rem)] 2xl:mb-[clamp(3rem,5vw,4rem)]">
               <span className="font-label text-[0.7rem] uppercase tracking-[0.4em] text-[#92857C] mb-3 2xl:mb-4 block font-bold">Mit Håndværk</span>
-              <h2 className="text-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:text-[clamp(2rem,3vw,3rem)] font-headline italic font-light text-[#4C433C]">Signatur &amp; Essentielle</h2>
+              <h2 className="text-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:text-[clamp(2rem,3vw,3rem)] font-headline italic font-light text-[#4C433C]">Behandlinger</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-[clamp(2.4rem,4.8vw,4.8rem)] 2xl:gap-x-[clamp(3rem,6vw,6rem)] gap-y-[clamp(2.4rem,4vw,3.2rem)] 2xl:gap-y-[clamp(3rem,5vw,4rem)]">
-              {/* Signatur Column (4 items) */}
+              {/* Column 1 (4 items): Dameklip, Farvebehandling, Extensions, Herreklip */}
               <div className="space-y-[clamp(1.6rem,3.2vw,2.4rem)] 2xl:space-y-[clamp(2rem,4vw,3rem)]">
                 <div className="flex items-center gap-3 2xl:gap-4 mb-6 2xl:mb-8">
-                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D8AD97]"></div>
-                  <span className="font-label text-[8px] 2xl:text-[10px] uppercase tracking-[0.25em] text-[#D8AD97] font-bold">Signatur</span>
-                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D8AD97]"></div>
+                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D3B39E]"></div>
                 </div>
                 
                 <div className="space-y-[clamp(1.2rem,2.4vw,2rem)] 2xl:space-y-[clamp(1.5rem,3vw,2.5rem)]">
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Dameklip</h3>
+                      <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Dameklip</h3>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 650,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Arkitektonisk klipning fuldt tilpasset dit ansigts form og fald.</p>
@@ -161,7 +159,7 @@ export default function BehandlingerPage() {
                   
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Farvebehandling</h3>
+                      <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Farvebehandling</h3>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 950,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Skræddersyet farve, reflekser og balayage med et naturligt udtryk.</p>
@@ -169,42 +167,32 @@ export default function BehandlingerPage() {
 
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Permanent</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 1.200,-</span>
-                    </div>
-                    <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Bløde, levende krøller og fald skabt med moderne, skånsom teknik.</p>
-                  </div>
-                  
-                  <div className="group">
-                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Extensions</h4>
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Extensions</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Pris v. konsultation</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Diskret længde og volumen med 100% fokus på dit hårs sundhed.</p>
                   </div>
+                  
+                  <div className="group">
+                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Herreklip</h4>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 450,-</span>
+                    </div>
+                    <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Klassisk eller moderne herreklip inklusiv vask og styling.</p>
+                  </div>
                 </div>
               </div>
 
-              {/* Essentials Column (5 items) */}
+              {/* Column 2 (5 items): Børneklip, Bryn & Vipper, Permanent, Vask & Styling, Kur & Tillæg */}
               <div className="space-y-[clamp(1.6rem,3.2vw,2.4rem)] 2xl:space-y-[clamp(2rem,4vw,3rem)]">
                 <div className="flex items-center gap-3 2xl:gap-4 mb-6 2xl:mb-8">
-                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D8AD97]"></div>
-                  <span className="font-label text-[8px] 2xl:text-[10px] uppercase tracking-[0.25em] text-[#D8AD97] font-bold">Essentials</span>
-                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D8AD97]"></div>
+                  <div className="h-[0.8px] 2xl:h-[1px] flex-1 bg-[#D3B39E]"></div>
                 </div>
                 
                 <div className="space-y-[clamp(1.2rem,2.4vw,2rem)] 2xl:space-y-[clamp(1.5rem,3vw,2.5rem)]">
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Herreklip</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 450,-</span>
-                    </div>
-                    <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Klassisk eller moderne herreklip inklusiv vask og styling.</p>
-                  </div>
-                  
-                  <div className="group">
-                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Børneklip</h4>
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Børneklip</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 350,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">En tryg, rolig og nærværende klippeoplevelse for de mindste.</p>
@@ -212,7 +200,7 @@ export default function BehandlingerPage() {
                   
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Bryn &amp; Vipper</h4>
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Bryn &amp; Vipper</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 150,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Præcis farvning og formning for et smukt indrammet ansigt.</p>
@@ -220,7 +208,15 @@ export default function BehandlingerPage() {
 
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Vask &amp; Styling</h4>
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Permanent</h4>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 1.200,-</span>
+                    </div>
+                    <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Bløde, levende krøller og fald skabt med moderne, skånsom teknik.</p>
+                  </div>
+
+                  <div className="group">
+                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Vask &amp; Styling</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 400,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Professionel føn og styling til hverdag eller særlige anledninger.</p>
@@ -228,7 +224,7 @@ export default function BehandlingerPage() {
 
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D8AD97] transition-colors duration-300">Kur &amp; Tillæg</h4>
+                      <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Kur &amp; Tillæg</h4>
                       <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 150,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Dybdegående og genopbyggende pleje for ultimativ glans.</p>
@@ -253,8 +249,8 @@ export default function BehandlingerPage() {
             {/* Mobile Title */}
             <div className="block lg:hidden w-full mb-6">
               <div className="flex items-center gap-3 2xl:gap-4 mb-[clamp(0.8rem,1.6vw,1.2rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)] opacity-80">
-                 <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#D8AD97]"></div>
-                 <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#D8AD97] font-bold">Signature Service</span>
+                 <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#D3B39E]"></div>
+                 <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#D3B39E] font-bold">Signature Service</span>
               </div>
               <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Min tilgang til <br/><em className="italic font-light">Balayage</em></h2>
             </div>
@@ -267,10 +263,10 @@ export default function BehandlingerPage() {
               className="lg:col-span-7 relative group"
             >
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[clamp(160px,24vw,320px)] 2xl:w-[clamp(200px,30vw,400px)] aspect-square z-0 pointer-events-none opacity-40">
-                 <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(216,173,151,0.35) 0%, transparent 70%)'}}></div>
+                 <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(211,179,158,0.35) 0%, transparent 70%)'}}></div>
               </div>
 
-              <div className="aspect-[4/5] w-[85%] ml-[3%] mr-auto lg:w-full lg:mx-0 bg-[#EAD5C5]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_50px_rgba(28,26,24,0.06)] relative z-10 -rotate-1">
+              <div className="aspect-[4/5] w-[85%] ml-[3%] mr-auto lg:w-full lg:mx-0 bg-[#E4D3C4]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_50px_rgba(28,26,24,0.06)] relative z-10 -rotate-1">
                 <Image alt="Balayage transformation" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[5s] group-hover:scale-105 brightness-[1.15] contrast-[1.05]" src="/gallerypics/14.png" />
               </div>
 
@@ -285,8 +281,8 @@ export default function BehandlingerPage() {
             >
               <div className="hidden lg:block">
                 <div className="flex items-center gap-3 2xl:gap-4 mb-[clamp(0.8rem,1.6vw,1.2rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)] opacity-80">
-                   <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#D8AD97]"></div>
-                   <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#D8AD97] font-bold">Signature Service</span>
+                   <div className="h-[0.8px] 2xl:h-[1px] w-[clamp(1.6rem,2.4vw,2.4rem)] 2xl:w-[clamp(2rem,3vw,3rem)] bg-[#D3B39E]"></div>
+                   <span className="font-label text-[clamp(0.56rem,0.8vw,0.6rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] uppercase tracking-[0.25em] text-[#D3B39E] font-bold">Signature Service</span>
                 </div>
                 <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Min tilgang til <br/><em className="italic font-light">Balayage</em></h2>
               </div>
@@ -297,7 +293,7 @@ export default function BehandlingerPage() {
                 Jeg bygger altid farven op med bløde, præcise strøg, så den smelter helt naturligt ind i din egen hårfarve. På den måde får du et ærligt og sundt resultat, som du let kan vedligeholde i din hverdag. Og bare rolig. Jeg skal nok vejlede dig i, hvordan du gør.
               </p>
               <div className="pt-2">
-                <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#D8AD97] transition-colors duration-300 group">
+                <Link href="?booking=true" scroll={false} className="w-fit inline-flex items-center gap-3 2xl:gap-4 text-[#4C433C] font-label uppercase text-[0.8rem] tracking-[0.15em] font-bold hover:text-[#D3B39E] transition-colors duration-300 group">
                   Find din tid her
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
                 </Link>
@@ -327,7 +323,7 @@ export default function BehandlingerPage() {
               >
                 <div className="space-y-[clamp(1.2rem,2.4vw,1.6rem)] 2xl:space-y-[clamp(1.5rem,3vw,2rem)]">
                   <h2 className="text-[clamp(2rem,3.2vw,2.8rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] font-headline font-light text-[#4C433C] leading-[1.05] tracking-tight">Extensions <em className="italic font-light">på den rigtige måde</em></h2>
-                  <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#D8AD97]/40 pl-6 py-2">
+                  <p className="font-sans text-[clamp(0.88rem,1.12vw,1.04rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.3rem)] text-[#6A5D55] font-light leading-relaxed italic border-l-2 border-[#D3B39E]/40 pl-6 py-2">
                     En af de største bekymringer ved extensions er frygten for, at de føles forkerte, tunge eller er tydelige at se. Det forstår jeg utrolig godt, og netop derfor bygger min tilgang på to faste principper:
                   </p>
                 </div>
@@ -375,7 +371,7 @@ export default function BehandlingerPage() {
                 transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
                 className="relative mt-8 lg:mt-[clamp(4.8rem,8vw,6.4rem)] group"
               >
-                <div className="aspect-[3/4] bg-[#EAD5C5]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(28,26,24,0.08)] relative z-10 w-full max-w-[400px] 2xl:max-w-[500px] ml-auto rotate-1">
+                <div className="aspect-[3/4] bg-[#E4D3C4]/20 rounded-[40px] lg:rounded-[48px] 2xl:rounded-[60px] overflow-hidden shadow-[0_20px_60px_rgba(28,26,24,0.08)] relative z-10 w-full max-w-[400px] 2xl:max-w-[500px] ml-auto rotate-1">
                   <Image alt="Hair Extensions results" fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" src="/new_gallery/45.png" />
                 </div>
                 <div className="absolute -left-[3%] bottom-[2%] md:left-auto md:-right-[5%] md:bottom-[5%] z-20 max-w-[240px] 2xl:max-w-[300px] group/guarantee">
@@ -397,14 +393,14 @@ export default function BehandlingerPage() {
           <div className="absolute top-0 left-0 w-full h-[clamp(130px,27vw,270px)] 2xl:h-[clamp(150px,30vw,300px)] bg-gradient-to-b from-[#FDFBF7] to-transparent pointer-events-none z-10"></div>
 
           {/* Subtle pulsating background gradient fading up from bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#DCB69E]/10 via-[#DCB69E]/[0.02] to-transparent pointer-events-none z-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-[#D7C0B0]/10 via-[#D7C0B0]/[0.02] to-transparent pointer-events-none z-0"></div>
 
           {/* Amorphous Pulsating blobs */}
           <div className="absolute bottom-0 left-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(220,182,158,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(215,192,175,0.25) 0%, transparent 70%)'}}></div>
           </div>
           <div className="absolute bottom-0 right-[10%] w-[clamp(270px,45vw,720px)] 2xl:w-[clamp(300px,50vw,800px)] aspect-square z-0 pointer-events-none opacity-40 translate-y-1/2">
-             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(220,182,158,0.25) 0%, transparent 70%)'}}></div>
+             <div className="absolute inset-0 rounded-full" style={{background: 'radial-gradient(circle, rgba(215,192,175,0.25) 0%, transparent 70%)'}}></div>
           </div>
 
           <div className="relative z-10 max-w-5xl 2xl:max-w-7xl mx-auto px-[clamp(1.2rem,4vw,3.2rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)]">
@@ -434,7 +430,7 @@ export default function BehandlingerPage() {
                 <p className="font-sans text-[#6A5D55] font-light text-[clamp(0.8rem,0.96vw,0.9rem)] 2xl:text-[clamp(1rem,1.2vw,1.125rem)] leading-relaxed mb-[clamp(2rem,2.8vw,2.4rem)] 2xl:mb-[clamp(2.5rem,3.5vw,3rem)]">
                   Når du sætter dig i stolen hos mig, skal skuldrene helt ned. Vi starter med at tale helt åbent om dine forventninger – og hvis du beder om noget, jeg af faglige årsager ikke mener gavner dit hår, så siger jeg det direkte til dig. Det handler om ren og skær tillid, en god kop kaffe i hånden og ordentlig tid til håndværket.
                 </p>
-                <Link href="?booking=true" scroll={false} className="inline-block bg-[#D8AD97] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(216,173,151,0.4)] hover:shadow-[0_20px_50px_rgba(216,173,151,0.6)] hover:-translate-y-1 hover:bg-[#cd977a] transition duration-1000 ease-out">
+                <Link href="?booking=true" scroll={false} className="inline-block bg-[#D3B39E] text-white px-[clamp(1.6rem,2.8vw,2.4rem)] 2xl:px-[clamp(2rem,3.5vw,3rem)] py-[clamp(0.8rem,1.2vw,1rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.56rem,0.8vw,0.64rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out">
                   Book en behandling
                 </Link>
               </motion.div>
