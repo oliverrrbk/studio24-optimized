@@ -143,8 +143,8 @@ export const CardTransformed = React.forwardRef<
     
     // To keep the exact "sweet spot" overlap ratio we dialed in earlier,
     // the total duration of the card should be ~4.16x the stagger.
-    // On mobile, we speed up the card (duration multiplier 3.0) so it gets higher up before the next card grabs on.
-    const durationMultiplier = isMobile ? 3.0 : 4.16;
+    // On mobile, we speed up the card slightly (duration multiplier 3.85) so it reveals the stars/text, but stays attached.
+    const durationMultiplier = isMobile ? 3.85 : 4.16;
     const end = start + stagger * durationMultiplier;
     
     const isLastCard = index === arrayLength - 1;
