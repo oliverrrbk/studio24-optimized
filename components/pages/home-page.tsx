@@ -546,6 +546,7 @@ export default function Page() {
                           variant="light"
                           index={index}
                           role="article"
+                          isMobile={isMobile}
                           className="flex flex-col justify-between h-[100%] p-5 pt-6 2xl:p-8 2xl:pt-10 rounded-[28px] rounded-tr-[56px] rounded-bl-[56px] 2xl:rounded-[40px] 2xl:rounded-tr-[80px] 2xl:rounded-bl-[80px]"
                         >
                           <div className="flex flex-col items-center space-y-4 text-center mt-2">

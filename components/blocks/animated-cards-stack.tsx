@@ -39,6 +39,7 @@ interface CardStickyProps
   incrementY?: number
   incrementZ?: number
   incrementRotation?: number
+  isMobile?: boolean
 }
 interface ContainerScrollContextValue {
   scrollYProgress: MotionValue<number>
@@ -114,6 +115,7 @@ export const CardTransformed = React.forwardRef<
       className,
       variant,
       style,
+      isMobile,
       ...props
     },
     ref
@@ -141,7 +143,9 @@ export const CardTransformed = React.forwardRef<
     
     // To keep the exact "sweet spot" overlap ratio we dialed in earlier,
     // the total duration of the card should be ~4.16x the stagger.
-    const end = start + stagger * 4.16;
+    // On mobile, we speed up the card (duration multiplier 3.0) so it gets higher up before the next card grabs on.
+    const durationMultiplier = isMobile ? 3.0 : 4.16;
+    const end = start + stagger * durationMultiplier;
     
     const isLastCard = index === arrayLength - 1;
     const endY = isLastCard ? "0vh" : "-150vh";
