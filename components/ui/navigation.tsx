@@ -42,6 +42,7 @@ export function Navigation() {
   return (
     <>
       <nav
+        id="main-nav"
         style={{ WebkitBackfaceVisibility: 'hidden', backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
         className={`fixed top-0 w-full z-50 transition-colors duration-700 ease-out ${
           isScrolled || isMobileMenuOpen
@@ -53,17 +54,17 @@ export function Navigation() {
         <div className={`hidden md:flex justify-between items-center max-w-[1920px] mx-auto px-[clamp(1.5rem,4vw,3rem)] text-[#4C433C] transition-[padding] duration-700 ${
           isScrolled ? 'py-[clamp(0.8rem,1.2vw,1rem)]' : 'py-[clamp(1.2rem,2vw,1.5rem)]'
         }`}>
-          <div className="flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
+          <div className="flex-1 flex items-center justify-start gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             {navLinks.map((link) => (
               <Link key={link.name} className="hover:opacity-70 transition-opacity pb-[2px]" href={link.href}>
                 {link.name}
               </Link>
             ))}
           </div>
-          <Link className="absolute left-1/2 -translate-x-1/2 hover:opacity-80 transition-opacity flex items-center justify-center" href="/">
+          <Link className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center justify-center" href="/">
             <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[clamp(150px,16vw,200px)] h-auto" priority />
           </Link>
-          <div className="flex items-center gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
+          <div className="flex-1 flex items-center justify-end gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             <Link href="?booking=true" scroll={false}>
               <button className="cursor-pointer bg-[#D3B39E] text-white px-[clamp(1.5rem,3vw,2rem)] py-[clamp(0.5rem,1.5vw,0.75rem)] rounded-lg font-label text-xs md:text-sm uppercase tracking-[0.1em] font-bold hover:scale-105 active:scale-95 hover:bg-[#C9A189] border-[#4C433C]/20 transition duration-1000 ease-out shadow-[0_8px_30px_rgba(211,179,158,0.4)]">
                 Book tid

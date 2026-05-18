@@ -22,17 +22,27 @@ function BookingModalInner() {
 
   useEffect(() => {
     if (isOpen) {
+      const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
       document.documentElement.style.overflow = "hidden";
       document.body.style.overflow = "hidden";
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+      const nav = document.getElementById('main-nav');
+      if (nav) nav.style.paddingRight = `${scrollbarWidth}px`;
       if (lenis) lenis.stop();
     } else {
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      const nav = document.getElementById('main-nav');
+      if (nav) nav.style.paddingRight = "";
       if (lenis) lenis.start();
     }
     return () => {
       document.documentElement.style.overflow = "";
       document.body.style.overflow = "";
+      document.body.style.paddingRight = "";
+      const nav = document.getElementById('main-nav');
+      if (nav) nav.style.paddingRight = "";
       if (lenis) lenis.start();
     };
   }, [isOpen, lenis]);
