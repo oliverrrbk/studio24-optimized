@@ -330,7 +330,7 @@ export default function MinHistoriePage() {
           className="pt-[clamp(5rem,8vw,8rem)] 2xl:pt-[clamp(6rem,10vw,10rem)] pb-4 bg-[#FAF8F5] overflow-hidden"
         >
           <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] mb-[clamp(2.5rem,4vw,4rem)] 2xl:mb-[clamp(3rem,5vw,5rem)] flex justify-between items-end border-b border-[#4C433C]/10 pb-6">
-            <h2 className="text-[clamp(2.2rem,2.7vw,3.1rem)] 2xl:text-[clamp(2.5rem,3vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1]">Mit håndværk</h2>
+            <h2 className="text-[clamp(2.2rem,2.7vw,3.1rem)] 2xl:text-[clamp(2.5rem,3vw,3.5rem)] font-headline text-[#1c1a18] font-light leading-[1.1]">Fra hverdagen</h2>
             <span className="font-label text-[clamp(0.6rem,0.7vw,0.65rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.2em] text-[#92857C]">
               Detaljerne bag facaden
             </span>

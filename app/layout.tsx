@@ -20,8 +20,8 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Studio 24 | The Art of Hair',
-  description: 'The Modern Hair Boutique. Studio 24 was founded on the belief that hair is the ultimate medium for self-expression.',
+  title: 'Studio 24 | Ærligt frisørhåndværk',
+  description: 'Få ro, velvære og en skræddersyet behandling hos Studio 24. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
