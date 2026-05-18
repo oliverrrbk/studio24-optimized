@@ -152,7 +152,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Dameklip</h3>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 650,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 399,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Arkitektonisk klipning fuldt tilpasset dit ansigts form og fald.</p>
                   </div>
@@ -160,7 +160,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Farvebehandling</h3>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 950,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 350,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Skræddersyet farve, reflekser og balayage med et naturligt udtryk.</p>
                   </div>
@@ -168,7 +168,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Extensions</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Pris v. konsultation</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 399,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Diskret længde og volumen med 100% fokus på dit hårs sundhed.</p>
                   </div>
@@ -176,7 +176,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Herreklip</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 450,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 329,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Klassisk eller moderne herreklip inklusiv vask og styling.</p>
                   </div>
@@ -193,7 +193,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Børneklip</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 350,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 285,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">En tryg, rolig og nærværende klippeoplevelse for de mindste.</p>
                   </div>
@@ -201,7 +201,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Bryn &amp; Vipper</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 150,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 50,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Præcis farvning og formning for et smukt indrammet ansigt.</p>
                   </div>
@@ -209,7 +209,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Permanent</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 1.200,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 799,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Bløde, levende krøller og fald skabt med moderne, skånsom teknik.</p>
                   </div>
@@ -217,7 +217,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Vask &amp; Styling</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 400,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 235,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Professionel føn og styling til hverdag eller særlige anledninger.</p>
                   </div>
@@ -225,7 +225,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Kur &amp; Tillæg</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 150,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 149,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Dybdegående og genopbyggende pleje for ultimativ glans.</p>
                   </div>
