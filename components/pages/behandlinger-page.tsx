@@ -160,7 +160,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h3 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Farvebehandling</h3>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 350,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 549,-</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Skræddersyet farve, reflekser og balayage med et naturligt udtryk.</p>
                   </div>
@@ -168,7 +168,7 @@ export default function BehandlingerPage() {
                   <div className="group">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.2rem,1.6vw,1.6rem)] 2xl:text-[clamp(1.5rem,2vw,2rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] transition-colors duration-300">Extensions</h4>
-                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 399,-</span>
+                      <span className="font-label text-[8.8px] 2xl:text-[11px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Pris v. konsultation</span>
                     </div>
                     <p className="text-xs text-[#92857C] italic font-light mt-2 group-hover:text-[#6A5D55] transition-colors">Diskret længde og volumen med 100% fokus på dit hårs sundhed.</p>
                   </div>
