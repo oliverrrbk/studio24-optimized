@@ -122,7 +122,7 @@ export default function BehandlingerPage() {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-[#6A5D55] text-[clamp(0.88rem,1.12vw,1.08rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] font-sans font-light leading-relaxed max-w-lg 2xl:max-w-2xl mx-auto drop-shadow-sm"
             >
-              Forud for enhver behandling bruger jeg god tid på ærlig rådgivning. Uanset om det er balayage, extensions eller en præcisionsklipning her i Randers, vurderer jeg hårets tilstand og dine unikke træk, så vi i fællesskab kan skabe et skræddersyet resultat. Hver eneste detalje er velovervejet for at fremhæve dig på den mest naturlige og flatterende måde.
+              Forud for enhver behandling bruger jeg god tid på ærlig rådgivning. Uanset om det er balayage, extensions eller en præcisionsklipning her på Frederiksberg, vurderer jeg hårets tilstand og dine unikke træk, så vi i fællesskab kan skabe et skræddersyet resultat. Hver eneste detalje er velovervejet for at fremhæve dig på den mest naturlige og flatterende måde.
             </motion.p>
           </div>
         </section>

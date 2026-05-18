@@ -21,11 +21,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Studio 24 Randers',
-    default: 'Studio 24 | Eksklusiv Frisør i Randers',
+    template: '%s | Studio 24 Frederiksberg',
+    default: 'Studio 24 | Eksklusiv Frisør på Frederiksberg',
   },
   description: 'Få ro, velvære og en skræddersyet behandling hos Studio 24. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
-  metadataBase: new URL('https://studio24randers.dk'), // Replace with actual domain
+  metadataBase: new URL('https://studio24.dk'), // Replace with actual domain
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -39,13 +39,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               "@context": "https://schema.org",
               "@type": "HairSalon",
               "name": "Studio 24",
-              "image": "https://studio24randers.dk/logo.png",
-              "description": "Eksklusiv og imødekommende frisørsalon i Randers, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
+              "image": "https://studio24.dk/logo.png",
+              "description": "Eksklusiv og imødekommende frisørsalon på Frederiksberg, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Randers",
-                "addressLocality": "Randers",
-                "postalCode": "8900",
+                "streetAddress": "Frederiksberg",
+                "addressLocality": "Frederiksberg",
+                "postalCode": "2000",
                 "addressCountry": "DK"
               },
               "priceRange": "$$$"

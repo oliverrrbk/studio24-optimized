@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Studio 24 Site-Wide SEO Audit</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-main: #F9FAFB;
+    --bg-card: #FFFFFF;
+    --border: rgba(0, 0, 0, 0.1);
+    --border-hover: rgba(0, 0, 0, 0.2);
+    
+    --text: #111827;
+    --text-secondary: #4B5563;
+    --text-muted: #6B7280;
+    
+    --accent: #6366F1;
+    --accent-glow: rgba(99, 102, 241, 0.2);
+    
+    --green: #10B981;
+    --green-bg: rgba(16, 185, 129, 0.1);
+    --green-border: rgba(16, 185, 129, 0.2);
+    
+    --red: #EF4444;
+    --red-bg: rgba(239, 68, 68, 0.1);
+    --red-border: rgba(239, 68, 68, 0.2);
+    
+    --yellow: #F59E0B;
+    --yellow-bg: rgba(245, 158, 11, 0.1);
+    --yellow-border: rgba(245, 158, 11, 0.2);
+    
+    --orange: #F97316;
+    --orange-bg: rgba(249, 115, 22, 0.1);
+    --orange-border: rgba(249, 115, 22, 0.2);
+    
+    --purple: #A855F7;
+    --purple-bg: rgba(168, 85, 247, 0.1);
+    --purple-border: rgba(168, 85, 247, 0.2);
+    
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  
+  body {
+    background-color: var(--bg-main);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    padding-bottom: 100px;
+  }
+  
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 500px;
+    background: radial-gradient(circle at 50% 0%, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: -1;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+  
+  .header {
+    padding: 60px 0 40px;
+    text-align: center;
+  }
+  .header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.05);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+  }
+  .dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; box-shadow: 0 0 10px var(--accent); }
+  .header h1 {
+    font-size: 42px;
+    letter-spacing: -1px;
+    margin-bottom: 16px;
+    background: linear-gradient(to right, #111, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .subtitle { font-size: 16px; color: var(--text-secondary); }
+
+  /* Score Overview */
+  .score-section {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 48px;
+    margin-bottom: 40px;
+  }
+  .score-circle-wrap { position: relative; width: 160px; height: 160px; flex-shrink: 0; }
+  .score-circle { position: relative; width: 100%; height: 100%; }
+  .score-circle svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+  .bg-ring { fill: none; stroke: rgba(0,0,0,0.05); stroke-width: 8; }
+  .progress-ring {
+    fill: none; 
+    stroke: var(--orange); 
+    stroke-width: 8; 
+    stroke-linecap: round;
+    stroke-dasharray: 465;
+    stroke-dashoffset: 269; /* 42 score */
+    transition: stroke-dashoffset 1s ease-out;
+  }
+  .score-number {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Space Grotesk', sans-serif; font-size: 48px; font-weight: 700; color: #111;
+  }
+  .score-grade {
+    position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+    font-size: 14px; font-weight: 600; color: var(--orange);
+    background: var(--orange-bg); padding: 2px 10px; border-radius: 100px;
+  }
+  .score-label {
+    position: absolute; bottom: -28px; left: 50%; transform: translateX(-50%);
+    font-size: 13px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; white-space: nowrap;
+  }
+  
+  .score-details { flex: 1; }
+  .score-details h2 { font-size: 24px; margin-bottom: 8px; }
+  .score-details p { color: var(--text-secondary); margin-bottom: 24px; font-size: 15px; }
+  .sub-scores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .sub-score { background: rgba(0,0,0,0.02); padding: 12px; border-radius: var(--radius-sm); border: 1px solid var(--border); }
+  .sub-score-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .sub-score-value { font-family: 'Space Grotesk', sans-serif; font-size: 20px; font-weight: 600; margin-bottom: 8px; }
+  .sub-score-bar { height: 4px; background: rgba(0,0,0,0.1); border-radius: 2px; overflow: hidden; }
+  .sub-score-bar-fill { height: 100%; border-radius: 2px; }
+
+  /* Tabs */
+  .tabs {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 40px;
+  }
+  .tabs-inner {
+    max-width: 1100px; margin: 0 auto; padding: 0 24px;
+    display: flex; gap: 8px; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tabs-inner::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    background: transparent; border: none; color: var(--text-secondary);
+    padding: 16px 4px; margin-right: 20px;
+    font-size: 14px; font-family: 'Inter', sans-serif; font-weight: 500;
+    cursor: pointer; position: relative; white-space: nowrap; transition: color 0.2s;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--accent); }
+  .tab-btn.active::after {
+    content: ''; position: absolute; bottom: -1px; left: 0; right: 0;
+    height: 2px; background: var(--accent); border-radius: 2px 2px 0 0;
+  }
+  .tab-count {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.1); border-radius: 100px;
+    padding: 0 6px; font-size: 11px; margin-left: 6px;
+  }
+
+  /* Content Areas */
+  .tab-content { display: none; animation: fadeIn 0.3s ease; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .section-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: var(--text); }
+  .section-subtitle { font-size: 14px; color: var(--text-secondary); margin-bottom: 24px; }
+
+  /* Cards */
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; margin-bottom: 24px;
+  }
+  .card-title { font-family: 'Space Grotesk', sans-serif; font-size: 16px; font-weight: 600; color: var(--text); }
+
+  /* Stats Grid */
+  .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 32px; }
+  .stat-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 20px; text-align: center;
+  }
+  .stat-value { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 700; color: var(--accent); margin-bottom: 4px; }
+  .stat-label { font-size: 13px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Findings & Badges */
+  .badge {
+    display: inline-flex; align-items: center; padding: 2px 8px;
+    border-radius: 4px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .badge-pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .badge-warning { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-fail { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .badge-critical { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .badge-high { background: var(--orange-bg); color: var(--orange); border: 1px solid var(--orange-border); }
+  .badge-medium { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .badge-low { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+
+  .finding {
+    display: flex; gap: 16px; padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .finding:last-child { border-bottom: none; padding-bottom: 0; }
+  .finding-status { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+  .finding-status.fail { background: var(--red); box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+  .finding-status.warning { background: var(--yellow); box-shadow: 0 0 10px rgba(245, 158, 11, 0.4); }
+  .finding-status.pass { background: var(--green); box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
+  .finding-content { flex: 1; }
+  .finding-content h4 { font-size: 15px; margin-bottom: 6px; color: var(--text); }
+  .finding-content p { font-size: 14px; color: var(--text-secondary); margin-bottom: 12px; line-height: 1.6; }
+  .finding-rec {
+    background: rgba(0,0,0,0.03); border-left: 3px solid var(--accent);
+    padding: 12px 16px; font-size: 13px; color: var(--text); border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  }
+
+  /* Collapsible */
+  .collapsible {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); margin-bottom: 12px; overflow: hidden;
+  }
+  .collapsible-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 20px; cursor: pointer; user-select: none;
+    background: rgba(0,0,0,0.01); transition: background 0.2s;
+  }
+  .collapsible-header:hover { background: rgba(0,0,0,0.03); }
+  .collapsible-title { display: flex; align-items: center; gap: 12px; font-weight: 500; }
+  .collapse-icon { font-size: 10px; color: var(--text-muted); transition: transform 0.3s; }
+  .collapsible.open .collapse-icon { transform: rotate(-180deg); }
+  .collapsible-body { display: none; border-top: 1px solid var(--border); }
+  .collapsible.open .collapsible-body { display: block; }
+  .collapsible-body-inner { padding: 20px; }
+
+  /* Tables */
+  .page-table { width: 100%; border-collapse: collapse; text-align: left; }
+  .page-table th {
+    background: rgba(0,0,0,0.02); padding: 12px 16px; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted);
+    border-bottom: 1px solid var(--border); font-weight: 600;
+  }
+  .page-table td {
+    padding: 12px 16px; font-size: 14px;
+    border-bottom: 1px solid rgba(0,0,0,0.03); vertical-align: middle;
+  }
+  .page-table tr:hover td { background: rgba(0,0,0,0.02); }
+  .page-url { font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--accent); }
+
+  /* Checklist */
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 12px; padding: 12px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.04);
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .check-icon {
+    width: 22px; height: 22px; border-radius: 6px; flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center; font-size: 12px; margin-top: 1px;
+  }
+  .check-icon.pass { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+  .check-icon.fail { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+  .check-icon.warn { background: var(--yellow-bg); color: var(--yellow); border: 1px solid var(--yellow-border); }
+  .check-text { font-size: 14px; color: var(--text); }
+  .check-text.muted { color: var(--text-secondary); }
+
+  /* Action items */
+  .action-item {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 24px; margin-bottom: 12px;
+    display: flex; gap: 20px; align-items: flex-start; transition: border-color 0.2s;
+  }
+  .action-item:hover { border-color: var(--border-hover); }
+  .action-number {
+    font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700;
+    color: var(--accent); flex-shrink: 0; width: 36px; text-align: center; opacity: 0.5;
+  }
+  .action-content { flex: 1; }
+  .action-title { font-weight: 600; color: var(--text); font-size: 15px; margin-bottom: 6px; }
+  .action-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+  .action-impact { margin-top: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
+
+  /* Content clusters */
+  .cluster {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 24px; margin-bottom: 16px;
+  }
+  .cluster-title {
+    font-family: 'Space Grotesk', sans-serif; font-weight: 600;
+    color: var(--purple); font-size: 16px; margin-bottom: 12px;
+  }
+  .cluster-pages { display: flex; flex-wrap: wrap; gap: 8px; }
+  .cluster-page {
+    padding: 6px 14px; border-radius: 100px; background: var(--purple-bg);
+    border: 1px solid var(--purple-border); font-size: 13px;
+    font-family: 'JetBrains Mono', monospace; color: var(--text-secondary);
+  }
+  .cluster-page.pillar {
+    background: rgba(167,139,250,0.15); border-color: rgba(167,139,250,0.3);
+    color: var(--purple); font-weight: 600;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="container">
+    <div class="header-badge"><span class="dot"></span> Site-Wide SEO Audit</div>
+    <h1>Studio 24 Frederiksberg</h1>
+    <p class="subtitle">Comprehensive analysis of 4 core pages — Generated May 18, 2026</p>
+  </div>
+</div>
+
+<div class="container" style="padding-top: 0; padding-bottom: 32px;">
+  <div class="score-section">
+    <div class="score-circle-wrap">
+      <div class="score-circle">
+        <svg viewBox="0 0 160 160">
+          <circle class="bg-ring" cx="80" cy="80" r="74"/>
+          <circle class="progress-ring" cx="80" cy="80" r="74"/>
+        </svg>
+        <span class="score-number">42</span>
+        <span class="score-grade">D</span>
+        <span class="score-label">Overall Health</span>
+      </div>
+    </div>
+    <div class="score-details">
+      <h2>Missing Fundamental SEO Architecture</h2>
+      <p>The site possesses a stunning, premium aesthetic and powerful messaging based on Emilie's "Company DNA," but this value is entirely invisible to search engines. Missing H1 tags, duplicated metadata, and zero schema markup mean Google cannot understand the premium value and local relevance of Studio 24 on Frederiksberg.</p>
+      <div class="sub-scores">
+        <div class="sub-score">
+          <div class="sub-score-label">Technical</div>
+          <div class="sub-score-value" style="color: var(--red)">35</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:35%; background: var(--red)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Content</div>
+          <div class="sub-score-value" style="color: var(--yellow)">65</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:65%; background: var(--yellow)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Architecture</div>
+          <div class="sub-score-value" style="color: var(--orange)">40</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:40%; background: var(--orange)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Cross-Page</div>
+          <div class="sub-score-value" style="color: var(--red)">20</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:20%; background: var(--red)"></div></div>
+        </div>
+        <div class="sub-score">
+          <div class="sub-score-label">Local & Schema</div>
+          <div class="sub-score-value" style="color: var(--orange)">40</div>
+          <div class="sub-score-bar"><div class="sub-score-bar-fill" style="width:40%; background: var(--orange)"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="tabs">
+  <div class="tabs-inner">
+    <button class="tab-btn active" onclick="switchTab('executive')">Executive Summary</button>
+    <button class="tab-btn" onclick="switchTab('pages')">Page Breakdown <span class="tab-count">4</span></button>
+    <button class="tab-btn" onclick="switchTab('sitewide')">Site-Wide Issues <span class="tab-count">4</span></button>
+    <button class="tab-btn" onclick="switchTab('technical')">Technical & Schema</button>
+    <button class="tab-btn" onclick="switchTab('content')">Content Strategy</button>
+    <button class="tab-btn" onclick="switchTab('actions')">Action Plan</button>
+  </div>
+</div>
+
+<!-- TAB 1: EXECUTIVE SUMMARY -->
+<div id="tab-executive" class="tab-content active">
+<div class="container">
+  <div class="section-title">Executive Summary</div>
+  <div class="section-subtitle">High-level overview of Studio 24's SEO health and top priorities</div>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Pages Audited</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">4</div>
+      <div class="stat-label">Critical Issues</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">3</div>
+      <div class="stat-label">High Priority</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">0%</div>
+      <div class="stat-label">H1 Tag Coverage</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">100%</div>
+      <div class="stat-label">Metadata Duplication</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">0%</div>
+      <div class="stat-label">Schema Coverage</div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom: 24px;">
+    <div class="card-title" style="margin-bottom: 16px;">Key Findings</div>
+    <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
+      Studio 24 has a highly premium aesthetic and strong brand messaging rooted in the "Company DNA", but its technical foundation severely restricts search visibility. Across all 4 primary pages, there are exactly <strong>zero &lt;h1&gt; tags</strong>, removing Google's primary method for determining page topics. Furthermore, <strong>100% of the pages share the exact same meta title and description</strong> inherited from the global Next.js layout, causing total keyword cannibalization. Finally, the site entirely lacks crucial <code>LocalBusiness</code> and <code>HairSalon</code> structured data markup, which is vital for dominating local map-pack searches in Frederiksberg for core services like Balayage and Extensions.
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Top 3 Priorities</div>
+  <div class="section-subtitle">The highest-impact actions to take right now</div>
+  
+  <div class="action-item">
+    <div class="action-number">1</div>
+    <div class="action-content">
+      <div class="action-title">Inject Dynamic Meta Titles & Descriptions</div>
+      <div class="action-desc">Remove the global hardcoded metadata in <code>app/layout.tsx</code> and configure dynamic metadata exports in each specific <code>page.tsx</code> route. This ensures <code>/behandlinger</code> actually tells Google it's about "Frisørbehandlinger, Balayage & Extensions" instead of repeating the homepage title.</div>
+      <div class="action-impact">Expected impact: Resolves 100% duplicate content issues and allows ranking for distinct keywords.</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">2</div>
+    <div class="action-content">
+      <div class="action-title">Implement H1 Heading Hierarchy</div>
+      <div class="action-desc">Refactor the UI components to use semantic HTML tags. Ensure every single page has exactly one visually integrated but semantically correct <code>&lt;h1&gt;</code> tag containing the primary target keyword (e.g., "Frisør Frederiksberg" or "Extensions Ekspert").</div>
+      <div class="action-impact">Expected impact: Drastically improves crawler comprehension of individual page topics.</div>
+    </div>
+    <span class="badge badge-critical">Critical</span>
+  </div>
+
+  <div class="action-item">
+    <div class="action-number">3</div>
+    <div class="action-content">
+      <div class="action-title">Add HairSalon & LocalBusiness Schema</div>
+      <div class="action-desc">Inject JSON-LD structured data into the <code>app/layout.tsx</code> body to explicitly tell Google the business name, Frederiksberg location, 10-year experience, opening hours, and specific services (Balayage, Extensions).</div>
+      <div class="action-impact">Expected impact: Massively boosts local SEO presence on Google Maps and search snippets in the local area.</div>
+    </div>
+    <span class="badge badge-high">High</span>
+  </div>
+
+</div>
+</div>
+
+<!-- TAB 2: PAGE BREAKDOWN -->
+<div id="tab-pages" class="tab-content">
+<div class="container">
+  <div class="section-title">Page-by-Page Breakdown</div>
+  <div class="section-subtitle">Individual audit results for each crawled page</div>
+
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Title</th>
+          <th>Words</th>
+          <th>H1</th>
+          <th>Meta Desc</th>
+          <th>Schema</th>
+          <th>Issues</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/ (Home)</span></td>
+          <td>Studio 24 | Ærligt...</td>
+          <td>~1447</td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td><span class="badge badge-fail">Duplicate</span></td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/behandlinger</span></td>
+          <td>Studio 24 | Ærligt...</td>
+          <td>~756</td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td><span class="badge badge-fail">Duplicate</span></td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/min-historie</span></td>
+          <td>Studio 24 | Ærligt...</td>
+          <td>~671</td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td><span class="badge badge-fail">Duplicate</span></td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/galleri</span></td>
+          <td>Studio 24 | Ærligt...</td>
+          <td>~187</td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td><span class="badge badge-fail">Duplicate</span></td>
+          <td><span class="badge badge-fail">Missing</span></td>
+          <td>4</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/ (Home)</span>
+        <span class="badge badge-critical">4 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Missing H1 Tag</h4>
+            <p>The homepage has no H1 tag. Search engines rely heavily on the H1 to understand what the page is about.</p>
+            <div class="finding-rec">Wrap the main hero text in an &lt;h1&gt; tag. Target keywords: "Eksklusiv Frisør på Frederiksberg".</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Missing LocalBusiness Schema</h4>
+            <p>No structured data is present to tell Google that this is a local business in Frederiksberg.</p>
+            <div class="finding-rec">Add LocalBusiness JSON-LD markup with name, address, and coordinates.</div>
+          </div>
+          <span class="badge badge-high">High</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="collapsible">
+    <div class="collapsible-header" onclick="this.parentElement.classList.toggle('open')">
+      <span class="collapsible-title">
+        <span class="page-url">/behandlinger</span>
+        <span class="badge badge-critical">4 issues</span>
+      </span>
+      <span class="collapse-icon">&#9660;</span>
+    </div>
+    <div class="collapsible-body">
+      <div class="collapsible-body-inner">
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Global Metadata Duplication</h4>
+            <p>The page uses the exact same title ("Studio 24 | Ærligt frisørhåndværk") as the home page. It fails to rank for specific service keywords.</p>
+            <div class="finding-rec">Export a custom Next.js metadata object targeting "Balayage & Extensions | Behandlinger hos Studio 24".</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+        <div class="finding">
+          <div class="finding-status fail"></div>
+          <div class="finding-content">
+            <h4>Missing H1 Tag</h4>
+            <p>There is no H1 identifying this as the services/treatments page.</p>
+            <div class="finding-rec">Convert the page's main title into an &lt;h1&gt; tag.</div>
+          </div>
+          <span class="badge badge-critical">Critical</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- TAB 3: SITEWIDE ISSUES -->
+<div id="tab-sitewide" class="tab-content">
+<div class="container">
+  <div class="section-title">Site-Wide Issues</div>
+  <div class="section-subtitle">Cross-cutting concerns that affect multiple pages</div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Duplicate Content & Cannibalization</div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>100% Metadata Duplication</h4>
+        <p>Because metadata is only defined in <code>app/layout.tsx</code>, all pages currently share the exact same Title and Meta Description. This causes Google to filter out the subpages as "duplicates" and severely damages ranking potential for specific services.</p>
+        <div class="finding-rec">Move unique metadata into each individual <code>page.tsx</code> route. Keep <code>layout.tsx</code> as a fallback only.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 16px;">Robots.txt & Sitemap</div>
+    <div class="finding">
+      <div class="finding-status fail"></div>
+      <div class="finding-content">
+        <h4>Missing Sitemap & Robots.txt</h4>
+        <p>There are no <code>sitemap.xml</code> or <code>robots.txt</code> files at the root of the project. These are essential for instructing Google's crawlers on how to navigate the site.</p>
+        <div class="finding-rec">Create <code>app/sitemap.ts</code> and <code>app/robots.ts</code> using Next.js built-in API to generate these dynamically.</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- TAB 4: TECHNICAL -->
+<div id="tab-technical" class="tab-content">
+<div class="container">
+  <div class="section-title">Technical SEO & Schema Strategy</div>
+  <div class="section-subtitle">Infrastructure, performance indicators, and structured data</div>
+
+  <div class="card">
+    <div class="card-title" style="margin-bottom: 20px;">Implementation Checklist</div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Semantic H1-H6 Tag Hierarchy</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Unique Title Tags Per Route</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Unique Meta Descriptions Per Route</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon fail">&#10007;</div>
+      <div class="check-text">Sitemap.xml and Robots.txt generated</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon pass">&#10003;</div>
+      <div class="check-text">Next.js SSR Capabilities Active</div>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Schema Markup Strategy</div>
+  <div class="section-subtitle">Required JSON-LD structured data for local dominance</div>
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Schema Type</th>
+          <th>Location</th>
+          <th>Purpose & Data Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>HairSalon</code> / <code>LocalBusiness</code></td>
+          <td>Home / Layout</td>
+          <td>Signals to Google Maps. Include: "Studio 24", Frederiksberg address, phone, priceRange "$$$".</td>
+        </tr>
+        <tr>
+          <td><code>Service</code></td>
+          <td>/behandlinger</td>
+          <td>Detail specific services: "Balayage", "Eksklusive Extensions", "Herreklip", highlighting the 4.5 year education USP.</td>
+        </tr>
+        <tr>
+          <td><code>Person</code></td>
+          <td>/min-historie</td>
+          <td>Mark up Emilie's profile, linking to her 10-years experience and "Industry Favorites" award.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>
+
+<!-- TAB 5: CONTENT STRATEGY -->
+<div id="tab-content" class="tab-content">
+<div class="container">
+  <div class="section-title">Content Strategy (Powered by Company DNA)</div>
+  <div class="section-subtitle">Integrating Emilie's vision, Vestegn authenticity, and Frederiksberg elegance into the keyword map</div>
+
+  <div class="card" style="margin-bottom: 24px;">
+    <div class="card-title" style="margin-bottom: 16px;">DNA Strategic Alignment</div>
+    <div style="color: var(--text-secondary); font-size: 15px; line-height: 1.8;">
+      The <strong>Company DNA</strong> document reveals a massively powerful positioning: <em>"elegant, men med Vestegns-jordforbindelse"</em>. The site must leverage terms that establish <strong>trust, education, and anti-assembly-line mentality</strong>. The SEO content must pivot away from standard generic phrases to target high-intent clients ("De Unge Modne") searching for long-term hair health and extension experts who won't ruin their natural hair.
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Target Keyword Map</div>
+  <div class="card" style="overflow-x: auto; padding: 0;">
+    <table class="page-table">
+      <thead>
+        <tr>
+          <th>Page</th>
+          <th>Primary Target Keyword</th>
+          <th>LSI / Semantic Keywords (from DNA)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="page-url">/</span></td>
+          <td>Frisør Frederiksberg</td>
+          <td>Ærlig rådgivning, fordomsfri salon, eksklusivitet, uovertruffen imødekommende</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/behandlinger</span></td>
+          <td>Balayage & Extensions Frederiksberg</td>
+          <td>Skånsom farvning, naturlige overgange, skandinavisk hår, ingen lappeløsninger</td>
+        </tr>
+        <tr>
+          <td><span class="page-url">/min-historie</span></td>
+          <td>Professionel Frisør København</td>
+          <td>4,5-årig uddannelse, 10 års brancheerfaring, Industry Favorites, stolt håndværk</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; margin-top: 32px;">Content Gap Recommendations</div>
+  <div class="action-item">
+    <div class="action-number">+</div>
+    <div class="action-content">
+      <div class="action-title">Create "Hjemmepleje & Rådgivning" (Blog/Guides)</div>
+      <div class="action-desc">Capitalize on the DNA quote: <em>"20% af arbejdet ligger hos mig. De resterende 80 er hos kunden selv derhjemme."</em> Create SEO-driven guides for hair care to capture long-tail traffic ("hvordan plejer man extensions", "undgå skadet hår efter farvning").</div>
+    </div>
+    <span class="badge badge-medium">Opportunity</span>
+  </div>
+</div>
+</div>
+
+<!-- TAB 6: ACTION PLAN -->
+<div id="tab-actions" class="tab-content">
+<div class="container">
+  <div class="section-title">Prioritized Action Plan</div>
+  <div class="section-subtitle">Every recommendation ranked by impact</div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--green);">Phase 1: Architecture Fixes <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; Critical</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">1</div>
+      <div class="action-content">
+        <div class="action-title">Export specific Metadata in Next.js Routes</div>
+        <div class="action-desc">Add <code>export const metadata = { title: "...", description: "..." }</code> to <code>app/page.tsx</code>, <code>app/behandlinger/page.tsx</code>, etc., mapping to the suggested keywords.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">2</div>
+      <div class="action-content">
+        <div class="action-title">Add &lt;h1&gt; tags to all page components</div>
+        <div class="action-desc">Ensure every page has an explicit H1 tag instead of generic styling wrappers.</div>
+      </div>
+      <span class="badge badge-critical">Critical</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--orange);">Phase 2: Local & Technical <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; High Impact</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">3</div>
+      <div class="action-content">
+        <div class="action-title">Inject JSON-LD HairSalon Schema</div>
+        <div class="action-desc">Add a schema script to the layout or homepage targeting local search visibility in Frederiksberg.</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+    <div class="action-item">
+      <div class="action-number">4</div>
+      <div class="action-content">
+        <div class="action-title">Create Sitemap and Robots.txt</div>
+        <div class="action-desc">Use Next.js <code>sitemap.ts</code> and <code>robots.ts</code> files to ensure indexability.</div>
+      </div>
+      <span class="badge badge-high">High</span>
+    </div>
+  </div>
+
+  <div class="section-title" style="font-size: 18px; color: var(--purple);">Phase 3: Content Integration <span style="font-size: 14px; color: var(--text-muted); font-weight: 400;">&mdash; Strategic</span></div>
+  <div style="margin-bottom: 24px;">
+    <div class="action-item">
+      <div class="action-number">5</div>
+      <div class="action-content">
+        <div class="action-title">Weave "Company DNA" keywords into copy</div>
+        <div class="action-desc">Ensure phrases like "ærlig rådgivning", "4,5-årig uddannelse", and "ingen lappeløsninger" appear prominently within the body copy of the Behandlinger and Min Historie pages.</div>
+      </div>
+      <span class="badge badge-medium">Medium</span>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tabId).classList.add('active');
+  event.target.closest('.tab-btn').classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// Collapsible panels
+document.querySelectorAll('.collapsible-header').forEach(header => {
+  header.addEventListener('click', () => {
+    header.closest('.collapsible').classList.toggle('open');
+  });
+});
+</script>
+
+</body>
+</html>
