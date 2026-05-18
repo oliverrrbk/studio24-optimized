@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import BehandlingerClient from "@/components/pages/behandlinger-page";
 
 export const metadata: Metadata = {
-  title: 'Balayage, Extensions & Klipning',
-  description: 'Vi tilbyder skræddersyet farvedesign, eksklusive extensions og præcisionsklipning. Altid med fokus på skånsomme behandlinger og ærlig rådgivning.',
+  title: 'Balayage, Extensions & Frisør',
+  description: 'Vi tilbyder skræddersyet balayage, eksklusive extensions og præcisionsklipning i vores frisørsalon i Randers. Altid med fokus på sundt hår og ærlig rådgivning.',
 };
 
 export default function Page() {
