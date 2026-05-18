@@ -21,6 +21,16 @@ const nextConfig: NextConfig = {
         destination: '/behandlinger',
         permanent: true,
       },
+      {
+        source: '/omossporgsmaal',
+        destination: '/min-historie',
+        permanent: true,
+      },
+      {
+        source: '/omossporgsmaal.html',
+        destination: '/min-historie',
+        permanent: true,
+      },
     ];
   },
 };
