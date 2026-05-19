@@ -41,7 +41,7 @@ export function SiteFooter() {
             <h5 className="font-bold text-[clamp(0.75rem,1vw,0.875rem)] tracking-[0.25em] uppercase text-[#4C433C] mb-[clamp(1.5rem,3vw,2rem)] font-label">Kontakt</h5>
             <ul className="space-y-[clamp(0.75rem,1.5vw,1rem)] text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] font-light tracking-wide">
               <li>Tirsdag - Fredag: 09:00 - 17:30<br/>Lørdag: 09:00 - 13:00<br/>Søn, Man &amp; Helligdage efter aftale</li>
-              <li><a href="tel:+4529896069" className="hover:text-[#E4D3C4] transition-colors">+45 29 89 60 69</a></li>
+              <li><a href="tel:+4586418433" className="hover:text-[#E4D3C4] transition-colors">+45 86 41 84 33</a></li>
               <li><a href="mailto:enistudio.24@gmail.com" className="hover:text-[#E4D3C4] transition-colors">enistudio.24@gmail.com</a></li>
               <li>Mariagervej 91<br/>8920 Randers NV</li>
             </ul>
