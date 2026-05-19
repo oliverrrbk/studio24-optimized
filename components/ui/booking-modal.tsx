@@ -167,8 +167,8 @@ function BookingModalInner() {
                       Direkte
                     </h3>
                     <p className="font-body text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)] text-[#4C433C] leading-relaxed font-light">
-                      <a className="hover:text-[#D3B39E] transition-colors" href="tel:86418433">
-                        86 41 84 33
+                      <a className="hover:text-[#D3B39E] transition-colors" href="tel:+4586418433">
+                        +45 86 41 84 33
                       </a>
                       <br/>
                       <a className="hover:text-[#D3B39E] transition-colors" href="mailto:enistudio.24@gmail.com">

@@ -64,7 +64,7 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
                   <p>8920 Randers NV</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-[#6A5D55]">CVR-nr.: 44907917</p>
                   <div className="mt-4 space-y-1">
-                    <p>Telefon: <a href="tel:86418433" className="hover:text-[#D3B39E] transition-colors">86 41 84 33</a></p>
+                    <p>Telefon: <a href="tel:+4586418433" className="hover:text-[#D3B39E] transition-colors">+45 86 41 84 33</a></p>
                     <p>E-mail: <a href="mailto:enistudio.24@gmail.com" className="hover:text-[#D3B39E] transition-colors">enistudio.24@gmail.com</a></p>
                   </div>
                 </div>
