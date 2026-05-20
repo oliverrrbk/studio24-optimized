@@ -66,29 +66,23 @@ const CuttingScissors = () => (
 );
 
 const leafVariants = {
-  initial: { x: 0, y: 0, rotate: 0 },
+  initial: { rotate: 0 },
   hover: {
-    x: [0, 4, 6, 3, 0.5, 0],
-    y: [0, -2, -3, -1, 0, 0],
-    rotate: [0, 16, 22, 10, -3, 0],
+    rotate: [0, 15, -10, 0],
     transition: { 
-      duration: 1.25, 
-      times: [0, 0.25, 0.5, 0.75, 0.9, 1],
-      ease: [0.25, 1, 0.5, 1] as any
+      duration: 0.7, 
+      ease: "easeInOut" as any
     }
   }
 };
 
 const rulerVariants = {
-  initial: { y: 0, x: 0, rotate: 0 },
+  initial: { rotate: 0 },
   hover: {
-    y: [0, -5, -5, 0, -0.6, 0],
-    x: [0, -1, -1, 0, 0, 0],
-    rotate: [0, -8, -8, 0, 0, 0],
+    rotate: [0, -15, 10, 0],
     transition: {
-      duration: 1.15,
-      times: [0, 0.35, 0.65, 0.82, 0.92, 1],
-      ease: ["easeOut", "easeInOut", "easeIn", "easeOut", "easeIn", "easeOut"] as any
+      duration: 0.6,
+      ease: "easeInOut" as any
     }
   }
 };
