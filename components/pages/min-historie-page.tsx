@@ -141,7 +141,7 @@ export default function MinHistoriePage() {
                 Baggrunden
               </motion.span>
               <motion.h1 style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(2.7rem,4.5vw,4.5rem)] 2xl:text-[clamp(4.5rem,5vw,5.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight mb-[clamp(1.8rem,3.5vw,2.5rem)] 2xl:mb-[clamp(2.5rem,4vw,3rem)]">
-                Et oprør mod <br /> <span className="italic">samlebåndet.</span>
+                Et oprør mod <br /> <span className="italic">samlebåndet</span>
               </motion.h1>
               <motion.p style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(1rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.4vw,1.35rem)] font-sans text-[#6A5D55] font-light leading-relaxed max-w-[450px] 2xl:max-w-[500px]">
                 Med min 4,5-årige frisøruddannelse og over 10 års erfaring skabte jeg Studio 24 her i Randers. Jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager ærligt håndværk og et smukt resultat den tid, det tager. Længere er den egentlig ikke.
@@ -289,7 +289,7 @@ export default function MinHistoriePage() {
               Mit løfte
             </span>
             <h2 className="text-[clamp(2.5rem,4vw,4.5rem)] font-headline text-[#1c1a18] font-light leading-[1.05] tracking-tight">
-              Hvad jeg <span className="italic">står for.</span>
+              Hvad jeg <span className="italic">står for</span>
             </h2>
           </motion.div>
           <style>{`

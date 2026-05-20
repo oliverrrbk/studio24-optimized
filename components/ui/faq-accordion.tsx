@@ -71,7 +71,7 @@ export const FAQAccordion = () => {
         className="max-w-[730px] 2xl:max-w-[850px] mx-auto"
       >
         <div className="text-center mb-10 lg:mb-12 2xl:mb-[clamp(3rem,6vw,5rem)]">
-          <h2 className="font-headline text-[clamp(1.9rem,2.7vw,2.3rem)] 2xl:text-[clamp(2rem,3.5vw,2.5rem)] text-[#4C433C] leading-[1.1] mb-5 2xl:mb-6">Ofte Stillede Spørgsmål</h2>
+          <h2 className="font-headline text-[clamp(1.9rem,2.7vw,2.3rem)] 2xl:text-[clamp(2rem,3.5vw,2.5rem)] text-[#4C433C] leading-[1.1] mb-5 2xl:mb-6">Ofte stillede spørgsmål</h2>
           <div className="w-[55px] 2xl:w-[60px] h-[3px] bg-[#a8826c] mx-auto"></div>
         </div>
         

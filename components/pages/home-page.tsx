@@ -207,6 +207,10 @@ const ReviewModal = ({ review, onClose }: { review: any, onClose: () => void }) 
 
 export default function Page() {
 
+  const { scrollY } = useScroll();
+  const indicatorY = useTransform(scrollY, [0, 60], [0, 8]);
+  const indicatorOpacity = useTransform(scrollY, [0, 20, 60], [0.6, 0.6, 0]);
+
   const [activeServices, setActiveServices] = useState<number[]>([]);
   const [isHoveringServices, setIsHoveringServices] = useState(false);
   const [selectedReview, setSelectedReview] = useState<any>(null);
@@ -324,7 +328,45 @@ export default function Page() {
               </Link>
             </motion.div>
           </div>
-
+ 
+          {/* Scroll Indicator */}
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute bottom-[clamp(1.5rem,4vh,3rem)] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center justify-center"
+          >
+            <motion.div
+              style={{
+                y: indicatorY,
+                opacity: indicatorOpacity,
+                ...hardwareAccelerated
+              }}
+              className="flex flex-col items-center justify-center"
+            >
+              <Link 
+                href="#min-historie"
+                className="flex flex-col items-center justify-center group cursor-pointer hover:opacity-100 transition-opacity duration-300"
+              >
+                <span className="font-label text-[9px] md:text-[10px] uppercase tracking-[0.25em] text-[#4C433C] mb-2 font-bold opacity-80 group-hover:text-[#D3B39E] transition-colors duration-500">Rul ned</span>
+                <div className="w-[18px] h-[30px] 2xl:w-[20px] 2xl:h-[34px] rounded-full border border-[#4C433C]/40 group-hover:border-[#D3B39E] flex justify-center p-[4px] 2xl:p-[5px] transition-colors duration-500">
+                  <motion.div
+                    animate={{
+                      y: [0, 10, 0],
+                      opacity: [0.4, 1, 0.4],
+                    }}
+                    transition={{
+                      duration: 2,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                    className="w-1.5 h-1.5 rounded-full bg-[#D3B39E]"
+                  />
+                </div>
+              </Link>
+            </motion.div>
+          </motion.div>
+ 
           {/* Bottom Curve */}
           <div className="absolute bottom-[-1px] left-0 w-full overflow-hidden leading-none z-20 pointer-events-none">
             <svg className="relative block w-full h-[clamp(50px,8vw,120px)]" viewBox="0 0 1440 100" preserveAspectRatio="none" fill="currentColor">
@@ -359,8 +401,8 @@ export default function Page() {
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
               className="font-headline font-light text-[clamp(2.5rem,5vw,4.5rem)] md:text-[clamp(2.2rem,4vw,3.2rem)] 2xl:text-[clamp(2.5rem,5vw,4.5rem)] text-center leading-[1.1] tracking-tight max-w-4xl mx-auto"
             >
-              <em className="italic font-light">Ingen ubehagelige overraskelser.</em><br/>
-              <strong className="font-medium">Bare det resultat,</strong> <br className="md:hidden"/><em className="italic font-light">vi aftalte.</em>
+              <em className="italic font-light">Ingen ubehagelige overraskelser</em><br/>
+              <strong className="font-medium">Bare det resultat,</strong> <br className="md:hidden"/><em className="italic font-light">vi aftalte</em>
             </motion.h2>
 
             <motion.p
@@ -386,14 +428,14 @@ export default function Page() {
                 {/* Floating Title (Absolute to overlap left edge on Desktop) */}
                 <div className="absolute top-[10%] lg:left-[12%] 2xl:left-[-10%] z-20 hidden lg:block">
                   <h3 className="font-headline text-[clamp(1.75rem,2.5vw,2.5rem)] 2xl:text-[clamp(2.5rem,4vw,3.5rem)] leading-[1.05] text-[#4C433C] whitespace-nowrap [text-shadow:0_4px_16px_rgba(251,249,245,1),0_0_8px_rgba(251,249,245,0.8)]">
-                    <strong className="font-medium">Ægte faglighed.</strong><br/>
-                    <em className="italic font-light">Hårkunst med hjertet.</em>
+                    <strong className="font-medium">Ægte faglighed</strong><br/>
+                    <em className="italic font-light">Hårkunst med hjertet</em>
                   </h3>
                 </div>
                 {/* For mobile & small tablets, show natural flowing title */}
                 <h3 className="font-headline text-[clamp(2.5rem,6vw,3.5rem)] leading-[1.05] text-[#4C433C] mb-6 block lg:hidden text-center md:text-left [text-shadow:0_4px_16px_rgba(251,249,245,1),0_0_8px_rgba(251,249,245,0.8)]">
-                  <strong className="font-medium">Ægte faglighed.</strong><br/>
-                  <em className="italic font-light">Hårkunst med hjertet.</em>
+                  <strong className="font-medium">Ægte faglighed</strong><br/>
+                  <em className="italic font-light">Hårkunst med hjertet</em>
                 </h3>
                 
                 <div className="relative w-full md:w-[80%] lg:w-[68%] 2xl:w-[90%] ml-auto aspect-[1/1] rounded-[50%] overflow-hidden group">
@@ -443,7 +485,7 @@ export default function Page() {
                  </div>
                  
                  <h4 className="font-headline font-medium text-[clamp(1.5rem,2.2vw,2.3rem)] 2xl:text-[clamp(1.75rem,2.5vw,2.5rem)] text-[#4C433C] leading-[1.1] text-center md:text-left md:w-[115%]">
-                   Glem alt om det travle og <br/>upersonlige samlebåndsarbejde.
+                   Glem alt om det travle og <br/>upersonlige samlebåndsarbejde
                  </h4>
                  
                  <p className="mt-[clamp(1rem,2vw,1.5rem)] font-body text-[clamp(0.875rem,1.1vw,1rem)] text-[#6A5D55] leading-relaxed text-center md:text-left">
@@ -788,7 +830,7 @@ export default function Page() {
               className="relative z-10 mt-[8rem] md:mt-[clamp(2rem,6vw,5rem)] max-w-[650px] 2xl:max-w-[750px] w-full bg-white/90 p-10 lg:p-12 2xl:p-[clamp(2.5rem,6vw,4.5rem)] text-center shadow-[0_30px_80px_rgba(0,0,0,0.15)] rounded-tr-[50px] rounded-bl-[50px] md:rounded-tr-[70px] md:rounded-bl-[70px] 2xl:rounded-tr-[90px] 2xl:rounded-bl-[90px]"
            >
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
-                Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår.
+                Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår
               </h2>
               <a href="#book" className="cursor-pointer inline-block bg-[#D3B39E] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out">
                 Book en tid nu

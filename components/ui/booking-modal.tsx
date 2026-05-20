@@ -117,7 +117,7 @@ function BookingModalInner() {
             <section className="w-full md:w-1/2 bg-[#FDFBF7] py-[clamp(1.7rem,3.4vw,3.4rem)] md:py-[clamp(2.55rem,4.25vw,4.25rem)] 2xl:py-[clamp(3rem,5vw,5rem)] px-[clamp(1.7rem,3.4vw,3.4rem)] 2xl:px-[clamp(2rem,4vw,4rem)] overflow-y-auto md:overflow-y-hidden relative z-10 flex flex-col justify-start md:justify-center">
               <header className="mb-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)] text-left mt-0 md:mt-[clamp(2.5rem,4vw,4rem)] 2xl:md:mt-[clamp(3.5rem,5vw,5rem)]">
                 <span className="text-[#92857C] font-label text-[clamp(0.51rem,0.68vw,0.595rem)] 2xl:text-[clamp(0.6rem,0.8vw,0.7rem)] uppercase tracking-[0.4em] font-bold block mb-[clamp(0.85rem,1.7vw,1.275rem)] 2xl:mb-[clamp(1rem,2vw,1.5rem)]">
-                  Booking & Rådgivning
+                  Booking &amp; rådgivning
                 </span>
                 <h1 className="font-headline text-[clamp(1.7rem,2.55vw,2.125rem)] 2xl:text-[clamp(2rem,3vw,2.5rem)] text-[#1c1a18] leading-[1.1] font-light mb-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:mb-[clamp(1.5rem,2vw,2rem)] italic tracking-tight">
                   Er du i tvivl om din booking?

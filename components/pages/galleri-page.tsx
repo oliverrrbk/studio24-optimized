@@ -9,13 +9,106 @@ import { Scissors, Leaf, Ruler, Droplet, Quote } from 'lucide-react';
 import StickyScrollGallery from '@/components/ui/sticky-scroll';
 import { SiteFooter } from '@/components/ui/site-footer';
 
+// ----------------------------------------------------------------------
+// High-Fidelity Hardware-Accelerated Framer Motion Variants for Lucide Icons
+// ----------------------------------------------------------------------
+
+const CuttingScissors = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={1.5}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="w-full h-full overflow-visible"
+  >
+    {/* Top blade & bottom loop */}
+    <motion.g 
+      variants={{
+        initial: { rotate: 0 },
+        hover: {
+          rotate: [0, -12, 14, 0],
+          transition: { 
+            duration: 0.38, 
+            times: [0, 0.3, 0.65, 1],
+            ease: ["easeOut", "easeIn", "easeOut"] as any
+          }
+        }
+      }}
+      style={{ transformOrigin: '12px 12px' }}
+    >
+      <circle cx="6" cy="6" r="3" />
+      <path d="M8.12 8.12L12 12L22 22" />
+    </motion.g>
+    {/* Bottom blade & top loop */}
+    <motion.g 
+      variants={{
+        initial: { rotate: 0 },
+        hover: {
+          rotate: [0, 12, -14, 0],
+          transition: { 
+            duration: 0.38, 
+            times: [0, 0.3, 0.65, 1],
+            ease: ["easeOut", "easeIn", "easeOut"] as any
+          }
+        }
+      }}
+      style={{ transformOrigin: '12px 12px' }}
+    >
+      <circle cx="6" cy="18" r="3" />
+      <path d="M8.12 15.88L12 12L22 2" />
+    </motion.g>
+    {/* Central pivot screw */}
+    <circle cx="12" cy="12" r="1.2" fill="currentColor" />
+  </svg>
+);
+
+const leafVariants = {
+  initial: { x: 0, y: 0, rotate: 0 },
+  hover: {
+    x: [0, 4, 6, 3, 0.5, 0],
+    y: [0, -2, -3, -1, 0, 0],
+    rotate: [0, 16, 22, 10, -3, 0],
+    transition: { 
+      duration: 1.25, 
+      times: [0, 0.25, 0.5, 0.75, 0.9, 1],
+      ease: [0.25, 1, 0.5, 1] as any
+    }
+  }
+};
+
+const rulerVariants = {
+  initial: { y: 0, x: 0, rotate: 0 },
+  hover: {
+    y: [0, -5, -5, 0, -0.6, 0],
+    x: [0, -1, -1, 0, 0, 0],
+    rotate: [0, -8, -8, 0, 0, 0],
+    transition: {
+      duration: 1.15,
+      times: [0, 0.35, 0.65, 0.82, 0.92, 1],
+      ease: ["easeOut", "easeInOut", "easeIn", "easeOut", "easeIn", "easeOut"] as any
+    }
+  }
+};
+
+const dropletVariants = {
+  initial: { scaleY: 1, scaleX: 1 },
+  hover: {
+    scaleY: [1, 0.82, 1.14, 0.96, 1],
+    scaleX: [1, 1.14, 0.86, 1.02, 1],
+    transition: { 
+      duration: 0.75, 
+      ease: [0.25, 1, 0.5, 1] as const
+    }
+  }
+};
 
 export default function GalleriPage() {
 
-
   return (
     <div className="bg-[#FDFBF7] text-[#4C433C] font-sans antialiased min-h-[100svh] flex flex-col selection:bg-[#D3B39E] selection:text-white">
-
 
       <main className="flex-1 pt-[clamp(6.8rem,10.2vw,10.2rem)] 2xl:pt-[clamp(8rem,12vw,12rem)] pb-0">
         
@@ -27,7 +120,7 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="font-headline text-[clamp(2.975rem,5.1vw,4.675rem)] 2xl:text-[clamp(3.5rem,6vw,5.5rem)] text-[#4C433C] mb-[clamp(1.275rem,2.55vw,1.7rem)] 2xl:mb-[clamp(1.5rem,3vw,2rem)] tracking-tight font-light"
           >
-            Mit Håndværk
+            Mit håndværk
           </motion.h1>
           <motion.p style={hardwareAccelerated} 
             initial={{ opacity: 0, y: 20 }}
@@ -44,22 +137,63 @@ export default function GalleriPage() {
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
             className="flex justify-center flex-wrap gap-[clamp(1.7rem,3.4vw,3.4rem)] 2xl:gap-[clamp(2rem,4vw,4rem)] text-[#4C433C]/80 relative"
           >
-            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
-              <Scissors strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
-              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Håndlavet</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
-              <Leaf strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
-              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Organisk</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
-              <Ruler strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
+            <motion.div 
+              initial="initial"
+              whileHover="hover"
+              className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10 cursor-default"
+            >
+              <div 
+                className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)] flex items-center justify-center"
+              >
+                <CuttingScissors />
+              </div>
+              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Håndværk</span>
+            </motion.div>
+
+            <motion.div 
+              initial="initial"
+              whileHover="hover"
+              className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10 cursor-default"
+            >
+              <motion.div 
+                variants={leafVariants}
+                style={{ transformOrigin: 'bottom center' }}
+                className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)] flex items-center justify-center"
+              >
+                <Leaf strokeWidth={1.5} className="w-full h-full" />
+              </motion.div>
+              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Naturlighed</span>
+            </motion.div>
+
+            <motion.div 
+              initial="initial"
+              whileHover="hover"
+              className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10 cursor-default"
+            >
+              <motion.div 
+                variants={rulerVariants}
+                style={{ transformOrigin: 'center' }}
+                className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)] flex items-center justify-center"
+              >
+                <Ruler strokeWidth={1.5} className="w-full h-full" />
+              </motion.div>
               <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Præcision</span>
-            </div>
-            <div className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10">
-              <Droplet strokeWidth={1.5} className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)]" />
-              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Essens</span>
-            </div>
+            </motion.div>
+
+            <motion.div 
+              initial="initial"
+              whileHover="hover"
+              className="flex flex-col items-center gap-3 hover:text-[#D3B39E] transition-colors duration-300 relative z-10 cursor-default"
+            >
+              <motion.div 
+                variants={dropletVariants}
+                style={{ transformOrigin: 'bottom center' }}
+                className="w-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:w-[clamp(1.5rem,2vw,2rem)] h-[clamp(1.275rem,1.7vw,1.7rem)] 2xl:h-[clamp(1.5rem,2vw,2rem)] flex items-center justify-center"
+              >
+                <Droplet strokeWidth={1.5} className="w-full h-full" />
+              </motion.div>
+              <span className="font-label text-[8.5px] 2xl:text-[10px] tracking-[0.2em] uppercase font-bold">Pleje</span>
+            </motion.div>
           </motion.div>
         </section>
 
@@ -112,7 +246,7 @@ export default function GalleriPage() {
             {/* Author aligned right under quote */}
             <div className="w-full max-w-3xl 2xl:max-w-4xl flex justify-end pr-[0%] md:pr-[5%] mb-[clamp(2.125rem,3.4vw,2.975rem)] 2xl:mb-[clamp(2.5rem,4vw,3.5rem)]">
               <cite className="font-label text-[#92857C] tracking-[0.4em] uppercase text-[clamp(0.595rem,0.85vw,0.637rem)] 2xl:text-[clamp(0.7rem,1vw,0.75rem)] not-italic border-t border-[#4C433C]/10 pt-[clamp(0.85rem,1.7vw,1.275rem)] 2xl:pt-[clamp(1rem,2vw,1.5rem)] inline-block font-bold">
-                Emilie, Grundlægger
+                Emilie, grundlægger
               </cite>
             </div>
 
