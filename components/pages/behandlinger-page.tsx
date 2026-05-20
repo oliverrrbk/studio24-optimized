@@ -112,7 +112,7 @@ export default function BehandlingerPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(3.25rem,5.3vw,5.3rem)] 2xl:text-[clamp(4rem,6.6vw,6.6rem)] font-headline text-[#4C433C] leading-tight tracking-tight font-light"
+              className="font-headline text-[clamp(2.975rem,5.1vw,4.675rem)] 2xl:text-[clamp(3.5rem,6vw,5.5rem)] text-[#4C433C] leading-tight tracking-tight font-light"
             >
               Eksklusive frisørbehandlinger
             </motion.h1>
@@ -120,7 +120,7 @@ export default function BehandlingerPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[#6A5D55] text-[clamp(1.02rem,1.25vw,1.2rem)] 2xl:text-[clamp(1.25rem,1.55vw,1.5rem)] font-sans font-light leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto drop-shadow-sm"
+              className="font-sans text-[clamp(0.935rem,1.19vw,1.147rem)] 2xl:text-[clamp(1.1rem,1.4vw,1.35rem)] text-[#6A5D55] leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto font-light drop-shadow-sm"
             >
               Forud for enhver behandling bruger jeg god tid på ærlig rådgivning. Uanset om det er balayage, extensions eller en præcisionsklipning her i Randers, vurderer jeg hårets tilstand og dine unikke træk, så vi i fællesskab kan skabe et skræddersyet resultat. Hver eneste detalje er velovervejet for at fremhæve dig på den mest naturlige og flatterende måde.
             </motion.p>
