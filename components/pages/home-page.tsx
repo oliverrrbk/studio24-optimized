@@ -334,7 +334,7 @@ export default function Page() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-[clamp(1.5rem,4vh,3rem)] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center justify-center"
+            className="absolute bottom-[clamp(0.9rem,2.7vh,2rem)] left-1/2 -translate-x-1/2 z-30 flex flex-col items-center justify-center"
           >
             <motion.div
               style={{
