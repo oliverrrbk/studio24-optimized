@@ -747,7 +747,7 @@ export default function Page() {
                 className="hidden md:block relative w-full max-w-[500px] lg:max-w-[420px] 2xl:max-w-[500px] mx-auto md:mr-auto md:ml-0 order-1"
               >
                   <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
-                    <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                    <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_20%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                   </div>
                   {/* Floating Galleri Image */}
                   <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
@@ -779,7 +779,7 @@ export default function Page() {
                  {/* Mobile Image Composition */}
                  <div className="relative w-[85%] max-w-[500px] mx-auto md:mx-0 mt-4 mb-16 md:hidden order-3">
                      <div className="w-full aspect-[3/4] rounded-t-[1000px] rounded-b-[20px] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.08)] group relative z-10">
-                       <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_30%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
+                       <Image src="/new_gallery/client-look-in-mirror.png" fill alt="Client looking in mirror" className="object-cover object-[center_20%] transition-transform duration-[5s] group-hover:scale-105 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
                      </div>
                      <div className="absolute bottom-[-10%] right-[-10%] w-[55%] aspect-square rounded-full overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.12)] z-20 hover:-translate-y-2 transition-transform duration-700 group">
                        <Image src="/new_gallery/35.png" fill alt="Salon work detail" className="object-cover transition-transform duration-[5s] group-hover:scale-110 contrast-[0.85] saturate-[0.85] brightness-[1.05]" />
