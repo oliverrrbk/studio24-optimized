@@ -192,14 +192,6 @@ export default function BehandlingerPage() {
                 <div className="space-y-[clamp(1.2rem,2.4vw,2rem)] 2xl:space-y-[clamp(1.5rem,3vw,2.5rem)]">
                   <div className="group cursor-pointer">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.35rem,1.85vw,1.85rem)] 2xl:text-[clamp(1.7rem,2.25vw,2.25rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] group-hover:translate-x-1 transition-all duration-500 ease-out">Børneklip</h4>
-                      <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 285,-</span>
-                    </div>
-                    <p className="text-[15.5px] 2xl:text-[17.5px] text-[#92857C] italic font-light mt-2 group-hover:text-[#4C433C] group-hover:translate-x-1.5 group-hover:scale-[1.04] origin-left transition-all duration-500 ease-out block leading-relaxed">En tryg, rolig og nærværende klippeoplevelse for de mindste.</p>
-                  </div>
-                  
-                  <div className="group cursor-pointer">
-                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.35rem,1.85vw,1.85rem)] 2xl:text-[clamp(1.7rem,2.25vw,2.25rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] group-hover:translate-x-1 transition-all duration-500 ease-out">Bryn &amp; vipper</h4>
                       <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 50,-</span>
                     </div>
