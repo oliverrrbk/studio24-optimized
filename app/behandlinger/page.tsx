@@ -3,7 +3,7 @@ import BehandlingerClient from "@/components/pages/behandlinger-page";
 
 export const metadata: Metadata = {
   title: 'Balayage, Extensions & Frisør',
-  description: 'Vi tilbyder skræddersyet balayage, eksklusive extensions og præcisionsklipning i vores frisørsalon i Randers. Altid med fokus på sundt hår og ærlig rådgivning.',
+  description: 'Vi tilbyder skræddersyet balayage, eksklusive extensions og præcisionsklipning i vores frisørsalon på Frederiksberg. Altid med fokus på sundt hår og ærlig rådgivning.',
 };
 
 export default function Page() {

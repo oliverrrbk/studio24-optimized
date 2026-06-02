@@ -43,7 +43,7 @@ export function SiteFooter() {
               <li>Tirsdag - Fredag: 09:00 - 17:30<br/>Lørdag: 09:00 - 13:00<br/>Søn, Man &amp; Helligdage efter aftale</li>
               <li><a href="tel:+4586418433" className="hover:text-[#E4D3C4] transition-colors">+45 86 41 84 33</a></li>
               <li><a href="mailto:enistudio.24@gmail.com" className="hover:text-[#E4D3C4] transition-colors">enistudio.24@gmail.com</a></li>
-              <li>Mariagervej 91<br/>8920 Randers NV</li>
+              <li>H. C. Ørsteds Vej 8<br/>1879 Frederiksberg</li>
             </ul>
           </div>
           <div className="flex flex-col">

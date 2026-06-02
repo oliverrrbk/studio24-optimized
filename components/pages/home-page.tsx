@@ -129,7 +129,7 @@ const TESTIMONIALS = [
     name: "Nadja",
     date: "14. februar 2026",
     rating: 5,
-    description: "Randers bedste frisør! Jeg nød hele min oplevelse, og så nærværende, og lyttede efter min ønsker og passede på mit hår undervejs! Kæmpe anbefaling.",
+    description: "Frederiksbergs bedste frisør! Jeg nød hele min oplevelse, og så nærværende, og lyttede efter min ønsker og passede på mit hår undervejs! Kæmpe anbefaling.",
   },
   {
     id: "testimonial-4",
@@ -315,7 +315,7 @@ export default function Page() {
               className="font-body text-[#6A5D55] text-[clamp(0.95rem,1.15vw,1.0625rem)] md:text-[clamp(1.15rem,1.4vw,1.25rem)] lg:text-[clamp(1.15rem,1.4vw,1.25rem)] 2xl:text-[clamp(1.15rem,1.5vw,1.35rem)] max-w-2xl lg:max-w-3xl 2xl:max-w-4xl mx-auto mb-[clamp(1.5rem,3vw,2.5rem)] 2xl:mb-[clamp(2rem,3.5vw,3rem)] font-light leading-relaxed drop-shadow-sm"
             >
               Mange har oplevet at sidde i stolen og få noget de slet ikke bad om. <br className="hidden md:block" />
-              Som din eksklusive frisør i Randers får du altid ærlig rådgivning og en skræddersyet behandling, der fuldender din vision.
+              Som din eksklusive frisør på Frederiksberg får du altid ærlig rådgivning og en skræddersyet behandling, der fuldender din vision.
             </motion.p>
             <motion.div style={hardwareAccelerated} 
               initial={{ opacity: 0, y: 20 }}

@@ -144,7 +144,7 @@ export default function MinHistoriePage() {
                 Et oprør mod <br /> <span className="italic">samlebåndet</span>
               </motion.h1>
               <motion.p style={hardwareAccelerated} variants={fadeInUp} className="text-[clamp(1rem,1.2vw,1.2rem)] 2xl:text-[clamp(1.2rem,1.4vw,1.35rem)] font-sans text-[#6A5D55] font-light leading-relaxed max-w-[450px] 2xl:max-w-[500px]">
-                Med min 4,5-årige frisøruddannelse og over 10 års erfaring skabte jeg Salon Deleuran her i Randers. Jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager ærligt håndværk og et smukt resultat den tid, det tager. Længere er den egentlig ikke.
+                Med min 4,5-årige frisøruddannelse og over 10 års erfaring skabte jeg Salon Deleuran her på Frederiksberg. Jeg nægtede at arbejde i en branche, hvor uret bestemmer. For mig tager ærligt håndværk og et smukt resultat den tid, det tager. Længere er den egentlig ikke.
               </motion.p>
             </div>
             <div className="relative w-[85%] ml-[11%] mr-auto md:w-[90%] md:ml-auto md:mr-0 mt-8 md:mt-0">

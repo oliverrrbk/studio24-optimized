@@ -21,11 +21,11 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Salon Deleuran Randers',
-    default: 'Salon Deleuran | Eksklusiv Frisør i Randers',
+    template: '%s | Salon Deleuran Frederiksberg',
+    default: 'Salon Deleuran | Eksklusiv Frisør på Frederiksberg',
   },
   description: 'Få ro, velvære og en skræddersyet behandling hos Salon Deleuran. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
-  metadataBase: new URL('https://studio24randers.dk'), // Replace with actual domain
+  metadataBase: new URL('https://www.salondeleuran.dk'), // Replace with actual domain
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -39,13 +39,13 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               "@context": "https://schema.org",
               "@type": "HairSalon",
               "name": "Salon Deleuran",
-              "image": "https://studio24randers.dk/logo.png",
-              "description": "Eksklusiv og imødekommende frisørsalon i Randers, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
+              "image": "https://www.salondeleuran.dk/logo.png",
+              "description": "Eksklusiv og imødekommende frisørsalon på Frederiksberg, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Randers",
-                "addressLocality": "Randers",
-                "postalCode": "8900",
+                "streetAddress": "Frederiksberg",
+                "addressLocality": "Frederiksberg",
+                "postalCode": "1879",
                 "addressCountry": "DK"
               },
               "priceRange": "$$$"
