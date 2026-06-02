@@ -65,7 +65,7 @@ export function SiteFooter() {
         <div className="border-t border-[#4C433C]/10 w-full">
           <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(1.5rem,3vw,2rem)] flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
             <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase text-left">
-              © 2026 Studio 24. Alle rettigheder forbeholdes.
+              © 2026 Salon Deleuran. Alle rettigheder forbeholdes.
             </p>
             <a href="#" onClick={(e) => { e.preventDefault(); setIsPrivacyOpen(true); }} className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase hover:text-[#E4D3C4] transition-colors text-center md:text-right cursor-pointer">
               Privatlivspolitik

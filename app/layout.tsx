@@ -21,10 +21,10 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Studio 24 Randers',
-    default: 'Studio 24 | Eksklusiv Frisør i Randers',
+    template: '%s | Salon Deleuran Randers',
+    default: 'Salon Deleuran | Eksklusiv Frisør i Randers',
   },
-  description: 'Få ro, velvære og en skræddersyet behandling hos Studio 24. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
+  description: 'Få ro, velvære og en skræddersyet behandling hos Salon Deleuran. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
   metadataBase: new URL('https://studio24randers.dk'), // Replace with actual domain
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "HairSalon",
-              "name": "Studio 24",
+              "name": "Salon Deleuran",
               "image": "https://studio24randers.dk/logo.png",
               "description": "Eksklusiv og imødekommende frisørsalon i Randers, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
               "address": {

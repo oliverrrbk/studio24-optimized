@@ -52,14 +52,14 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
 
               <div className="space-y-6 text-[#6A5D55] leading-relaxed font-body text-[clamp(0.95rem,1.1vw,1.05rem)]">
                 <p>
-                  Hos Studio 24 tager vi beskyttelsen af dine personoplysninger alvorligt. For os er det vigtigt, at du føler dig tryg, når du besøger vores hjemmeside og kontakter os. Herunder kan du læse præcis, hvilke oplysninger vi indsamler, og hvordan vi behandler dem.
+                  Hos Salon Deleuran tager vi beskyttelsen af dine personoplysninger alvorligt. For os er det vigtigt, at du føler dig tryg, når du besøger vores hjemmeside og kontakter os. Herunder kan du læse præcis, hvilke oplysninger vi indsamler, og hvordan vi behandler dem.
                 </p>
-
+                
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
                   1. Dataansvarlig
                 </h3>
                 <div className="bg-[#4C433C]/5 p-6 rounded-2xl text-[#4C433C]">
-                  <p className="font-bold mb-1">Studio 24</p>
+                  <p className="font-bold mb-1">Salon Deleuran</p>
                   <p>Mariagervej 91</p>
                   <p>8920 Randers NV</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-[#6A5D55]">CVR-nr.: 44907917</p>

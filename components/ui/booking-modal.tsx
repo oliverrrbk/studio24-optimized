@@ -157,7 +157,7 @@ function BookingModalInner() {
                       Lokation
                     </h3>
                     <p className="font-body text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)] text-[#4C433C] leading-relaxed font-light">
-                      Studio 24<br/>
+                      Salon Deleuran<br/>
                       Mariagervej 91<br/>
                       8920 Randers NV
                     </p>
