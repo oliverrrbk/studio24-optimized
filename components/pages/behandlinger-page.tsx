@@ -192,14 +192,6 @@ export default function BehandlingerPage() {
                 <div className="space-y-[clamp(1.2rem,2.4vw,2rem)] 2xl:space-y-[clamp(1.5rem,3vw,2.5rem)]">
                   <div className="group cursor-pointer">
                     <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
-                      <h4 className="text-[clamp(1.35rem,1.85vw,1.85rem)] 2xl:text-[clamp(1.7rem,2.25vw,2.25rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] group-hover:translate-x-1 transition-all duration-500 ease-out">Bryn &amp; vipper</h4>
-                      <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 50,-</span>
-                    </div>
-                    <p className="text-[15.5px] 2xl:text-[17.5px] text-[#92857C] italic font-light mt-2 group-hover:text-[#4C433C] group-hover:translate-x-1.5 group-hover:scale-[1.04] origin-left transition-all duration-500 ease-out block leading-relaxed">Præcis farvning og formning for et smukt indrammet ansigt.</p>
-                  </div>
-
-                  <div className="group cursor-pointer">
-                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
                       <h4 className="text-[clamp(1.35rem,1.85vw,1.85rem)] 2xl:text-[clamp(1.7rem,2.25vw,2.25rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] group-hover:translate-x-1 transition-all duration-500 ease-out">Permanent</h4>
                       <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 799,-</span>
                     </div>
@@ -212,6 +204,14 @@ export default function BehandlingerPage() {
                       <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 235,-</span>
                     </div>
                     <p className="text-[15.5px] 2xl:text-[17.5px] text-[#92857C] italic font-light mt-2 group-hover:text-[#4C433C] group-hover:translate-x-1.5 group-hover:scale-[1.04] origin-left transition-all duration-500 ease-out block leading-relaxed">Professionel føn og styling til hverdag eller særlige anledninger.</p>
+                  </div>
+
+                  <div className="group cursor-pointer">
+                    <div className="flex justify-between items-baseline border-b border-[#4C433C]/10 pb-2 2xl:pb-3 mb-2">
+                      <h4 className="text-[clamp(1.35rem,1.85vw,1.85rem)] 2xl:text-[clamp(1.7rem,2.25vw,2.25rem)] font-headline font-light text-[#4C433C] group-hover:text-[#D3B39E] group-hover:translate-x-1 transition-all duration-500 ease-out">Bryn &amp; vipper</h4>
+                      <span className="font-label text-[13.2px] 2xl:text-[15.5px] tracking-[0.2em] text-[#6A5D55] uppercase font-bold group-hover:text-[#4C433C] transition-colors">Fra 50,-</span>
+                    </div>
+                    <p className="text-[15.5px] 2xl:text-[17.5px] text-[#92857C] italic font-light mt-2 group-hover:text-[#4C433C] group-hover:translate-x-1.5 group-hover:scale-[1.04] origin-left transition-all duration-500 ease-out block leading-relaxed">Præcis farvning og formning for et smukt indrammet ansigt.</p>
                   </div>
 
                   <div className="group cursor-pointer">
@@ -295,7 +295,7 @@ export default function BehandlingerPage() {
         </section>
 
         {/* Extensions Section */}
-        <section className="bg-[#FAF8F5] py-[clamp(4.8rem,9.6vw,9.6rem)] 2xl:py-[clamp(6rem,12vw,12rem)] relative" id="extensions">
+        <section className="bg-[#FAF8F5] py-[clamp(4.8rem,9.6vw,9.6rem)] 2xl:py-[clamp(6rem,12vw,12rem)] relative z-20" id="extensions">
           {/* Curve Graphics Overlay */}
           <div className="hidden md:block absolute top-[-10%] md:top-[-15%] 2xl:top-[-20%] left-0 w-[clamp(96px,20vw,520px)] md:w-[clamp(220px,25vw,440px)] 2xl:w-[clamp(120px,25vw,650px)] h-[120%] md:h-[140%] pointer-events-none drop-shadow-sm brightness-[0.95] opacity-60 z-0">
              <Image src="/images/curve_left.png" alt="Curve left" fill className="object-contain object-left-top" />
