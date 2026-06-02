@@ -62,7 +62,7 @@ export function Navigation() {
             ))}
           </div>
           <Link className="flex-shrink-0 hover:opacity-80 transition-opacity flex items-center justify-center" href="/">
-            <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[clamp(150px,16vw,200px)] h-auto" priority />
+            <Image src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran Logo" width={424} height={62} className="w-[clamp(150px,16vw,200px)] h-auto" priority />
           </Link>
           <div className="flex-1 flex items-center justify-end gap-8 font-sans font-light text-[clamp(0.875rem,1vw,1rem)] tracking-wide">
             <Link href="?booking=true" scroll={false}>
@@ -88,7 +88,7 @@ export function Navigation() {
               </motion.div>
             </button>
             <Link className="hover:opacity-80 transition-opacity relative flex items-center justify-center" href="/">
-              <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[130px] h-auto" priority />
+              <Image src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran Logo" width={424} height={62} className="w-[130px] h-auto" priority />
             </Link>
           </div>
           <Link href="?booking=true" scroll={false}>

@@ -245,7 +245,7 @@ export const AwardBadge = ({ type, place, link }: AwardBadgeProps) => {
           <rect width="260" height="54" rx="10" fill={type === "industry-favorites" ? backgroundColor[0] : (backgroundColor[(place || 2) - 1] || backgroundColor[1])} />
           <rect x="4" y="4" width="252" height="46" rx="8" fill="transparent" stroke="rgba(106, 93, 85, 0.15)" strokeWidth="1" />
           <text fontFamily="Helvetica-Bold, Helvetica" fontSize="9" fontWeight="bold" fill="#6A5D55" x="53" y="20">
-            STUDIO 24
+            Salon Deleuran
           </text>
           <text fontFamily="Helvetica-Bold, Helvetica" fontSize="16" fontWeight="bold" fill="#6A5D55" x="52" y="40">
             {title[type]}{place && ` ${place}`}

@@ -15,7 +15,7 @@ export function SiteFooter() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,10vw,8rem)] max-w-[1400px] mx-auto w-full">
           <div className="max-w-[320px]">
             <div className="mb-[clamp(1rem,2vw,1.5rem)]">
-              <Image src="/images/logo2-cropped.png" alt="Studio 24 Logo" width={424} height={62} className="w-[clamp(140px,14vw,180px)] h-auto" priority />
+              <Image src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran Logo" width={424} height={62} className="w-[clamp(140px,14vw,180px)] h-auto" priority />
             </div>
             <p className="text-[#6A5D55] font-sans text-[clamp(1rem,1.2vw,1.125rem)] tracking-wide leading-relaxed font-light">
               Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.
