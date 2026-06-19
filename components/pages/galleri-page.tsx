@@ -192,7 +192,7 @@ export default function GalleriPage() {
         </section>
 
         {/* Sticky Scroll Gallery */}
-        <section className="mb-[clamp(0.85rem,1.7vw,1.7rem)] 2xl:mb-[clamp(1rem,2vw,2rem)] max-w-[1920px] mx-auto px-[clamp(1.275rem,4.25vw,3.4rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] relative z-10">
+        <section className="pb-[clamp(2.5rem,4vw,4rem)] mb-[clamp(0.85rem,1.7vw,1.7rem)] 2xl:mb-[clamp(1rem,2vw,2rem)] max-w-[1920px] mx-auto px-[clamp(1.275rem,4.25vw,3.4rem)] 2xl:px-[clamp(1.5rem,5vw,4rem)] relative z-10">
 
           {/* Background Gradient Blobs */}
           <div className="absolute top-[10%] left-[-5%] w-[clamp(255px,34vw,425px)] 2xl:w-[clamp(300px,40vw,500px)] aspect-square z-[-1] pointer-events-none opacity-30">
