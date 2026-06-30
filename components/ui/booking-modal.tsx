@@ -140,11 +140,7 @@ function BookingModalInner() {
                       <span className="font-medium">09:00 — 17:30</span>
                     </li>
                     <li className="flex justify-between items-baseline">
-                      <span className="uppercase tracking-[0.2em] text-[clamp(0.595rem,0.765vw,0.68rem)] 2xl:text-[clamp(0.7rem,0.9vw,0.8rem)] font-bold">Lørdag</span>
-                      <span className="font-medium">09:00 — 13:00</span>
-                    </li>
-                    <li className="flex justify-between items-baseline">
-                      <span className="uppercase tracking-[0.2em] text-[clamp(0.595rem,0.765vw,0.68rem)] 2xl:text-[clamp(0.7rem,0.9vw,0.8rem)] font-bold">Søn, Man & Helligdage</span>
+                      <span className="uppercase tracking-[0.2em] text-[clamp(0.595rem,0.765vw,0.68rem)] 2xl:text-[clamp(0.7rem,0.9vw,0.8rem)] font-bold">Lør, Søn, Man & Helligdage</span>
                       <span className="font-medium italic">Efter aftale</span>
                     </li>
                   </ul>
