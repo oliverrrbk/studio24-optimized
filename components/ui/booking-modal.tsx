@@ -137,7 +137,7 @@ function BookingModalInner() {
                   <ul className="font-body text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)] space-y-[clamp(0.637rem,1.275vw,0.85rem)] 2xl:space-y-[clamp(0.75rem,1.5vw,1rem)] text-[#4C433C] font-light">
                     <li className="flex justify-between items-baseline">
                       <span className="uppercase tracking-[0.2em] text-[clamp(0.595rem,0.765vw,0.68rem)] 2xl:text-[clamp(0.7rem,0.9vw,0.8rem)] font-bold">Tirsdag — Fredag</span>
-                      <span className="font-medium">09:00 — 17:30</span>
+                      <span className="font-medium">10:00 — 17:30</span>
                     </li>
                     <li className="flex justify-between items-baseline">
                       <span className="uppercase tracking-[0.2em] text-[clamp(0.595rem,0.765vw,0.68rem)] 2xl:text-[clamp(0.7rem,0.9vw,0.8rem)] font-bold">Lør, Søn, Man & Helligdage</span>
@@ -163,12 +163,12 @@ function BookingModalInner() {
                       Direkte
                     </h3>
                     <p className="font-body text-[clamp(0.807rem,0.935vw,0.892rem)] 2xl:text-[clamp(0.95rem,1.1vw,1.05rem)] text-[#4C433C] leading-relaxed font-light">
-                      <a className="hover:text-[#D3B39E] transition-colors" href="tel:+4586418433">
-                        +45 86 41 84 33
+                      <a className="hover:text-[#D3B39E] transition-colors" href="tel:+4522991918">
+                        Tlf. 22 99 19 18
                       </a>
                       <br/>
-                      <a className="hover:text-[#D3B39E] transition-colors" href="mailto:enistudio.24@gmail.com">
-                        enistudio.24@gmail.com
+                      <a className="hover:text-[#D3B39E] transition-colors" href="mailto:kontakt@salondeleuran.dk">
+                        kontakt@salondeleuran.dk
                       </a>
                     </p>
                   </div>

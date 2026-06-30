@@ -64,8 +64,8 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
                   <p>1879 Frederiksberg</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-[#6A5D55]">CVR-nr.: 44907917</p>
                   <div className="mt-4 space-y-1">
-                    <p>Telefon: <a href="tel:+4586418433" className="hover:text-[#D3B39E] transition-colors">+45 86 41 84 33</a></p>
-                    <p>E-mail: <a href="mailto:enistudio.24@gmail.com" className="hover:text-[#D3B39E] transition-colors">enistudio.24@gmail.com</a></p>
+                    <p>Telefon: <a href="tel:+4522991918" className="hover:text-[#D3B39E] transition-colors">22 99 19 18</a></p>
+                    <p>E-mail: <a href="mailto:kontakt@salondeleuran.dk" className="hover:text-[#D3B39E] transition-colors">kontakt@salondeleuran.dk</a></p>
                   </div>
                 </div>
 
