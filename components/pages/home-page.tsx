@@ -832,9 +832,9 @@ export default function Page() {
               <h2 className="font-headline font-light text-[clamp(1.8rem,2.8vw,2.5rem)] 2xl:text-[clamp(2rem,3.5vw,3.5rem)] leading-[1.05] text-[#6E625A] mb-6 2xl:mb-[clamp(1.5rem,3vw,2.5rem)] tracking-tight">
                 Lyder det som noget for dig? Book en tid, så tager vi en snak om dit hår
               </h2>
-              <a href="#book" className="cursor-pointer inline-block bg-[#D3B39E] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out">
+              <Link href="?booking=true" scroll={false} className="cursor-pointer inline-block bg-[#D3B39E] text-white px-8 py-3.5 2xl:px-[clamp(2rem,3.5vw,3rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[0.65rem] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out">
                 Book en tid nu
-              </a>
+              </Link>
            </motion.div>
 
            {/* Bottom Curve for Footer (Opposite to Hero = U-shape dip) */}
