@@ -35,7 +35,7 @@ export function CookieConsent() {
 
   return (
     <>
-      <div className="fixed inset-0 z-[90] pointer-events-none flex items-end justify-start p-[clamp(1rem,3vw,2rem)]">
+      <div className="fixed inset-0 z-[90] pointer-events-none flex items-end justify-start p-[clamp(1rem,3vw,2rem)] md:pl-6 md:pb-6 2xl:pl-[clamp(1rem,3vw,2rem)] 2xl:pb-[clamp(1rem,3vw,2rem)]">
         <AnimatePresence>
           {visible && (
             <motion.div
@@ -45,7 +45,7 @@ export function CookieConsent() {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 30, scale: 0.98 }}
               transition={{ type: 'spring', damping: 26, stiffness: 200, delay: 0.5 }}
-              className="pointer-events-auto w-full max-w-[380px] bg-[#FDFBF7] border border-[#4C433C]/10 rounded-[25.5px] shadow-[0_25px_70px_-15px_rgba(44,38,33,0.28)] p-[clamp(1.75rem,3vw,2.5rem)] flex flex-col gap-[clamp(1.5rem,2.5vw,2rem)]"
+              className="pointer-events-auto w-full max-w-[380px] md:max-w-[342px] 2xl:max-w-[380px] bg-[#FDFBF7] border border-[#4C433C]/10 rounded-[25.5px] shadow-[0_25px_70px_-15px_rgba(44,38,33,0.28)] p-[clamp(1.75rem,3vw,2.5rem)] flex flex-col gap-[clamp(1.5rem,2.5vw,2rem)]"
             >
               <div>
                 <span className="block font-label text-[clamp(0.55rem,0.7vw,0.62rem)] uppercase tracking-[0.4em] font-bold text-[#92857C] mb-[clamp(0.6rem,1vw,0.85rem)]">

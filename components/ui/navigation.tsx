@@ -77,8 +77,8 @@ export function Navigation() {
         <div className={`flex md:hidden justify-between items-center w-full px-4 transition-[padding] duration-700 ${
           isScrolled || isMobileMenuOpen ? 'py-3' : 'py-4'
         }`}>
-          <div className="flex items-center gap-3">
-            <button 
+          <div className="flex items-center gap-4">
+            <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="p-1 text-[#4C433C] hover:opacity-70 transition-opacity z-50 relative"
               aria-label="Toggle menu"
