@@ -58,7 +58,7 @@ export function CookieConsent() {
                   Må vi bruge cookies?
                 </h2>
                 <div className="w-8 h-[0.8px] bg-[#4C433C]/20 mb-[clamp(0.75rem,1.2vw,1rem)]" />
-                <p className="font-body font-light text-[#6A5D55] leading-relaxed text-[clamp(0.85rem,1vw,0.95rem)]">
+                <p className="font-body font-light text-[#6A5D55] leading-relaxed text-[clamp(0.85rem,1vw,0.95rem)] min-[1440px]:text-[0.85rem]">
                   Vi bruger cookies til statistik og markedsføring, så vi kan gøre
                   siden bedre og vise dig relevante annoncer. Du bestemmer selv.{' '}
                   <button
