@@ -63,9 +63,9 @@ export function SiteFooter() {
             </div>
           </div>
         </div>
-        <div className="border-t border-[#4C433C]/10 w-full">
-          <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(1.5rem,3vw,2rem)] flex flex-col md:flex-row justify-between items-center md:items-start gap-4">
-            <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase text-left">
+        <div className="md:border-t border-[#4C433C]/10 w-full">
+          <div className="max-w-[1400px] mx-auto px-[clamp(1.5rem,5vw,4rem)] py-[clamp(1.5rem,3vw,2rem)] flex flex-col-reverse md:flex-row justify-between items-center md:items-start gap-4">
+            <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase text-left w-full border-t border-[#4C433C]/10 pt-6 md:w-auto md:border-t-0 md:pt-0">
               © 2026 Salon Deleuran. Alle rettigheder forbeholdes.
             </p>
             <div className="flex items-center gap-[clamp(1rem,2vw,1.5rem)]">
