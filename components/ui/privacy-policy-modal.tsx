@@ -96,20 +96,27 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
                   3. Cookies og sporing
                 </h3>
                 <p>
-                  Vi går meget op i at beskytte dit privatliv, og derfor bruger vi ingen markedsføringscookies eller tredjepartssporing på vores hjemmeside.
+                  Du bestemmer selv, om vi må bruge cookies til statistik og markedsføring. Første gang du besøger siden, spørger vi dig — og du kan altid ændre eller trække dit samtykke tilbage via »Cookieindstillinger« nederst på siden.
                 </p>
                 <ul className="list-disc pl-6 space-y-3">
-                  <li>Vi benytter udelukkende Vercel Analytics og Google Search Console til fejlfinding og basale trafikmålinger.</li>
-                  <li>Disse systemer indsamler data 100% anonymiseret og sætter ingen form for personhenførbare cookies på dit udstyr.</li>
-                  <li>Vores fonte og scripts er hostet lokalt i løsningen, så din IP-adresse ikke deles med Google eller andre tredjeparter.</li>
-                  <li>Eventuelle links til sociale medier (f.eks. Instagram) sporer dig ikke på vores side, men når du aktivt klikker dig videre, gælder den pågældende platforms privatlivsvilkår.</li>
+                  <li><strong className="text-[#4C433C]">Nødvendige:</strong> Vi gemmer udelukkende dit cookie-valg, så vi kan huske det. Det kræver ikke samtykke.</li>
+                  <li><strong className="text-[#4C433C]">Statistik:</strong> Vi bruger Vercel Analytics og Google Search Console til basale, anonymiserede trafikmålinger og fejlfinding. Vores fonte og scripts er hostet lokalt, så din IP-adresse ikke deles med disse tredjeparter.</li>
+                  <li>Links til sociale medier (f.eks. Instagram) sporer dig ikke på vores side — men når du aktivt klikker dig videre, gælder den pågældende platforms privatlivsvilkår.</li>
                 </ul>
+
+                <div className="border-l-4 border-[#D3B39E] pl-6 my-6">
+                  <h4 className="font-bold text-[#4C433C] mb-2">Markedsføring (Meta-pixel):</h4>
+                  <p>
+                    Hvis du giver samtykke, bruger vi Meta-pixlen (Facebook/Instagram). Den sætter cookies (bl.a. »_fbp«) og deler oplysninger med Meta Platforms Ireland Ltd. om din adfærd på siden — f.eks. hvilke sider du ser, og når du klikker videre til booking. Det bruger vi til at måle effekten af vores annoncer og vise dig mere relevante annoncer. Pixlen indlæses først, når du har accepteret, og fyrer slet ikke, hvis du siger nej.
+                  </p>
+                  <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: dit samtykke (GDPR art. 6, stk. 1, litra a) samt cookiereglerne. Data kan overføres til Meta i USA på grundlag af EU-Kommissionens overførselsmekanismer (bl.a. EU-U.S. Data Privacy Framework og standardkontraktbestemmelser).</p>
+                </div>
 
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
                   4. Hvem deler vi dine oplysninger med?
                 </h3>
                 <p>
-                  Vi sælger og deler aldrig dine personoplysninger med tredjeparter til markedsføringsvirksomheder eller lignende.
+                  Vi sælger aldrig dine personoplysninger. Vi deler dem kun med de databehandlere, der er nødvendige for at levere vores ydelser — og, hvis du har givet samtykke til markedsføring, med Meta som beskrevet i afsnit 3.
                 </p>
                 <p>
                   Dine data fra kontaktformularen behandles primært i vores eget e-mailsystem via en sikker tredjepartsformularudbyder. Booking af tider håndteres udelukkende i vores bookingsystem, Planway. Selve hjemmesiden hostes sikkert via Vercel. 

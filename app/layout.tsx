@@ -4,6 +4,8 @@ import './globals.css'; // Global styles
 import { LenisProvider } from '@/components/lenis-provider';
 import { BookingModal } from '@/components/ui/booking-modal';
 import { Navigation } from '@/components/ui/navigation';
+import { CookieConsent } from '@/components/ui/cookie-consent';
+import { MetaPixel } from '@/components/analytics/meta-pixel';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -26,6 +28,11 @@ export const metadata: Metadata = {
   },
   description: 'Få ro, velvære og en skræddersyet behandling hos Salon Deleuran. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
   metadataBase: new URL('https://www.salondeleuran.dk'), // Replace with actual domain
+  verification: {
+    other: {
+      'facebook-domain-verification': 'hqtgs6ptd2u00vfc4yk28qd6k4ah9d',
+    },
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
@@ -59,6 +66,8 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
             <BookingModal />
           </div>
         </LenisProvider>
+        <CookieConsent />
+        <MetaPixel />
       </body>
     </html>
   );

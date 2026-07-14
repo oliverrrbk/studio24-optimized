@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'motion/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLenis } from 'lenis/react';
+import { track, trackBooking } from '@/lib/meta-pixel';
 
 
 function BookingModalInner() {
@@ -46,6 +47,12 @@ function BookingModalInner() {
       if (lenis) lenis.start();
     };
   }, [isOpen, lenis]);
+
+  // Mid-funnel signal: the booking box opened. Fires before the click-through to
+  // Planway (which fires Schedule). Consent-safe — no-ops until the pixel loads.
+  useEffect(() => {
+    if (isOpen) track('InitiateCheckout');
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -106,6 +113,7 @@ function BookingModalInner() {
                   href="https://studio24-23056.planway.com/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackBooking()}
                   className="inline-block bg-[#D3B39E] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out relative z-20"
                 >
                   Gå til booking

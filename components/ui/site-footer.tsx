@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { AwardBadge } from '@/components/ui/award-badge';
 import { PrivacyPolicyModal } from '@/components/ui/privacy-policy-modal';
+import { resetConsent } from '@/lib/consent';
 
 export function SiteFooter() {
   const [isPrivacyOpen, setIsPrivacyOpen] = useState(false);
@@ -67,9 +68,14 @@ export function SiteFooter() {
             <p className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase text-left">
               © 2026 Salon Deleuran. Alle rettigheder forbeholdes.
             </p>
-            <a href="#" onClick={(e) => { e.preventDefault(); setIsPrivacyOpen(true); }} className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase hover:text-[#E4D3C4] transition-colors text-center md:text-right cursor-pointer">
-              Privatlivspolitik
-            </a>
+            <div className="flex items-center gap-[clamp(1rem,2vw,1.5rem)]">
+              <button type="button" onClick={() => resetConsent()} className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase hover:text-[#E4D3C4] transition-colors text-center md:text-right cursor-pointer">
+                Cookieindstillinger
+              </button>
+              <a href="#" onClick={(e) => { e.preventDefault(); setIsPrivacyOpen(true); }} className="text-[#92857C] font-sans text-[min(0.75rem,3vw)] md:text-[0.75rem] tracking-[0.2em] font-label uppercase hover:text-[#E4D3C4] transition-colors text-center md:text-right cursor-pointer">
+                Privatlivspolitik
+              </a>
+            </div>
           </div>
         </div>
       </footer>
