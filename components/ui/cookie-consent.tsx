@@ -35,8 +35,8 @@ export function CookieConsent() {
 
   return (
     <>
-      <div className="fixed inset-0 z-[90] pointer-events-none flex items-end justify-start p-[clamp(1rem,3vw,2rem)] md:pl-6 md:pb-6 min-[1440px]:pl-[clamp(1rem,3vw,2rem)] min-[1440px]:pb-[clamp(1rem,3vw,2rem)]">
-        <div className="md:scale-[0.85] md:origin-bottom-left min-[1440px]:scale-100">
+      <div className="fixed inset-0 z-[90] pointer-events-none flex items-end justify-start p-[clamp(1rem,3vw,2rem)] md:max-[1439px]:pl-6 md:max-[1439px]:pb-6">
+        <div className="md:max-[1439px]:scale-[0.82] md:max-[1439px]:origin-bottom-left">
         <AnimatePresence>
           {visible && (
             <motion.div
