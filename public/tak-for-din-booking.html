@@ -54,6 +54,7 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 .photo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(9px,1vw,13px)}
 .photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:0 22px 46px -28px rgba(76,67,60,.5);display:block}
 .photo img.mirror{transform:scaleX(-1)}
+.photo--mobile{display:none}
 
 /* footer — exact port of salondeleuran.dk SiteFooter */
 .foot{position:relative;z-index:1;background:#FDFBF7;color:#4C433C}
@@ -100,12 +101,13 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 @keyframes ov10{0%{transform:rotate(90deg)}50%{transform:rotate(100deg)}100%{transform:rotate(90deg)}}
 @media(prefers-reduced-motion:reduce){.ov{animation:none!important}}
 
-/* ── Mobile / small-tablet (≤860px): stack card, pictures BELOW the copy ── */
+/* ── Mobile / small-tablet (≤860px): stack; pictures sit after the signature ── */
 @media(max-width:860px){
-  .card{grid-template-columns:1fr;gap:clamp(40px,9vw,56px);text-align:center;justify-items:center}
-  .rule{margin-left:auto;margin-right:auto}
+  .card{grid-template-columns:1fr;text-align:center;justify-items:center}
   .copy{max-width:560px}
-  .photo{max-width:400px}
+  .rule{margin-left:auto;margin-right:auto}
+  .photo--desktop{display:none}
+  .photo--mobile{display:grid;width:100%;max-width:400px;margin:clamp(32px,7vw,44px) auto clamp(4px,1vw,8px)}
 }
 </style>
 </head>
@@ -124,11 +126,17 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
         <h1>Tak for din booking</h1>
         <p class="lead">Jeg glæder mig oprigtigt til at se dig i salonen og give dig ro, god tid og en behandling, der er skabt til præcis dig.</p>
         <p class="sign">— Emilie</p>
+        <div class="photo photo--mobile">
+          <img src="/gallerypics/4.png" alt="Hårresultat fra Salon Deleuran — blød bronde balayage">
+          <img class="mirror" src="/gallerypics/16.png" alt="Hårresultat fra Salon Deleuran — langt lyst hår">
+          <img src="/gallerypics/14.png" alt="Hårresultat fra Salon Deleuran — blond balayage">
+          <img class="mirror" src="/gallerypics/1.png" alt="Hårresultat fra Salon Deleuran — varm balayage">
+        </div>
         <div class="rule"></div>
         <p class="help">Skal du ændre eller spørge om noget? Ring endelig på <a href="tel:+4522991918">22&nbsp;99&nbsp;19&nbsp;18</a>.</p>
         <a class="cta" href="https://www.salondeleuran.dk">Besøg hjemmesiden</a>
       </div>
-      <div class="photo">
+      <div class="photo photo--desktop">
         <img src="/gallerypics/4.png" alt="Hårresultat fra Salon Deleuran — blød bronde balayage">
         <img class="mirror" src="/gallerypics/16.png" alt="Hårresultat fra Salon Deleuran — langt lyst hår">
         <img src="/gallerypics/14.png" alt="Hårresultat fra Salon Deleuran — blond balayage">
