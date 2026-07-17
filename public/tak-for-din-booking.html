@@ -35,9 +35,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--fontBody);-webkit-f
 .main{position:relative;z-index:1;flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(36px,6vw,72px) clamp(22px,5vw,48px)}
 .card{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,5vw,64px);align-items:center;max-width:1120px;width:100%}
 .copy{max-width:520px}
-.badge{display:inline-flex;align-items:center;gap:10px;background:var(--champagne);color:var(--primaryDeep);border-radius:999px;padding:8px 16px 8px 10px;font-family:var(--fontBody);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.badge{display:inline-flex;align-items:center;gap:10px;background:var(--primary);color:#fff;border-radius:999px;padding:8px 18px 8px 10px;font-family:var(--fontBody);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;box-shadow:0 12px 30px -14px rgba(211,179,158,.9)}
 .badge .tick{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:999px;background:#fff}
-.badge svg{width:12px;height:12px;stroke:var(--primaryDeep);stroke-width:2.4;fill:none}
+.badge svg{width:12px;height:12px;stroke:var(--primary);stroke-width:2.6;fill:none}
 h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px);line-height:1.02;letter-spacing:-.01em;margin:22px 0 0}
 .lead{font-size:clamp(17px,1.5vw,20px);color:var(--muted);margin-top:20px;max-width:44ch;font-weight:300}
 .sign{font-family:var(--fontDisplay);font-style:italic;font-weight:500;font-size:clamp(24px,2.6vw,30px);color:var(--primaryDeep);margin-top:22px}
@@ -52,30 +52,41 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 .photo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(9px,1vw,13px)}
 .photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:0 22px 46px -28px rgba(76,67,60,.5);display:block}
 
-/* footer */
-.foot{position:relative;z-index:1;background:var(--surfaceAlt);border-top:1px solid var(--border)}
-.foot-inner{max-width:1120px;margin:0 auto;padding:clamp(40px,6vw,64px) clamp(22px,5vw,48px);display:flex;flex-wrap:wrap;gap:clamp(32px,6vw,80px);justify-content:space-between}
-.foot-col h5{font-family:var(--fontBody);font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink);margin-bottom:16px}
-.foot-col p,.foot-col a{font-size:15.5px;color:var(--muted);font-weight:300;line-height:1.85;text-decoration:none}
-.foot-col a:hover{color:var(--primaryDeep)}
-.foot-brand{max-width:280px}
-.foot-brand .name{font-family:var(--fontDisplay);font-size:26px;font-weight:500;color:var(--ink);letter-spacing:.01em}
-.foot-brand p{font-size:14.5px;color:var(--subtle);margin-top:8px;line-height:1.7;font-weight:300}
-.copyright{border-top:1px solid var(--border)}
-.copyright div{max-width:1120px;margin:0 auto;padding:20px clamp(22px,5vw,48px);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--subtle);text-align:center}
+/* footer — matches salondeleuran.dk */
+.foot{position:relative;z-index:1;background:#FDFBF7;color:#4C433C}
+.foot::before{content:"";position:absolute;left:0;right:0;top:0;height:clamp(150px,22vw,300px);transform:translateY(-100%);background:radial-gradient(130% 100% at 50% 100%,rgba(228,211,196,.22) 0%,rgba(228,211,196,.07) 42%,transparent 72%);pointer-events:none;z-index:0}
+.foot-top{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:clamp(3.5rem,9vw,7rem) clamp(1.5rem,5vw,4rem) clamp(2.5rem,5vw,3.5rem);display:flex;flex-wrap:wrap;gap:clamp(2.5rem,6vw,5rem);justify-content:space-between}
+.f-brand{max-width:320px}
+.f-logo{width:clamp(140px,14vw,180px);height:auto;display:block;margin-bottom:clamp(1rem,2vw,1.5rem)}
+.f-tag{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.06rem);line-height:1.7;font-weight:300;letter-spacing:.01em}
+.f-award{width:clamp(180px,20vw,205px);height:auto;display:block;margin-top:24px}
+.f-col h5{font-size:clamp(.75rem,1vw,.875rem);font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#4C433C;margin-bottom:clamp(1.5rem,3vw,2rem);font-family:var(--fontBody)}
+.f-list{list-style:none;display:flex;flex-direction:column;gap:clamp(.75rem,1.5vw,1rem)}
+.f-list a,.f-list li{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.06rem);font-weight:300;letter-spacing:.01em;text-decoration:none;line-height:1.7}
+.f-list a{transition:color .3s}
+.f-list a:hover{color:#E4D3C4}
+.f-social{display:flex;gap:clamp(.5rem,1.5vw,1rem);align-items:center}
+.f-social a{display:inline-flex;color:#D3B39E;opacity:.8;transition:opacity .3s ease,transform .7s ease}
+.f-social a:hover{opacity:1;transform:scale(1.12)}
+.f-social svg{display:block;filter:drop-shadow(0 1px 1px rgba(0,0,0,.05))}
+.f-bottom{position:relative;z-index:1;border-top:1px solid rgba(76,67,60,.1)}
+.f-bottom-in{max-width:1400px;margin:0 auto;padding:clamp(1.25rem,3vw,2rem) clamp(1.5rem,5vw,4rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+.f-copy,.f-legal a{color:#92857C;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none}
+.f-legal{display:flex;gap:clamp(1rem,2vw,1.5rem)}
+.f-legal a{transition:color .3s}
+.f-legal a:hover{color:#E4D3C4}
 
 @media(max-width:860px){
   .card{grid-template-columns:1fr;gap:clamp(28px,7vw,44px);text-align:center;justify-items:center}
   .rule{margin-left:auto;margin-right:auto}
   .photo{order:-1;max-width:400px}
-  .foot-inner{gap:32px}
+  .foot-top{gap:2.5rem}
 }
 </style>
 </head>
 <body>
 <div class="page">
   <div class="glow glow-1"></div>
-  <div class="glow glow-2"></div>
 
   <header class="brand">
     <img src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran">
@@ -102,22 +113,59 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
   </main>
 
   <footer class="foot">
-    <div class="foot-inner">
-      <div class="foot-col foot-brand">
-        <div class="name">Salon Deleuran</div>
-        <p>Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.</p>
+    <div class="foot-top">
+      <div class="f-brand">
+        <img class="f-logo" src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran">
+        <p class="f-tag">Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.</p>
+        <a class="f-award" href="https://www.industryfavorites.eu/" target="_blank" rel="noopener noreferrer" aria-label="Salon Deleuran — Industry Favorites 2026">
+          <svg viewBox="0 0 260 54" xmlns="http://www.w3.org/2000/svg" role="img">
+            <rect width="260" height="54" rx="10" fill="#E8E0D5"/>
+            <rect x="4" y="4" width="252" height="46" rx="8" fill="none" stroke="rgba(106,93,85,0.15)" stroke-width="1"/>
+            <g transform="translate(13, 11) scale(1.3)"><path fill="#6A5D55" d="M16.956 2.057c.355.124.829.375 1.303.796a3.77 3.77 0 0 1 1.246 2.204c.173.989-.047 1.894-.519 2.683l-.123.194q-.097.147-.196.272q.066.234.117.471q.26-.178.545-.307c.851-.389 1.727-.442 2.527-.306q.226.04.346.076a1 1 0 0 1 .689.712l.029.13q.015.08.03.18a4.45 4.45 0 0 1-.324 2.496a3.94 3.94 0 0 1-1.71 1.85l-.242.12a4.23 4.23 0 0 1-2.234.349A9 9 0 0 1 17.997 15c.37.016.748.093 1.128.24c.732.28 1.299.758 1.711 1.367a3.95 3.95 0 0 1 .654 1.613a1 1 0 0 1-.356.917a3.8 3.8 0 0 1-.716.443c-.933.455-1.978.588-3.043.179l-.032-.015l-.205-.086a3.6 3.6 0 0 1-1.33-1.069l-.143-.197a4 4 0 0 1-.26-.433a6 6 0 0 1-.927.511q.18.262.337.56a7.4 7.4 0 0 1 .66 1.747a1 1 0 0 1-1.95.444l-.028-.11a6 6 0 0 0-.449-1.143C12.706 19.323 12.338 19 12 19s-.706.323-1.048.969a5.6 5.6 0 0 0-.367.874l-.082.269l-.028.11a1 1 0 0 1-1.95-.444a7.3 7.3 0 0 1 .66-1.747q.158-.298.337-.561a6.4 6.4 0 0 1-.93-.508a4 4 0 0 1-.256.43c-.366.541-.855.98-1.473 1.267l-.238.1c-.994.382-1.97.292-2.855-.091l-.188-.087a3.8 3.8 0 0 1-.716-.443a1 1 0 0 1-.356-.917a3.95 3.95 0 0 1 .654-1.613a3.6 3.6 0 0 1 1.71-1.368c.38-.146.758-.223 1.13-.24a9 9 0 0 1-.445-1.023a4.23 4.23 0 0 1-2.233-.348a4 4 0 0 1-.916-.587l-.207-.191a4 4 0 0 1-.724-.977l-.105-.216a4.45 4.45 0 0 1-.265-2.806a1 1 0 0 1 .69-.712q.119-.036.345-.076c.801-.135 1.678-.082 2.53.308q.283.129.545.304q.048-.235.112-.47a5 5 0 0 1-.194-.272c-.556-.832-.83-1.806-.642-2.877l.05-.242a3.75 3.75 0 0 1 1.027-1.803l.169-.159a4 4 0 0 1 1.303-.796a1 1 0 0 1 .975.178c.2.168.462.446.719.83c.556.833.83 1.807.642 2.878a3.77 3.77 0 0 1-1.246 2.204c-.303.27-.607.47-.879.61A7.5 7.5 0 0 0 7 10.728C7 14.23 9.285 17 12 17s5-2.77 5-6.276a7.6 7.6 0 0 0-.253-1.967a4.3 4.3 0 0 1-.881-.61a3.77 3.77 0 0 1-1.246-2.204c-.188-1.07.086-2.045.642-2.877c.257-.385.52-.663.72-.831a1 1 0 0 1 .974-.178"/></g>
+            <text font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#6A5D55" x="53" y="20">Salon Deleuran</text>
+            <text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#6A5D55" x="52" y="40">Industry Favorites 2026</text>
+          </svg>
+        </a>
       </div>
-      <div class="foot-col">
-        <h5>Du finder salonen her</h5>
-        <p>H. C. Ørsteds Vej 8<br>1879 Frederiksberg</p>
-        <p style="margin-top:12px"><a href="tel:+4522991918">Tlf. 22 99 19 18</a><br><a href="mailto:kontakt@salondeleuran.dk">kontakt@salondeleuran.dk</a></p>
+      <div class="f-col">
+        <h5>Udforsk</h5>
+        <ul class="f-list">
+          <li><a href="https://www.salondeleuran.dk/">Hjem</a></li>
+          <li><a href="https://www.salondeleuran.dk/min-historie">Min Historie</a></li>
+          <li><a href="https://www.salondeleuran.dk/behandlinger">Behandlinger</a></li>
+          <li><a href="https://www.salondeleuran.dk/galleri">Galleri</a></li>
+        </ul>
       </div>
-      <div class="foot-col">
-        <h5>Åbningstider</h5>
-        <p>Tirsdag – Fredag: 10:00 – 17:30<br>Lør, søn, man &amp; helligdage:<br>efter aftale</p>
+      <div class="f-col">
+        <h5>Kontakt</h5>
+        <ul class="f-list">
+          <li>Tirsdag - Fredag: 10:00 - 17:30<br>Lør, Søn, Man &amp; Helligdage:<br>efter aftale</li>
+          <li><a href="tel:+4522991918">Tlf. 22 99 19 18</a></li>
+          <li><a href="mailto:kontakt@salondeleuran.dk">kontakt@salondeleuran.dk</a></li>
+          <li>H. C. Ørsteds Vej 8<br>1879 Frederiksberg</li>
+        </ul>
+      </div>
+      <div class="f-col">
+        <h5>Følg med</h5>
+        <div class="f-social">
+          <a href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="30" height="30" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="34" height="34" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="copyright"><div>© 2026 Salon Deleuran · Frederiksberg</div></div>
+    <div class="f-bottom">
+      <div class="f-bottom-in">
+        <span class="f-copy">© 2026 Salon Deleuran. Alle rettigheder forbeholdes.</span>
+        <div class="f-legal">
+          <a href="https://www.salondeleuran.dk/">Cookieindstillinger</a>
+          <a href="https://www.salondeleuran.dk/">Privatlivspolitik</a>
+        </div>
+      </div>
+    </div>
   </footer>
 </div>
 </body>
