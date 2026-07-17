@@ -100,10 +100,12 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 @keyframes ov10{0%{transform:rotate(90deg)}50%{transform:rotate(100deg)}100%{transform:rotate(90deg)}}
 @media(prefers-reduced-motion:reduce){.ov{animation:none!important}}
 
+/* ── Mobile / small-tablet (≤860px): stack card, pictures BELOW the copy ── */
 @media(max-width:860px){
-  .card{grid-template-columns:1fr;gap:clamp(28px,7vw,44px);text-align:center;justify-items:center}
+  .card{grid-template-columns:1fr;gap:clamp(40px,9vw,56px);text-align:center;justify-items:center}
   .rule{margin-left:auto;margin-right:auto}
-  .photo{order:-1;max-width:400px}
+  .copy{max-width:560px}
+  .photo{max-width:400px}
 }
 </style>
 </head>
