@@ -22,7 +22,7 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--ink);font-family:var(--fontBody);-webkit-font-smoothing:antialiased;line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
 
 /* ambient warmth */
-.page{position:relative;flex:1;display:flex;flex-direction:column}
+.page{position:relative;flex:1;display:flex;flex-direction:column;overflow:hidden}
 .glow{position:absolute;border-radius:999px;filter:blur(60px);opacity:.55;pointer-events:none;z-index:0}
 .glow-1{width:420px;height:420px;top:-140px;right:-120px;background:radial-gradient(circle,rgba(228,211,196,.7) 0%,transparent 70%)}
 .glow-2{width:360px;height:360px;bottom:-120px;left:-120px;background:radial-gradient(circle,rgba(244,223,203,.6) 0%,transparent 70%)}
@@ -45,13 +45,12 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 .help{font-size:15px;color:var(--subtle)}
 .help a{color:var(--primaryDeep);font-weight:600;text-decoration:none}
 .help a:hover{text-decoration:underline}
-.cta{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:var(--primary);color:#fff;font-family:var(--fontBody);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:12px;padding:15px 30px;border-radius:999px;text-decoration:none;box-shadow:0 15px 40px -16px rgba(211,179,158,.9);transition:transform .5s ease,box-shadow .5s ease,background .5s ease}
-.cta:hover{background:var(--primaryHover);transform:translateY(-2px);box-shadow:0 20px 50px -16px rgba(211,179,158,1)}
+.cta{display:inline-flex;align-items:center;gap:9px;margin-top:26px;background:transparent;color:var(--ink);border:1.5px solid rgba(76,67,60,.25);font-family:var(--fontBody);font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:12px;padding:14px 28px;border-radius:999px;text-decoration:none;transition:transform .5s ease,box-shadow .5s ease,background .5s ease,color .5s ease,border-color .5s ease}
+.cta:hover{background:var(--ink);color:var(--bg);border-color:var(--ink);transform:translateY(-2px);box-shadow:0 14px 34px -16px rgba(76,67,60,.4)}
 
-/* image */
-.photo{position:relative}
-.photo img{width:100%;aspect-ratio:5/6;object-fit:cover;border-radius:28px;border:1px solid var(--border);box-shadow:0 34px 70px -30px rgba(76,67,60,.45);display:block}
-.photo::after{content:"";position:absolute;inset:0;border-radius:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35);pointer-events:none}
+/* image grid */
+.photo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(9px,1vw,13px)}
+.photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:0 22px 46px -28px rgba(76,67,60,.5);display:block}
 
 /* footer */
 .foot{position:relative;z-index:1;background:var(--surfaceAlt);border-top:1px solid var(--border)}
@@ -68,8 +67,7 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 @media(max-width:860px){
   .card{grid-template-columns:1fr;gap:clamp(28px,7vw,44px);text-align:center;justify-items:center}
   .rule{margin-left:auto;margin-right:auto}
-  .photo{order:-1;max-width:420px}
-  .photo img{aspect-ratio:4/3}
+  .photo{order:-1;max-width:400px}
   .foot-inner{gap:32px}
 }
 </style>
@@ -95,7 +93,10 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
         <a class="cta" href="https://www.salondeleuran.dk">Besøg hjemmesiden</a>
       </div>
       <div class="photo">
-        <img src="/about/salon_experience_elegant.png" alt="Afslappet stemning i Salon Deleuran">
+        <img src="/gallerypics/1.png" alt="Hårresultat fra Salon Deleuran — varm balayage">
+        <img src="/gallerypics/3.png" alt="Hårresultat fra Salon Deleuran — brunette bølger">
+        <img src="/gallerypics/5.png" alt="Hårresultat fra Salon Deleuran — lyst blond">
+        <img src="/gallerypics/7.png" alt="Hårresultat fra Salon Deleuran — mørkt brunt">
       </div>
     </div>
   </main>
