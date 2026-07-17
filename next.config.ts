@@ -15,6 +15,10 @@ const nextConfig: NextConfig = {
         source: '/farvepalette',
         destination: '/farvepalette.html',
       },
+      {
+        source: '/tak-for-din-booking',
+        destination: '/tak-for-din-booking.html',
+      },
     ];
   },
   async headers() {
@@ -25,6 +29,14 @@ const nextConfig: NextConfig = {
       },
       {
         source: '/farvepalette.html',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/tak-for-din-booking',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/tak-for-din-booking.html',
         headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
       },
     ];
