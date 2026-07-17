@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   transpilePackages: ['motion'],
+  async rewrites() {
+    return [
+      {
+        source: '/farvepalette',
+        destination: '/farvepalette.html',
+      },
+    ];
+  },
   async redirects() {
     return [
       {

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Salon Deleuran — Farvepalette & Designsystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:#efece5;color:#1b1c1a;font-family:'Manrope',system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
+code{font-family:ui-monospace,'SF Mono',Menlo,monospace}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ---------- Top chrome (light) ---------- */
+.top{padding:80px 0 44px;text-align:center;border-bottom:1px solid #ddd6cb}
+.top .eyebrow{font-family:'Manrope',sans-serif;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:#8a7d6f;font-weight:600}
+.top h1{font-family:'Cormorant Garamond',serif;font-size:clamp(40px,6vw,72px);line-height:1.02;font-weight:500;letter-spacing:-.01em;margin:16px 0 6px;background:linear-gradient(120deg,#74563b,#a98763 45%,#d3b39e 90%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.url-pill{display:inline-flex;align-items:baseline;gap:1px;margin:14px 0 20px;font-family:ui-monospace,Menlo,monospace;font-size:14px;letter-spacing:.01em;background:#fff;border:1px solid #e5dccf;border-radius:999px;padding:9px 20px;box-shadow:0 1px 2px rgba(28,26,24,.05)}
+.url-pill .domain{color:#4c433c;font-weight:600}
+.url-pill .path{color:#a9855f;font-weight:600}
+.top p.lede{max-width:640px;margin:6px auto 0;color:#5b5348;font-size:17px}
+.top p.lede b{color:#3a342d}
+.src{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:center;margin-top:44px}
+.src-img{width:214px;height:120px;border-radius:16px;object-fit:cover;box-shadow:0 18px 44px -22px rgba(70,55,40,.45);border:1px solid #e5dccf}
+.src-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:660px}
+.src-chip{display:flex;align-items:center;gap:9px;background:#ffffff;border:1px solid #e9e1d6;border-radius:10px;padding:8px 12px 8px 8px}
+.src-sw{width:30px;height:30px;border-radius:7px;flex:none;border:1px solid rgba(0,0,0,.08)}
+.src-meta{display:flex;flex-direction:column;line-height:1.25;text-align:left}
+.src-meta b{font-size:12.5px;font-weight:600;color:#20242e}
+.src-meta code{font-size:10.5px;color:#6f6456}
+.src-meta i{font-size:10.5px;color:#8a7f70;font-style:normal}
+.src-note{margin-top:26px;font-size:13px;color:#8a7d6f}
+
+/* ---------- Board ---------- */
+.board{background:var(--bg);color:var(--ink)}
+.board-intro{max-width:1180px;margin:0 auto;padding:88px 28px 36px}
+.board-name{font-family:var(--fontDisplay);font-size:clamp(48px,8vw,88px);line-height:1;font-weight:500;letter-spacing:-.01em;color:var(--ink)}
+.board-name em{font-style:italic;color:var(--primaryDeep)}
+.board-kicker{display:inline-block;margin-top:10px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--primaryDeep);font-weight:600}
+.board-tagline{font-family:var(--fontDisplay);font-size:clamp(22px,2.8vw,32px);margin-top:26px;color:var(--ink);max-width:760px;line-height:1.3;font-weight:400}
+.board-personality{font-size:17px;color:var(--muted);max-width:680px;margin-top:18px}
+.board-bestfor{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:26px}
+.bf-lbl{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--subtle);margin-right:6px;font-weight:600}
+.bf-chip{font-size:13px;padding:6px 14px;border-radius:999px;background:var(--tonalBg);color:var(--tonalText);font-weight:500}
+.board-body{max-width:1180px;margin:0 auto;padding:20px 28px 100px}
+
+/* section */
+.sec{padding:44px 0;border-top:1px solid var(--border)}
+.sec:first-child{border-top:none}
+.sec-head{display:flex;align-items:baseline;gap:14px}
+.sec-num{font-family:var(--fontBody);font-size:12px;font-weight:700;color:var(--primaryDeep);background:var(--tonalBg);width:24px;height:24px;border-radius:6px;display:inline-flex;align-items:center;justify-content:center}
+.sec-title{font-family:var(--fontDisplay);font-size:32px;font-weight:500;color:var(--ink);letter-spacing:-.01em}
+.sec-note{color:var(--muted);font-size:15px;max-width:680px;margin:12px 0 26px}
+.sec-head + .sw-grid,.sec-head + .ty-list,.sec-head + .font-card,.sec-head + .sp-list,.sec-head + .rad-grid,.sec-head + .sh-grid,.sec-head + .btn-showcase,.sec-head + .mini-h{margin-top:26px}
+
+/* colors */
+.sw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
+.sw{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:var(--shadowSm)}
+.sw-color{height:76px}
+.sw-meta{padding:12px 14px;display:flex;flex-direction:column;gap:3px}
+.sw-meta b{font-size:13.5px;font-weight:600;color:var(--ink)}
+.sw-meta code{font-size:12px;color:var(--muted);text-transform:uppercase}
+.sw-role{font-size:12.5px;color:var(--muted)}
+.sw-contrast{font-size:11px;color:var(--subtle);margin-top:2px}
+
+/* gradients */
+.grad-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.grad{border:1px solid var(--border);border-radius:14px;overflow:hidden;background:var(--surface);box-shadow:var(--shadowSm)}
+.grad-bar{height:96px}
+.grad-meta{padding:14px 16px;display:flex;flex-direction:column;gap:5px}
+.grad-meta b{font-size:14px;color:var(--ink);font-weight:600}
+.grad-meta span{font-size:12.5px;color:var(--muted)}
+.grad-meta code{font-size:11px;color:var(--subtle);word-break:break-all;line-height:1.5}
+
+/* typography */
+.font-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:28px;box-shadow:var(--shadowSm)}
+.font-spec{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;padding:10px 0;border-bottom:1px dashed var(--border)}
+.font-role{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle);width:90px;flex:none;font-weight:600}
+.font-name{font-size:28px;color:var(--ink)}
+.font-demo{font-size:24px;color:var(--muted);margin-left:auto}
+.font-rationale{font-size:14.5px;color:var(--muted);margin-top:16px;max-width:720px}
+.ty-list{display:flex;flex-direction:column}
+.ty-row{padding:18px 0;border-bottom:1px solid var(--border);display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:baseline}
+.ty-meta{font-family:var(--fontBody);font-size:12px;color:var(--subtle);line-height:1.5}
+.ty-sample{overflow:hidden}
+
+/* spacing */
+.sp-list{display:flex;flex-direction:column;gap:10px}
+.sp-row{display:flex;align-items:center;gap:16px}
+.sp-token{font-size:12px;font-weight:700;color:var(--ink);width:44px;text-transform:uppercase}
+.sp-val{font-size:12px;color:var(--muted);width:48px}
+.sp-bar{height:16px;background:var(--primaryDeep);border-radius:4px;flex:none;opacity:.85}
+.sp-use{font-size:13px;color:var(--subtle)}
+
+/* radii */
+.rad-grid{display:flex;flex-wrap:wrap;gap:20px}
+.rad{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.rad-box{width:96px;height:72px;background:var(--tonalBg);border:1.5px solid var(--primaryDeep)}
+.rad b{font-size:13px;color:var(--ink);font-weight:600}
+.rad code{font-size:12px;color:var(--muted)}
+.rad span{font-size:12px;color:var(--subtle)}
+
+/* shadows */
+.sh-grid{display:flex;flex-wrap:wrap;gap:28px;padding:8px 0}
+.sh{display:flex;flex-direction:column;gap:10px}
+.sh-box{width:160px;height:96px;background:var(--surface);border-radius:var(--cardRadius);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:600;color:var(--muted);border:1px solid var(--border)}
+.sh-use{font-size:12.5px;color:var(--subtle)}
+
+/* buttons */
+.mini-h{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--subtle);font-weight:700;margin:28px 0 14px}
+.mini-note{letter-spacing:0;text-transform:none;font-weight:400;color:var(--subtle)}
+.btn-showcase{display:flex;flex-wrap:wrap;gap:24px}
+.btn-cell{display:flex;flex-direction:column;align-items:center;gap:8px}
+.btn-label{font-size:12px;color:var(--subtle)}
+.size-list{display:flex;flex-direction:column;gap:16px}
+.size-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.size-lbl{font-size:12px;color:var(--subtle);width:80px;font-weight:600}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--fontBody);font-weight:700;text-transform:uppercase;letter-spacing:.12em;border:1.5px solid transparent;border-radius:var(--btnRadius);cursor:pointer;transition:transform .5s ease,box-shadow .5s ease,background .5s ease,filter .5s ease;text-decoration:none;white-space:nowrap;line-height:1;user-select:none}
+.btn--sm{padding:10px 20px;font-size:11px}
+.btn--md{padding:13px 28px;font-size:12px}
+.btn--lg{padding:16px 36px;font-size:13px}
+.btn--solid{background:var(--primary);color:#fff;box-shadow:var(--ctaShadow)}
+.btn--solid:hover{background:var(--primaryHover);transform:translateY(-2px);box-shadow:var(--ctaShadowHover)}
+.btn--deep{background:var(--primaryDeep);color:#fff;box-shadow:var(--shadowSm)}
+.btn--deep:hover{background:#5d4128;transform:translateY(-2px);box-shadow:var(--shadowMd)}
+.btn--outline{background:transparent;color:var(--ink);border-color:var(--inkBorder)}
+.btn--outline:hover{background:var(--ink);color:var(--bg);transform:translateY(-2px);box-shadow:var(--shadowMd)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ghostHover)}
+.btn--tonal{background:var(--tonalBg);color:var(--tonalText)}
+.btn--tonal:hover{filter:brightness(.97);transform:translateY(-2px)}
+.btn.is-disabled{opacity:.45;pointer-events:none;box-shadow:none}
+.btn.is-focus{outline:none;box-shadow:0 0 0 4px var(--ring)}
+.btn[data-hover]{background:var(--primaryHover);transform:translateY(-2px);box-shadow:var(--ctaShadowHover)}
+
+/* footer (light) */
+.foot{background:#e7e0d6;padding:70px 0 90px;text-align:center;border-top:1px solid #ddd6cb}
+.foot h2{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;margin-bottom:14px;letter-spacing:-.01em;color:#1b1c1a}
+.foot p{color:#5b5348;max-width:600px;margin:0 auto 8px;font-size:15px}
+.foot .verify{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:13px;color:#7a5a3c;background:#fff;border:1px solid #e5dccf;padding:9px 16px;border-radius:999px;font-weight:500}
+
+@media(max-width:720px){
+  .ty-row{grid-template-columns:1fr;gap:6px}
+  .mk-links{display:none}
+  .board-intro,.board-body{padding-left:20px;padding-right:20px}
+  .board-intro{padding-top:56px}
+  .mk-stats{gap:26px}
+}
+
+/* ---------- design tokens: SALON DELEURAN ---------- */
+.board--deleuran{
+  --bg:#FDFBF7;--surface:#FFFFFF;--surfaceAlt:#F5F3EF;--border:#E5DCCF;
+  --ink:#4C433C;--inkBorder:rgba(76,67,60,.25);--muted:#6B5C4C;--subtle:#80756B;
+  --primary:#D3B39E;--primaryHover:#C9A189;--primaryDeep:#74563B;
+  --tonalBg:#F4DFCB;--tonalText:#7A5A3C;
+  --ghostHover:rgba(76,67,60,.05);--ring:rgba(211,179,158,.5);
+  --veil:linear-gradient(140deg,#F7EFE6 0%,#F5E7D9 45%,#EFE3D6 100%);
+  --btnRadius:999px;--cardRadius:20px;
+  --shadowSm:0 1px 2px rgba(28,26,24,.05);
+  --shadowMd:0 12px 34px -14px rgba(76,67,60,.20);
+  --shadowLg:0 28px 64px -24px rgba(76,67,60,.28);
+  --ctaShadow:0 15px 40px -16px rgba(211,179,158,.75);
+  --ctaShadowHover:0 20px 50px -16px rgba(211,179,158,.95);
+  --fontDisplay:'Cormorant Garamond', Georgia, serif;
+  --fontBody:'Manrope', system-ui, sans-serif;
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <span class="eyebrow">Farvepalette · Designsystem</span>
+    <h1>Salon Deleuran</h1>
+    <div class="url-pill"><span class="domain">salondeleuran.dk</span><span class="path">/farvepalette</span></div>
+    <p class="lede">Et hurtigt visuelt overblik over <b>farverne, skrifttyperne og formsproget</b>, der bygger Salon Deleurans univers online — hentet direkte fra den kode, sitet kører på i dag.</p>
+    <div class="src">
+      <div class="src-chips">
+        <div class="src-chip"><span class="src-sw" style="background:#D3B39E"></span><span class="src-meta"><b>Rosensand</b><code>#D3B39E</code><i>Varm signatur</i></span></div>
+        <div class="src-chip"><span class="src-sw" style="background:#C9A189"></span><span class="src-meta"><b>Dyb sand</b><code>#C9A189</code><i>Hover / dybde</i></span></div>
+        <div class="src-chip"><span class="src-sw" style="background:#74563B"></span><span class="src-meta"><b>Espressobrun</b><code>#74563B</code><i>Dyb accent</i></span></div>
+        <div class="src-chip"><span class="src-sw" style="background:#F4DFCB"></span><span class="src-meta"><b>Champagne</b><code>#F4DFCB</code><i>Bløde flader</i></span></div>
+        <div class="src-chip"><span class="src-sw" style="background:#4C433C"></span><span class="src-meta"><b>Brunsort blæk</b><code>#4C433C</code><i>Tekst</i></span></div>
+        <div class="src-chip"><span class="src-sw" style="background:#FDFBF7"></span><span class="src-meta"><b>Cremehvid</b><code>#FDFBF7</code><i>Lærred</i></span></div>
+      </div>
+    </div>
+    <p class="src-note">De varme sand- og brune toner er sitets kerne — sammen med en rolig, cremehvid baggrund og et blødt, brunsort blæk til tekst.</p>
+  </div>
+</header>
+
+<section class="board board--deleuran">
+  <div class="board-intro">
+    <h1 class="board-name">Rolig <em>elegance</em></h1>
+    <span class="board-kicker">Salon Deleuran · Frisør på Frederiksberg</span>
+    <p class="board-tagline">Varme, jordnære toner og luftig serif-typografi — et univers, der føles ligeså roligt som salonen selv.</p>
+    <p class="board-personality">Blødt og eksklusivt uden at være koldt: en cremehvid baggrund, varme sand- og espressotoner og en klassisk Cormorant-serif, der giver ro og karakter. Sanden bærer energien og hver primær handling; det brunsorte blæk holder teksten varm — aldrig sort på hvidt. Runde pille-knapper, bløde skygger og langsomme, elegante overgange binder det hele sammen.</p>
+    <div class="board-bestfor"><span class="bf-lbl">Bruges på</span><span class="bf-chip">Forside</span><span class="bf-chip">Behandlinger</span><span class="bf-chip">Galleri</span><span class="bf-chip">Min historie</span></div>
+  </div>
+  <div class="board-body">
+
+    <!-- A. Color -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">A</span><h2 class="sec-title">Farver</h2></div>
+    <p class="sec-note">Brug farverne efter rolle — ikke rå hex i komponenter. Den varme sand bærer handlinger; den dybe brun er accent; alt tekst hviler på cremehvid.</p>
+    <div class="sw-grid">
+      <div class="sw"><div class="sw-color" style="background:#FDFBF7"></div><div class="sw-meta"><b>Baggrund</b><code>#FDFBF7</code><span class="sw-role">Sidens lærred (cremehvid)</span><span class="sw-contrast">base</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#FFFFFF"></div><div class="sw-meta"><b>Flade</b><code>#FFFFFF</code><span class="sw-role">Kort, paneler</span><span class="sw-contrast">base</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#F5F3EF"></div><div class="sw-meta"><b>Flade alt</b><code>#F5F3EF</code><span class="sw-role">Nedtonede sektioner</span><span class="sw-contrast">base</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#E5DCCF"></div><div class="sw-meta"><b>Kant</b><code>#E5DCCF</code><span class="sw-role">Streger, delelinjer</span><span class="sw-contrast">hårlinje</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#4C433C"></div><div class="sw-meta"><b>Blæk</b><code>#4C433C</code><span class="sw-role">Primær tekst (brunsort)</span><span class="sw-contrast">AAA 9.6:1 på bg</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#6B5C4C"></div><div class="sw-meta"><b>Dæmpet</b><code>#6B5C4C</code><span class="sw-role">Sekundær tekst</span><span class="sw-contrast">AA 5.7:1 på bg</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#80756B"></div><div class="sw-meta"><b>Diskret</b><code>#80756B</code><span class="sw-role">Meta, labels</span><span class="sw-contrast">3.9:1 (kun stor tekst)</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#D3B39E"></div><div class="sw-meta"><b>Primær — Rosensand</b><code>#D3B39E</code><span class="sw-role">Knapper, handlinger</span><span class="sw-contrast">Signaturfarve</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#C9A189"></div><div class="sw-meta"><b>Primær hover</b><code>#C9A189</code><span class="sw-role">Hover / trykket</span><span class="sw-contrast">dybere sand</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#74563B"></div><div class="sw-meta"><b>Dyb — Espressobrun</b><code>#74563B</code><span class="sw-role">Accent, links, ikoner</span><span class="sw-contrast">AA 6.1:1 m/ hvid</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#F4DFCB"></div><div class="sw-meta"><b>Tonal — Champagne</b><code>#F4DFCB</code><span class="sw-role">Chips, bløde flader</span><span class="sw-contrast">m/ mørk tekst</span></div></div>
+      <div class="sw"><div class="sw-color" style="background:#30312E"></div><div class="sw-meta"><b>Invers flade</b><code>#30312E</code><span class="sw-role">Mørke sektioner, footer</span><span class="sw-contrast">m/ lys tekst</span></div></div>
+    </div></div>
+
+    <!-- B. Typography -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">B</span><h2 class="sec-title">Typografi</h2></div>
+    <div class="font-card">
+      <div class="font-spec"><span class="font-role">Display</span><span class="font-name" style="font-family:'Cormorant Garamond',serif;font-weight:500">Cormorant Garamond</span><span class="font-demo" style="font-family:'Cormorant Garamond',serif;font-weight:500">Aa Bb Cc Æ Ø Å — 0123</span></div>
+      <div class="font-spec"><span class="font-role">Body / UI</span><span class="font-name" style="font-family:'Manrope',sans-serif">Manrope</span><span class="font-demo" style="font-family:'Manrope',sans-serif">Aa Bb Cc Æ Ø Å — 0123</span></div>
+      <p class="font-rationale">Cormorant Garamond giver overskrifter en klassisk, luftig elegance — gerne med kursiv til fremhævninger. Manrope holder brødtekst, labels og knapper skarpe og neutrale. Eyebrows sættes i Manrope, versaler, med bred sperring.</p>
+    </div>
+    <div class="ty-list">
+      <div class="ty-row"><div class="ty-meta">Display · clamp → 72px / 1.02 · 400 · Hero-udsagn</div><div class="ty-sample" style="font-family:'Cormorant Garamond',serif;font-size:64px;line-height:1.02;font-weight:400;letter-spacing:-0.01em;color:var(--ink)">Skønhed i <em style="font-style:italic;color:var(--primaryDeep)">ro</em></div></div>
+      <div class="ty-row"><div class="ty-meta">H1 · 52px / 1.08 · 500 · Sidetitler</div><div class="ty-sample" style="font-family:'Cormorant Garamond',serif;font-size:52px;line-height:1.08;font-weight:500;letter-spacing:-0.01em;color:var(--ink)">God tid til dit hår</div></div>
+      <div class="ty-row"><div class="ty-meta">H2 · 38px / 1.15 · 500 · Sektionstitler</div><div class="ty-sample" style="font-family:'Cormorant Garamond',serif;font-size:38px;line-height:1.15;font-weight:500;letter-spacing:-0.005em;color:var(--ink)">En skræddersyet oplevelse</div></div>
+      <div class="ty-row"><div class="ty-meta">H3 · 26px / 1.25 · 500 · Kort- &amp; undertitler</div><div class="ty-sample" style="font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1.25;font-weight:500;color:var(--ink)">Balayage &amp; farve</div></div>
+      <div class="ty-row"><div class="ty-meta">Lead · 19px / 1.6 · 400 · Manrope · Indledninger</div><div class="ty-sample" style="font-family:'Manrope',sans-serif;font-size:19px;line-height:1.6;font-weight:400;color:var(--ink)">Ro, velvære og en behandling skabt til præcis dig og dit hår.</div></div>
+      <div class="ty-row"><div class="ty-meta">Body · 16px / 1.7 · 400 · Manrope · Brødtekst</div><div class="ty-sample" style="font-family:'Manrope',sans-serif;font-size:16px;line-height:1.7;font-weight:400;color:var(--ink)">Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid — fra første samtale til det færdige resultat.</div></div>
+      <div class="ty-row"><div class="ty-meta">Small · 14px / 1.55 · 400 · Manrope · Støttetekst</div><div class="ty-sample" style="font-family:'Manrope',sans-serif;font-size:14px;line-height:1.55;font-weight:400;color:var(--ink)">Supplerende detaljer og sekundær information.</div></div>
+      <div class="ty-row"><div class="ty-meta">Overline · 12px / 1.4 · 700 · Manrope · Eyebrows (VERSALER)</div><div class="ty-sample" style="font-family:'Manrope',sans-serif;font-size:12px;line-height:1.4;font-weight:700;letter-spacing:0.2em;color:var(--primaryDeep);text-transform:uppercase">Frisør på Frederiksberg</div></div>
+    </div></div>
+
+    <!-- C. Spacing -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">C</span><h2 class="sec-title">Spacing</h2></div>
+    <p class="sec-note">En luftig 8px-rytme med et 4px-halvtrin. Salonen ånder — når du er i tvivl, så rund op.</p>
+    <div class="sp-list">
+      <div class="sp-row"><span class="sp-token">2xs</span><span class="sp-val">4px</span><span class="sp-bar" style="width:4px"></span><span class="sp-use">Ikon-mellemrum</span></div>
+      <div class="sp-row"><span class="sp-token">xs</span><span class="sp-val">8px</span><span class="sp-bar" style="width:8px"></span><span class="sp-use">Tætte stakke</span></div>
+      <div class="sp-row"><span class="sp-token">sm</span><span class="sp-val">12px</span><span class="sp-bar" style="width:12px"></span><span class="sp-use">Chip-padding</span></div>
+      <div class="sp-row"><span class="sp-token">md</span><span class="sp-val">16px</span><span class="sp-bar" style="width:16px"></span><span class="sp-use">Grundrytme</span></div>
+      <div class="sp-row"><span class="sp-token">lg</span><span class="sp-val">24px</span><span class="sp-bar" style="width:24px"></span><span class="sp-use">Kort-padding</span></div>
+      <div class="sp-row"><span class="sp-token">xl</span><span class="sp-val">32px</span><span class="sp-bar" style="width:32px"></span><span class="sp-use">Blok-afstand</span></div>
+      <div class="sp-row"><span class="sp-token">2xl</span><span class="sp-val">48px</span><span class="sp-bar" style="width:48px"></span><span class="sp-use">Sektions-mellemrum</span></div>
+      <div class="sp-row"><span class="sp-token">3xl</span><span class="sp-val">64px</span><span class="sp-bar" style="width:64px"></span><span class="sp-use">Store sektioner</span></div>
+      <div class="sp-row"><span class="sp-token">4xl</span><span class="sp-val">96px</span><span class="sp-bar" style="width:96px"></span><span class="sp-use">Hero-luft</span></div>
+      <div class="sp-row"><span class="sp-token">5xl</span><span class="sp-val">128px</span><span class="sp-bar" style="width:128px"></span><span class="sp-use">Fuld-bredde luft</span></div>
+    </div></div>
+
+    <!-- D. Radii -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">D</span><h2 class="sec-title">Rundinger</h2></div>
+    <p class="sec-note">Skarpe token-rundinger til små detaljer, en blød 20px til kort — og fuldt runde pille-knapper.</p>
+    <div class="rad-grid">
+      <div class="rad"><div class="rad-box" style="border-radius:2px"></div><b>base</b><code>2px</code><span>Inputs, detaljer</span></div>
+      <div class="rad"><div class="rad-box" style="border-radius:4px"></div><b>lg</b><code>4px</code><span>Små kontroller</span></div>
+      <div class="rad"><div class="rad-box" style="border-radius:8px"></div><b>xl</b><code>8px</code><span>Chips, badges</span></div>
+      <div class="rad"><div class="rad-box" style="border-radius:20px"></div><b>kort</b><code>20px</code><span>Kort, paneler</span></div>
+      <div class="rad"><div class="rad-box" style="border-radius:999px"></div><b>pille</b><code>full</code><span>Knapper</span></div>
+    </div></div>
+
+    <!-- E. Elevation -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">E</span><h2 class="sec-title">Skygger</h2></div>
+    <p class="sec-note">Bløde, diffuse og varme — aldrig hårde eller grå. Strukturelle løft holdes neutralt brune; knap-gløden varmer til sanden.</p>
+    <div class="sh-grid">
+      <div class="sh"><div class="sh-box" style="box-shadow:0 1px 2px rgba(28,26,24,.05)">sm</div><span class="sh-use">Hårlinje-løft</span></div>
+      <div class="sh"><div class="sh-box" style="box-shadow:0 20px 50px rgba(28,26,24,.06)">kort</div><span class="sh-use">Kort &amp; billeder</span></div>
+      <div class="sh"><div class="sh-box" style="box-shadow:0 28px 64px -24px rgba(76,67,60,.28)">lg</div><span class="sh-use">Overlays, hero-kort</span></div>
+      <div class="sh"><div class="sh-box" style="box-shadow:0 15px 40px rgba(211,179,158,.5)">glød</div><span class="sh-use">Primær / CTA-glød</span></div>
+    </div></div>
+
+    <!-- F. Buttons -->
+    <div class="sec"><div class="sec-head"><span class="sec-num">F</span><h2 class="sec-title">Knapper</h2></div>
+    <p class="mini-h">Varianter</p>
+    <div class="btn-showcase">
+      <div class="btn-cell"><span class="btn btn--solid btn--md">Book tid</span><span class="btn-label">Primær (sand)</span></div>
+      <div class="btn-cell"><span class="btn btn--deep btn--md">Book tid</span><span class="btn-label">Dyb brun</span></div>
+      <div class="btn-cell"><span class="btn btn--outline btn--md">Book tid</span><span class="btn-label">Outline</span></div>
+      <div class="btn-cell"><span class="btn btn--ghost btn--md">Book tid</span><span class="btn-label">Ghost</span></div>
+      <div class="btn-cell"><span class="btn btn--tonal btn--md">Book tid</span><span class="btn-label">Tonal</span></div>
+    </div>
+    <p class="mini-h">Størrelser</p>
+    <div class="size-list">
+      <div class="size-row"><span class="size-lbl">Primær</span><span class="btn btn--solid btn--sm">Small</span><span class="btn btn--solid btn--md">Medium</span><span class="btn btn--solid btn--lg">Large</span></div>
+      <div class="size-row"><span class="size-lbl">Outline</span><span class="btn btn--outline btn--sm">Small</span><span class="btn btn--outline btn--md">Medium</span><span class="btn btn--outline btn--lg">Large</span></div>
+    </div>
+    <p class="mini-h">Tilstande <span class="mini-note">— hold musen over knapperne ovenfor; alt er live</span></p>
+    <div class="size-list">
+      <div class="size-row"><span class="size-lbl">Tilstande</span><span class="btn btn--solid btn--md">Standard</span><span class="btn btn--solid btn--md" data-hover="1">Hover ↗</span><span class="btn btn--solid btn--md is-disabled">Deaktiveret</span><span class="btn btn--outline btn--md is-focus">Fokus</span></div>
+    </div></div>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <h2>Ét system. Ét udtryk.</h2>
+    <p>Hele Salon Deleurans univers — forside, behandlinger, galleri og min historie — hviler på de samme farver, skrifttyper, rundinger og skygger, du ser her.</p>
+    <span class="verify">Hentet direkte fra sitets kode · salondeleuran.dk</span>
+  </div>
+</footer>
+</body>
+</html>
