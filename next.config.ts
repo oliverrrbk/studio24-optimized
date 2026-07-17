@@ -17,6 +17,18 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async headers() {
+    return [
+      {
+        source: '/farvepalette',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+      {
+        source: '/farvepalette.html',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ];
+  },
   async redirects() {
     return [
       {
