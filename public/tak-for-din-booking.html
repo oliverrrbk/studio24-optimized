@@ -55,25 +55,52 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 .photo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:16px;border:1px solid var(--border);box-shadow:0 22px 46px -28px rgba(76,67,60,.5);display:block}
 .photo img.mirror{transform:scaleX(-1)}
 
-/* footer — matches salondeleuran.dk */
+/* footer — exact port of salondeleuran.dk SiteFooter */
 .foot{position:relative;z-index:1;background:#FDFBF7;color:#4C433C}
-.foot::before{content:"";position:absolute;left:0;right:0;top:0;height:clamp(150px,22vw,300px);transform:translateY(-100%);background:radial-gradient(130% 100% at 50% 100%,rgba(228,211,196,.22) 0%,rgba(228,211,196,.07) 42%,transparent 72%);pointer-events:none;z-index:0}
-.foot-top{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding:clamp(3.5rem,9vw,7rem) clamp(1.5rem,5vw,4rem) clamp(2.5rem,5vw,3.5rem);display:flex;flex-wrap:wrap;gap:clamp(2.5rem,6vw,5rem);justify-content:space-between}
+/* warm gradient transition above the footer */
+.foot::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:clamp(160px,22vw,300px);background:radial-gradient(140% 105% at 50% 100%,rgba(228,211,196,.26) 0%,rgba(228,211,196,.09) 45%,transparent 74%);pointer-events:none;z-index:0}
+/* curve dip into the footer (from the gallery page) */
+.foot-curve{position:absolute;left:0;width:100%;bottom:100%;overflow:hidden;line-height:0;pointer-events:none;z-index:1}
+.foot-curve svg{display:block;width:100%;height:clamp(42.5px,6.8vw,102px)}
+.foot-top{position:relative;z-index:2;max-width:1400px;margin:0 auto;padding:clamp(5rem,10vw,8rem) clamp(1.5rem,5vw,4rem);display:flex;flex-direction:column;gap:clamp(3rem,6vw,5rem);align-items:flex-start}
+@media(min-width:768px){.foot-top{flex-direction:row;justify-content:space-between}}
 .f-brand{max-width:320px}
 .f-logo{width:clamp(140px,14vw,180px);height:auto;display:block;margin-bottom:clamp(1rem,2vw,1.5rem)}
-.f-tag{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.06rem);line-height:1.7;font-weight:300;letter-spacing:.01em}
-.f-award{width:clamp(180px,20vw,205px);height:auto;display:block;margin-top:24px}
+.f-tag{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.125rem);line-height:1.625;font-weight:300;letter-spacing:.025em}
 .f-col h5{font-size:clamp(.75rem,1vw,.875rem);font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:#4C433C;margin-bottom:clamp(1.5rem,3vw,2rem);font-family:var(--fontBody)}
 .f-list{list-style:none;display:flex;flex-direction:column;gap:clamp(.75rem,1.5vw,1rem)}
-.f-list a,.f-list li{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.06rem);font-weight:300;letter-spacing:.01em;text-decoration:none;line-height:1.7}
+.f-list a,.f-list li{color:#6A5D55;font-size:clamp(1rem,1.2vw,1.125rem);font-weight:300;letter-spacing:.025em;text-decoration:none;line-height:1.7}
 .f-list a{transition:color .3s}
 .f-list a:hover{color:#E4D3C4}
 .f-social{display:flex;gap:clamp(.5rem,1.5vw,1rem);align-items:center}
 .f-social a{display:inline-flex;color:#D3B39E;opacity:.8;transition:opacity .3s ease,transform .7s ease}
+.f-social a:active{transform:scale(.95)}
 .f-social a:hover{opacity:1;transform:scale(1.12)}
+.f-social .fb{width:clamp(2.5rem,4vw,3rem);height:clamp(2.5rem,4vw,3rem);position:relative;top:-3px}
+.f-social .ig{width:clamp(2.75rem,4.5vw,3.5rem);height:clamp(2.75rem,4.5vw,3.5rem);position:relative;top:-2px}
 .f-social svg{display:block;filter:drop-shadow(0 1px 1px rgba(0,0,0,.05))}
-.f-bottom{position:relative;z-index:1;border-top:1px solid rgba(76,67,60,.1)}
-.f-bottom-in{max-width:1400px;margin:0 auto;padding:clamp(1.25rem,3vw,2rem) clamp(1.5rem,5vw,4rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem}
+/* Industry Favorites badge — 3D tilt + holographic shimmer */
+.f-award{display:block;width:180px;height:auto;margin-top:24px;cursor:pointer;contain:layout style}
+@media(min-width:640px){.f-award{width:260px}}
+.award-badge3d{transform:perspective(700px);transform-origin:center center;transition:transform 700ms ease-out}
+.award-svg{display:block;width:100%;height:auto}
+.award-overlay{transform-box:fill-box;transform-origin:center;transition:transform .18s ease}
+.ov{transform-box:fill-box;transform-origin:center}
+.ov1{animation:ov1 5s infinite}.ov2{animation:ov2 5s infinite}.ov3{animation:ov3 5s infinite}.ov4{animation:ov4 5s infinite}.ov5{animation:ov5 5s infinite}.ov6{animation:ov6 5s infinite}.ov7{animation:ov7 5s infinite}.ov8{animation:ov8 5s infinite}.ov9{animation:ov9 5s infinite}.ov10{animation:ov10 5s infinite}
+.f-award.is-hover .ov{animation:none}
+@keyframes ov1{0%{transform:rotate(0deg)}50%{transform:rotate(10deg)}100%{transform:rotate(0deg)}}
+@keyframes ov2{0%{transform:rotate(10deg)}50%{transform:rotate(20deg)}100%{transform:rotate(10deg)}}
+@keyframes ov3{0%{transform:rotate(20deg)}50%{transform:rotate(30deg)}100%{transform:rotate(20deg)}}
+@keyframes ov4{0%{transform:rotate(30deg)}50%{transform:rotate(40deg)}100%{transform:rotate(30deg)}}
+@keyframes ov5{0%{transform:rotate(40deg)}50%{transform:rotate(50deg)}100%{transform:rotate(40deg)}}
+@keyframes ov6{0%{transform:rotate(50deg)}50%{transform:rotate(60deg)}100%{transform:rotate(50deg)}}
+@keyframes ov7{0%{transform:rotate(60deg)}50%{transform:rotate(70deg)}100%{transform:rotate(60deg)}}
+@keyframes ov8{0%{transform:rotate(70deg)}50%{transform:rotate(80deg)}100%{transform:rotate(70deg)}}
+@keyframes ov9{0%{transform:rotate(80deg)}50%{transform:rotate(90deg)}100%{transform:rotate(80deg)}}
+@keyframes ov10{0%{transform:rotate(90deg)}50%{transform:rotate(100deg)}100%{transform:rotate(90deg)}}
+@media(prefers-reduced-motion:reduce){.ov{animation:none!important}}
+.f-bottom{position:relative;z-index:2;border-top:1px solid rgba(76,67,60,.1)}
+.f-bottom-in{max-width:1400px;margin:0 auto;padding:clamp(1.5rem,3vw,2rem) clamp(1.5rem,5vw,4rem);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:1rem}
 .f-copy,.f-legal a{color:#92857C;font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;text-decoration:none}
 .f-legal{display:flex;gap:clamp(1rem,2vw,1.5rem)}
 .f-legal a{transition:color .3s}
@@ -83,7 +110,6 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
   .card{grid-template-columns:1fr;gap:clamp(28px,7vw,44px);text-align:center;justify-items:center}
   .rule{margin-left:auto;margin-right:auto}
   .photo{order:-1;max-width:400px}
-  .foot-top{gap:2.5rem}
 }
 </style>
 </head>
@@ -116,18 +142,39 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
   </main>
 
   <footer class="foot">
+    <div class="foot-curve"><svg viewBox="0 0 1440 100" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg"><path fill="#FDFBF7" d="M0,100 L0,0 C480,80 960,80 1440,0 L1440,100 Z"/></svg></div>
     <div class="foot-top">
       <div class="f-brand">
         <img class="f-logo" src="/images/logo_deleuran_transparent.png" alt="Salon Deleuran">
         <p class="f-tag">Bygget på håndværk, ærlighed og en tro på at du fortjener en frisør, der forstår dig.</p>
         <a class="f-award" href="https://www.industryfavorites.eu/" target="_blank" rel="noopener noreferrer" aria-label="Salon Deleuran — Industry Favorites 2026">
-          <svg viewBox="0 0 260 54" xmlns="http://www.w3.org/2000/svg" role="img">
-            <rect width="260" height="54" rx="10" fill="#E8E0D5"/>
-            <rect x="4" y="4" width="252" height="46" rx="8" fill="none" stroke="rgba(106,93,85,0.15)" stroke-width="1"/>
-            <g transform="translate(13, 11) scale(1.3)"><path fill="#6A5D55" d="M16.956 2.057c.355.124.829.375 1.303.796a3.77 3.77 0 0 1 1.246 2.204c.173.989-.047 1.894-.519 2.683l-.123.194q-.097.147-.196.272q.066.234.117.471q.26-.178.545-.307c.851-.389 1.727-.442 2.527-.306q.226.04.346.076a1 1 0 0 1 .689.712l.029.13q.015.08.03.18a4.45 4.45 0 0 1-.324 2.496a3.94 3.94 0 0 1-1.71 1.85l-.242.12a4.23 4.23 0 0 1-2.234.349A9 9 0 0 1 17.997 15c.37.016.748.093 1.128.24c.732.28 1.299.758 1.711 1.367a3.95 3.95 0 0 1 .654 1.613a1 1 0 0 1-.356.917a3.8 3.8 0 0 1-.716.443c-.933.455-1.978.588-3.043.179l-.032-.015l-.205-.086a3.6 3.6 0 0 1-1.33-1.069l-.143-.197a4 4 0 0 1-.26-.433a6 6 0 0 1-.927.511q.18.262.337.56a7.4 7.4 0 0 1 .66 1.747a1 1 0 0 1-1.95.444l-.028-.11a6 6 0 0 0-.449-1.143C12.706 19.323 12.338 19 12 19s-.706.323-1.048.969a5.6 5.6 0 0 0-.367.874l-.082.269l-.028.11a1 1 0 0 1-1.95-.444a7.3 7.3 0 0 1 .66-1.747q.158-.298.337-.561a6.4 6.4 0 0 1-.93-.508a4 4 0 0 1-.256.43c-.366.541-.855.98-1.473 1.267l-.238.1c-.994.382-1.97.292-2.855-.091l-.188-.087a3.8 3.8 0 0 1-.716-.443a1 1 0 0 1-.356-.917a3.95 3.95 0 0 1 .654-1.613a3.6 3.6 0 0 1 1.71-1.368c.38-.146.758-.223 1.13-.24a9 9 0 0 1-.445-1.023a4.23 4.23 0 0 1-2.233-.348a4 4 0 0 1-.916-.587l-.207-.191a4 4 0 0 1-.724-.977l-.105-.216a4.45 4.45 0 0 1-.265-2.806a1 1 0 0 1 .69-.712q.119-.036.345-.076c.801-.135 1.678-.082 2.53.308q.283.129.545.304q.048-.235.112-.47a5 5 0 0 1-.194-.272c-.556-.832-.83-1.806-.642-2.877l.05-.242a3.75 3.75 0 0 1 1.027-1.803l.169-.159a4 4 0 0 1 1.303-.796a1 1 0 0 1 .975.178c.2.168.462.446.719.83c.556.833.83 1.807.642 2.878a3.77 3.77 0 0 1-1.246 2.204c-.303.27-.607.47-.879.61A7.5 7.5 0 0 0 7 10.728C7 14.23 9.285 17 12 17s5-2.77 5-6.276a7.6 7.6 0 0 0-.253-1.967a4.3 4.3 0 0 1-.881-.61a3.77 3.77 0 0 1-1.246-2.204c-.188-1.07.086-2.045.642-2.877c.257-.385.52-.663.72-.831a1 1 0 0 1 .974-.178"/></g>
-            <text font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#6A5D55" x="53" y="20">Salon Deleuran</text>
-            <text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#6A5D55" x="52" y="40">Industry Favorites 2026</text>
-          </svg>
+          <div class="award-badge3d">
+            <svg class="award-svg" viewBox="0 0 260 54" xmlns="http://www.w3.org/2000/svg" role="img">
+              <defs>
+                <filter id="awardBlur" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur in="SourceGraphic" stdDeviation="12"/></filter>
+                <mask id="awardMask"><rect width="260" height="54" rx="10" fill="white"/></mask>
+              </defs>
+              <rect width="260" height="54" rx="10" fill="#E8E0D5"/>
+              <rect x="4" y="4" width="252" height="46" rx="8" fill="none" stroke="rgba(106,93,85,0.15)" stroke-width="1"/>
+              <g transform="translate(13, 11) scale(1.3)"><path fill="#6A5D55" d="M16.956 2.057c.355.124.829.375 1.303.796a3.77 3.77 0 0 1 1.246 2.204c.173.989-.047 1.894-.519 2.683l-.123.194q-.097.147-.196.272q.066.234.117.471q.26-.178.545-.307c.851-.389 1.727-.442 2.527-.306q.226.04.346.076a1 1 0 0 1 .689.712l.029.13q.015.08.03.18a4.45 4.45 0 0 1-.324 2.496a3.94 3.94 0 0 1-1.71 1.85l-.242.12a4.23 4.23 0 0 1-2.234.349A9 9 0 0 1 17.997 15c.37.016.748.093 1.128.24c.732.28 1.299.758 1.711 1.367a3.95 3.95 0 0 1 .654 1.613a1 1 0 0 1-.356.917a3.8 3.8 0 0 1-.716.443c-.933.455-1.978.588-3.043.179l-.032-.015l-.205-.086a3.6 3.6 0 0 1-1.33-1.069l-.143-.197a4 4 0 0 1-.26-.433a6 6 0 0 1-.927.511q.18.262.337.56a7.4 7.4 0 0 1 .66 1.747a1 1 0 0 1-1.95.444l-.028-.11a6 6 0 0 0-.449-1.143C12.706 19.323 12.338 19 12 19s-.706.323-1.048.969a5.6 5.6 0 0 0-.367.874l-.082.269l-.028.11a1 1 0 0 1-1.95-.444a7.3 7.3 0 0 1 .66-1.747q.158-.298.337-.561a6.4 6.4 0 0 1-.93-.508a4 4 0 0 1-.256.43c-.366.541-.855.98-1.473 1.267l-.238.1c-.994.382-1.97.292-2.855-.091l-.188-.087a3.8 3.8 0 0 1-.716-.443a1 1 0 0 1-.356-.917a3.95 3.95 0 0 1 .654-1.613a3.6 3.6 0 0 1 1.71-1.368c.38-.146.758-.223 1.13-.24a9 9 0 0 1-.445-1.023a4.23 4.23 0 0 1-2.233-.348a4 4 0 0 1-.916-.587l-.207-.191a4 4 0 0 1-.724-.977l-.105-.216a4.45 4.45 0 0 1-.265-2.806a1 1 0 0 1 .69-.712q.119-.036.345-.076c.801-.135 1.678-.082 2.53.308q.283.129.545.304q.048-.235.112-.47a5 5 0 0 1-.194-.272c-.556-.832-.83-1.806-.642-2.877l.05-.242a3.75 3.75 0 0 1 1.027-1.803l.169-.159a4 4 0 0 1 1.303-.796a1 1 0 0 1 .975.178c.2.168.462.446.719.83c.556.833.83 1.807.642 2.878a3.77 3.77 0 0 1-1.246 2.204c-.303.27-.607.47-.879.61A7.5 7.5 0 0 0 7 10.728C7 14.23 9.285 17 12 17s5-2.77 5-6.276a7.6 7.6 0 0 0-.253-1.967a4.3 4.3 0 0 1-.881-.61a3.77 3.77 0 0 1-1.246-2.204c-.188-1.07.086-2.045.642-2.877c.257-.385.52-.663.72-.831a1 1 0 0 1 .974-.178"/></g>
+              <text font-family="Arial, Helvetica, sans-serif" font-size="9" font-weight="bold" fill="#6A5D55" x="53" y="20">Salon Deleuran</text>
+              <text font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="bold" fill="#6A5D55" x="52" y="40">Industry Favorites 2026</text>
+              <g style="mix-blend-mode:overlay" mask="url(#awardMask)">
+                <g class="award-overlay" filter="url(#awardBlur)">
+                  <g class="ov ov1" style="transform:rotate(0deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(358,100%,62%)" opacity="0.42"/></g>
+                  <g class="ov ov2" style="transform:rotate(10deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(30,100%,50%)" opacity="0.42"/></g>
+                  <g class="ov ov3" style="transform:rotate(20deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(60,100%,50%)" opacity="0.42"/></g>
+                  <g class="ov ov4" style="transform:rotate(30deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(96,100%,50%)" opacity="0.42"/></g>
+                  <g class="ov ov5" style="transform:rotate(40deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(233,85%,47%)" opacity="0.42"/></g>
+                  <g class="ov ov6" style="transform:rotate(50deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(271,85%,47%)" opacity="0.42"/></g>
+                  <g class="ov ov7" style="transform:rotate(60deg)"><polygon points="0,0 260,54 260,0 0,54" fill="hsl(300,20%,35%)" opacity="0.42"/></g>
+                  <g class="ov ov8" style="transform:rotate(70deg)"><polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity="0.42"/></g>
+                  <g class="ov ov9" style="transform:rotate(80deg)"><polygon points="0,0 260,54 260,0 0,54" fill="transparent" opacity="0.42"/></g>
+                  <g class="ov ov10" style="transform:rotate(90deg)"><polygon points="0,0 260,54 260,0 0,54" fill="white" opacity="0.42"/></g>
+                </g>
+              </g>
+            </svg>
+          </div>
         </a>
       </div>
       <div class="f-col">
@@ -152,10 +199,10 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
         <h5>Følg med</h5>
         <div class="f-social">
           <a href="https://www.facebook.com/p/Studio24-61564054917618/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg width="30" height="30" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
+            <svg class="fb" viewBox="0 0 320 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
           </a>
           <a href="https://www.instagram.com/__studio.24__/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg width="34" height="34" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
+            <svg class="ig" viewBox="0 0 448 512" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>
           </a>
         </div>
       </div>
@@ -171,5 +218,61 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
     </div>
   </footer>
 </div>
+<script>
+(function(){
+  var a=document.querySelector('.f-award');
+  if(!a) return;
+  var badge=a.querySelector('.award-badge3d');
+  var overlay=a.querySelector('.award-overlay');
+  var maxRotate=0.18,minRotate=-0.18,maxScale=1.05,minScale=0.94;
+  var identity="1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1";
+  var matrix=identity, leaveT=null;
+  function dims(){var r=a.getBoundingClientRect();return{left:r.left,right:r.right,top:r.top,bottom:r.bottom};}
+  function getMatrix(cx,cy){
+    var d=dims(),xC=(d.left+d.right)/2,yC=(d.top+d.bottom)/2;
+    var s0=maxScale-(maxScale-minScale)*Math.abs(xC-cx)/(xC-d.left);
+    var s1=maxScale-(maxScale-minScale)*Math.abs(yC-cy)/(yC-d.top);
+    var s2=maxScale-(maxScale-minScale)*(Math.abs(xC-cx)+Math.abs(yC-cy))/(xC-d.left+yC-d.top);
+    var rx1=0.25*((yC-cy)/yC-(xC-cx)/xC);
+    var rx2=maxRotate-(maxRotate-minRotate)*Math.abs(d.right-cx)/(d.right-d.left);
+    var ry2=maxRotate-(maxRotate-minRotate)*(d.top-cy)/(d.top-d.bottom);
+    var rz0=-(maxRotate-(maxRotate-minRotate)*Math.abs(d.right-cx)/(d.right-d.left));
+    var rz1=(0.2-(0.2+0.6)*(d.top-cy)/(d.top-d.bottom));
+    return s0+", 0, "+rz0+", 0, "+rx1+", "+s1+", "+rz1+", 0, "+rx2+", "+ry2+", "+s2+", 0, 0, 0, 0, 1";
+  }
+  function getOpposite(m,cy,enter){
+    var d=dims(),oppY=d.bottom-cy+d.top,weak=enter?0.7:4,mult=enter?-1:1;
+    return m.split(", ").map(function(item,i){
+      if(i===2||i===4||i===8){return -parseFloat(item)*mult/weak;}
+      if(i===0||i===5||i===10){return "1";}
+      if(i===6){return mult*(maxRotate-(maxRotate-minRotate)*(d.top-oppY)/(d.top-d.bottom))/weak;}
+      if(i===9){return (maxRotate-(maxRotate-minRotate)*(d.top-oppY)/(d.top-d.bottom))/weak;}
+      return item;
+    }).join(", ");
+  }
+  function setBadge(m){badge.style.transform="perspective(700px) matrix3d("+m+")";}
+  function lightAngle(cx){var d=dims(),xC=(d.left+d.right)/2,w=d.right-d.left;return ((cx-xC)/(w/2))*8;}
+  a.addEventListener('mouseenter',function(e){
+    if(window.innerWidth<768) return;
+    if(leaveT){clearTimeout(leaveT);leaveT=null;}
+    a.classList.add('is-hover');
+    if(overlay) overlay.style.transform="rotate("+lightAngle(e.clientX)+"deg)";
+    matrix=getOpposite(getMatrix(e.clientX,e.clientY),e.clientY,true);
+    setBadge(matrix);
+  });
+  a.addEventListener('mousemove',function(e){
+    if(window.innerWidth<768) return;
+    if(overlay) overlay.style.transform="rotate("+lightAngle(e.clientX)+"deg)";
+    setBadge(getMatrix(e.clientX,e.clientY));
+  });
+  a.addEventListener('mouseleave',function(e){
+    if(window.innerWidth<768) return;
+    setBadge(getOpposite(matrix,e.clientY,false));
+    if(overlay) overlay.style.transform="rotate(0deg)";
+    setTimeout(function(){matrix=identity;setBadge(identity);},200);
+    leaveT=setTimeout(function(){a.classList.remove('is-hover');},500);
+  });
+})();
+</script>
 </body>
 </html>
