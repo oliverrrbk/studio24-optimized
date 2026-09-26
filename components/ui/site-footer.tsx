@@ -44,7 +44,7 @@ export function SiteFooter() {
               <li>Tirsdag - Fredag: 10:00 - 17:30<br/>Lør, Søn, Man &amp; Helligdage:<br/>efter aftale</li>
               <li><a href="tel:+4522991918" className="hover:text-[#E4D3C4] transition-colors">Tlf. 22 99 19 18</a></li>
               <li><a href="mailto:kontakt@salondeleuran.dk" className="hover:text-[#E4D3C4] transition-colors">kontakt@salondeleuran.dk</a></li>
-              <li>H. C. Ørsteds Vej 8<br/>1879 Frederiksberg</li>
+              <li>Trekronergade 124A<br/>2500 Valby</li>
             </ul>
           </div>
           <div className="flex flex-col">

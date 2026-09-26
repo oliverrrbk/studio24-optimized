@@ -23,8 +23,8 @@ const manrope = Manrope({
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Salon Deleuran Frederiksberg',
-    default: 'Salon Deleuran | Eksklusiv Frisør på Frederiksberg',
+    template: '%s | Salon Deleuran Valby',
+    default: 'Salon Deleuran | Eksklusiv Frisør i Valby',
   },
   description: 'Få ro, velvære og en skræddersyet behandling hos Salon Deleuran. Vi skaber smukke, holdbare resultater baseret på tillid og altid god tid til dit hår.',
   metadataBase: new URL('https://www.salondeleuran.dk'), // Replace with actual domain
@@ -47,12 +47,12 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
               "@type": "HairSalon",
               "name": "Salon Deleuran",
               "image": "https://www.salondeleuran.dk/logo.png",
-              "description": "Eksklusiv og imødekommende frisørsalon på Frederiksberg, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
+              "description": "Eksklusiv og imødekommende frisørsalon i Valby, der tilbyder balayage, extensions og præcisionsklipning baseret på ærlig rådgivning.",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "Frederiksberg",
-                "addressLocality": "Frederiksberg",
-                "postalCode": "1879",
+                "streetAddress": "Trekronergade 124A",
+                "addressLocality": "Valby",
+                "postalCode": "2500",
                 "addressCountry": "DK"
               },
               "priceRange": "$$$"

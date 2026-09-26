@@ -60,8 +60,8 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
                 </h3>
                 <div className="bg-[#4C433C]/5 p-6 rounded-2xl text-[#4C433C]">
                   <p className="font-bold mb-1">Salon Deleuran</p>
-                  <p>H. C. Ørsteds Vej 8</p>
-                  <p>1879 Frederiksberg</p>
+                  <p>Trekronergade 124A</p>
+                  <p>2500 Valby</p>
                   <p className="mt-2 text-sm uppercase tracking-wider text-[#6A5D55]">CVR-nr.: 44907917</p>
                   <div className="mt-4 space-y-1">
                     <p>Telefon: <a href="tel:+4522991918" className="hover:text-[#D3B39E] transition-colors">22 99 19 18</a></p>
