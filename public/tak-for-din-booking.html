@@ -3,6 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Google Consent Mode v2 · MUST stay above the GTM loader. Same defaults as
+     the main site (lib/gtm.ts): all denied, then the visitor's stored choice from
+     the site's cookie banner (same domain, same localStorage key). This page has
+     no banner of its own, so a visitor who never answered stays denied. -->
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('consent','default',{'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied','wait_for_update':500});
+gtag('set','ads_data_redaction',true);
+gtag('set','url_passthrough',true);
+try{var sdc=localStorage.getItem('sd-cookie-consent');
+if(sdc==='granted'||sdc==='denied'){gtag('consent','update',{'ad_storage':sdc,'ad_user_data':sdc,'ad_personalization':sdc,'analytics_storage':sdc});}}catch(e){}
+dataLayer.push({event:'booking_confirmed',page_path:location.pathname});
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZKL938S');</script>
+<!-- End Google Tag Manager -->
 <meta name="robots" content="noindex, nofollow">
 <title>Tak for din booking · Salon Deleuran</title>
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -112,6 +134,10 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZKL938S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div class="page">
   <div class="glow glow-1"></div>
 
@@ -268,6 +294,15 @@ h1{font-family:var(--fontDisplay);font-weight:500;font-size:clamp(44px,7vw,76px)
     leaveT=setTimeout(function(){a.classList.remove('is-hover');},500);
   });
 })();
+</script>
+<script>
+/* phone_click / email_click — same contract as the main site's gtm-events.tsx */
+document.addEventListener('click',function(e){
+  var a=e.target&&e.target.closest&&e.target.closest('a[href]');if(!a)return;
+  var h=a.getAttribute('href')||'';
+  var ev=h.indexOf('tel:')===0?'phone_click':h.indexOf('mailto:')===0?'email_click':null;if(!ev)return;
+  dataLayer.push({event:ev,page_path:location.pathname,link_url:h,link_location:a.closest('footer')?'footer':'tak-for-booking'});
+},true);
 </script>
 </body>
 </html>

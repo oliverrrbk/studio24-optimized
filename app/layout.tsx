@@ -6,6 +6,8 @@ import { BookingModal } from '@/components/ui/booking-modal';
 import { Navigation } from '@/components/ui/navigation';
 import { CookieConsent } from '@/components/ui/cookie-consent';
 import { MetaPixel } from '@/components/analytics/meta-pixel';
+import { GtmEvents } from '@/components/analytics/gtm-events';
+import { CONSENT_DEFAULT_SCRIPT, GTM_ID, GTM_SCRIPT } from '@/lib/gtm';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -38,7 +40,23 @@ export const metadata: Metadata = {
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="da" className={`${cormorant.variable} ${manrope.variable}`} suppressHydrationWarning>
+      <head>
+        {/* Google Consent Mode v2 — MUST stay above the GTM loader. Everything is
+            denied until the visitor accepts the cookie banner, and a returning
+            visitor's stored choice is re-applied here, before any tag can fire. */}
+        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
+        {/* Google Tag Manager (PurposeAds, Google Ads) */}
+        <script dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
+      </head>
       <body suppressHydrationWarning className="bg-background text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed w-full relative antialiased">
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -68,6 +86,7 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </LenisProvider>
         <CookieConsent />
         <MetaPixel />
+        <GtmEvents />
       </body>
     </html>
   );
