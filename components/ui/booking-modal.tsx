@@ -6,7 +6,6 @@ import { motion, AnimatePresence } from 'motion/react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useLenis } from 'lenis/react';
 import { track, trackBooking } from '@/lib/meta-pixel';
-import { pushEvent } from '@/lib/gtm';
 
 
 function BookingModalInner() {
@@ -50,12 +49,9 @@ function BookingModalInner() {
   }, [isOpen, lenis]);
 
   // Mid-funnel signal: the booking box opened. Fires before the click-through to
-  // Planway (which fires Schedule / booking_click). Consent-safe — the pixel
-  // no-ops until it loads, and Google's tags read Consent Mode themselves.
+  // Planway (which fires Schedule). Consent-safe — no-ops until the pixel loads.
   useEffect(() => {
-    if (!isOpen) return;
-    track('InitiateCheckout');
-    pushEvent('booking_open');
+    if (isOpen) track('InitiateCheckout');
   }, [isOpen]);
 
   return (
@@ -81,7 +77,6 @@ function BookingModalInner() {
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
             className="fixed inset-0 m-auto w-[90%] max-w-4xl 2xl:max-w-5xl h-[85svh] bg-[#FDFBF7] shadow-2xl z-[101] rounded-[25.5px] 2xl:rounded-[30px] overflow-hidden flex flex-col md:flex-row overscroll-contain"
             data-lenis-prevent="true"
-            data-link-location="booking"
             onWheel={(e) => e.stopPropagation()}
             onTouchMove={(e) => e.stopPropagation()}
           >
@@ -118,10 +113,7 @@ function BookingModalInner() {
                   href="https://studio24-23056.planway.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => {
-                    trackBooking();
-                    pushEvent('booking_click', { link_url: 'https://studio24-23056.planway.com/' });
-                  }}
+                  onClick={() => trackBooking()}
                   className="inline-block bg-[#D3B39E] text-white px-[clamp(1.7rem,2.55vw,2.55rem)] 2xl:px-[clamp(2rem,3vw,3rem)] py-[clamp(0.85rem,1.275vw,1.062rem)] 2xl:py-[clamp(1rem,1.5vw,1.25rem)] rounded-full font-label tracking-[0.2em] uppercase text-[clamp(0.595rem,0.85vw,0.68rem)] 2xl:text-[clamp(0.7rem,1vw,0.8rem)] font-bold shadow-[0_15px_40px_rgba(211,179,158,0.4)] hover:shadow-[0_20px_50px_rgba(211,179,158,0.6)] hover:-translate-y-1 hover:bg-[#C9A189] transition duration-1000 ease-out relative z-20"
                 >
                   Gå til booking

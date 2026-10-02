@@ -34,7 +34,6 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            data-link-location="privatlivspolitik"
             className="fixed top-0 right-0 h-[100svh] w-full max-w-2xl bg-[#FDFBF7] shadow-2xl z-[101] overflow-y-auto overscroll-contain"
             data-lenis-prevent="true"
           >
@@ -113,19 +112,11 @@ export const PrivacyPolicyModal = ({ isOpen, onClose }: { isOpen: boolean, onClo
                   <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: dit samtykke (GDPR art. 6, stk. 1, litra a) samt cookiereglerne. Data kan overføres til Meta i USA på grundlag af EU-Kommissionens overførselsmekanismer (bl.a. EU-U.S. Data Privacy Framework og standardkontraktbestemmelser).</p>
                 </div>
 
-                <div className="border-l-4 border-[#D3B39E] pl-6 my-6">
-                  <h4 className="font-bold text-[#4C433C] mb-2">Markedsføring (Google Ads via Google Tag Manager):</h4>
-                  <p>
-                    Vi annoncerer også på Google og bruger Google Tag Manager til at måle, om annoncerne virker — f.eks. når du klikker videre til booking, ringer eller skriver til os, eller lander på bekræftelsessiden efter en booking. Google-cookies sættes kun, hvis du har accepteret. Siger du nej, sendes højst anonyme signaler uden cookies, som Google bruger til at estimere annonceeffekt samlet set. Oplysningerne deles med Google Ireland Ltd., som er selvstændig dataansvarlig for sin egen behandling.
-                  </p>
-                  <p className="mt-2 text-sm text-[#92857C]">Behandlingsgrundlag: dit samtykke (GDPR art. 6, stk. 1, litra a) samt cookiereglerne. Data kan overføres til Google i USA på grundlag af EU-U.S. Data Privacy Framework og standardkontraktbestemmelser.</p>
-                </div>
-
                 <h3 className="text-xl font-bold uppercase tracking-wider text-[#4C433C] mt-12 mb-4 font-label">
                   4. Hvem deler vi dine oplysninger med?
                 </h3>
                 <p>
-                  Vi sælger aldrig dine personoplysninger. Vi deler dem kun med de databehandlere, der er nødvendige for at levere vores ydelser — og, hvis du har givet samtykke til markedsføring, med Meta og Google som beskrevet i afsnit 3.
+                  Vi sælger aldrig dine personoplysninger. Vi deler dem kun med de databehandlere, der er nødvendige for at levere vores ydelser — og, hvis du har givet samtykke til markedsføring, med Meta som beskrevet i afsnit 3.
                 </p>
                 <p>
                   Dine data fra kontaktformularen behandles primært i vores eget e-mailsystem via en sikker tredjepartsformularudbyder. Booking af tider håndteres udelukkende i vores bookingsystem, Planway. Selve hjemmesiden hostes sikkert via Vercel. 

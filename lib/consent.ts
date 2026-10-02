@@ -1,11 +1,8 @@
 // Lightweight, dependency-free cookie-consent state.
 // Marketing/statistics cookies (the Meta Pixel) may only load AFTER the visitor
 // has actively accepted — required under the Danish/EU ePrivacy + GDPR rules.
-// Google Tag Manager is told the same choice via Consent Mode v2 (lib/gtm.ts).
 // Consent lives in localStorage; a window event lets the pixel + banner react
 // live, without a page reload.
-
-import { updateConsent } from '@/lib/gtm';
 
 export const CONSENT_KEY = 'sd-cookie-consent';
 export const CONSENT_EVENT = 'sd-consent-change';
@@ -21,7 +18,6 @@ export function getStoredConsent(): ConsentValue | null {
 export function setConsent(value: ConsentValue): void {
   if (typeof window === 'undefined') return;
   window.localStorage.setItem(CONSENT_KEY, value);
-  updateConsent(value);
   window.dispatchEvent(new CustomEvent(CONSENT_EVENT, { detail: value }));
 }
 

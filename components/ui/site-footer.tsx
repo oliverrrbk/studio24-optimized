@@ -12,7 +12,7 @@ export function SiteFooter() {
 
   return (
     <>
-      <footer data-link-location="footer" className="w-full bg-[#FDFBF7] text-[#4C433C]">
+      <footer className="w-full bg-[#FDFBF7] text-[#4C433C]">
         <div className="flex flex-col md:flex-row justify-between items-start gap-[clamp(3rem,6vw,5rem)] px-[clamp(1.5rem,5vw,4rem)] py-[clamp(5rem,10vw,8rem)] max-w-[1400px] mx-auto w-full">
           <div className="max-w-[320px]">
             <div className="mb-[clamp(1rem,2vw,1.5rem)]">

@@ -6,8 +6,6 @@ import { BookingModal } from '@/components/ui/booking-modal';
 import { Navigation } from '@/components/ui/navigation';
 import { CookieConsent } from '@/components/ui/cookie-consent';
 import { MetaPixel } from '@/components/analytics/meta-pixel';
-import { GtmEvents } from '@/components/analytics/gtm-events';
-import { CONSENT_DEFAULT_SCRIPT, GTM_ID, GTM_SCRIPT } from '@/lib/gtm';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -41,22 +39,29 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="da" className={`${cormorant.variable} ${manrope.variable}`} suppressHydrationWarning>
       <head>
-        {/* Google Consent Mode v2 — MUST stay above the GTM loader. Everything is
-            denied until the visitor accepts the cookie banner, and a returning
-            visitor's stored choice is re-applied here, before any tag can fire. */}
-        <script dangerouslySetInnerHTML={{ __html: CONSENT_DEFAULT_SCRIPT }} />
-        {/* Google Tag Manager (PurposeAds, Google Ads) */}
-        <script dangerouslySetInnerHTML={{ __html: GTM_SCRIPT }} />
+        {/* Google Tag Manager */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NZKL938S');`,
+          }}
+        />
+        {/* End Google Tag Manager */}
       </head>
       <body suppressHydrationWarning className="bg-background text-on-surface font-body selection:bg-primary-fixed-dim selection:text-on-primary-fixed w-full relative antialiased">
+        {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NZKL938S"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
           />
         </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -86,7 +91,6 @@ export default function RootLayout({children}: {children: React.ReactNode}) {
         </LenisProvider>
         <CookieConsent />
         <MetaPixel />
-        <GtmEvents />
       </body>
     </html>
   );
